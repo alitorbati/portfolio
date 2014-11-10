@@ -1,0 +1,22 @@
+.experience-card {
+  padding-left : $padding;
+  border-left  : $thick_blue_border;
+}
+
+.experience-card-company {
+  font-weight : $bold_font_weight;
+  font-size   : $medium_font_size;
+  line-height : $medium_font_size;
+}
+
+.experience-card-position {
+  color: $bright_blue;
+}
+
+.experience-card-duration {
+  color: $light_grey;
+}
+
+.experience-card-description {
+
+}

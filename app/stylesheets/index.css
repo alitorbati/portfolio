@@ -1,0 +1,77 @@
+@import url(normalize.css);
+/* FONT */
+/* FONT WEIGHT */
+/* COLOR */
+/* PADDING */
+/* MARGIN */
+/* BREAKPOINT */
+/* BORDER */
+body {
+  font-family: 'Open Sans', 'Helvetica';
+  color: #60677B;
+  font-size: 20px; }
+
+.app_container {
+  max-width: 1000px;
+  margin: 0 auto; }
+
+.page_section {
+  margin-bottom: 80px; }
+
+.h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 700; }
+
+.index_header {
+  background: #F5F5F5;
+  padding: 80px;
+  margin-bottom: 80px; }
+
+.index_header_title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #4A90E2;
+  text-transform: uppercase; }
+
+.index_header_subtitle,
+.index_header_subsubtitle {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase; }
+
+.index_header_subtitle {
+  color: #60677B; }
+
+.index_header_subsubtitle {
+  color: #BEC5D7; }
+
+.app-nav-items {
+  background: #356AA8; }
+
+.app-nav-item {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px;
+  display: inline-block; }
+
+.app-nav-item.selected {
+  background: #4A90E2; }
+
+.experience-card {
+  padding-left: 15px;
+  border-left: 5px solid #4A90E2; }
+
+.experience-card-company {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px; }
+
+.experience-card-position {
+  color: #4A90E2; }
+
+.experience-card-duration {
+  color: #BEC5D7; }
+
+/*# sourceMappingURL=index.css.map */

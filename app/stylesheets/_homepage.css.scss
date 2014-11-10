@@ -1,0 +1,23 @@
+.index_header {
+  background    : $lighter_grey;
+  padding       : $crazy_padding;
+  margin-bottom : $crazy_margin;
+}
+
+.index_header_title {
+  font-size      : $bigger_font_size;
+  font-weight    : $bold_font_weight;
+  color          : $bright_blue;
+  text-transform : uppercase;
+}
+
+.index_header_subtitle,
+.index_header_subsubtitle {
+  font-weight    : $semi_bold_font_weight;
+  font-size      : $normal_font_size;
+  text-transform : uppercase;
+}
+
+.index_header_subtitle { color : $dark_grey; }
+
+.index_header_subsubtitle { color : $light_grey; }

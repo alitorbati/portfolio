@@ -1,0 +1,15 @@
+.app-nav-items {
+  background: $dark_blue;
+}
+
+.app-nav-item {
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: $small_padding;
+  display: inline-block;
+}
+
+.app-nav-item.selected {
+  background: $bright_blue;
+}
