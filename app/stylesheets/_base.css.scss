@@ -11,6 +11,8 @@ body {
 
 .page-section { margin-bottom: $crazy_margin; }
 
+
+/* TYPOGRAPHY */
 h1, h2, h3, h4, h5, h6, p { margin: 0; vertical-align: baseline; }
 
 h1 {
@@ -38,3 +40,4 @@ h4 {
 h3 { color : $dark_grey; }
 h4 { color : $light_grey; }
 
+a { color: $bright_blue; text-decoration: none; }

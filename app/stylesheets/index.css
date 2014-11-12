@@ -18,6 +18,7 @@ body {
 .page-section {
   margin-bottom: 80px; }
 
+/* TYPOGRAPHY */
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   vertical-align: baseline; }
@@ -46,6 +47,10 @@ h3 {
 
 h4 {
   color: #BEC5D7; }
+
+a {
+  color: #4A90E2;
+  text-decoration: none; }
 
 .app-nav-items {
   background: #356AA8; }
