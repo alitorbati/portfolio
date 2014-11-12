@@ -50,9 +50,9 @@ app.directive('indexIntro', function() {
   };
 });
 
-app.directive('experienceCards', function() {
+app.directive('infoCards', function() {
   return {
-    templateUrl: 'partials/experience-cards.html',
+    templateUrl: 'partials/info-cards.html',
     controller: function(){
       this.experiences = [
       {
