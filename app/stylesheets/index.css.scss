@@ -1,9 +1,9 @@
 @import "bourbon/bourbon";
 @import "normalize.css";
+// @import "meyer_reset.css"; // TODO: PICK A SINGLE RESET
 
 @import "_variables.css.scss";
-@import "_app.css.scss";
-@import "_homepage.css.scss";
+@import "_base.css.scss";
 @import "_nav.css.scss";
-@import "_experience_cards.css.scss";
-
+@import "_header.css.scss";
+@import "_info_cards.css.scss";

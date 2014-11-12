@@ -1,0 +1,21 @@
+.info-card {
+  padding-left  : $padding;
+  border-left   : $thick_blue_border;
+  margin-bottom : $bigger_padding;
+}
+
+.info-card-company {
+  font-weight    : $bold_font_weight;
+  font-size      : $medium_font_size;
+  line-height    : $medium_font_size;
+  text-transform : uppercase;
+}
+
+.info-card-position {
+  color: $bright_blue;
+}
+
+.info-card-duration {
+  color: $light_grey;
+}
+

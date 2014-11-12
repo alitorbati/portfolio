@@ -7,43 +7,44 @@
 /* BREAKPOINT */
 /* BORDER */
 body {
-  font-family: 'Open Sans', 'Helvetica';
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   color: #60677B;
   font-size: 20px; }
 
-.app_container {
+.app-container {
   max-width: 1000px;
   margin: 0 auto; }
 
-.page_section {
+.page-section {
   margin-bottom: 80px; }
 
-.h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  font-weight: 700; }
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  vertical-align: baseline; }
 
-.index_header {
-  background: #F5F5F5;
-  padding: 80px;
-  margin-bottom: 80px; }
-
-.index_header_title {
+h1 {
   font-size: 48px;
   font-weight: 700;
   color: #4A90E2;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 1em; }
 
-.index_header_subtitle,
-.index_header_subsubtitle {
+h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1em; }
+
+h3,
+h4 {
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase; }
 
-.index_header_subtitle {
+h3 {
   color: #60677B; }
 
-.index_header_subsubtitle {
+h4 {
   color: #BEC5D7; }
 
 .app-nav-items {
@@ -59,19 +60,26 @@ body {
 .app-nav-item.selected {
   background: #4A90E2; }
 
-.experience-card {
-  padding-left: 15px;
-  border-left: 5px solid #4A90E2; }
+.header {
+  background: #F5F5F5;
+  padding: 80px 0;
+  margin-bottom: 80px; }
 
-.experience-card-company {
+.info-card {
+  padding-left: 15px;
+  border-left: 5px solid #4A90E2;
+  margin-bottom: 25px; }
+
+.info-card-company {
   font-weight: 700;
   font-size: 24px;
-  line-height: 24px; }
+  line-height: 24px;
+  text-transform: uppercase; }
 
-.experience-card-position {
+.info-card-position {
   color: #4A90E2; }
 
-.experience-card-duration {
+.info-card-duration {
   color: #BEC5D7; }
 
 /*# sourceMappingURL=index.css.map */
