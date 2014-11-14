@@ -1,20 +1,41 @@
+// info-cards
 .info-card {
   padding-left  : $padding;
   border-left   : $thick_blue_border;
   margin-bottom : $bigger_padding;
 }
 
-.info-card-company {
+.card-title {
   font-weight    : $bold_font_weight;
   font-size      : $medium_font_size;
   line-height    : $medium_font_size;
   text-transform : uppercase;
 }
 
-.info-card-position {
+.card-subtitle {
   color: $bright_blue;
 }
 
-.info-card-duration {
+.card-subsubtitle {
   color: $light_grey;
+}
+
+
+// project-cards
+.project-card-container {
+  @include clearfix();
+}
+
+.project-card-image {
+  float: left;
+  width: 20%;
+  height: 200px;
+  background: $lighter_grey;
+  border-left: $thick_blue_border;
+}
+
+.project-card-text {
+  float: left;
+  width: 80%;
+  padding-left: $padding;
 }

@@ -75,16 +75,33 @@ a {
   border-left: 5px solid #4A90E2;
   margin-bottom: 25px; }
 
-.info-card-company {
+.card-title {
   font-weight: 700;
   font-size: 24px;
   line-height: 24px;
   text-transform: uppercase; }
 
-.info-card-position {
+.card-subtitle {
   color: #4A90E2; }
 
-.info-card-duration {
+.card-subsubtitle {
   color: #BEC5D7; }
+
+.project-card-container:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.project-card-image {
+  float: left;
+  width: 20%;
+  height: 200px;
+  background: #F5F5F5;
+  border-left: 5px solid #4A90E2; }
+
+.project-card-text {
+  float: left;
+  width: 80%;
+  padding-left: 15px; }
 
 /*# sourceMappingURL=index.css.map */

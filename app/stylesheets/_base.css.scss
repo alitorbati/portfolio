@@ -15,6 +15,7 @@ body {
 /* TYPOGRAPHY */
 h1, h2, h3, h4, h5, h6, p { margin: 0; vertical-align: baseline; }
 
+// Header title
 h1 {
   font-size      : $bigger_font_size;
   font-weight    : $bold_font_weight;
@@ -23,6 +24,7 @@ h1 {
   line-height    : 1em;
 }
 
+// Page section title
 h2 {
   font-size     : $big_font_size;
   margin-bottom : $small_margin;
@@ -30,6 +32,8 @@ h2 {
   line-height   : 1em;
 }
 
+// Header subtitle
+// Header subsubtitle
 h3,
 h4 {
   font-weight    : $semi_bold_font_weight;
