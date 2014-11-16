@@ -4,8 +4,9 @@ body {
   font-size   : $normal_font_size;
 }
 
-.app-container {
-  max-width: 1000px;
+// Adds styles to the bootstrap 'container-fluid' class
+.container-fluid {
+  max-width: $desktop_screen;
   margin: 0 auto;
 }
 
@@ -44,12 +45,13 @@ h4 {
 h3 { color : $dark_grey; }
 h4 { color : $light_grey; }
 
-a {
-  color: $bright_blue;
-  text-decoration: none;
-}
+a {       color : $bright_blue; }
+a:hover { color : $dark_blue; }
 
-a:hover {
-  color: $dark_blue;
-  text-decoration: none;
+a,
+a:hover { text-decoration : none; }
+
+::selection {
+  background: $bright_blue;
+  color: #fff;
 }

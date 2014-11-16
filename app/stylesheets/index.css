@@ -11,8 +11,8 @@ body {
   color: #60677B;
   font-size: 20px; }
 
-.app-container {
-  max-width: 1000px;
+.container-fluid {
+  max-width: 1200px;
   margin: 0 auto; }
 
 .page-section {
@@ -49,12 +49,18 @@ h4 {
   color: #BEC5D7; }
 
 a {
-  color: #4A90E2;
-  text-decoration: none; }
+  color: #4A90E2; }
 
 a:hover {
-  color: #356AA8;
+  color: #356AA8; }
+
+a,
+a:hover {
   text-decoration: none; }
+
+::selection {
+  background: #4A90E2;
+  color: #fff; }
 
 .app-nav-items {
   background: #356AA8; }
@@ -95,10 +101,21 @@ a:hover {
   margin-bottom: 25px; }
 
 .card-title {
+  color: #60677B;
   font-weight: 700;
   font-size: 24px;
   line-height: 24px;
   text-transform: uppercase; }
+
+.card-title:hover {
+  color: #60677B; }
+
+.card-title:hover i {
+  color: #356AA8; }
+
+.card-title i {
+  color: #4A90E2;
+  font-size: 20px; }
 
 .card-subtitle {
   color: #4A90E2; }
@@ -106,21 +123,13 @@ a:hover {
 .card-subsubtitle {
   color: #BEC5D7; }
 
-.project-card-container:after {
-  content: "";
-  display: table;
-  clear: both; }
+.project-card-container {
+  margin-bottom: 80px; }
 
 .project-card-image {
-  float: left;
-  width: 20%;
   height: 200px;
   background: #F5F5F5;
-  border-left: 5px solid #4A90E2; }
-
-.project-card-text {
-  float: left;
-  width: 80%;
-  padding-left: 15px; }
+  border-left: 5px solid #4A90E2;
+  margin-bottom: 15px; }
 
 /*# sourceMappingURL=index.css.map */

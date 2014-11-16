@@ -1,10 +1,13 @@
-<div class="app-container page-section container-fluid">
+<div class="page-section">
   <div class="row">
 
-    <div class="project-card-container col-xs-10 col-xs-offset-1" ng-repeat="project in projects">
+    <div class="project-card-container col-sm-12" ng-repeat="project in projects">
       <div class="project-card-image"></div>
       <div class="project-card-text">
-        <div class="card-title">{{project.title}}</div>
+        <a class="card-title" href="#">
+          {{project.title}}
+          <i class="fa fa-external-link-square"></i>
+        </a>
         <div class="card-subtitle">{{project.role}}</div>
         <div class="card-subsubtitle">{{project.duration}}</div>
         <div class="card-description">{{project.description}}</div>

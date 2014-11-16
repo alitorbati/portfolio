@@ -6,36 +6,35 @@
 }
 
 .card-title {
+  color          : $dark_grey;
   font-weight    : $bold_font_weight;
   font-size      : $medium_font_size;
   line-height    : $medium_font_size;
   text-transform : uppercase;
 }
 
-.card-subtitle {
+.card-title:hover   { color: $dark_grey; }
+.card-title:hover i { color: $dark_blue; }
+
+.card-title i {
   color: $bright_blue;
+  font-size: $normal_font_size;
 }
 
-.card-subsubtitle {
-  color: $light_grey;
-}
+.card-subtitle    { color: $bright_blue; }
+.card-subsubtitle { color: $light_grey; }
 
 
 // project-cards
 .project-card-container {
-  @include clearfix();
+  margin-bottom: $crazy_margin;
 }
 
 .project-card-image {
-  float: left;
-  width: 20%;
-  height: 200px;
-  background: $lighter_grey;
-  border-left: $thick_blue_border;
+  height      : 200px;
+  background  : $lighter_grey;
+  border-left : $thick_blue_border;
+  margin-bottom: $margin;
 }
 
-.project-card-text {
-  float: left;
-  width: 80%;
-  padding-left: $padding;
-}
+.project-card-text {}
