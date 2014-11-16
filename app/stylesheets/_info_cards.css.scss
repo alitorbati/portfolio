@@ -27,14 +27,14 @@
 
 // project-cards
 .project-card-container {
-  margin-bottom: $crazy_margin;
+  margin-bottom : $crazy_margin;
+  &:last-child { margin-bottom : 0; }
 }
 
 .project-card-image {
-  height      : 200px;
-  background  : $lighter_grey;
-  border-left : $thick_blue_border;
-  margin-bottom: $margin;
+  display       : block;
+  height        : 200px;
+  background    : $lighter_grey;
+  border-left   : $thick_blue_border;
+  margin-bottom : $margin;
 }
-
-.project-card-text {}

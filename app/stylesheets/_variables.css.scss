@@ -3,7 +3,7 @@ $bigger_font_size : 48px;
 $big_font_size    : 36px;
 $medium_font_size : 24px;
 $normal_font_size : 20px;
-$small_font_size  : 48px;
+$small_font_size  : 18px;
 
 /* FONT WEIGHT */
 $bold_font_weight       : 700;
@@ -51,4 +51,5 @@ $big_breakpoint    : $laptop_screen;
 $huge_breakpoint   : $desktop_screen;
 
 /* BORDER */
-$thick_blue_border: 5px solid $bright_blue;
+$thin_blue_border  : 1px solid $bright_blue;
+$thick_blue_border : 5px solid $bright_blue;

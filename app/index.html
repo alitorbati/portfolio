@@ -1,9 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="portfolio">
   <head>
     <meta charset="UTF-8">
     <!-- <base href="/"> -->
     <title>Ali Torbati - User Interface Developer</title>
+
+    <!-- mobile behavior -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 
     <!-- fonts and icons -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700:latin"/>
@@ -23,8 +26,7 @@
     <script src="javascripts/directives.js"></script>
   </head>
 
-  <body ng-app="portfolio">
-    <!-- <div app-nav></div> -->
+  <body>
     <div ng-view></div>
     <div app-footer></div>
   </body>

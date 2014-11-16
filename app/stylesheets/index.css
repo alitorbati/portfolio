@@ -62,23 +62,36 @@ a:hover {
   background: #4A90E2;
   color: #fff; }
 
-.app-nav-items {
-  background: #356AA8; }
+.app-nav {
+  margin-bottom: 50px; }
+  .app-nav:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .app-nav-item {
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 10px;
-  display: inline-block; }
+  color: #4A90E2;
+  text-transform: lowercase;
+  padding: 0 10px;
+  display: block;
+  float: left;
+  border-top: 1px solid #4A90E2;
+  border-left: 1px solid #4A90E2;
+  border-bottom: 1px solid #4A90E2; }
+  .app-nav-item:last-child {
+    border-right: 1px solid #4A90E2; }
+  .app-nav-item:hover {
+    background: #4A90E2;
+    color: #fff; }
 
 .app-nav-item.selected {
+  color: #fff;
   background: #4A90E2; }
 
 .header {
   background: #F5F5F5;
   padding: 80px 0;
-  margin-bottom: 80px; }
+  margin-bottom: 50px; }
 
 .footer {
   background: #F5F5F5;
@@ -125,8 +138,11 @@ a:hover {
 
 .project-card-container {
   margin-bottom: 80px; }
+  .project-card-container:last-child {
+    margin-bottom: 0; }
 
 .project-card-image {
+  display: block;
   height: 200px;
   background: #F5F5F5;
   border-left: 5px solid #4A90E2;

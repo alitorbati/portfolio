@@ -1,15 +1,22 @@
-.app-nav-items {
-  background: $dark_blue;
+.app-nav {
+  margin-bottom : $biggest_margin;
+  @include clearfix();
 }
 
 .app-nav-item {
-  color: $white;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: $small_padding;
-  display: inline-block;
+  color          : $bright_blue;
+  text-transform : lowercase;
+  padding        : 0 $small_padding;
+  display        : block;
+  float          : left;
+  border-top     : $thin_blue_border;
+  border-left    : $thin_blue_border;
+  border-bottom  : $thin_blue_border;
+  &:last-child { border-right: $thin_blue_border; }
+  &:hover { background: $bright_blue; color: #fff; }
 }
 
 .app-nav-item.selected {
-  background: $bright_blue;
+  color      : #fff;
+  background : $bright_blue;
 }
