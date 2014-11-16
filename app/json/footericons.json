@@ -1,0 +1,30 @@
+[{
+  "service":"Email",
+  "icon":"fa-envelope-square",
+  "url":"mailto:alitorbati@gmail.com"
+},{
+  "service":"Github",
+  "icon":"fa-github-alt",
+  "url":"http://github.com/alitorbati"
+},{
+  "service":"Behance",
+  "icon":"fa-behance-square",
+  "url":"http://be.net/alitorbati"
+},{
+  "service":"Twitter",
+  "icon":"fa-twitter",
+  "url":"http://twitter.com/alitorbati"
+},{
+  "service":"Instagram",
+  "icon":"fa-instagram",
+  "url":"http://instagram.com/alitorbati",
+  "hidden":true
+},{
+  "service":"Vimeo",
+  "icon":"fa-vimeo-square",
+  "url":"http://vimeo.com/alitorbati"
+},{
+  "service":"LinkedIn",
+  "icon":"fa-linkedin-square",
+  "url":"http://linkedin.com/in/alitorbati"
+}]
