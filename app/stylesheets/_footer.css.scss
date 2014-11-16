@@ -1,9 +1,16 @@
 .footer {
   background : $lighter_grey;
-  padding    : $crazy_padding;
+  padding    : $biggest_padding;
   text-align : center;
+  @include breakpoint(600px) {
+    padding : $crazy_padding;
+  }
 }
 
 .footer_icon {
-  margin: 0 $big_margin;
+  display : inline-block;
+  margin  : $big_margin;
+  @include breakpoint(600px) {
+    margin : 0 $big_margin;
+  }
 }

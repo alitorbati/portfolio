@@ -44,4 +44,12 @@ h4 {
 h3 { color : $dark_grey; }
 h4 { color : $light_grey; }
 
-a { color: $bright_blue; text-decoration: none; }
+a {
+  color: $bright_blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $dark_blue;
+  text-decoration: none;
+}

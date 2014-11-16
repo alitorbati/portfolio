@@ -52,6 +52,10 @@ a {
   color: #4A90E2;
   text-decoration: none; }
 
+a:hover {
+  color: #356AA8;
+  text-decoration: none; }
+
 .app-nav-items {
   background: #356AA8; }
 
@@ -69,6 +73,21 @@ a {
   background: #F5F5F5;
   padding: 80px 0;
   margin-bottom: 80px; }
+
+.footer {
+  background: #F5F5F5;
+  padding: 50px;
+  text-align: center; }
+  @media (min-width: 600px) {
+    .footer {
+      padding: 80px; } }
+
+.footer_icon {
+  display: inline-block;
+  margin: 20px; }
+  @media (min-width: 600px) {
+    .footer_icon {
+      margin: 0 20px; } }
 
 .info-card {
   padding-left: 15px;

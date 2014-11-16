@@ -40,6 +40,15 @@ $small_margin   : $small_padding;
 $smaller_margin : $smaller_padding;
 
 /* BREAKPOINT */
+$phone_screen   : 400px;
+$tablet_screen  : 800px;
+$laptop_screen  : 1000px;
+$desktop_screen : 1200px;
+//
+$small_breakpoint  : $phone_screen;
+$medium_breakpoint : $tablet_screen;
+$big_breakpoint    : $laptop_screen;
+$huge_breakpoint   : $desktop_screen;
 
 /* BORDER */
 $thick_blue_border: 5px solid $bright_blue;

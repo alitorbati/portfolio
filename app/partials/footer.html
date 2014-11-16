@@ -1,1 +1,5 @@
-FOOTER
+<div class="footer">
+  <a class="footer_icon" href="{{icon.url}}" ng-repeat="icon in icons" ng-if="icon.hidden!=true">
+    <i class="fa {{icon.icon}}"></i>
+  </a>
+</div>

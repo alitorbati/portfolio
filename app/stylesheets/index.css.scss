@@ -1,9 +1,14 @@
 @import "bourbon/bourbon";
 @import "normalize.css";
-// @import "meyer_reset.css"; // TODO: PICK A SINGLE RESET
+// @import "meyer_reset.css"; // TODO: pick a single reset
 
+// Reusable components
+@import "_mixins.css.scss";
 @import "_variables.css.scss";
 @import "_base.css.scss";
+
+// Pages/partials
 @import "_nav.css.scss";
 @import "_header.css.scss";
+@import "_footer.css.scss";
 @import "_info_cards.css.scss";

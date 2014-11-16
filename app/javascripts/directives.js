@@ -8,7 +8,7 @@ app.directive('pageHeader', function($location) {
   return {
     templateUrl: 'partials/header.html',
     controller: function($scope){
-      $scope.headerInfo = {}
+      $scope.headerInfo = {};
 
       if($location.url() == '/') {
         $scope.headerInfo.title = 'Ali Torbati',
@@ -26,6 +26,17 @@ app.directive('pageHeader', function($location) {
   };
 });
 
+app.directive('appFooter', function() {
+  return {
+    templateUrl: 'partials/footer.html',
+    controller: function($scope, $http){
+      $http.get('json/footericons.json').success(function(icons) {
+        return $scope.icons = icons;
+      });
+    },
+  };
+});
+
 app.directive('indexIntro', function() {
   return {
     templateUrl: 'partials/intro.html'
@@ -35,29 +46,23 @@ app.directive('indexIntro', function() {
 app.directive('infoCards', function() {
   return {
     templateUrl: 'partials/info-cards.html',
+    controllerAs: 'cards',
     controller: function($scope, $http){
       $http.get('json/experiences.json').success(function(experiences) {
         return $scope.experiences = experiences;
       });
     },
-    controllerAs: 'cards'
   };
 });
 
 app.directive('projectCards', function() {
   return {
     templateUrl: 'partials/project-cards.html',
+    controllerAs: 'projects',
     controller: function($scope, $http){
       $http.get('json/projects.json').success(function(projects) {
         return $scope.projects = projects;
       });
     },
-    controllerAs: 'projects'
-  };
-});
-
-app.directive('appFooter', function() {
-  return {
-    templateUrl: 'partials/footer.html'
   };
 });
