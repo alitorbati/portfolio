@@ -1,0 +1,12 @@
+.text-tags {
+  @include clearfix();
+}
+
+.text-tag {
+  display       : block;
+  float         : left;
+  background    : $lighter_grey;
+  padding       : 3px 10px;
+  margin-right  : 10px;
+  margin-bottom : 10px;
+}

@@ -66,3 +66,9 @@ app.directive('projectCards', function() {
     },
   };
 });
+
+app.directive('techSkills', function() {
+  return {
+    templateUrl: 'partials/technical-knowledge.html'
+  };
+});

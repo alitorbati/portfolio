@@ -7,8 +7,12 @@
 @import "_variables.css.scss";
 @import "_base.css.scss";
 
+// Animations
+@import "_animation.css.scss";
+
 // Pages/partials
 @import "_nav.css.scss";
 @import "_header.css.scss";
 @import "_footer.css.scss";
 @import "_info_cards.css.scss";
+@import "_text_tags.css.scss";

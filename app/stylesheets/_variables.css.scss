@@ -53,3 +53,8 @@ $huge_breakpoint   : $desktop_screen;
 /* BORDER */
 $thin_blue_border  : 1px solid $bright_blue;
 $thick_blue_border : 5px solid $bright_blue;
+//
+$small_top_rounded    : 3px 3px 0 0;
+$small_right_rounded  : 0 3px 3px 0;
+$small_bottom_rounded : 0 0 3px 3px;
+$small_left_rounded   : 3px 0 0 3px;

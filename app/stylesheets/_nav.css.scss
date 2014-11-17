@@ -12,8 +12,12 @@
   border-top     : $thin_blue_border;
   border-left    : $thin_blue_border;
   border-bottom  : $thin_blue_border;
-  &:last-child { border-right: $thin_blue_border; }
   &:hover { background: $bright_blue; color: #fff; }
+  &:first-child { border-radius : $small_left_rounded; }
+  &:last-child {
+    border-radius : $small_right_rounded;
+    border-right: $thin_blue_border;
+  }
 }
 
 .app-nav-item.selected {

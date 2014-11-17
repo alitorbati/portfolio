@@ -78,11 +78,14 @@ a:hover {
   border-top: 1px solid #4A90E2;
   border-left: 1px solid #4A90E2;
   border-bottom: 1px solid #4A90E2; }
-  .app-nav-item:last-child {
-    border-right: 1px solid #4A90E2; }
   .app-nav-item:hover {
     background: #4A90E2;
     color: #fff; }
+  .app-nav-item:first-child {
+    border-radius: 3px 0 0 3px; }
+  .app-nav-item:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid #4A90E2; }
 
 .app-nav-item.selected {
   color: #fff;
@@ -147,5 +150,18 @@ a:hover {
   background: #F5F5F5;
   border-left: 5px solid #4A90E2;
   margin-bottom: 15px; }
+
+.text-tags:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.text-tag {
+  display: block;
+  float: left;
+  background: #F5F5F5;
+  padding: 3px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=index.css.map */
