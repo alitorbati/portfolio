@@ -71,7 +71,6 @@ a:hover {
 
 .app-nav-item {
   color: #4A90E2;
-  text-transform: lowercase;
   padding: 0 10px;
   display: block;
   float: left;
@@ -82,9 +81,11 @@ a:hover {
     background: #4A90E2;
     color: #fff; }
   .app-nav-item:first-child {
-    border-radius: 3px 0 0 3px; }
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px; }
   .app-nav-item:last-child {
-    border-radius: 0 3px 3px 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-right: 1px solid #4A90E2; }
 
 .app-nav-item.selected {

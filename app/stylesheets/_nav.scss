@@ -5,7 +5,6 @@
 
 .app-nav-item {
   color          : $bright_blue;
-  text-transform : lowercase;
   padding        : 0 $small_padding;
   display        : block;
   float          : left;
@@ -13,9 +12,9 @@
   border-left    : $thin_blue_border;
   border-bottom  : $thin_blue_border;
   &:hover { background: $bright_blue; color: #fff; }
-  &:first-child { border-radius : $small_left_rounded; }
+  &:first-child { @include border-left-radius(3px); }
   &:last-child {
-    border-radius : $small_right_rounded;
+    @include border-right-radius(3px);
     border-right: $thin_blue_border;
   }
 }
@@ -24,3 +23,8 @@
   color      : #fff;
   background : $bright_blue;
 }
+
+// .action-button {
+//   @extend .app-nav-item;
+//   span { margin-left: 5px; }
+// }

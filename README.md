@@ -14,7 +14,7 @@ $ node server.js
 
 Run the following from the stylesheets directory to compile scss files
 
-$ sass --watch index.css.scss:index.css
+$ sass --watch .
 
 
 // BROWSER

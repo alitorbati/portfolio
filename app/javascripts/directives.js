@@ -1,6 +1,9 @@
-app.directive('appNav', function() {
+app.directive('appNav', function($location) {
   return {
-    templateUrl: 'partials/nav.html'
+    templateUrl: 'partials/nav.html',
+    controller: function($scope){
+      $scope.url = $location.url();
+    }
   };
 });
 
@@ -10,17 +13,28 @@ app.directive('pageHeader', function($location) {
     controller: function($scope){
       $scope.headerInfo = {};
 
-      if($location.url() == '/') {
-        $scope.headerInfo.title = 'Ali Torbati',
-        $scope.headerInfo.subtitle = 'User Interface Developer',
-        $scope.headerInfo.subsubtitle = 'Los Angeles'
-      };
-
-      if($location.url() == '/projects') {
-        $scope.headerInfo.title = 'Projects',
-        $scope.headerInfo.subtitle = 'Development + Design',
-        $scope.headerInfo.subsubtitle = 'Digital + Print'
-      };
+      switch($location.url()){
+        case '/':
+          $scope.headerInfo.title = 'Ali Torbati'
+          $scope.headerInfo.subtitle = 'User Interface Developer'
+          $scope.headerInfo.subsubtitle = 'Los Angeles'
+          break;
+        case '/projects':
+          $scope.headerInfo.title = 'Projects'
+          $scope.headerInfo.subtitle = 'Development + Design'
+          $scope.headerInfo.subsubtitle = 'Digital + Print'
+          break;
+        case '/contact':
+          $scope.headerInfo.title = 'Contact'
+          $scope.headerInfo.subtitle = 'ali.torbati@gmail.com'
+          $scope.headerInfo.subsubtitle = 'Los Angeles'
+          break;
+        default:
+          $scope.headerInfo.title = 'Ali Torbati'
+          $scope.headerInfo.subtitle = 'User Interface Developer'
+          $scope.headerInfo.subsubtitle = 'Los Angeles'
+          break;
+      }
     },
     controllerAs: 'headerCtrl'
   };
