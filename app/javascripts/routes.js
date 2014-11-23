@@ -1,5 +1,6 @@
-app.config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider) {
-  $routeProvider.when('/', {
+app.config(function($routeProvider, $locationProvider) {
+  $routeProvider
+    .when('/', {
       templateUrl : 'pages/homepage.html',
     })
     .when('/projects', {
@@ -8,6 +9,5 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
     .when('/contact', {
       templateUrl : 'pages/contact.html',
     });
-    // return $locationProvider.html5Mode(true);
-  }]
-);
+  // $locationProvider.html5Mode(true);
+});

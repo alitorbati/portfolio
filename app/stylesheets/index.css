@@ -71,6 +71,7 @@ a:hover {
 
 .app-nav-item {
   color: #4A90E2;
+  background: #fff;
   padding: 0 10px;
   display: block;
   float: left;
@@ -111,6 +112,9 @@ a:hover {
   @media (min-width: 600px) {
     .footer_icon {
       margin: 0 20px; } }
+
+.footer_icon i {
+  font-size: 24px; }
 
 .info-card {
   padding-left: 15px;

@@ -62,8 +62,13 @@ app.directive('infoCards', function() {
     templateUrl: 'partials/info-cards.html',
     controllerAs: 'cards',
     controller: function($scope, $http){
-      $http.get('json/experiences.json').success(function(experiences) {
-        return $scope.experiences = experiences;
+      $http.get('json/experiences.json').success(function(data) {
+        // for (var startDate in data) {
+        //   if (data.hasOwnProperty(startDate)) {
+        //     console.log("asd");
+        //   }
+        // }
+        return $scope.experiences = data;
       });
     },
   };
@@ -74,8 +79,8 @@ app.directive('projectCards', function() {
     templateUrl: 'partials/project-cards.html',
     controllerAs: 'projects',
     controller: function($scope, $http){
-      $http.get('json/projects.json').success(function(projects) {
-        return $scope.projects = projects;
+      $http.get('json/projects.json').success(function(data) {
+        return $scope.projects = data;
       });
     },
   };
