@@ -2,6 +2,9 @@
 @import "normalize.css";
 // @import "meyer_reset.css"; // TODO: pick a single reset
 
+// Bootstrap grid
+@import "bootstrap/css/bootstrap.min.css";
+
 // Reusable components
 @import "_mixins.scss";
 @import "_variables.scss";
