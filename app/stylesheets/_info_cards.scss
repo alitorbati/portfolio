@@ -1,4 +1,8 @@
 // info-cards
+.info-card-container:nth-child(2n+1) {
+  clear: both;
+}
+
 .info-card {
   padding-left  : $padding;
   border-left   : $thick_blue_border;
@@ -37,4 +41,13 @@
   background    : $lighter_grey;
   border-left   : $thick_blue_border;
   margin-bottom : $margin;
+
+  // for parallaxify.js
+  background-image      : url('https://static.pexels.com/photos/2971/farm-animals-horses.jpg');
+  background-size       : cover;
+  background-position-x : 50%;
+  background-position-y : 0%;
+  background-repeat     : no-repeat;
+
+  display: none; // until i find decent photos
 }

@@ -1,30 +1,30 @@
 [{
-  "service" :"Email",
-  "fa_icon" :"fa-envelope-square",
-  "url"     :"mailto:alitorbati@gmail.com"
+  "service" : "Email",
+  "fa_icon" : "fa-envelope-square",
+  "url"     : "mailto:ali.torbati@gmail.com"
 },{
-  "service" :"Github",
-  "fa_icon" :"fa-github-alt",
-  "url"     :"http://github.com/alitorbati"
+  "service" : "Github",
+  "fa_icon" : "fa-github-alt",
+  "url"     : "http://github.com/alitorbati"
 },{
-  "service" :"Behance",
-  "fa_icon" :"fa-behance-square",
-  "url"     :"http://be.net/alitorbati"
+  "service" : "Behance",
+  "fa_icon" : "fa-behance-square",
+  "url"     : "http://be.net/alitorbati"
 },{
-  "service" :"Twitter",
-  "fa_icon" :"fa-twitter",
-  "url"     :"http://twitter.com/alitorbati"
+  "service" : "Twitter",
+  "fa_icon" : "fa-twitter",
+  "url"     : "http://twitter.com/alitorbati"
 },{
-  "service" :"Instagram",
-  "fa_icon" :"fa-instagram",
-  "url"     :"http://instagram.com/alitorbati",
-  "hidden"  :true
+  "service" : "Instagram",
+  "fa_icon" : "fa-instagram",
+  "url"     : "http://instagram.com/alitorbati"
 },{
-  "service" :"Vimeo",
-  "fa_icon" :"fa-vimeo-square",
-  "url"     :"http://vimeo.com/alitorbati"
+  "service" : "Vimeo",
+  "fa_icon" : "fa-vimeo-square",
+  "url"     : "http://vimeo.com/alitorbati",
+  "hidden"  : true
 },{
-  "service" :"LinkedIn",
-  "fa_icon" :"fa-linkedin-square",
-  "url"     :"http://linkedin.com/in/alitorbati"
+  "service" : "LinkedIn",
+  "fa_icon" : "fa-linkedin-square",
+  "url"     : "http://linkedin.com/in/alitorbati"
 }]

@@ -1,12 +1,144 @@
 @import url(normalize.css);
 @import url(bootstrap/css/bootstrap.min.css);
 /* FONT */
+.bigger_font_size {
+  font-size: 48px; }
+
+.big_font_size {
+  font-size: 36px; }
+
+.medium_font_size {
+  font-size: 24px; }
+
+.normal_font_size {
+  font-size: 20px; }
+
+.small_font_size {
+  font-size: 18px; }
+
 /* FONT WEIGHT */
+.bold_font_weight {
+  font-weight: 700; }
+
+.semi_bold_font_weight {
+  font-weight: 600; }
+
+.normal_font_weight {
+  font-weight: 400; }
+
+.semi_light_font_weight {
+  font-weight: 200; }
+
+.light_font_weight {
+  font-weight: 100; }
+
 /* COLOR */
 /* PADDING */
+.padding_80 {
+  padding: 80px; }
+
+.padding_50 {
+  padding: 50px; }
+
+.padding_25 {
+  padding: 25px; }
+
+.padding_20 {
+  padding: 20px; }
+
+.padding_15 {
+  padding: 15px; }
+
+.padding_10 {
+  padding: 10px; }
+
+.padding_5 {
+  padding: 5px; }
+
+.crazy_padding {
+  padding: 80px; }
+
+.biggest_padding {
+  padding: 50px; }
+
+.bigger_padding {
+  padding: 25px; }
+
+.big_padding {
+  padding: 20px; }
+
+.padding {
+  padding: 15px; }
+
+.small_padding {
+  padding: 10px; }
+
+.smaller_padding {
+  padding: 5px; }
+
 /* MARGIN */
+.margin_80 {
+  margin: 80px; }
+
+.margin_50 {
+  margin: 50px; }
+
+.margin_25 {
+  margin: 25px; }
+
+.margin_20 {
+  margin: 20px; }
+
+.margin_15 {
+  margin: 15px; }
+
+.margin_10 {
+  margin: 10px; }
+
+.margin_5 {
+  margin: 5px; }
+
+.crazy_margin {
+  margin: 80px; }
+
+.biggest_margin {
+  margin: 50px; }
+
+.bigger_margin {
+  margin: 25px; }
+
+.big_margin {
+  margin: 20px; }
+
+.margin {
+  margin: 15px; }
+
+.small_margin {
+  margin: 10px; }
+
+.smaller_margin {
+  margin: 5px; }
+
 /* BREAKPOINT */
 /* BORDER */
+.thin_blue_border {
+  border-radius: 1px solid #4a90e2; }
+
+.thick_blue_border {
+  border-radius: 5px solid #4a90e2; }
+
+.top_rounded_3 {
+  border-radius: 3px 3px 0 0; }
+
+.right_rounded_3 {
+  border-radius: 0 3px 3px 0; }
+
+.bottom_rounded_3 {
+  border-radius: 0 0 3px 3px; }
+
+.left_rounded_3 {
+  border-radius: 3px 0 0 3px; }
+
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   color: #60677B;
@@ -20,14 +152,20 @@ body {
   margin-bottom: 80px; }
 
 /* TYPOGRAPHY */
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
   vertical-align: baseline; }
 
 h1 {
   font-size: 48px;
   font-weight: 700;
-  color: #4A90E2;
+  color: #4a90e2;
   text-transform: uppercase;
   line-height: 1em; }
 
@@ -47,20 +185,19 @@ h3 {
   color: #60677B; }
 
 h4 {
-  color: #BEC5D7; }
+  color: #bec5d7; }
 
 a {
-  color: #4A90E2; }
-
-a:hover {
-  color: #356AA8; }
+  color: #4a90e2; }
+  a:hover {
+    color: #356aa8; }
 
 a,
 a:hover {
   text-decoration: none; }
 
 ::selection {
-  background: #4A90E2;
+  background: #4a90e2;
   color: #fff; }
 
 .app-nav {
@@ -71,16 +208,16 @@ a:hover {
     clear: both; }
 
 .app-nav-item {
-  color: #4A90E2;
+  color: #4a90e2;
   background: #fff;
   padding: 0 10px;
   display: block;
   float: left;
-  border-top: 1px solid #4A90E2;
-  border-left: 1px solid #4A90E2;
-  border-bottom: 1px solid #4A90E2; }
+  border-top: 1px solid #4a90e2;
+  border-left: 1px solid #4a90e2;
+  border-bottom: 1px solid #4a90e2; }
   .app-nav-item:hover {
-    background: #4A90E2;
+    background: #4a90e2;
     color: #fff; }
   .app-nav-item:first-child {
     border-top-left-radius: 3px;
@@ -88,19 +225,19 @@ a:hover {
   .app-nav-item:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    border-right: 1px solid #4A90E2; }
+    border-right: 1px solid #4a90e2; }
 
 .app-nav-item.selected {
   color: #fff;
-  background: #4A90E2; }
+  background: #4a90e2; }
 
 .header {
-  background: #F5F5F5;
+  background: #f5f5f5;
   padding: 80px 0;
   margin-bottom: 50px; }
 
 .footer {
-  background: #F5F5F5;
+  background: #f5f5f5;
   padding: 50px;
   text-align: center; }
   @media (min-width: 600px) {
@@ -117,9 +254,12 @@ a:hover {
 .footer_icon i {
   font-size: 24px; }
 
+.info-card-container:nth-child(2n+1) {
+  clear: both; }
+
 .info-card {
   padding-left: 15px;
-  border-left: 5px solid #4A90E2;
+  border-left: 5px solid #4a90e2;
   margin-bottom: 25px; }
 
 .card-title {
@@ -133,17 +273,17 @@ a:hover {
   color: #60677B; }
 
 .card-title:hover i {
-  color: #356AA8; }
+  color: #356aa8; }
 
 .card-title i {
-  color: #4A90E2;
+  color: #4a90e2;
   font-size: 20px; }
 
 .card-subtitle {
-  color: #4A90E2; }
+  color: #4a90e2; }
 
 .card-subsubtitle {
-  color: #BEC5D7; }
+  color: #bec5d7; }
 
 .project-card-container {
   margin-bottom: 80px; }
@@ -153,9 +293,15 @@ a:hover {
 .project-card-image {
   display: block;
   height: 200px;
-  background: #F5F5F5;
-  border-left: 5px solid #4A90E2;
-  margin-bottom: 15px; }
+  background: #f5f5f5;
+  border-left: 5px solid #4a90e2;
+  margin-bottom: 15px;
+  background-image: url("https://static.pexels.com/photos/2971/farm-animals-horses.jpg");
+  background-size: cover;
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-repeat: no-repeat;
+  display: none; }
 
 .text-tags:after {
   content: "";
@@ -165,7 +311,7 @@ a:hover {
 .text-tag {
   display: block;
   float: left;
-  background: #F5F5F5;
+  background: #f5f5f5;
   padding: 3px 10px;
   margin-right: 10px;
   margin-bottom: 10px; }

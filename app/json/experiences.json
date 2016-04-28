@@ -7,7 +7,7 @@
   "startDate"   : "2013/12/9",
   "endDate"     : "",
   "location"    : "Pasadena, CA",
-  "description" : "As a one of only two User Interface Developers, I am responsible for creating and maintaining consistent, scalable, and functional assets and modules used throughout our application."
+  "description" : "As the sole User Interface Developer, I am responsible for creating and maintaining consistent, scalable, and maintainable components for our applications. I also provide the Design and Product teams with technical advice."
 },{
   "company"     : "Rosetta",
   "position"    : "Interactive Developer, Junior Associate",
@@ -17,7 +17,7 @@
   "startDate"   : "2013/4/20",
   "endDate"     : "2013/11/15",
   "location"    : "San Luis Obispo, CA",
-  "description" : "Transforming marketing for the connected world ain't easy. As a member of the marketing team I helped create and distribute consistently branded assets throughout our online presence."
+  "description" : "While on the marketing team I helped create and distribute consistently branded assets for our online initiatives, while trying to keep my head above water in the deep, deep ocean of marketing-speak."
 },{
   "company"     : "DeviantART",
   "position"    : "Marketing Intern",
@@ -27,7 +27,7 @@
   "startDate"   : "2011/7/1",
   "endDate"     : "2011/9/15",
   "location"    : "Hollywood, CA",
-  "description" : "This is the world's largest online art community. During my internship I researched and presented strengths and weaknesses of specific new business opportunities."
+  "description" : "During my internship at the world's largest online art community I researched and presented the strengths and weaknesses of a few business initiatives that were under consideration by an advisory committee."
 },{
   "company"     : "University Graphic Systems",
   "position"    : "Knowledge Manager",
@@ -47,5 +47,5 @@
   "startDate"  : "2011/8/20",
   "endDate"    : "2012/10/2",
   "location"   : "San Luis Obispo, CA",
-  "description": "Designers take media managers' spec sheets and turn them into profitable ads. Meeting strict deadlines and client expectations were daily responsibilities."
+  "description": "The primary role of designers is to take media clients' spec sheets and convert them into ads. Meeting strict deadlines and client expectations were daily responsibilities."
 }]

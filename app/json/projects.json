@@ -1,15 +1,21 @@
 [{
+  "title":"Spokeo UI Framework",
+  "url":"http://www.spokeo.com/styleguide",
+  "role":"User Interface Developer",
+  "duration":"12+ months",
+  "description":"I've built this UI framework for Spokeo from the ground up. Starting with a mockup for a single page of our site I started to pull out reusable components, organize them, and write a scalable CSS architecture. The complexity in this project comes mostly from having to look at individual mockups, understand the \"big picture\" of Spokeo's overall aesthetic, and determine a hierarchy of design both visually and technically (e.g: seeing two button styles in a mockup, but anticipating other variations and building with flexibility to accommodate those scenarios). There are also a lot of small details that have made allowed this project to grow without major refactors (e.g: naming buttons, fonts, etc on a relative scale instead of an absolute scale where possible: \"xl\", \"xxl\" allows us to add \"xxxl\", whereas \"larger\", \"largest\" would be inflexible and cause issues if we needed new sizes.). This living document has become a crucial reference for developers and designers, and has cut frontend dev time significantly. "
+},{
+  "title":"DRRROPS",
+  "url":"http://www.drrrops.com",
+  "role":"Frontend Dev",
+  "duration":"8 hours",
+  "description":"Easy demo: drrrops.com/?song=https:%2F/soundcloud.com/galimatias/alina-baraz-galimatias-make. This was a quick hackathon project I built with a small team over the course of about 4 hours. We wanted to use the SoundCloud API to create a more community-focused music experience, and we thought the best way to go about doing that would be to put track comments front and center. In concept it seems very basic, but in practice it's actually pretty fun to use. This project was interesting because we spent very little time creating wireframes, and instead focused more on getting a MVP out in the wild. It was a rush to get something working as quickly as possible, and we're all pretty happy with the result. We even got featured on Product Hunt (www.producthunt.com/tech/drrrops)!"
+},{
   "title":"Phoenix Challenge",
   "url":"http://www.behance.net/gallery/8745723/Pacific-Festival-Rebrand",
   "role":"Team Leader",
   "duration":"9 months",
-  "description":"Bacon ipsum dolor amet pork chop swine ham beef bacon, corned beef salami tongue. Pork ribeye picanha flank turkey. Meatball sausage cow, andouille short ribs ham doner short loin ribeye pancetta chuck rump swine jerky spare ribs. Brisket short ribs fatback chicken hamburger jerky drumstick. Bacon ipsum dolor amet pork chop swine ham beef bacon, corned beef salami tongue. Pork ribeye picanha flank turkey. Meatball sausage cow, andouille short ribs ham doner short loin ribeye pancetta chuck rump swine jerky spare ribs. Brisket short ribs fatback chicken hamburger jerky drumstick."
-},{
-  "title":"Spokeo v8",
-  "url":"http://www.spokeo.com",
-  "role":"User Interface Developer",
-  "duration":"12+ months",
-  "description":"Bacon ipsum dolor amet pork chop swine ham beef bacon, corned beef salami tongue. Pork ribeye picanha flank turkey. Meatball sausage cow, andouille short ribs ham doner short loin ribeye pancetta chuck rump swine jerky spare ribs. Brisket short ribs fatback chicken hamburger jerky drumstick. Bacon ipsum dolor amet pork chop swine ham beef bacon, corned beef salami tongue. Pork ribeye picanha flank turkey. Meatball sausage cow, andouille short ribs ham doner short loin ribeye pancetta chuck rump swine jerky spare ribs. Brisket short ribs fatback chicken hamburger jerky drumstick."
+  "description":"During my senior year of college I was chosen to lead a team of students and represent our school at an international packaging design and production competition called Phoenix Challenge. The guidelines were flexible, and we went above and beyond the required scope. We rebranded Pacific festival, and designed and produced two food packages and a promotional document for the event. This went from basic concept (what foods are most practical/fun/profitable at a music festival?) to design critique (Which colors best represent our brand?) to technical research (if we choose Design A, can we feasibly produce that design on food-safe materials?). We even created an augmented reality app that would overlay up-to-date concert information on our printed map and in physical space (there's a video in the Behance project)."
 },{
   "title":"Housing Fair",
   "url":"http://www.behance.net/gallery/6970799/Housing-Fair",

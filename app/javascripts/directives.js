@@ -82,6 +82,10 @@ app.directive('projectCards', function() {
       $http.get('json/projects.json').success(function(data) {
         return $scope.projects = data;
       });
+      // $scope.$on('$locationChangeSuccess', function(){
+      //   console.log('hihihi');
+      //   // $( '.project-card-image' ).parallaxify();
+      // });
     },
   };
 });
@@ -89,5 +93,11 @@ app.directive('projectCards', function() {
 app.directive('techSkills', function() {
   return {
     templateUrl: 'partials/technical-knowledge.html'
+  };
+});
+
+app.directive('contactInfo', function() {
+  return {
+    templateUrl: 'partials/contact.html'
   };
 });
