@@ -1,17 +1,24 @@
 .app-nav {
   margin-bottom : $biggest_margin;
+  margin-top: -#{$biggest_margin + 16px};
   @include clearfix();
+}
+
+.app-nav-items {
+  box-shadow: 0px 3px 15px 0px $light_grey;
+  display: inline-block;
 }
 
 .app-nav-item {
   color          : $bright_blue;
   background     : #fff;
-  padding        : 0 $small_padding;
+  padding        : 0 $padding;
   display        : block;
   float          : left;
   border-top     : $thin_blue_border;
   border-left    : $thin_blue_border;
   border-bottom  : $thin_blue_border;
+  font-size: $medium_font_size;
   &:hover { background: $bright_blue; color: #fff; }
   &:first-child { @include border-left-radius(3px); }
   &:last-child {
@@ -25,7 +32,19 @@
   background : $bright_blue;
 }
 
-// .action-button {
-//   @extend .app-nav-item;
-//   span { margin-left: 5px; }
-// }
+.action-button {
+  display: inline-block;
+  margin-bottom: $crazy_margin;
+}
+
+.action-button-icon {
+    border-radius: 50%;
+    width: $biggest_padding;
+    height: $biggest_padding;
+    line-height: $biggest_padding;
+    text-align: center;
+    color: #fff;
+    background-color: $bright_blue;
+}
+
+.action-button:hover .action-button-icon { background-color: $dark_blue; }

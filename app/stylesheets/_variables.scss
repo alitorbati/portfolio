@@ -115,8 +115,8 @@ $small_right_rounded  : 0 3px 3px 0;
 $small_bottom_rounded : 0 0 3px 3px;
 $small_left_rounded   : 3px 0 0 3px;
 
-.thin_blue_border  { border-radius : $thin_blue_border };
-.thick_blue_border { border-radius : $thick_blue_border };
+.thin_blue_border  { border : $thin_blue_border };
+.thick_blue_border { border : $thick_blue_border };
 //
 .top_rounded_3    { border-radius : $small_top_rounded };
 .right_rounded_3  { border-radius : $small_right_rounded };

@@ -4,9 +4,10 @@
 }
 
 .info-card {
-  padding-left  : $padding;
-  border-left   : $thick_blue_border;
+  padding  : $padding;
   margin-bottom : $bigger_padding;
+  border: $thin_blue_border;
+  border-radius: 5px;
 }
 
 .card-title {

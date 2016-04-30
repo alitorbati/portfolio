@@ -51,6 +51,12 @@ app.directive('appFooter', function() {
   };
 });
 
+app.directive('downloadPdf', function(){
+  return {
+    templateUrl: 'partials/download.html'
+  }
+});
+
 app.directive('indexIntro', function() {
   return {
     templateUrl: 'partials/intro.html'

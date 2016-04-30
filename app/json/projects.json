@@ -11,6 +11,12 @@
   "duration":"8 hours",
   "description":"Easy demo: drrrops.com/?song=https:%2F/soundcloud.com/galimatias/alina-baraz-galimatias-make. This was a quick hackathon project I built with a small team over the course of about 4 hours. We wanted to use the SoundCloud API to create a more community-focused music experience, and we thought the best way to go about doing that would be to put track comments front and center. In concept it seems very basic, but in practice it's actually pretty fun to use. This project was interesting because we spent very little time creating wireframes, and instead focused more on getting a MVP out in the wild. It was a rush to get something working as quickly as possible, and we're all pretty happy with the result. We even got featured on Product Hunt (www.producthunt.com/tech/drrrops)!"
 },{
+  "title":"Github Reveal",
+  "url":"http://www.alitorbati.com/reveal",
+  "role":"Design + Dev",
+  "duration":"A few hours",
+  "description":"Built this quick tool for a recruiter buddy. Just enter a github username and hit enter to reveal their email address, if it's available."
+},{
   "title":"Phoenix Challenge",
   "url":"http://www.behance.net/gallery/8745723/Pacific-Festival-Rebrand",
   "role":"Team Leader",
