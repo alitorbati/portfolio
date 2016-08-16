@@ -67,13 +67,19 @@ app.directive('infoCards', function() {
     templateUrl: 'partials/info-cards.html',
     controllerAs: 'cards',
     controller: function($scope, $http){
-      $http.get('json/experiences.json').success(function(data) {
-        // for (var startDate in data) {
-        //   if (data.hasOwnProperty(startDate)) {
-        //     console.log("asd");
-        //   }
-        // }
-        return $scope.experiences = data;
+      url = 'https://spreadsheets.google.com/feeds/list/1VnD8RJtceCIFPvWzrCOcQCY5eUY5_FO1yOwvGIpCXe8/od6/public/values?alt=json'
+      $http.get(url).success(function(data) {
+        experiences = []
+        $(data.feed.entry).each(function(){
+          experience = {}
+          experience.company = this.gsx$company.$t
+          experience.position = this.gsx$position.$t
+          experience.duration = this.gsx$duration.$t
+          experience.href = this.gsx$href.$t
+          experience.description = this.gsx$description.$t
+          experiences.push(experience)
+        });
+        return $scope.experiences = experiences;
       });
     },
   };
@@ -84,9 +90,21 @@ app.directive('projectCards', function() {
     templateUrl: 'partials/project-cards.html',
     controllerAs: 'projects',
     controller: function($scope, $http){
-      $http.get('json/projects.json').success(function(data) {
-        return $scope.projects = data;
+      url = 'https://spreadsheets.google.com/feeds/list/12sERGaYvU1ZUsEOnG11LgR8ZQVtLW3zn2Kv8yOOBPyg/od6/public/values?alt=json'
+      $http.get(url).success(function(data) {
+        projs = []
+        $(data.feed.entry).each(function(){
+          project = {}
+          project.title = this.gsx$title.$t
+          project.url = this.gsx$url.$t
+          project.role = this.gsx$role.$t
+          project.duration = this.gsx$duration.$t
+          project.description = this.gsx$description.$t
+          projs.push(project)
+        });
+        return $scope.projects = projs;
       });
+
       // $scope.$on('$locationChangeSuccess', function(){
       //   console.log('hihihi');
       //   // $( '.project-card-image' ).parallaxify();
