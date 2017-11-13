@@ -1,9 +1,0 @@
-@mixin breakpoint($point) {
-  @media (min-width: $point) { @content ; }
-}
-
-@mixin ellipsis($line_break: false) {
-  @if $line_break == false { white-space: nowrap; }
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
