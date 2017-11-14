@@ -8,7 +8,7 @@ import Contribution from '../components/Contribution';
 import Url from '../components/Url';
 
 const Desc = styled.div`
-  margin-top: -18px;
+  margin-top: -15px;
   padding-left: 25px;
   position: relative;
 `

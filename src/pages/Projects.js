@@ -34,8 +34,8 @@ class Projects extends Component {
         const projects = res.data.feed.entry.map(p => (
           {
             title: p.gsx$title.$t,
-            url: p.gsx$url.$t,
-            role: p.gsx$role.$t,
+            href: p.gsx$href.$t,
+            position: p.gsx$position.$t,
             duration: p.gsx$duration.$t,
             description: p.gsx$description.$t,
           }
@@ -56,9 +56,9 @@ class Projects extends Component {
               <Desc>
                 <div>
                   { p.description }
-                  <Url href={ p.url } target='_blank'>{ p.url }</Url>
+                  <Url href={ p.href } target='_blank'>{ p.href }</Url>
                 </div>
-                <Contribution alt={ true }>{ p.role }</Contribution>
+                <Contribution alt={ true }>{ p.position }</Contribution>
                 <div>{ p.duration }</div>
               </Desc>
             </StickySection>

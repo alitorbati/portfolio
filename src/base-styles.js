@@ -9,7 +9,7 @@ const baseStyles = () => injectGlobal`
     ${'' /* color: blue; */}
     font-size: 14px;
     outline: 0;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   a {

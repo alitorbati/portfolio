@@ -6,6 +6,7 @@ const Title = styled.h2`
   font-weight: 900;
   font-size: 2em;
   color: ${props => props.alt ? '#ffe1b1' : '#73ffaa'};
+  line-height: 1;
 `;
 
 export default Title;
