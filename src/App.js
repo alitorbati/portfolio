@@ -6,6 +6,7 @@ import baseStyles from './base-styles'
 import Home from './pages/Home'
 import Experiences from './pages/Experiences'
 import Projects from './pages/Projects'
+import Photography from './pages/Photography'
 import Elsewhere from './pages/Elsewhere'
 
 import './App.css';
@@ -30,6 +31,7 @@ class App extends Component {
       '/',
       '/experiences',
       '/projects',
+      '/photography',
       '/elsewhere',
     ]
 
@@ -57,6 +59,7 @@ class App extends Component {
             <Route path='/' exact component={ Home } />
             <Route path='/experiences' component={ Experiences } />
             <Route path='/projects' component={ Projects } />
+            <Route path='/photography' component={ Photography } />
             <Route path='/elsewhere' component={ Elsewhere } />
           </div>
         </Main>
