@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Contribution = styled.div`
   padding: 5px 15px;
-  background: ${props => props.alt ? '#ffdbfd' : '#e3ffe2'};
-  color: ${props => props.alt ? '#ff84fb' : '#6adc65'};
+  background: #ffdbfd;
+  color: #ff84fb;
   display: inline-block;
   margin: 5px 0;
 `

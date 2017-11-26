@@ -7,15 +7,10 @@ import Title from '../components/Title'
 import Contribution from '../components/Contribution';
 import Url from '../components/Url';
 
-const Meta = styled.div`
-  float: left;
-  width: 30%;
-`;
-
 const Desc = styled.div`
-  float: right;
-  width: 70%;
-  padding-left: 10px;
+  margin-top: -15px;
+  padding-left: 25px;
+  position: relative;
 `
 
 class Projects extends Component {
@@ -50,15 +45,13 @@ class Projects extends Component {
         {
           this.state.projects.map((p, i) => (
             <StickySection key={ i }>
-              <Meta>
-                <Title>{ p.title }</Title>
-              </Meta>
+              <Title>{ p.title }</Title>
               <Desc>
                 <div>
                   { p.description }
-                  <Url href={ p.href } target='_blank'>{ p.href }</Url>
+                  <Url to={ p.href } target='_blank' />
                 </div>
-                <Contribution alt={ true }>{ p.position }</Contribution>
+                <Contribution>{ p.position }</Contribution>
                 <div>{ p.duration }</div>
               </Desc>
             </StickySection>

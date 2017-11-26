@@ -17,7 +17,7 @@ class Photography extends Component {
 
     return (
       <div className='Photography'>
-        <Title alt>Click clack</Title>
+        <Title>Click clack</Title>
         <ul>
           {
             albumLinks.map(link => (

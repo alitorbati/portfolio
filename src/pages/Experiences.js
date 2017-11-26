@@ -58,9 +58,7 @@ class Experiences extends Component {
         {
           this.state.experiences.map((e, i) => (
             <StickySection key={ i }>
-              <div>
-                <Title alt>{ e.company }</Title>
-              </div>
+              <Title>{ e.company }</Title>
               <Desc>
                 <div>
                   { e.description }
