@@ -1,0 +1,31 @@
+import * as THREE from 'three';
+import PropTypes from 'prop-types';
+
+import GeometryDescriptorBase from './GeometryDescriptorBase';
+import propTypeInstanceOf from '../../utils/propTypeInstanceOf';
+
+class GeometryDescriptor extends GeometryDescriptorBase {
+  constructor(react3RendererInstance) {
+    super(react3RendererInstance);
+
+    this.hasProp('vertices', {
+      override: true,
+      type: PropTypes.arrayOf(propTypeInstanceOf(THREE.Vector3)).isRequired,
+      update(threeObject, vertices) {
+        if (threeObject.vertices !== vertices) {
+          threeObject.vertices = vertices;
+
+          threeObject.verticesNeedUpdate = true;
+        }
+      },
+      updateInitial: true,
+      default: [],
+    });
+  }
+
+  construct() {
+    return new THREE.Geometry();
+  }
+}
+
+module.exports = GeometryDescriptor;
