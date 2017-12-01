@@ -21,10 +21,9 @@ class Photography extends Component {
         <ul>
           {
             albumLinks.map(link => (
-              <li>
+              <li key={ link }>
                 <Url
                   href={ link }
-                  key={ link }
                   target='_blank'
                 >
                   { link }

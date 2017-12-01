@@ -22,10 +22,9 @@ class Elsewhere extends Component {
         <ul>
           {
             socialLinks.map(link => (
-              <li>
+              <li key={ link }>
                 <Url
                   href={ link }
-                  key={ link }
                   target='_blank'
                 >
                   { link }
