@@ -38,4 +38,6 @@ export default styled(Title)`
   color: #73ffaa;
   line-height: 1;
   margin-bottom: -15px;
+  position: sticky;
+  top: 0;
 `

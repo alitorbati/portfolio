@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
-import StickySection from '../components/StickySection';
+import ContentBlock from '../components/ContentBlock';
 import Title from '../components/Title'
 import Contribution from '../components/Contribution';
 import Url from '../components/Url';
@@ -57,7 +57,7 @@ class Experiences extends Component {
       <div className='Experiences'>
         {
           this.state.experiences.map((e, i) => (
-            <StickySection key={ i }>
+            <ContentBlock key={ i }>
               <Title>{ e.company }</Title>
               <Desc>
                 <div>
@@ -72,7 +72,7 @@ class Experiences extends Component {
                 </div>
 
               </Desc>
-            </StickySection>
+            </ContentBlock>
           ))
         }
       </div>
