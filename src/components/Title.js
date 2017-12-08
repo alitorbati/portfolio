@@ -1,32 +1,30 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-function hashCode(str) {
-    var hash = 0;
-    for (var i = 0; i < str.length; i++) {
-       hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    return hash;
-}
+// function hashCode(str) {
+//   var hash = 0;
+//   for (var i = 0; i < str.length; i++) {
+//     hash = str.charCodeAt(i) + ((hash << 5) - hash);
+//   }
+//   return hash;
+// }
 
-function intToARGB(i){
-    return ((i>>24)&0xFF).toString(16) +
-           ((i>>16)&0xFF).toString(16) +
-           ((i>>8)&0xFF).toString(16)
-          //  (i&0xFF).toString(16); // alpha
-}
+// function intToARGB(i){
+//   return ((i>>24)&0xFF).toString(16) +
+//          ((i>>16)&0xFF).toString(16) +
+//          ((i>>8)&0xFF).toString(16)
+//           //  (i&0xFF).toString(16); // alpha
+// }
 
 class Title extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <h2
         { ...this.props }
         // style={{ color: `#${ intToARGB(hashCode(this.props.children)) }`}}
-      />
+      >
+        { this.props.children }
+      </h2>
     )
   }
 }
@@ -40,4 +38,5 @@ export default styled(Title)`
   margin-bottom: -15px;
   position: sticky;
   top: 0;
+  z-index: -1;
 `

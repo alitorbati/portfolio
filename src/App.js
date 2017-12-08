@@ -8,6 +8,7 @@ import Experiences from './pages/Experiences'
 import Projects from './pages/Projects'
 import Photography from './pages/Photography'
 import Elsewhere from './pages/Elsewhere'
+import Experiments from './pages/Experiments'
 
 import './App.css';
 
@@ -33,6 +34,7 @@ class App extends Component {
       '/projects',
       '/photography',
       '/elsewhere',
+      // '/experiments',
     ]
 
     baseStyles()
@@ -61,6 +63,7 @@ class App extends Component {
             <Route path='/projects' component={ Projects } />
             <Route path='/photography' component={ Photography } />
             <Route path='/elsewhere' component={ Elsewhere } />
+            <Route path='/experiments' component={ Experiments } />
           </div>
         </Main>
       </BrowserRouter>
