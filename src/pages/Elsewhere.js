@@ -16,7 +16,7 @@ class Elsewhere extends Component {
 
     return (
       <div className='Elsewhere'>
-        <Title>Cash me ousside</Title>
+        <Title>Catch me ousside</Title>
         <ul>
           {
             socialLinks.map(link => (

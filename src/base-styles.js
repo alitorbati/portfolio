@@ -1,6 +1,9 @@
 import { injectGlobal } from 'styled-components'
 import reset from 'styled-reset'
 
+import cursorImage from './images/cursor.png'
+import handImage from './images/hand.png'
+
 const baseStyles = () => injectGlobal`
   ${reset}
 
@@ -12,12 +15,18 @@ const baseStyles = () => injectGlobal`
     line-height: 1.5;
   }
 
+  #body {
+    min-height: 100vh;
+    cursor: url('${cursorImage}'), auto !important;
+  }
+
   a {
     color: blue;
   }
 
   a:hover {
     color: palevioletred;
+    cursor: url('${handImage}'), auto !important;
   }
 `
 
