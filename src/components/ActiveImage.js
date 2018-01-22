@@ -21,6 +21,7 @@ export default styled(ActiveImage)`
   pointer-events: none;
   border: 10px solid #73ffaa;
   width: 70vw;
+  max-width: 900px;
   z-index: -1;
   transition: all 0.3s;
 `
