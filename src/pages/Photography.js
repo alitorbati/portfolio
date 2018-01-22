@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-
+import styled from 'styled-components';
 import Title from '../components/Title'
 import Url from '../components/Url'
 import ActiveImage from '../components/ActiveImage'
-
 import image_KoK1iG7JNnQxyEt92 from '../images/photography/KoK1iG7JNnQxyEt92.jpg'
 import image_75QJV36brgWUrzv93 from '../images/photography/75QJV36brgWUrzv93.jpg'
 import image_WG5ydYC85BVZUgnz2 from '../images/photography/WG5ydYC85BVZUgnz2.jpg'
 import image_5s8krtuAk0sTnTeW2 from '../images/photography/5s8krtuAk0sTnTeW2.jpg'
 import image_GstoKugKVzhkMkE02 from '../images/photography/GstoKugKVzhkMkE02.jpg'
+
+const ImageUl = styled.ul`
+  margin-top: 40px;
+`
 
 class Photography extends Component {
   constructor () {
@@ -25,44 +28,27 @@ class Photography extends Component {
     }
   }
 
-  setActiveImage (code, event) {
-    const newState = {
-      ...this.props.state,
-      activeImage: code,
-      x: event.clientX,
-      y: event.clientY,
-    }
-    this.setState(newState)
-  }
-
   render () {
 
     return (
       <div className='Photography'>
         <Title>Click clack</Title>
-        <ul>
+        <ImageUl>
           {
             Object.keys(this.albums).map(albumCode => {
               const link = `https://photos.app.goo.gl/${albumCode}`
               return (
                 <li key={ albumCode }>
-                  <Url
+                  <ActiveImage
                     href={ link }
-                    target='_blank'
-                    onMouseOver={ (event) => this.setActiveImage(this.albums[albumCode], event) }
-                  >
-                    { link }
-                  </Url>
+                    image={ this.albums[albumCode] }
+                    code={ albumCode }
+                  />
                 </li>
               )
             })
           }
-        </ul>
-        <ActiveImage
-          image={ this.state.activeImage }
-          x={ this.state.x }
-          y={ this.state.y }
-        />
+        </ImageUl>
       </div>
     );
   }

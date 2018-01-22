@@ -24,9 +24,7 @@ class Elsewhere extends Component {
                 <Url
                   href={ link }
                   target='_blank'
-                >
-                  { link }
-                </Url>
+                />
               </li>
             ))
           }

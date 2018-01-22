@@ -1,27 +1,50 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Url from '../components/Url'
 
 class ActiveImage extends Component {
   render() {
     return (
-      <img
-        { ...this.props }
-        src={ this.props.image }
-        alt={ this.props.image }
-      />
+      <div { ...this.props }>
+        <ActiveImageImg
+          src={ this.props.image }
+          alt={ this.props.image }
+        />
+        <ActiveImageText>
+          <ActiveImageTitle>
+            { this.props.code }
+          </ActiveImageTitle>
+
+          <Url
+            href={ this.props.href }
+            target='_blank'
+          />
+        </ActiveImageText>
+      </div>
     )
   }
 }
 
+const ActiveImageImg = styled.img`
+  width: 100%;
+  margin-bottom: -70px;
+`
+
+const ActiveImageText = styled.div`
+  position: sticky;
+  padding: 10px 25px;
+  background-color: #fff;
+  display: inline-block;
+  bottom: 30px;
+  margin-left: 30px;
+`
+
+const ActiveImageTitle = styled.div`
+  font-size: 3em;
+  font-style: italic;
+`
+
 export default styled(ActiveImage)`
-  display: ${ props => props.image === '' ? 'none' : 'block' };
-  position: absolute;
-  left: ${ props => props.x + 'px' };
-  top: ${ props => props.y + 'px' };
-  pointer-events: none;
-  border: 10px solid #73ffaa;
-  width: 70vw;
-  max-width: 900px;
-  z-index: -1;
-  transition: all 0.3s;
+  position: relative;
+  margin-bottom: 30px;
 `
