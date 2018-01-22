@@ -24,11 +24,11 @@ const Datedivider = styled.span`
   margin-right: 10px;
 `
 
-class Experiences extends Component {
+class Jobs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      experiences: []
+      jobs: []
     };
   }
 
@@ -37,7 +37,7 @@ class Experiences extends Component {
     axios
       .get(url)
       .then(res => {
-        const experiences = res.data.feed.entry.map(e => (
+        const jobs = res.data.feed.entry.map(e => (
           {
             company: e.gsx$company.$t,
             position: e.gsx$position.$t,
@@ -48,15 +48,15 @@ class Experiences extends Component {
             description: e.gsx$description.$t,
           }
         ));
-        this.setState({ experiences });
+        this.setState({ jobs });
       });
   }
 
   render() {
     return (
-      <div className='Experiences'>
+      <div className='Jobs'>
         {
-          this.state.experiences.map((e, i) => (
+          this.state.jobs.map((e, i) => (
             <ContentBlock key={ i }>
               <Title>{ e.company }</Title>
               <Desc>
@@ -80,4 +80,4 @@ class Experiences extends Component {
   }
 }
 
-export default Experiences;
+export default Jobs;

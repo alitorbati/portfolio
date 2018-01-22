@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import baseStyles from './base-styles'
 
 import Home from './pages/Home'
-import Experiences from './pages/Experiences'
+import Jobs from './pages/Jobs'
 import Projects from './pages/Projects'
 import Photography from './pages/Photography'
 import Elsewhere from './pages/Elsewhere'
@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     const navLinks = [
       '/',
-      '/experiences',
+      '/jobs',
       '/projects',
       '/photography',
       '/elsewhere',
@@ -59,7 +59,7 @@ class App extends Component {
 
           <div>
             <Route path='/' exact component={ Home } />
-            <Route path='/experiences' component={ Experiences } />
+            <Route path='/jobs' component={ Jobs } />
             <Route path='/projects' component={ Projects } />
             <Route path='/photography' component={ Photography } />
             <Route path='/elsewhere' component={ Elsewhere } />
