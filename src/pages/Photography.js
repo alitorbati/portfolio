@@ -32,7 +32,6 @@ class Photography extends Component {
 
     return (
       <div className='Photography'>
-        <Title>Click clack</Title>
         <ImageUl>
           {
             Object.keys(this.albums).map(albumCode => {

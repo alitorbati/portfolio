@@ -1,28 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-// function hashCode(str) {
-//   var hash = 0;
-//   for (var i = 0; i < str.length; i++) {
-//     hash = str.charCodeAt(i) + ((hash << 5) - hash);
-//   }
-//   return hash;
-// }
-
-// function intToARGB(i){
-//   return ((i>>24)&0xFF).toString(16) +
-//          ((i>>16)&0xFF).toString(16) +
-//          ((i>>8)&0xFF).toString(16)
-//           //  (i&0xFF).toString(16); // alpha
-// }
-
 class Title extends Component {
   render() {
     return (
-      <h2
-        { ...this.props }
-        // style={{ color: `#${ intToARGB(hashCode(this.props.children)) }`}}
-      >
+      <h2 { ...this.props }>
         { this.props.children }
       </h2>
     )
@@ -35,7 +17,7 @@ export default styled(Title)`
   font-size: 4em;
   color: #73ffaa;
   line-height: 1;
-  margin-bottom: -15px;
+  margin-bottom: 5px;
   position: sticky;
   top: 0;
   z-index: -1;

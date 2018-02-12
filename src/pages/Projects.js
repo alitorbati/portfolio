@@ -3,15 +3,12 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import ContentBlock from '../components/ContentBlock';
+import Count from '../components/Count'
 import Title from '../components/Title'
 import Contribution from '../components/Contribution';
 import Url from '../components/Url';
 
-const Desc = styled.div`
-  margin-top: -15px;
-  padding-left: 25px;
-  position: relative;
-`
+const Desc = styled.div``
 
 class Projects extends Component {
   constructor(props) {
@@ -43,19 +40,25 @@ class Projects extends Component {
     return (
       <div className='Projects'>
         {
-          this.state.projects.map((p, i) => (
-            <ContentBlock key={ i }>
-              <Title>{ p.title }</Title>
-              <Desc>
-                <div>
-                  { p.description }
-                  <Url to={ p.href } target='_blank' />
-                </div>
-                <Contribution>{ p.position }</Contribution>
-                <div>{ p.duration }</div>
-              </Desc>
-            </ContentBlock>
-          ))
+          this.state.projects.map((p, i) => {
+            const id = `${p.title.toLowerCase().replace(' ', '-')}`
+            return (
+              <div>
+                <ContentBlock key={ i } id={ id }>
+                  <Count value={ i } href={ `#${id}` } />
+                  <Title>{ p.title }</Title>
+                  <Desc>
+                    <div>
+                      { p.description }
+                      <Url to={ p.href } target='_blank' />
+                    </div>
+                    <Contribution>{ p.position }</Contribution>
+                    <div>{ p.duration }</div>
+                  </Desc>
+                </ContentBlock>
+              </div>
+            )
+          })
         }
       </div>
     );

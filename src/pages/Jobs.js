@@ -3,15 +3,12 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import ContentBlock from '../components/ContentBlock';
+import Count from '../components/Count'
 import Title from '../components/Title'
 import Contribution from '../components/Contribution';
 import Url from '../components/Url';
 
-const Desc = styled.div`
-  margin-top: -15px;
-  padding-left: 25px;
-  position: relative;
-`
+const Desc = styled.div``
 
 const Datedivider = styled.span`
   display: inline-block;
@@ -56,24 +53,28 @@ class Jobs extends Component {
     return (
       <div className='Jobs'>
         {
-          this.state.jobs.map((e, i) => (
-            <ContentBlock key={ i }>
-              <Title>{ e.company }</Title>
-              <Desc>
-                <div>
-                  { e.description }
-                  <Url to={ e.href } target='_blank' />
-                </div>
-                <Contribution>{ e.position }</Contribution>
-                <div>
-                  <span>{ e.startdate }</span>
-                  <Datedivider />
-                  <span>{ e.enddate }</span>
-                </div>
+          this.state.jobs.map((e, i) => {
+            const id = `${e.company.toLowerCase().replace(' ', '-')}`
+            return (
+              <ContentBlock key={ i } id={ id }>
+                <Count value={ i } href={ `#${id}` } />
+                <Title>{ e.company }</Title>
+                <Desc>
+                  <div>
+                    { e.description }
+                    <Url to={ e.href } target='_blank' />
+                  </div>
+                  <Contribution>{ e.position }</Contribution>
+                  <div>
+                    <span>{ e.startdate }</span>
+                    <Datedivider />
+                    <span>{ e.enddate }</span>
+                  </div>
 
-              </Desc>
-            </ContentBlock>
-          ))
+                </Desc>
+              </ContentBlock>
+            )
+          })
         }
       </div>
     );
