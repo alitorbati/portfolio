@@ -13,14 +13,11 @@ class Count extends Component {
 
 export default styled(Count)`
   font-size: 1.5em;
-  border-bottom: 2px solid peachpuff;
-  ${'' /* display: inline-block; */}
+  border-bottom: 4px solid peachpuff;
   text-decoration: none;
-  ${'' /* float: left; */}
-  margin-right: 10px;
   margin-top: 6px;
   position: absolute;
-  margin-left: -40px;
+  margin-left: -60px;
 `
 
 // margin coordinated with ContentBlock
