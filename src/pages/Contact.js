@@ -20,10 +20,9 @@ class Contact extends Component {
           {
             socialLinks.map(link => (
               <li key={ link }>
-                <Url
-                  href={ link }
-                  target='_blank'
-                />
+                <Url href={ link } target='_blank'>
+                  { link }
+                </Url>
               </li>
             ))
           }

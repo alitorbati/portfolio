@@ -1,16 +1,18 @@
 import { injectGlobal } from 'styled-components'
 import reset from 'styled-reset'
 
-// import cursorImage from './images/cursor.png'
-// import handImage from './images/hand.png'
-
 const baseStyles = () => injectGlobal`
   ${reset}
 
+  @import url('https://rsms.me/inter/inter.css');
+  html { font-family: 'Inter', sans-serif; }
+  @supports (font-variation-settings: normal) {
+    html { font-family: 'Inter var', sans-serif; }
+  }
+
+
   body {
-    font-family: 'Roboto Mono', monospace;
-    ${'' /* color: blue; */}
-    font-size: 14px;
+    font-size: 16px;
     outline: 0;
     line-height: 1.5;
   }
@@ -18,15 +20,6 @@ const baseStyles = () => injectGlobal`
   #body {
     min-height: 100vh;
     ${'' /* cursor: url('${cursorImage}'), auto !important; */}
-  }
-
-  a {
-    color: blue;
-  }
-
-  a:hover {
-    color: palevioletred;
-    ${'' /* cursor: url('${handImage}'), auto !important; */}
   }
 `
 

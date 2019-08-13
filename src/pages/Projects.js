@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
-import ContentBlock from '../components/ContentBlock';
-import Count from '../components/Count'
+import Section from '../components/Section';
 import Title from '../components/Title'
 import Contribution from '../components/Contribution';
 import Url from '../components/Url';
-
-const Desc = styled.div``
 
 class Projects extends Component {
   constructor(props) {
@@ -38,25 +35,24 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className='Projects'>
+      <div>
         {
           this.state.projects.map((p, i) => {
             const id = `${p.title.toLowerCase().replace(' ', '-')}`
             return (
-              <div>
-                <ContentBlock key={ i } id={ id }>
-                  <Count value={ i } href={ `#${id}` } />
-                  <Title>{ p.title }</Title>
-                  <Desc>
-                    <div>
-                      { p.description }
-                      <Url to={ p.href } target='_blank' />
-                    </div>
-                    <Contribution>{ p.position }</Contribution>
-                    <div>{ p.duration }</div>
-                  </Desc>
-                </ContentBlock>
-              </div>
+              <Section key={ i } id={ id }>
+                <Title>
+                  <Url to={ p.href } target='_blank'>
+                    { p.title }
+                  </Url>
+                </Title>
+                <p>
+                  { p.description }
+                </p>
+                <br />
+                <Contribution>{ p.position }</Contribution>
+                <div>{ p.duration }</div>
+              </Section>
             )
           })
         }

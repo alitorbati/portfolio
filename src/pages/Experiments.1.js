@@ -1,0 +1,180 @@
+import React, { Component } from 'react';
+const THREE = require('three');
+
+// import Earth from './Earth'
+
+class Experiments extends Component {
+  constructor(props) {
+    super(props)
+    this.buildEarth = this.buildEarth.bind(this)
+  }
+
+  buildEarth (container) {
+    // Create a WebGL renderer
+    const renderer = new THREE.WebGLRenderer();
+    //Set the attributes of the renderer
+    // const WIDTH = window.innerWidth;
+    // const HEIGHT = window.innerHeight;
+    const WIDTH = container.offsetWidth;
+    const HEIGHT = container.offsetHeight;
+    renderer.setSize(WIDTH, HEIGHT);
+
+    // Set camera attributes
+    const VIEW_ANGLE = 45;
+    const ASPECT = WIDTH / HEIGHT;
+    const NEAR = 0.1;
+    const FAR = 10000;
+    const camera = new THREE.PerspectiveCamera(
+      VIEW_ANGLE,
+      ASPECT,
+      NEAR,
+      FAR
+    );
+
+    //Set the camera position - x, y, z
+    camera.position.set( 0, 0, 500 );
+
+    // Create a scene
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color( 0x000 );
+
+    // Add the camera to the scene.
+    scene.add(camera);
+
+    // Attach the renderer to the DOM element.
+    container.appendChild(renderer.domElement);
+
+    //Three.js uses geometric meshes to create primitive 3D shapes like spheres, cubes, etc. I’ll be using a sphere.
+    // Set up the sphere attributes
+    const RADIUS = 200;
+    const SEGMENTS = 50;
+    const RINGS = 50;
+
+    //create a group which will include our sphere and its texture meshed together
+    const globe = new THREE.Group();
+    scene.add(globe);
+
+    //Let's create our globe. Use texture loader.
+    //First we create a sphere
+    var loader = new THREE.TextureLoader();
+    loader.load( 'https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57735/land_ocean_ice_cloud_2048.jpg', function ( texture ) {
+    // loader.load( 'https://dl.dropboxusercontent.com/s/wr97zo4bw0opx21/headshot.jpg?dl=1', function ( texture ) {
+      //create the sphere
+      var sphere = new THREE.SphereGeometry( RADIUS, SEGMENTS, RINGS );
+
+      //map the texture to the material. (Read more about materials in three.js docs.)
+      var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
+
+      // Create a new mesh with sphere geometry.
+      var mesh = new THREE.Mesh( sphere, material );
+      globe.add(mesh);
+    } );
+
+    // Move the Sphere back in Z so we can see it.
+    globe.position.z = -300;
+
+    // create a point light
+    const pointLight =
+    new THREE.PointLight(0xFFFFFF);
+
+    // set its position
+    pointLight.position.x = 10;
+    pointLight.position.y = 50;
+    pointLight.position.z = 400;
+
+    // add to the scene
+    scene.add(pointLight);
+
+    //Set update function
+    function update () {
+        //Render
+        renderer.render(scene, camera);
+
+        // Schedule the next frame.
+        requestAnimationFrame(update);
+    }
+
+    // Schedule the first frame.
+    requestAnimationFrame(update);
+
+    //Hard-coded animation function based on keypress
+    function animationBuilder(direction) {
+        return function animateRotate() {
+            switch (direction) {
+                case 'up':
+                    globe.rotation.x -= 0.2;
+                    break;
+                case 'down':
+                    globe.rotation.x += 0.2;
+                    break;
+                case 'left':
+                    globe.rotation.y -= 0.2;
+                    break;
+                case 'right':
+                    globe.rotation.y += 0.2;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    var animateDirection = {
+        up: animationBuilder('up'),
+        down: animationBuilder('down'),
+        left: animationBuilder('left'),
+        right: animationBuilder('right')
+    }
+
+    function checkKey(e) {
+
+        e = e || window.event;
+
+        e.preventDefault();
+
+        if (e.keyCode === '38') {
+            animateDirection.up();
+        }
+        else if (e.keyCode === '40') {
+            animateDirection.down();
+        }
+        else if (e.keyCode === '37') {
+            animateDirection.left();
+        }
+        else if (e.keyCode === '39') {
+            animateDirection.right();
+        }
+    }
+
+    document.onkeydown = checkKey;
+
+    var lastMove = [window.innerWidth/2, window.innerHeight/2];
+    //Mouse-move animation function
+    function onDocumentMouseMove( e ) {
+        e = e || window.event;
+        const mouseX = ( e.clientX - lastMove[0]);
+        const mouseY = ( e.clientY - lastMove[1]);
+        globe.rotation.y += ( mouseX * .005);
+        globe.rotation.x += ( mouseY * .005);
+        lastMove[0] = e.clientX;
+        lastMove[1] = e.clientY;
+    }
+
+    document.addEventListener('mousemove', onDocumentMouseMove);
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={ () => this.buildEarth(this.earthEl) }>earth</button>
+        <div
+          id="earth"
+          ref={ (el) => { this.earthEl = el } }
+          style={ { width: '400px', height: '400px' } }
+        />
+      </div>
+    );
+  }
+}
+
+export default Experiments;

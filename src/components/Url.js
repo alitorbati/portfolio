@@ -2,19 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Url = (props) => (
-  <span>
-    <span
-      role='img'
-      aria-label='point right'
-    >
-      👉
-    </span>&nbsp;{
-      props.href
-        ? <a { ...props }>{ props.href }</a>
-        : <Link { ...props }>{ props.to }</Link>
-    }
-  </span>
-);
+const Url = (props) => {
+  return props.href ? <a { ...props } /> : <Link { ...props } />
+}
 
-export default styled(Url)``
+export default styled(Url)`
+  color: black;
+  &:hover {
+    ${'' /* cursor: url('${handImage}'), auto !important; */}
+  }
+`
