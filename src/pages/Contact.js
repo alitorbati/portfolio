@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
-import Title from '../components/Title'
-import Url from '../components/Url'
+import { Link } from 'react-router-dom'
 
 class Contact extends Component {
   render() {
@@ -20,9 +18,7 @@ class Contact extends Component {
           {
             socialLinks.map(link => (
               <li key={ link }>
-                <Url href={ link } target='_blank'>
-                  { link }
-                </Url>
+                <Link to={ link } target='_blank'>{ link }</Link>
               </li>
             ))
           }

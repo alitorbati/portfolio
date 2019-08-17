@@ -1,68 +1,49 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components'
 import styled from 'styled-components';
-import baseStyles from './base-styles'
+import GlobalStyle from './GlobalStyle'
 import Home from './pages/Home'
 import Jobs from './pages/Jobs'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 // import Experiments from './pages/Experiments.1'
 // import Sandbox from './pages/Sandbox'
-import Url from './components/Url'
+import Text from './components/Text'
+import Box from './components/Box'
+import theme from './theme'
 
-const Main = styled.main`
-  max-width: 800px;
-  padding: 30px;
-`
+const navItems = [
+  { path: '/', component: Home, exact: true },
+  { path: '/jobs', component: Jobs },
+  { path: '/projects', component: Projects },
+  { path: '/contact', component: Contact },
+  // { path: '/experiments', component: Experiments },
+  // { path: '/sandbox', component: Sandbox },
+]
 
-const Nav = styled.nav`
-  margin-bottom: 30px;
-`
+const App = (props) => (
+  <ThemeProvider theme={ theme }>
+    <BrowserRouter>
+      <Box as='main' maxWidth='800px' padding={ 3 }>
+        <GlobalStyle />
+        <Box as='header'>
+          <Box as='nav' mb={ 3 }>
+            {
+              navItems.map(x => (
+                <Text marginRight={ 2 }>
+                  <Link to={ x.path } key={ x.path }>{ x.path }</Link>
+                </Text>
+              ))
+            }
+          </Box>
+        </Box>
+        <Box>
+          { navItems.map(x => <Route { ...x } />) }
+        </Box>
+      </Box>
+    </BrowserRouter>
+  </ThemeProvider>
+)
 
-const NavUrl = styled(Url)`
-  margin-right: 15px;
-  display: inline-block;
-`
-
-class App extends Component {
-  render() {
-    const navUrls = [
-      '/',
-      '/jobs',
-      '/projects',
-      '/contact',
-      // '/experiments',
-      // '/sandbox',
-    ]
-
-    baseStyles()
-    return (
-      <BrowserRouter>
-        <Main>
-          <header>
-            <Nav>
-              {
-                navUrls.map(link => (
-                  <NavUrl to={ link } key={ link }>
-                    { link }
-                  </NavUrl>
-                ))
-              }
-            </Nav>
-          </header>
-
-          <div>
-            <Route path='/' exact component={ Home } />
-            <Route path='/jobs' component={ Jobs } />
-            <Route path='/projects' component={ Projects } />
-            <Route path='/contact' component={ Contact } />
-            {/* <Route path='/experiments' component={ Experiments } /> */}
-            {/* <Route path='/sandbox' component={ Sandbox } /> */}
-          </div>
-        </Main>
-      </BrowserRouter>
-    );
-  }
-}
-
-export default App;
+export default App

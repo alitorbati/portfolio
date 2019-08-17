@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import styled from 'styled-components';
-
-import Section from '../components/Section';
-import Title from '../components/Title'
-import Contribution from '../components/Contribution';
-import Url from '../components/Url';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import Text from '../components/Text'
+import Box from '../components/Box'
 
 class Projects extends Component {
   constructor(props) {
@@ -25,7 +22,7 @@ class Projects extends Component {
             title: p.gsx$title.$t,
             href: p.gsx$href.$t,
             position: p.gsx$position.$t,
-            duration: p.gsx$duration.$t,
+            // duration: p.gsx$duration.$t,
             description: p.gsx$description.$t,
           }
         ));
@@ -40,19 +37,30 @@ class Projects extends Component {
           this.state.projects.map((p, i) => {
             const id = `${p.title.toLowerCase().replace(' ', '-')}`
             return (
-              <Section key={ i } id={ id }>
-                <Title>
-                  <Url to={ p.href } target='_blank'>
-                    { p.title }
-                  </Url>
-                </Title>
-                <p>
+              <Box
+                key={ i }
+                id={ id }
+                marginBottom={ 3 }
+              >
+                <Text
+                  as={ Link }
+                  to={ p.href }
+                  target='_blank'
+                  fontSize={ 2 }
+                  fontWeight={ 700 }
+                >
+                  { p.title }
+                </Text>
+                <Box marginBottom={ 1 }>
+                  <Text fontWeight={ 700 }>{ p.position }</Text>
+                </Box>
+                <Text
+                  as='p'
+                  marginBottom={ 1 }
+                >
                   { p.description }
-                </p>
-                <br />
-                <Contribution>{ p.position }</Contribution>
-                <div>{ p.duration }</div>
-              </Section>
+                </Text>
+              </Box>
             )
           })
         }

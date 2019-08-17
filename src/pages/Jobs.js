@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-
-import Section from '../components/Section';
-import Title from '../components/Title'
-import Contribution from '../components/Contribution';
-import Url from '../components/Url';
+import css from '@styled-system/css';
+import Text from '../components/Text';
+import Box from '../components/Box';
 
 const Datedivider = styled.span`
   display: inline-block;
   width: 100px;
   height: 1px;
-  background: #dedede;
   position: relative;
   top: -4px;
-  margin-left: 10px;
-  margin-right: 10px;
+  ${
+    css({
+      backgroundColor: 'accent',
+      marginX: 1,
+    })
+  }
 `
 
 class Jobs extends Component {
@@ -46,6 +48,9 @@ class Jobs extends Component {
       });
   }
 
+  // position: sticky;
+  // top: 0;
+
   render() {
     return (
       <div className='Jobs'>
@@ -53,23 +58,37 @@ class Jobs extends Component {
           this.state.jobs.map((e, i) => {
             const id = `${e.company.toLowerCase().replace(' ', '-')}`
             return (
-              <Section key={ i } id={ id }>
-                <Title>
-                  <Url to={ e.href } target='_blank'>
-                    { e.company }
-                  </Url>
-                </Title>
-                <p>
+              <Box
+                key={ i }
+                id={ id }
+                marginBottom={ 3 }
+              >
+                <Text
+                  as={ Link }
+                  to={ e.href }
+                  target='_blank'
+                  fontSize={ 2 }
+                  fontWeight={ 700 }
+                  // this isn't working for now
+                  // css={`
+                  //   position: sticky;
+                  //   top: 0;
+                  // `}
+                >
+                  { e.company }
+                </Text>
+                <Box marginBottom={ 1 }>
+                  <Text fontWeight={ 700 }>
+                    <Text marginRight={ 3 }>{ e.position }</Text>
+                    <Text>{ e.startdate }</Text>
+                    <Datedivider />
+                    <Text>{ e.enddate }</Text>
+                  </Text>
+                </Box>
+                <Text as='p'>
                   { e.description }
-                </p>
-                <br />
-                <Contribution>{ e.position }</Contribution>
-                <div>
-                  <span>{ e.startdate }</span>
-                  <Datedivider />
-                  <span>{ e.enddate }</span>
-                </div>
-              </Section>
+                </Text>
+              </Box>
             )
           })
         }
