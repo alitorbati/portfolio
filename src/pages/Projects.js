@@ -17,13 +17,15 @@ class Projects extends Component {
     axios
       .get(url)
       .then(res => {
-        const projects = res.data.feed.entry.map(p => (
+        const projects = res.data.feed.entry.map(x => (
           {
-            title: p.gsx$title.$t,
-            href: p.gsx$href.$t,
-            position: p.gsx$position.$t,
-            // duration: p.gsx$duration.$t,
-            description: p.gsx$description.$t,
+            title: x.gsx$title.$t,
+            href: x.gsx$href.$t,
+            position: x.gsx$position.$t,
+            // duration: x.gsx$duration.$t,
+            description: x.gsx$description.$t,
+            show: x.gsx$show.$t.toLowerCase() !== 'false',
+            slug: `${x.gsx$title.$t.toLowerCase().replace(' ', '-')}`
           }
         ));
         this.setState({ projects });
@@ -34,35 +36,35 @@ class Projects extends Component {
     return (
       <div>
         {
-          this.state.projects.map((p, i) => {
-            const id = `${p.title.toLowerCase().replace(' ', '-')}`
-            return (
+          this.state.projects
+            .filter(x => x.show)
+            .map(x => (
               <Box
-                key={ i }
-                id={ id }
+                key={ x.slug }
+                id={ x.slug }
                 marginBottom={ 3 }
               >
                 <Text
                   as={ Link }
-                  to={ p.href }
+                  to={ x.href }
                   target='_blank'
                   fontSize={ 2 }
                   fontWeight={ 700 }
                 >
-                  { p.title }
+                  { x.title }
                 </Text>
                 <Box marginBottom={ 1 }>
-                  <Text fontWeight={ 700 }>{ p.position }</Text>
+                  <Text fontWeight={ 700 }>{ x.position }</Text>
                 </Box>
                 <Text
                   as='p'
                   marginBottom={ 1 }
                 >
-                  { p.description }
+                  { x.description }
                 </Text>
               </Box>
             )
-          })
+          )
         }
       </div>
     );

@@ -33,15 +33,17 @@ class Jobs extends Component {
     axios
       .get(url)
       .then(res => {
-        const jobs = res.data.feed.entry.map(e => (
+        const jobs = res.data.feed.entry.map(x => (
           {
-            company: e.gsx$company.$t,
-            position: e.gsx$position.$t,
-            href: e.gsx$href.$t,
-            startdate: e.gsx$startdate.$t,
-            enddate: e.gsx$enddate.$t,
-            location: e.gsx$location.$t,
-            description: e.gsx$description.$t,
+            company: x.gsx$company.$t,
+            position: x.gsx$position.$t,
+            href: x.gsx$href.$t,
+            startdate: x.gsx$startdate.$t,
+            enddate: x.gsx$enddate.$t,
+            location: x.gsx$location.$t,
+            description: x.gsx$description.$t,
+            show: x.gsx$show.$t.toLowerCase() !== 'false',
+            slug: `${x.gsx$company.$t.toLowerCase().replace(' ', '-')}`
           }
         ));
         this.setState({ jobs });
@@ -55,17 +57,17 @@ class Jobs extends Component {
     return (
       <div className='Jobs'>
         {
-          this.state.jobs.map((e, i) => {
-            const id = `${e.company.toLowerCase().replace(' ', '-')}`
-            return (
+          this.state.jobs
+            .filter(x => x.show)
+            .map(x => (
               <Box
-                key={ i }
-                id={ id }
+                key={ x.slug }
+                id={ x.slug }
                 marginBottom={ 3 }
               >
                 <Text
                   as={ Link }
-                  to={ e.href }
+                  to={ x.href }
                   target='_blank'
                   fontSize={ 2 }
                   fontWeight={ 700 }
@@ -75,22 +77,22 @@ class Jobs extends Component {
                   //   top: 0;
                   // `}
                 >
-                  { e.company }
+                  { x.company }
                 </Text>
                 <Box marginBottom={ 1 }>
                   <Text fontWeight={ 700 }>
-                    <Text marginRight={ 3 }>{ e.position }</Text>
-                    <Text>{ e.startdate }</Text>
+                    <Text marginRight={ 3 }>{ x.position }</Text>
+                    <Text>{ x.startdate }</Text>
                     <Datedivider />
-                    <Text>{ e.enddate }</Text>
+                    <Text>{ x.enddate }</Text>
                   </Text>
                 </Box>
                 <Text as='p'>
-                  { e.description }
+                  { x.description }
                 </Text>
               </Box>
             )
-          })
+          )
         }
       </div>
     );
