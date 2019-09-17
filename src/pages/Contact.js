@@ -1,29 +1,41 @@
 import React, { Component } from 'react';
+import Box from '../components/Box'
 import { Link } from 'react-router-dom'
 
 class Contact extends Component {
   render() {
-    const socialLinks = [
-      'mailto:ali.torbati@gmail.com',
-      'http://github.com/alitorbati',
-      'http://behance.net/alitorbati',
+    const primarySocialLinks = [
       'http://twitter.com/alitorbati',
+      'http://github.com/alitorbati',
+    ]
+    const secondarySocialLinks = [
+      'mailto:ali.torbati@gmail.com',
       'http://instagram.com/alitorbati',
       'http://linkedin.com/in/alitorbati',
+      'http://behance.net/alitorbati',
     ]
 
     return (
-      <div className='Contact'>
-        <ul>
+      <Box>
+        <Box as='ul' marginBottom={ 2 }>
           {
-            socialLinks.map(link => (
+            primarySocialLinks.map(link => (
               <li key={ link }>
                 <Link to={ link } target='_blank'>{ link }</Link>
               </li>
             ))
           }
-        </ul>
-      </div>
+        </Box>
+        <Box as='ul'>
+          {
+            secondarySocialLinks.map(link => (
+              <li key={ link }>
+                <Link to={ link } target='_blank'>{ link }</Link>
+              </li>
+            ))
+          }
+        </Box>
+      </Box>
     );
   }
 }
