@@ -48,7 +48,7 @@ class Projects extends Component {
                   as={ Link }
                   to={ x.href }
                   target='_blank'
-                  fontSize={ 2 }
+                  fontSize={ [ 1, 2 ] }
                   fontWeight={ 700 }
                 >
                   { x.title }

@@ -14,7 +14,7 @@ const Datedivider = styled.span`
   top: -4px;
   ${
     css({
-      backgroundColor: 'accent',
+      backgroundColor: 'foreground',
       marginX: 1,
     })
   }
@@ -69,7 +69,7 @@ class Jobs extends Component {
                   as={ Link }
                   to={ x.href }
                   target='_blank'
-                  fontSize={ 2 }
+                  fontSize={ [ 1, 2 ] }
                   fontWeight={ 700 }
                   // this isn't working for now
                   // css={`
@@ -80,12 +80,12 @@ class Jobs extends Component {
                   { x.company }
                 </Text>
                 <Box marginBottom={ 1 }>
-                  <Text fontWeight={ 700 }>
-                    <Text marginRight={ 3 }>{ x.position }</Text>
+                  <Text fontWeight={ 700 } marginRight={ 3 }>{ x.position }</Text>
+                  <Box>
                     <Text>{ x.startdate }</Text>
                     <Datedivider />
                     <Text>{ x.enddate }</Text>
-                  </Text>
+                  </Box>
                 </Box>
                 <Text as='p'>
                   { x.description }
