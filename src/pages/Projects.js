@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Text from '../components/Text'
 import Box from '../components/Box'
+import CleanSheetData from '../components/CleanSheetData'
+// import kineticType from '../images/kinetic-type.gif'
 
 class Projects extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      projects: []
-    };
+    super(props)
+    this.state = { data: [] }
   }
 
   componentDidMount() {
@@ -17,58 +17,49 @@ class Projects extends Component {
     axios
       .get(url)
       .then(res => {
-        const projects = res.data.feed.entry.map(x => (
-          {
-            title: x.gsx$title.$t,
-            href: x.gsx$href.$t,
-            position: x.gsx$position.$t,
-            // duration: x.gsx$duration.$t,
-            description: x.gsx$description.$t,
-            show: x.gsx$show.$t.toLowerCase() !== 'false',
-            slug: `${x.gsx$title.$t.toLowerCase().replace(' ', '-')}`
-          }
-        ));
-        this.setState({ projects });
-      });
+        this.setState({ data: res.data.feed.entry })
+      })
   }
 
   render() {
+    if (!this.state.data) return null
+
     return (
-      <div>
+      <CleanSheetData data={ this.state.data }>
         {
-          this.state.projects
-            .filter(x => x.show)
-            .map(x => (
-              <Box
-                key={ x.slug }
-                id={ x.slug }
-                marginBottom={ 3 }
-              >
-                <Text
-                  as={ Link }
-                  to={ x.href }
-                  target='_blank'
-                  fontSize={ [ 1, 2 ] }
-                  fontWeight={ 700 }
-                >
-                  { x.title }
-                </Text>
-                <Box marginBottom={ 1 }>
-                  <Text fontWeight={ 700 }>{ x.position }</Text>
+          ({ data }) => (
+            data
+              .filter(x => x.show.toLowerCase() === 'true')
+              .map((x, i) => (
+                <Box key={ i } marginBottom={ 3 }>
+                  <Text
+                    as={ Link }
+                    to={ x.href }
+                    target='_blank'
+                    fontSize={ [ 1, 2 ] }
+                    fontWeight={ 700 }
+                    style={{ position: 'sticky', top: 0 }}
+                  >
+                    { x.title }
+                  </Text>
+                  {/*
+                  <Box>
+                    <img src={ kineticType }/>
+                  </Box>
+                  */}
+                  <Box marginBottom={ 1 }>
+                    <Text fontWeight={ 700 }>{ x.position }</Text>
+                  </Box>
+                  <Text as='p' marginBottom={ 1 }>
+                    { x.description }
+                  </Text>
                 </Box>
-                <Text
-                  as='p'
-                  marginBottom={ 1 }
-                >
-                  { x.description }
-                </Text>
-              </Box>
-            )
+              ))
           )
         }
-      </div>
-    );
+      </CleanSheetData>
+    )
   }
 }
 
-export default Projects;
+export default Projects
