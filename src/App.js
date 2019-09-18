@@ -28,7 +28,7 @@ const NavItems = withRouter(props => (
       navItems.map(x => (
         <Text key={ x.path } marginRight={ 2 } >
           <Link
-            style={{ 'text-decoration-style': props.location.pathname === x.path ? 'wavy' : 'solid' }}
+            style={{ 'textDecorationStyle': props.location.pathname === x.path ? 'wavy' : 'solid' }}
             to={ x.path }
             key={ x.path }
           >

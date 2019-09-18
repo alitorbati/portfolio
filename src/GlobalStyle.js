@@ -32,11 +32,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    outline: 0;
     ${css({ color: 'foreground' })}
   }
 
-  a:focus {
+  a:focus-visible {
+    outline: 0;
     ${css({ boxShadow: 'button' })}
   }
 `

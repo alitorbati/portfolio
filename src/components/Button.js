@@ -10,7 +10,7 @@ export default styled('button')(
     color: 'foreground',
     fontSize: 0,
     border: 0,
-    '&:focus': {
+    '&:focus-visible': {
       boxShadow: 'button',
     },
   }),

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import Text from '../components/Text';
 import Box from '../components/Box';
+import CleanSheetData from '../components/CleanSheetData'
 
 const Datedivider = styled.span`
   display: inline-block;
@@ -22,10 +23,8 @@ const Datedivider = styled.span`
 
 class Jobs extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      jobs: []
-    };
+    super(props)
+    this.state = { data: [] }
   }
 
   componentDidMount() {
@@ -33,70 +32,49 @@ class Jobs extends Component {
     axios
       .get(url)
       .then(res => {
-        const jobs = res.data.feed.entry.map(x => (
-          {
-            company: x.gsx$company.$t,
-            position: x.gsx$position.$t,
-            href: x.gsx$href.$t,
-            startdate: x.gsx$startdate.$t,
-            enddate: x.gsx$enddate.$t,
-            location: x.gsx$location.$t,
-            description: x.gsx$description.$t,
-            show: x.gsx$show.$t.toLowerCase() !== 'false',
-            slug: `${x.gsx$company.$t.toLowerCase().replace(' ', '-')}`
-          }
-        ));
-        this.setState({ jobs });
+        this.setState({ data: res.data.feed.entry })
       });
   }
 
-  // position: sticky;
-  // top: 0;
-
   render() {
+    if (!this.state.data) return null
+
     return (
-      <div className='Jobs'>
+      <CleanSheetData data={ this.state.data }>
         {
-          this.state.jobs
-            .filter(x => x.show)
-            .map(x => (
-              <Box
-                key={ x.slug }
-                id={ x.slug }
-                marginBottom={ 3 }
-              >
-                <Text
-                  as={ Link }
-                  to={ x.href }
-                  target='_blank'
-                  fontSize={ [ 1, 2 ] }
-                  fontWeight={ 700 }
-                  // this isn't working for now
-                  // css={`
-                  //   position: sticky;
-                  //   top: 0;
-                  // `}
-                >
-                  { x.company }
-                </Text>
-                <Box marginBottom={ 1 }>
-                  <Text fontWeight={ 700 } marginRight={ 3 }>{ x.position }</Text>
-                  <Box>
-                    <Text>{ x.startdate }</Text>
-                    <Datedivider />
-                    <Text>{ x.enddate }</Text>
+          ({ data }) => (
+            data
+              .filter(x => x.show.toLowerCase() === 'true')
+              .map((x, i) => (
+                <Box key={ i } marginBottom={ 3 }>
+                  <Text
+                    as={ Link }
+                    to={ x.href }
+                    target='_blank'
+                    fontSize={ [ 1, 2 ] }
+                    fontWeight={ 700 }
+                    style={{ position: 'sticky', top: 0 }}
+                  >
+                    { x.company }
+                  </Text>
+                  <Box marginBottom={ 1 }>
+                    <Text fontWeight={ 700 } marginRight={ 3 }>{ x.position }</Text>
+                    <Box>
+                      <Text>{ x.startdate }</Text>
+                      <Datedivider />
+                      <Text>{ x.enddate }</Text>
+                    </Box>
                   </Box>
+                  <Text as='p'>
+                    { x.description }
+                  </Text>
                 </Box>
-                <Text as='p'>
-                  { x.description }
-                </Text>
-              </Box>
-            )
+              ))
           )
         }
-      </div>
-    );
+      </CleanSheetData>
+    )
   }
 }
 
-export default Jobs;
+export default Jobs
