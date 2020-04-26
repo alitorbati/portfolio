@@ -1,5 +1,5 @@
 // import React from 'react';
-const THREE = require('three');
+const THREE = require("three");
 
 // export default function Earth() {
 //   console.log('earff')
@@ -7,7 +7,7 @@ const THREE = require('three');
 // }
 
 // Get the DOM element in which you want to attach the scene
-const container = document.querySelector('#earth');
+const container = document.querySelector("#earth");
 
 // Create a WebGL renderer
 const renderer = new THREE.WebGLRenderer();
@@ -26,20 +26,14 @@ const NEAR = 0.1;
 const FAR = 10000;
 
 //Create a camera
-const camera =
-new THREE.PerspectiveCamera(
-    VIEW_ANGLE,
-    ASPECT,
-    NEAR,
-    FAR
-);
+const camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
 
 //Set the camera position - x, y, z
-camera.position.set( 0, 0, 500 );
+camera.position.set(0, 0, 500);
 
 // Create a scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color( 0x000 );
+scene.background = new THREE.Color(0x000);
 
 // Add the camera to the scene.
 scene.add(camera);
@@ -61,27 +55,28 @@ scene.add(globe);
 //Let's create our globe. Use texture loader.
 //First we create a sphere
 var loader = new THREE.TextureLoader();
-loader.load( 'https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57735/land_ocean_ice_cloud_2048.jpg', function ( texture ) {
+loader.load(
+  "https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57735/land_ocean_ice_cloud_2048.jpg",
+  function (texture) {
     //create the sphere
-    var sphere = new THREE.SphereGeometry( RADIUS, SEGMENTS, RINGS );
+    var sphere = new THREE.SphereGeometry(RADIUS, SEGMENTS, RINGS);
 
     //map the texture to the material. (Read more about materials in three.js docs.)
-    var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
+    var material = new THREE.MeshBasicMaterial({ map: texture, overdraw: 0.5 });
 
     // Create a new mesh with
     // sphere geometry.
-    var mesh = new THREE.Mesh( sphere, material );
+    var mesh = new THREE.Mesh(sphere, material);
     globe.add(mesh);
-} );
+  }
+);
 
-
-    // // Move the Sphere back in Z so we
+// // Move the Sphere back in Z so we
 //     // can see it.
 globe.position.z = -300;
 
 // create a point light
-const pointLight =
-new THREE.PointLight(0xFFFFFF);
+const pointLight = new THREE.PointLight(0xffffff);
 
 // set its position
 pointLight.position.x = 10;
@@ -92,12 +87,12 @@ pointLight.position.z = 400;
 scene.add(pointLight);
 
 //Set update function
-function update () {
-    //Render
-    renderer.render(scene, camera);
+function update() {
+  //Render
+  renderer.render(scene, camera);
 
-    // Schedule the next frame.
-    requestAnimationFrame(update);
+  // Schedule the next frame.
+  requestAnimationFrame(update);
 }
 
 // Schedule the first frame.
@@ -105,69 +100,64 @@ requestAnimationFrame(update);
 
 //Hard-coded animation function based on keypress
 function animationBuilder(direction) {
-    return function animateRotate() {
-        switch (direction) {
-            case 'up':
-                globe.rotation.x -= 0.2;
-                break;
-            case 'down':
-                globe.rotation.x += 0.2;
-                break;
-            case 'left':
-                globe.rotation.y -= 0.2;
-                break;
-            case 'right':
-                globe.rotation.y += 0.2;
-                break;
-            default:
-                break;
-        }
+  return function animateRotate() {
+    switch (direction) {
+      case "up":
+        globe.rotation.x -= 0.2;
+        break;
+      case "down":
+        globe.rotation.x += 0.2;
+        break;
+      case "left":
+        globe.rotation.y -= 0.2;
+        break;
+      case "right":
+        globe.rotation.y += 0.2;
+        break;
+      default:
+        break;
     }
+  };
 }
 
 var animateDirection = {
-    up: animationBuilder('up'),
-    down: animationBuilder('down'),
-    left: animationBuilder('left'),
-    right: animationBuilder('right')
-}
+  up: animationBuilder("up"),
+  down: animationBuilder("down"),
+  left: animationBuilder("left"),
+  right: animationBuilder("right"),
+};
 
 function checkKey(e) {
+  e = e || window.event;
 
-    e = e || window.event;
+  e.preventDefault();
 
-    e.preventDefault();
-
-    if (e.keyCode == '38') {
-        animateDirection.up();
-    }
-    else if (e.keyCode == '40') {
-        animateDirection.down();
-    }
-    else if (e.keyCode == '37') {
-        animateDirection.left();
-    }
-    else if (e.keyCode == '39') {
-        animateDirection.right();
-    }
+  if (e.keyCode == "38") {
+    animateDirection.up();
+  } else if (e.keyCode == "40") {
+    animateDirection.down();
+  } else if (e.keyCode == "37") {
+    animateDirection.left();
+  } else if (e.keyCode == "39") {
+    animateDirection.right();
+  }
 }
 
 document.onkeydown = checkKey;
 
-var lastMove = [window.innerWidth/2, window.innerHeight/2];
+var lastMove = [window.innerWidth / 2, window.innerHeight / 2];
 //Mouse-move animation function
-function onDocumentMouseMove( e ) {
-    e = e || window.event;
-    const mouseX = ( e.clientX - lastMove[0]);
-    const mouseY = ( e.clientY - lastMove[1]);
-    globe.rotation.y += ( mouseX * .005);
-    globe.rotation.x += ( mouseY * .005);
-    lastMove[0] = e.clientX;
-    lastMove[1] = e.clientY;
+function onDocumentMouseMove(e) {
+  e = e || window.event;
+  const mouseX = e.clientX - lastMove[0];
+  const mouseY = e.clientY - lastMove[1];
+  globe.rotation.y += mouseX * 0.005;
+  globe.rotation.x += mouseY * 0.005;
+  lastMove[0] = e.clientX;
+  lastMove[1] = e.clientY;
 }
 
-document.addEventListener('mousemove', onDocumentMouseMove);
-
+document.addEventListener("mousemove", onDocumentMouseMove);
 
 // WEBPACK FOOTER //
 // ./app/components/Root.jsx

@@ -1,5 +1,5 @@
-import React from 'react'
-import Text from '../components/Text'
+import React from "react";
+import Text from "../components/Text";
 
 // const MAX_WEIGHT = 900
 // const MIN_WEIGHT = 100
@@ -13,15 +13,15 @@ const Home = (props) => {
     // <div onMouseMove={ e => setWeight(calcWeight(e.clientX / window.innerWidth)) }>
     <div>
       {/* <Text fontSize={ 2 } fontWeight={ weight }> */}
-      <Text fontSize={ 2 } fontWeight={ 700 }>
+      <Text fontSize={2} fontWeight={700}>
         Ali Torbati
       </Text>
     </div>
-  )
-}
+  );
+};
 
 // const StyledHome = styled(Home)`
 //   height: 100vh;
 // `
 
-export default Home
+export default Home;

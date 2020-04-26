@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
-import css from '@styled-system/css';
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+import css from "@styled-system/css";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -15,8 +15,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     ${css({
-      backgroundColor: 'background',
-      color: 'foreground',
+      backgroundColor: "background",
+      color: "foreground",
     })}
     text-transform: lowercase;
   }
@@ -28,17 +28,17 @@ const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1.5;
     min-height: 100vh;
-    ${'' /* cursor: url('${cursorImage}'), auto !important; */}
+    ${"" /* cursor: url('${cursorImage}'), auto !important; */}
   }
 
   a {
-    ${css({ color: 'foreground' })}
+    ${css({ color: "foreground" })}
   }
 
   a:focus-visible {
     outline: 0;
-    ${css({ boxShadow: 'button' })}
+    ${css({ boxShadow: "button" })}
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

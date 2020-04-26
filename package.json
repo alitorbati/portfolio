@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-and-deploy": "npm run build && s3cmd sync build/* s3://alitorbati.com && echo '🚀  Deployed!' && open http://alitorbati.com"
+    "format": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.6",
