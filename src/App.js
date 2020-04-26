@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Link, withRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
@@ -52,10 +52,8 @@ const App = (props) => {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
+    window.localStorage.setItem("theme", newTheme);
   };
-  useEffect(() => {
-    window.localStorage.setItem("theme", theme);
-  });
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
