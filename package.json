@@ -7,7 +7,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^4.2.0",
-    "react-scripts": "1.0.17",
+    "react-scripts": "^3.4.1",
     "react-spring": "^8.0.27",
     "react-transition-group": "^2.2.1",
     "styled-components": "^4.3.2",
@@ -25,5 +25,17 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "prettier": "2.0.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
