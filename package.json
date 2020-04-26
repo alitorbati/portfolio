@@ -23,6 +23,7 @@
     "build-and-deploy": "npm run build && s3cmd sync build/* s3://alitorbati.com && echo '🚀  Deployed!' && open http://alitorbati.com"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.6"
+    "babel-plugin-styled-components": "^1.10.6",
+    "prettier": "2.0.5"
   }
 }
