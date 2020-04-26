@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-const THREE = require('three');
+import React, { Component } from "react";
+const THREE = require("three");
 
 // import Earth from './Earth'
 
 class Experiments extends Component {
   constructor(props) {
-    super(props)
-    this.buildEarth = this.buildEarth.bind(this)
+    super(props);
+    this.buildEarth = this.buildEarth.bind(this);
   }
 
-  buildEarth (container) {
+  buildEarth(container) {
     // Create a WebGL renderer
     const renderer = new THREE.WebGLRenderer();
     //Set the attributes of the renderer
@@ -24,19 +24,14 @@ class Experiments extends Component {
     const ASPECT = WIDTH / HEIGHT;
     const NEAR = 0.1;
     const FAR = 10000;
-    const camera = new THREE.PerspectiveCamera(
-      VIEW_ANGLE,
-      ASPECT,
-      NEAR,
-      FAR
-    );
+    const camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
 
     //Set the camera position - x, y, z
-    camera.position.set( 0, 0, 500 );
+    camera.position.set(0, 0, 500);
 
     // Create a scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0x000 );
+    scene.background = new THREE.Color(0x000);
 
     // Add the camera to the scene.
     scene.add(camera);
@@ -57,25 +52,30 @@ class Experiments extends Component {
     //Let's create our globe. Use texture loader.
     //First we create a sphere
     var loader = new THREE.TextureLoader();
-    loader.load( 'https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57735/land_ocean_ice_cloud_2048.jpg', function ( texture ) {
-    // loader.load( 'https://dl.dropboxusercontent.com/s/wr97zo4bw0opx21/headshot.jpg?dl=1', function ( texture ) {
-      //create the sphere
-      var sphere = new THREE.SphereGeometry( RADIUS, SEGMENTS, RINGS );
+    loader.load(
+      "https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57735/land_ocean_ice_cloud_2048.jpg",
+      function (texture) {
+        // loader.load( 'https://dl.dropboxusercontent.com/s/wr97zo4bw0opx21/headshot.jpg?dl=1', function ( texture ) {
+        //create the sphere
+        var sphere = new THREE.SphereGeometry(RADIUS, SEGMENTS, RINGS);
 
-      //map the texture to the material. (Read more about materials in three.js docs.)
-      var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
+        //map the texture to the material. (Read more about materials in three.js docs.)
+        var material = new THREE.MeshBasicMaterial({
+          map: texture,
+          overdraw: 0.5,
+        });
 
-      // Create a new mesh with sphere geometry.
-      var mesh = new THREE.Mesh( sphere, material );
-      globe.add(mesh);
-    } );
+        // Create a new mesh with sphere geometry.
+        var mesh = new THREE.Mesh(sphere, material);
+        globe.add(mesh);
+      }
+    );
 
     // Move the Sphere back in Z so we can see it.
     globe.position.z = -300;
 
     // create a point light
-    const pointLight =
-    new THREE.PointLight(0xFFFFFF);
+    const pointLight = new THREE.PointLight(0xffffff);
 
     // set its position
     pointLight.position.x = 10;
@@ -86,12 +86,12 @@ class Experiments extends Component {
     scene.add(pointLight);
 
     //Set update function
-    function update () {
-        //Render
-        renderer.render(scene, camera);
+    function update() {
+      //Render
+      renderer.render(scene, camera);
 
-        // Schedule the next frame.
-        requestAnimationFrame(update);
+      // Schedule the next frame.
+      requestAnimationFrame(update);
     }
 
     // Schedule the first frame.
@@ -99,78 +99,76 @@ class Experiments extends Component {
 
     //Hard-coded animation function based on keypress
     function animationBuilder(direction) {
-        return function animateRotate() {
-            switch (direction) {
-                case 'up':
-                    globe.rotation.x -= 0.2;
-                    break;
-                case 'down':
-                    globe.rotation.x += 0.2;
-                    break;
-                case 'left':
-                    globe.rotation.y -= 0.2;
-                    break;
-                case 'right':
-                    globe.rotation.y += 0.2;
-                    break;
-                default:
-                    break;
-            }
+      return function animateRotate() {
+        switch (direction) {
+          case "up":
+            globe.rotation.x -= 0.2;
+            break;
+          case "down":
+            globe.rotation.x += 0.2;
+            break;
+          case "left":
+            globe.rotation.y -= 0.2;
+            break;
+          case "right":
+            globe.rotation.y += 0.2;
+            break;
+          default:
+            break;
         }
+      };
     }
 
     var animateDirection = {
-        up: animationBuilder('up'),
-        down: animationBuilder('down'),
-        left: animationBuilder('left'),
-        right: animationBuilder('right')
-    }
+      up: animationBuilder("up"),
+      down: animationBuilder("down"),
+      left: animationBuilder("left"),
+      right: animationBuilder("right"),
+    };
 
     function checkKey(e) {
+      e = e || window.event;
 
-        e = e || window.event;
+      e.preventDefault();
 
-        e.preventDefault();
-
-        if (e.keyCode === '38') {
-            animateDirection.up();
-        }
-        else if (e.keyCode === '40') {
-            animateDirection.down();
-        }
-        else if (e.keyCode === '37') {
-            animateDirection.left();
-        }
-        else if (e.keyCode === '39') {
-            animateDirection.right();
-        }
+      if (e.keyCode === "38") {
+        animateDirection.up();
+      } else if (e.keyCode === "40") {
+        animateDirection.down();
+      } else if (e.keyCode === "37") {
+        animateDirection.left();
+      } else if (e.keyCode === "39") {
+        animateDirection.right();
+      }
     }
 
     document.onkeydown = checkKey;
 
-    var lastMove = [window.innerWidth/2, window.innerHeight/2];
+    var lastMove = [window.innerWidth / 2, window.innerHeight / 2];
     //Mouse-move animation function
-    function onDocumentMouseMove( e ) {
-        e = e || window.event;
-        const mouseX = ( e.clientX - lastMove[0]);
-        const mouseY = ( e.clientY - lastMove[1]);
-        globe.rotation.y += ( mouseX * .005);
-        globe.rotation.x += ( mouseY * .005);
-        lastMove[0] = e.clientX;
-        lastMove[1] = e.clientY;
+    function onDocumentMouseMove(e) {
+      e = e || window.event;
+      const mouseX = e.clientX - lastMove[0];
+      const mouseY = e.clientY - lastMove[1];
+      globe.rotation.y += mouseX * 0.005;
+      globe.rotation.x += mouseY * 0.005;
+      lastMove[0] = e.clientX;
+      lastMove[1] = e.clientY;
     }
 
-    document.addEventListener('mousemove', onDocumentMouseMove);
+    document.addEventListener("mousemove", onDocumentMouseMove);
   }
 
   render() {
     return (
       <div>
-        <button onClick={ () => this.buildEarth(this.earthEl) }>earth</button>
+        <button onClick={() => this.buildEarth(this.earthEl)}>earth</button>
         <div
           id="earth"
-          ref={ (el) => { this.earthEl = el } }
-          style={ { width: '400px', height: '400px' } }
+          ref={(el) => {
+            this.earthEl = el;
+          }}
+          style={{ width: "400px", height: "400px" }}
         />
       </div>
     );
