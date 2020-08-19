@@ -13,9 +13,9 @@ const Datedivider = styled.span`
   position: relative;
   top: -4px;
   ${css({
-    backgroundColor: "foreground",
-    marginX: 1,
-  })}
+  backgroundColor: "foreground",
+  marginX: 2,
+})}
 `;
 
 const Jobs = (props) => {
@@ -44,10 +44,10 @@ const Jobs = (props) => {
         data
           .filter((x) => x.show.toLowerCase() === "true")
           .map((x, i) => (
-            <Box key={i} marginBottom={3}>
+            <Box key={i} marginBottom={4}>
               <Text
-                as={Link}
-                to={x.href}
+                as={'a'}
+                href={x.href}
                 target="_blank"
                 fontSize={[1, 2]}
                 fontWeight={700}
@@ -55,8 +55,8 @@ const Jobs = (props) => {
               >
                 {x.company}
               </Text>
-              <Box marginBottom={1}>
-                <Text fontWeight={700} marginRight={3}>
+              <Box marginBottom={3}>
+                <Text fontWeight={700}>
                   {x.position}
                 </Text>
                 <Box>

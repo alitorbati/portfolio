@@ -25,12 +25,8 @@ const navItems = [
 const NavItems = withRouter((props) => (
   <React.Fragment>
     {navItems.map((x) => (
-      <Text key={x.path} marginRight={2}>
+      <Text key={x.path} marginRight={3}>
         <Link
-          // style={{
-          //   textDecorationStyle:
-          //     props.location.pathname === x.path ? "wavy" : "solid",
-          // }}
           style={{
             textDecoration:
               // props.location.pathname === x.path ? "underline overline" : null,
@@ -58,10 +54,10 @@ const App = (props) => {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <BrowserRouter>
-        <Box as="main" maxWidth="800px" padding={3}>
+        <Box as="main" maxWidth="800px" padding={4}>
           <GlobalStyle />
           <Box as="header">
-            <Box as="nav" mb={3}>
+            <Box as="nav" marginBottom={4}>
               <NavItems />
               <Button onClick={toggleTheme}>theme</Button>
             </Box>
