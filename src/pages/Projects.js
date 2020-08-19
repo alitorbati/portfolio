@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Text from "../components/Text";
 import Box from "../components/Box";
 import CleanSheetData from "../components/CleanSheetData";
@@ -30,10 +29,10 @@ const Projects = (props) => {
         data
           .filter((x) => x.show.toLowerCase() === "true")
           .map((x, i) => (
-            <Box key={i} marginBottom={3}>
+            <Box key={i} marginBottom={4}>
               <Text
-                as={Link}
-                to={x.href}
+                as={'a'}
+                href={x.href}
                 target="_blank"
                 fontSize={[1, 2]}
                 fontWeight={700}
@@ -46,10 +45,10 @@ const Projects = (props) => {
                   <img src={ kineticType }/>
                 </Box>
                 */}
-              <Box marginBottom={1}>
+              <Box marginBottom={2}>
                 <Text fontWeight={700}>{x.position}</Text>
               </Box>
-              <Text as="p" marginBottom={1}>
+              <Text as="p" marginBottom={2}>
                 {x.description}
               </Text>
             </Box>

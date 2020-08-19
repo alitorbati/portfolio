@@ -13,7 +13,7 @@ const darkColors = {
   accent: "#f00",
 };
 
-const space = [0, 10, 30, 60];
+const space = [0, 5, 10, 30, 60];
 
 const borders = [`2px solid ${colors.foreground}`];
 
