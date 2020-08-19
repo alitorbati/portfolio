@@ -5,29 +5,29 @@ import Box from "../components/Box";
 const Contact = (props) => {
   const primarySocialLinks = [
     {
-      label: 'twitter',
+      label: "twitter",
       href: "http://twitter.com/alitorbati",
     },
     {
-      label: 'github',
+      label: "github",
       href: "http://github.com/alitorbati",
     },
   ];
   const secondarySocialLinks = [
     {
-      label: 'email',
+      label: "email",
       href: "mailto:ali.torbati@gmail.com",
     },
     {
-      label: 'instagram',
+      label: "instagram",
       href: "http://instagram.com/alitorbati",
     },
     {
-      label: 'linkedin',
+      label: "linkedin",
       href: "http://linkedin.com/in/alitorbati",
     },
     {
-      label: 'behance',
+      label: "behance",
       href: "http://behance.net/alitorbati",
     },
   ];
@@ -35,7 +35,7 @@ const Contact = (props) => {
   const LocalLink = (props) => {
     return (
       <Text
-        as={'a'}
+        as={"a"}
         href={props.link.href}
         target="_blank"
         fontSize={[1, 2]}
@@ -44,8 +44,8 @@ const Contact = (props) => {
       >
         {props.link.label}
       </Text>
-    )
-  }
+    );
+  };
 
   return (
     <Box>

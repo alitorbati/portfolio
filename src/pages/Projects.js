@@ -31,7 +31,7 @@ const Projects = (props) => {
           .map((x, i) => (
             <Box key={i} marginBottom={4}>
               <Text
-                as={'a'}
+                as={"a"}
                 href={x.href}
                 target="_blank"
                 fontSize={[1, 2]}

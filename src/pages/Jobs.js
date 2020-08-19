@@ -13,9 +13,9 @@ const Datedivider = styled.span`
   position: relative;
   top: -4px;
   ${css({
-  backgroundColor: "foreground",
-  marginX: 2,
-})}
+    backgroundColor: "foreground",
+    marginX: 2,
+  })}
 `;
 
 const Jobs = (props) => {
@@ -46,7 +46,7 @@ const Jobs = (props) => {
           .map((x, i) => (
             <Box key={i} marginBottom={4}>
               <Text
-                as={'a'}
+                as={"a"}
                 href={x.href}
                 target="_blank"
                 fontSize={[1, 2]}
@@ -56,9 +56,7 @@ const Jobs = (props) => {
                 {x.company}
               </Text>
               <Box marginBottom={3}>
-                <Text fontWeight={700}>
-                  {x.position}
-                </Text>
+                <Text fontWeight={700}>{x.position}</Text>
                 <Box>
                   <Text>{x.startdate}</Text>
                   <Datedivider />
