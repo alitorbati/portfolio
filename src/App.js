@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 // import Sandbox from './pages/Sandbox'
 import Text from "./components/Text";
 import Box from "./components/Box";
+import Flexbox from "./components/Flexbox";
 import Button from "./components/Button";
 import lightTheme, { darkTheme } from "./theme";
 
@@ -58,8 +59,18 @@ const App = (props) => {
           <GlobalStyle />
           <Box as="header">
             <Box as="nav" marginBottom={4}>
-              <NavItems />
-              <Button onClick={toggleTheme}>theme</Button>
+              <Flexbox
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <Box>
+                  <NavItems />
+                </Box>
+                <Box>
+                  <Button onClick={toggleTheme}>theme</Button>
+                </Box>
+              </Flexbox>
             </Box>
           </Box>
           <Box>
