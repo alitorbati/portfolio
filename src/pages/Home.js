@@ -1,5 +1,6 @@
-import React from "react";
+import * as React from "react";
 import Text from "../components/Text";
+import Box from "../components/Box";
 
 // const MAX_WEIGHT = 900
 // const MIN_WEIGHT = 100
@@ -15,6 +16,13 @@ const Home = (props) => {
       {/* <Text fontSize={ 2 } fontWeight={ weight }> */}
       <Text fontSize={2} fontWeight={700}>
         Ali Torbati
+      </Text>
+      <Box marginBottom={3} />
+      <Text fontSize={1} color="accent">
+        My professional focus is on UI Engineering. The intersection of these
+        two subjects is an incredibly expressive, complex and nuanced place to
+        spend my energy and time. It requires both deep and broad knowledge,
+        which is why I find it so rewarding.
       </Text>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { BrowserRouter, Route, Link, withRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
@@ -6,12 +6,9 @@ import Home from "./pages/Home";
 import Jobs from "./pages/Jobs";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-// import Experiments from './pages/Experiments.1'
-// import Sandbox from './pages/Sandbox'
 import Text from "./components/Text";
 import Box from "./components/Box";
 import Flexbox from "./components/Flexbox";
-import Button from "./components/Button";
 import lightTheme, { darkTheme } from "./theme";
 
 const navItems = [
@@ -19,18 +16,15 @@ const navItems = [
   { path: "/projects", label: "projects", component: Projects },
   { path: "/jobs", label: "jobs", component: Jobs },
   { path: "/contact", label: "contact", component: Contact },
-  // { path: '/experiments', component: Experiments },
-  // { path: '/sandbox', component: Sandbox },
 ];
 
 const NavItems = withRouter((props) => (
   <React.Fragment>
     {navItems.map((x) => (
-      <Text key={x.path} marginRight={3}>
+      <Text key={x.path}>
         <Link
           style={{
             textDecoration:
-              // props.location.pathname === x.path ? "underline overline" : null,
               props.location.pathname === x.path ? "line-through" : null,
           }}
           to={x.path}
@@ -44,32 +38,28 @@ const NavItems = withRouter((props) => (
 ));
 
 const App = (props) => {
-  const initialTheme = () => window.localStorage.getItem("theme") || "light";
-  const [theme, setTheme] = useState(initialTheme);
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    window.localStorage.setItem("theme", newTheme);
-  };
+  // const initialTheme = () => window.localStorage.getItem("theme") || "light";
+  // const [theme, setTheme] = useState(initialTheme);
+  // const toggleTheme = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setTheme(newTheme);
+  //   window.localStorage.setItem("theme", newTheme);
+  // };
+  const theme =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? darkTheme
+      : lightTheme;
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Box as="main" maxWidth="800px" padding={4}>
           <GlobalStyle />
           <Box as="header">
             <Box as="nav" marginBottom={4}>
-              <Flexbox
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-              >
-                <Box>
-                  <NavItems />
-                </Box>
-                <Box>
-                  <Button onClick={toggleTheme}>theme</Button>
-                </Box>
+              <Flexbox display="flex" alignItems="center" gap="3">
+                <NavItems />
               </Flexbox>
             </Box>
           </Box>

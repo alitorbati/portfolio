@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     ${css({
       backgroundColor: "background",
       color: "foreground",

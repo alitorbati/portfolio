@@ -10,7 +10,7 @@ const colors = {
 const darkColors = {
   foreground: "white",
   background: "#222",
-  accent: "#f00",
+  accent: "#888",
 };
 
 const space = [0, 5, 10, 30, 60];
