@@ -39,17 +39,20 @@ const NavItems = withRouter((props) => (
 
 const App = (props) => {
   // const initialTheme = () => window.localStorage.getItem("theme") || "light";
-  // const [theme, setTheme] = useState(initialTheme);
-  // const toggleTheme = () => {
-  //   const newTheme = theme === "light" ? "dark" : "light";
-  //   setTheme(newTheme);
-  //   window.localStorage.setItem("theme", newTheme);
-  // };
-  const theme =
+  const initialTheme =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
       ? darkTheme
       : lightTheme;
+  const [theme, setTheme] = React.useState(initialTheme);
+
+  React.useEffect(() => {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        event.matches ? setTheme(darkTheme) : setTheme(lightTheme);
+      });
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
