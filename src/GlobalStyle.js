@@ -9,10 +9,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  @import url('https://rsms.me/inter/inter.css');
-
   html {
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 18px;
     ${css({
       backgroundColor: "background",
@@ -21,9 +19,9 @@ const GlobalStyle = createGlobalStyle`
     text-transform: lowercase;
   }
 
-  @supports (font-variation-settings: normal) {
-    html { font-family: 'Inter var', sans-serif; }
-  }
+  // @supports (font-variation-settings: normal) {
+  //   html { font-family: 'Inter var', sans-serif; }
+  // }
 
   body {
     line-height: 1.5;
