@@ -3,7 +3,7 @@ const fontSizes = ["1em", "2em", "3em"];
 const colors = {
   foreground: "#222",
   background: "white",
-  accent: "#f00",
+  accent: "#888",
 };
 
 // something about this pattern smells

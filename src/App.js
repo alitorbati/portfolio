@@ -54,7 +54,7 @@ const App = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Box as="main" maxWidth="800px" padding={4}>
+        <Box as="main" maxWidth="800px" padding={[3, 4]}>
           <GlobalStyle />
           <Box as="header">
             <Box as="nav" marginBottom={4}>
