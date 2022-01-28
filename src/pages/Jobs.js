@@ -1,6 +1,4 @@
 import * as React from "react";
-import styled from "styled-components";
-import css from "@styled-system/css";
 import Text from "../components/Text";
 import Box from "../components/Box";
 
