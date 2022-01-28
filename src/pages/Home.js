@@ -17,12 +17,11 @@ const Home = (props) => {
       <Text fontSize={2} fontWeight={700}>
         Ali Torbati
       </Text>
-      <Box marginBottom={3} />
+      <Box marginBottom={2} />
       <Text fontSize={1} color="accent">
-        My professional focus is on UI Engineering. The intersection of these
-        two subjects is an incredibly expressive, complex and nuanced place to
-        spend my energy and time. It requires both deep and broad knowledge,
-        which is why I find it so rewarding.
+        My professional focus is on UI Engineering. This discipline is
+        expressive, nuanced and complex. It requires both deep and broad
+        knowledge, which is why I find it so rewarding.
       </Text>
     </div>
   );

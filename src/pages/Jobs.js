@@ -4,17 +4,17 @@ import css from "@styled-system/css";
 import Text from "../components/Text";
 import Box from "../components/Box";
 
-const Datedivider = styled.span`
-  display: inline-block;
-  width: 100px;
-  height: 1px;
-  position: relative;
-  top: -4px;
-  ${css({
-    backgroundColor: "foreground",
-    marginX: 2,
-  })}
-`;
+// const Datedivider = styled.span`
+//   display: inline-block;
+//   width: 100px;
+//   height: 1px;
+//   position: relative;
+//   top: -4px;
+//   ${css({
+//     backgroundColor: "accent",
+//     marginX: 2,
+//   })}
+// `;
 
 const Jobs = (props) => {
   const { useState, useEffect } = React;
@@ -54,15 +54,16 @@ const Jobs = (props) => {
             </Text>
             <Box marginBottom={2} />
             <Text>{x.position}</Text>
-            <Box>
-              <Text>{x.startdate}</Text>
-              <Datedivider />
-              <Text>{x.enddate}</Text>
-            </Box>
-            <Box marginBottom={2} />
-            <Text as="p" color="accent">
-              {x.description}
+            <Box />
+            <Text color="accent">
+              {x.startdate} → {x.enddate}
             </Text>
+            <Box marginBottom="2" />
+            <Box>
+              <Text as="p" color="accent">
+                {x.description}
+              </Text>
+            </Box>
           </Box>
         ))}
     </>

@@ -20,20 +20,23 @@ const navItems = [
 
 const NavItems = withRouter((props) => (
   <React.Fragment>
-    {navItems.map((x) => (
-      <Text key={x.path}>
-        <Link
-          style={{
-            textDecoration:
-              props.location.pathname === x.path ? "line-through" : null,
-          }}
-          to={x.path}
-          key={x.path}
-        >
-          {x.label}
-        </Link>
-      </Text>
-    ))}
+    {navItems.map((x) => {
+      const active = props.location.pathname === x.path;
+      return (
+        <Text key={x.path}>
+          <Link
+            style={{
+              display: "inline-block",
+              transform: active ? "scaleX(-1)" : null,
+            }}
+            to={x.path}
+            key={x.path}
+          >
+            {x.label}
+          </Link>
+        </Text>
+      );
+    })}
   </React.Fragment>
 ));
 
@@ -61,15 +64,15 @@ const App = (props) => {
           <GlobalStyle />
           <Box as="header">
             <Box as="nav" marginBottom={4}>
-              <Flexbox display="flex" alignItems="center" gap="3">
+              <Flexbox alignItems="center" gap="2">
                 <NavItems />
               </Flexbox>
             </Box>
           </Box>
           <Box>
-            {navItems.map((x) => (
-              <Route {...x} key={x.path} />
-            ))}
+            {navItems.map((props) => {
+              return <Route {...props} key={props.path} />;
+            })}
           </Box>
         </Box>
       </BrowserRouter>

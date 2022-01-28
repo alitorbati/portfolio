@@ -17,10 +17,13 @@ const global = css({
   body: {
     lineHeight: "1.5",
     minHeight: "100vh",
-    // ${"" /* cursor: url('${cursorImage}'), auto !important; */}
   },
   a: {
     color: "foreground",
+    textDecoration: "none",
+  },
+  "a:hover": {
+    textDecoration: "underline",
   },
   "a:focus-visible": {
     outline: 0,

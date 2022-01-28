@@ -1,6 +1,7 @@
 import * as React from "react";
 import Text from "../components/Text";
 import Box from "../components/Box";
+import Flexbox from "../components/Flexbox";
 
 const Projects = (props) => {
   const { useState, useEffect } = React;
@@ -23,11 +24,11 @@ const Projects = (props) => {
   }, []);
 
   return (
-    <>
+    <Flexbox flexDirection="column" gap="4">
       {projects
         .filter((x) => x.show.toLowerCase() === "true")
         .map((x, i) => (
-          <Box key={i} marginBottom={4}>
+          <Box key={i}>
             <Text
               as={"a"}
               href={x.href}
@@ -40,13 +41,13 @@ const Projects = (props) => {
             </Text>
             <Box marginBottom={2} />
             <Text>{x.position}</Text>
-            <Box marginBottom={2} />
+            <Box marginBottom="2" />
             <Text as="p" color="accent">
               {x.description}
             </Text>
           </Box>
         ))}
-    </>
+    </Flexbox>
   );
 };
 
