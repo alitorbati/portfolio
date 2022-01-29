@@ -9,7 +9,7 @@ const global = css({
   html: {
     fontFamily:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    fontSize: ["14px", "18px"],
+    fontSize: ["20px"],
     backgroundColor: "background",
     color: "foreground",
     textTransform: "lowercase",

@@ -3,23 +3,23 @@ import Text from "../components/Text";
 import Box from "../components/Box";
 import Flexbox from "../components/Flexbox";
 
-const Projects = (props) => {
+const Work = (props) => {
   const { useState, useEffect } = React;
-  const [projects, setProjects] = useState([]);
+  const [work, setWork] = useState([]);
 
   useEffect(() => {
     fetch(
       // https://benborgers.com/posts/google-sheets-json
-      "https://opensheet.elk.sh/12sERGaYvU1ZUsEOnG11LgR8ZQVtLW3zn2Kv8yOOBPyg/Sheet1"
+      "https://opensheet.elk.sh/1VnD8RJtceCIFPvWzrCOcQCY5eUY5_FO1yOwvGIpCXe8/Sheet1"
     )
       .then((res) => res.json())
       .then(
         (result) => {
           const filtered = result.filter((x) => /true/i.test(x.show));
-          setProjects(filtered);
+          setWork(filtered);
         },
         (error) => {
-          setProjects([]);
+          setWork([]);
         }
       );
   }, []);
@@ -27,12 +27,13 @@ const Projects = (props) => {
   return (
     <Box>
       <Text fontSize="1" color="accent">
-        Tiny experiments and freelance gigs
+        Career progression
       </Text>
       <Box marginBottom="3" />
       <Flexbox flexDirection="column" gap="4">
-        {projects.map((x, i) => {
-          const { href, title, position, description } = x;
+        {work.map((x, i) => {
+          const { href, company, position, startdate, enddate, description } =
+            x;
           return (
             <Box key={i}>
               <Text
@@ -43,14 +44,20 @@ const Projects = (props) => {
                 fontWeight={700}
                 style={{ position: "sticky", top: 0 }}
               >
-                {title}
+                {company}
               </Text>
               <Box marginBottom={2} />
               <Text>{position}</Text>
-              <Box marginBottom="2" />
-              <Text as="p" color="accent">
-                {description}
+              <Box />
+              <Text color="accent">
+                {startdate} → {enddate}
               </Text>
+              <Box marginBottom="2" />
+              <Box>
+                <Text as="p" color="accent">
+                  {description}
+                </Text>
+              </Box>
             </Box>
           );
         })}
@@ -59,4 +66,4 @@ const Projects = (props) => {
   );
 };
 
-export default Projects;
+export default Work;

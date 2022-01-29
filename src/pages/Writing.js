@@ -3,23 +3,23 @@ import Text from "../components/Text";
 import Box from "../components/Box";
 import Flexbox from "../components/Flexbox";
 
-const Projects = (props) => {
+const Writing = (props) => {
   const { useState, useEffect } = React;
-  const [projects, setProjects] = useState([]);
+  const [writing, setWriting] = useState([]);
 
   useEffect(() => {
     fetch(
       // https://benborgers.com/posts/google-sheets-json
-      "https://opensheet.elk.sh/12sERGaYvU1ZUsEOnG11LgR8ZQVtLW3zn2Kv8yOOBPyg/Sheet1"
+      "https://opensheet.elk.sh/1EXvzAgQBxhzfwzhb8fFyziKJogfys5T7SBCORX-ZpAo/Sheet1"
     )
       .then((res) => res.json())
       .then(
         (result) => {
           const filtered = result.filter((x) => /true/i.test(x.show));
-          setProjects(filtered);
+          setWriting(filtered);
         },
         (error) => {
-          setProjects([]);
+          setWriting([]);
         }
       );
   }, []);
@@ -27,11 +27,11 @@ const Projects = (props) => {
   return (
     <Box>
       <Text fontSize="1" color="accent">
-        Tiny experiments and freelance gigs
+        Thoughts on systems
       </Text>
       <Box marginBottom="3" />
       <Flexbox flexDirection="column" gap="4">
-        {projects.map((x, i) => {
+        {writing.map((x, i) => {
           const { href, title, position, description } = x;
           return (
             <Box key={i}>
@@ -59,4 +59,4 @@ const Projects = (props) => {
   );
 };
 
-export default Projects;
+export default Writing;

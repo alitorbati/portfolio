@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Link, withRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import Home from "./pages/Home";
-import Jobs from "./pages/Jobs";
 import Projects from "./pages/Projects";
+import Work from "./pages/Work";
+import Writing from "./pages/Writing";
 import Contact from "./pages/Contact";
 import Text from "./components/Text";
 import Box from "./components/Box";
@@ -14,7 +15,8 @@ import lightTheme, { darkTheme } from "./theme";
 const navItems = [
   { path: "/", label: "home", component: Home, exact: true },
   { path: "/projects", label: "projects", component: Projects },
-  { path: "/jobs", label: "jobs", component: Jobs },
+  { path: "/work", label: "work", component: Work },
+  { path: "/writing", label: "writing", component: Writing },
   { path: "/contact", label: "contact", component: Contact },
 ];
 
@@ -30,7 +32,6 @@ const NavItems = withRouter((props) => (
               transform: active ? "scaleX(-1)" : null,
             }}
             to={x.path}
-            key={x.path}
           >
             {x.label}
           </Link>
@@ -41,12 +42,12 @@ const NavItems = withRouter((props) => (
 ));
 
 const App = (props) => {
-  // const initialTheme = () => window.localStorage.getItem("theme") || "light";
   const initialTheme =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
       ? darkTheme
       : lightTheme;
+
   const [theme, setTheme] = React.useState(initialTheme);
 
   React.useEffect(() => {
@@ -71,7 +72,14 @@ const App = (props) => {
           </Box>
           <Box>
             {navItems.map((props) => {
-              return <Route {...props} key={props.path} />;
+              return (
+                <Route
+                  path={props.path}
+                  exact={props.exact}
+                  component={props.component}
+                  key={props.path}
+                />
+              );
             })}
           </Box>
         </Box>
