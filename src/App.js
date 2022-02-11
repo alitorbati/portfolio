@@ -15,8 +15,8 @@ import lightTheme, { darkTheme } from "./theme";
 const navItems = [
   { path: "/", label: "home", component: Home, exact: true },
   { path: "/projects", label: "projects", component: Projects },
-  { path: "/work", label: "work", component: Work },
   { path: "/writing", label: "writing", component: Writing },
+  { path: "/work", label: "work", component: Work },
   { path: "/contact", label: "contact", component: Contact },
 ];
 

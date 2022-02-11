@@ -42,6 +42,7 @@ const Work = (props) => {
                 target="_blank"
                 fontSize={2}
                 fontWeight={700}
+                lineHeight="1.2"
                 style={{ position: "sticky", top: 0 }}
               >
                 {company}

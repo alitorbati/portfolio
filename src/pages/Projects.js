@@ -27,7 +27,7 @@ const Projects = (props) => {
   return (
     <Box>
       <Text fontSize="1" color="accent">
-        Tiny experiments and freelance gigs
+        Experiments and freelance gigs
       </Text>
       <Box marginBottom="3" />
       <Flexbox flexDirection="column" gap="4">
@@ -41,6 +41,7 @@ const Projects = (props) => {
                 target="_blank"
                 fontSize={2}
                 fontWeight={700}
+                lineHeight="1.2"
                 style={{ position: "sticky", top: 0 }}
               >
                 {title}
