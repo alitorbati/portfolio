@@ -39,9 +39,9 @@ const Writing = (props) => {
                 as={"a"}
                 href={href}
                 target="_blank"
-                fontSize={2}
-                fontWeight={700}
-                lineHeight="1.2"
+                fontSize={3}
+                fontWeight={600}
+                lineHeight="1.1"
                 style={{ position: "sticky", top: 0 }}
               >
                 {title}

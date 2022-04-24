@@ -1,4 +1,4 @@
-const fontSizes = ["1em", "1.5em", "2em"];
+const fontSizes = ["1em", "1.5em", "2em", "2.5em"];
 
 const colors = {
   foreground: "#222",
