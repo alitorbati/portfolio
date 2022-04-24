@@ -1,6 +1,8 @@
 import * as React from "react";
+import styled from "styled-components";
 import Text from "../components/Text";
 import Box from "../components/Box";
+import headshot from "../images/avatar.jpg";
 
 const links = [
   {
@@ -29,16 +31,25 @@ const links = [
   },
 ];
 
+const Headshot = styled("img")({
+  borderRadius: "4px",
+  maxWidth: "140px",
+});
+
 const Contact = (props) => {
   return (
-    <Box as="ul">
-      {links.map((link) => (
-        <li key={link.href}>
-          <Text as={"a"} href={link.href} target="_blank" fontSize={1}>
-            {link.label}
-          </Text>
-        </li>
-      ))}
+    <Box>
+      <Headshot src={headshot} alt="Photo of yours truly" />
+      <Box marginBottom="3" />
+      <Box as="ul">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Text as={"a"} href={link.href} target="_blank" fontSize={1}>
+              {link.label}
+            </Text>
+          </li>
+        ))}
+      </Box>
     </Box>
   );
 };
