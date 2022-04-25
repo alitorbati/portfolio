@@ -31,15 +31,15 @@ const links = [
   },
 ];
 
-const Headshot = styled("img")({
-  borderRadius: "4px",
-  maxWidth: "140px",
-});
+const Headshot = styled("img")((props) => ({
+  borderRadius: props.theme.space[1],
+  maxWidth: `${props.theme.space[4] * 2}px`,
+}));
 
 const Contact = (props) => {
   return (
     <Box>
-      <Headshot src={headshot} alt="Photo of yours truly" />
+      <Headshot src={headshot} alt="Photo of Ali Torbati" />
       <Box marginBottom="3" />
       <Box as="ul">
         {links.map((link) => (

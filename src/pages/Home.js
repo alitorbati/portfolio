@@ -14,7 +14,7 @@ const Home = (props) => {
     // <div onMouseMove={ e => setWeight(calcWeight(e.clientX / window.innerWidth)) }>
     <div>
       {/* <Text fontSize={ 2 } fontWeight={ weight }> */}
-      <Text fontSize={3} fontWeight={600}>
+      <Text fontSize={[2, 3]} fontWeight={600}>
         Ali Torbati
       </Text>
       <Box marginBottom={2} />

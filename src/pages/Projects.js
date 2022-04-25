@@ -39,7 +39,7 @@ const Projects = (props) => {
                 as={"a"}
                 href={href}
                 target="_blank"
-                fontSize={3}
+                fontSize={[2, 3]}
                 fontWeight={600}
                 lineHeight="1.1"
                 style={{ position: "sticky", top: 0 }}
