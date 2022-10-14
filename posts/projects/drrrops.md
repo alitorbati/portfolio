@@ -1,12 +1,9 @@
 ---
 title: "Drrrops"
-date: "2014"
+date: "2015"
 url: "http://drrrops.com/?song=https:%2F/soundcloud.com/galimatias/alina-baraz-galimatias-make"
 isVisible: true
-categories: ["print", "design"]
-roles: ["research", "design", "production"]
-duration: "Several hours"
-summary: "A comment-centric UI for SoundCloud"
+summary: "A comment-centric UI for SoundCloud."
 ---
 
 # Drrrops

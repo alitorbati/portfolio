@@ -1,12 +1,9 @@
 ---
 title: "Parallaxify"
-date: "2012"
+date: "2015-09"
 url: "https://github.com/alitorbati/parallaxify"
 isVisible: true
-categories: ["print", "design"]
-roles: ["research", "design", "production"]
-duration: "Several hours"
-summary: "A JavaScript module to easily produce a parallax image effect"
+summary: "A JavaScript module to easily produce a parallax image effect."
 ---
 
 # Parallaxify

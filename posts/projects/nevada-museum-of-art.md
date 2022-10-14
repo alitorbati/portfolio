@@ -1,12 +1,9 @@
 ---
 title: "Nevada Museum of Art"
-date: "2021"
+date: "2022-01"
 url: "https://www.nevadaart.org/conference2021/"
 isVisible: true
-categories: ["print", "design"]
-roles: ["research", "design", "production"]
-duration: "Several weeks"
-summary: "Supporting the Nevada Museum of Art conference — Land Art: Past, Present, Futures"
+summary: "Supporting the Nevada Museum of Art conference — Land Art: Past, Present, Futures."
 ---
 
 # Nevada Museum of Art

@@ -3,13 +3,16 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import Box from "../../components/Box";
+import Text from "../../components/Text";
 
 const PostPage = (props) => {
   const { frontmatter, slug, content } = props;
 
   return (
     <Box>
-      <a href={frontmatter.url}>Temporary external resource</a>
+      <a href={frontmatter.url} target="_blank" rel="noreferrer">
+        External documentation
+      </a>
       <Box marginBottom="3" />
       <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
     </Box>

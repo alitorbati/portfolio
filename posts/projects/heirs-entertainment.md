@@ -1,12 +1,9 @@
 ---
 title: "Heirs Entertainment"
-date: "2021"
+date: "2020-08"
 url: "https://heirs.us"
 isVisible: true
-categories: ["print", "design"]
-roles: ["research", "design", "production"]
-duration: "Several days"
-summary: "Showcase site for Heirs Entertainment"
+summary: "Showcase site for Heirs Entertainment."
 ---
 
 # Heirs Entertainment

@@ -62,7 +62,7 @@ const global = css({
     fontWeight: ["300"],
     backgroundColor: "background",
     color: "foreground",
-    textTransform: "lowercase",
+    // textTransform: "lowercase",
   },
   body: {
     lineHeight: "1.4",
@@ -86,6 +86,22 @@ const global = css({
     [href^="/"]:not([href^="//"]),
   )):after`]: {
     content: "' ↗️'",
+  },
+  h1: {
+    fontWeight: "bold",
+    fontSize: 3,
+    marginBottom: 3,
+    // color: "accent",
+  },
+  h2: {
+    // fontWeight: "bold",
+    fontSize: 2,
+    marginBottom: 3,
+    // color: "accent",
+  },
+  p: {
+    marginBottom: 3,
+    color: "accent",
   },
 });
 

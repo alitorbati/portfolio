@@ -1,12 +1,9 @@
 ---
 title: "Spokeo UI Framework"
-date: "2012"
+date: "2014"
 url: "http://spokeo.com"
 isVisible: false
-categories: ["print", "design"]
-roles: ["research", "design", "production"]
-duration: "Several months"
-summary: "My first design system"
+summary: "My first design system."
 ---
 
 # Spokeo UI Framework

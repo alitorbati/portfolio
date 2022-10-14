@@ -3,10 +3,7 @@ title: "Phoenix Challenge"
 date: "2013"
 url: "http://behance.net/gallery/8745723/Pacific-Festival-Rebrand"
 isVisible: true
-categories: ["print", "design"]
-roles: ["leadership", "design"]
-duration: "9 months"
-summary: "International design and print competition"
+summary: "International design and print competition."
 ---
 
 # Phoenix Challenge
