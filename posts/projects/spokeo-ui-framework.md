@@ -2,7 +2,7 @@
 title: "Spokeo UI Framework"
 date: "2012"
 url: "http://spokeo.com"
-isVisible: true
+isVisible: false
 categories: ["print", "design"]
 roles: ["research", "design", "production"]
 duration: "Several months"

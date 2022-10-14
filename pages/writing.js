@@ -12,7 +12,7 @@ const articles = [
       "Support fewer components, manage a consistent API, and provide designers and engineers the tools they need to explore openly and creatively without hacks and unmaintainable code",
   },
   {
-    title: "Death to Complexity: How to Simplify Advanced Search",
+    title: "Death to Complexity: How we Simplified Advanced Search",
     href: "https://medium.com/@alitorbati/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0",
     description:
       "A look at the design process that went into reimagining Spokeo’s Advanced Search tools. This was a weeks-long collaboration between the design and front-end teams, with support from backend for some specific API updates",

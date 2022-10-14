@@ -2,7 +2,7 @@
 title: "Housing Fair"
 date: "2012"
 url: "http://behance.net/gallery/6970799/Housing-Fair"
-isVisible: true
+isVisible: false
 categories: ["print", "design"]
 roles: ["research", "design", "production"]
 duration: "1 month"

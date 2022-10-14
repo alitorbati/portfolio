@@ -41,10 +41,11 @@ export async function getStaticProps() {
         "utf-8"
       );
       const { data: frontmatter } = matter(markdownWithMeta);
-      if (!frontmatter.isVisible) return null;
       return { slug, frontmatter };
     })
-    .filter((post) => post);
+    .filter((post) => {
+      return post.frontmatter.isVisible;
+    });
 
   return {
     props: {

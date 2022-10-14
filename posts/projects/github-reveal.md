@@ -2,7 +2,7 @@
 title: "Github Reveal"
 date: "2014"
 url: "http://alitorbati.com/reveal"
-isVisible: true
+isVisible: false
 categories: ["print", "design"]
 roles: ["research", "design", "production"]
 duration: "Several hours"
