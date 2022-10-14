@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import css from "@styled-system/css";
-import Link from "next/Link";
+import Link from "next/link";
 import Text from "../components/Text";
 import Box from "../components/Box";
 

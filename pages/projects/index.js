@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Link from "next/Link";
+import Link from "next/link";
 import { sortByDate } from "../../utils";
 import Box from "../../components/Box";
 import Flexbox from "../../components/Flexbox";

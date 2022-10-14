@@ -5,7 +5,7 @@ import GlobalStyle from "../styles/GlobalStyle";
 import Text from "../components/Text";
 import Box from "../components/Box";
 import Flexbox from "../components/Flexbox";
-import Link from "next/Link";
+import Link from "next/link";
 import light from "../themes/light";
 import dark from "../themes/dark";
 import Navigation from "../components/Navigation";

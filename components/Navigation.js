@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Link from "next/Link";
+import Link from "next/link";
 import css from "@styled-system/css";
 import Box from "../components/Box";
 import Text from "../components/Text";
