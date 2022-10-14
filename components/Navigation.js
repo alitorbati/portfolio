@@ -11,14 +11,8 @@ const Header = (props) => {
   const router = useRouter();
 
   return (
-    <Box
-      as="nav"
-      paddingBottom="3"
-      borderBottomWidth="1px"
-      borderBottomStyle="solid"
-      borderBottomColor="hint"
-    >
-      <Flexbox alignItems="center" gap="3">
+    <Box as="nav" paddingBottom="3" borderBottom="0">
+      <Flexbox alignItems="center" gap="3" flexWrap="wrap">
         {paths.map((path) => {
           const currentPath = router.asPath;
           const currentPathParts = currentPath.split("/");

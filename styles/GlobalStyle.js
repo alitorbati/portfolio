@@ -2,62 +2,60 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import css from "@styled-system/css";
 
-// const fonts = `
-//   @font-face {
-//     font-family: Portfolio Headline;
-//     src: url("/fonts/FKScreamer-Bold.woff2") format("woff2");
-//     font-weight: 400;
-//     font-display: swap;
-//   }
-//   @font-face {
-//     font-family: Portfolio Body;
-//     src: url("/fonts/PolySans-Slim.woff2") format("woff2");
-//     font-weight: 300;
-//     font-display: swap;
-//   }
-//   @font-face {
-//     font-family: Portfolio Body;
-//     src: url("/fonts/PolySans-SlimItalic.woff2") format("woff2");
-//     font-weight: 300;
-//     font-style: italic;
-//     font-display: swap;
-//   }
-//   @font-face {
-//     font-family: Portfolio Body;
-//     src: url("/fonts/PolySans-Neutral.woff2") format("woff2");
-//     font-weight: 400;
-//     font-display: swap;
-//   }
-//   @font-face {
-//     font-family: Portfolio Body;
-//     src: url("/fonts/PolySans-NeutralItalic.woff2") format("woff2");
-//     font-weight: 400;
-//     font-style: italic;
-//     font-display: swap;
-//   }
-//   @font-face {
-//     font-family: Portfolio Body;
-//     src: url("/fonts/PolySans-Median.woff2") format("woff2");
-//     font-weight: 600;
-//     font-display: swap;
-//   }
-//   @font-face {
-//     font-family: "Portfolio Monospace";
-//     src: url("/fonts/PolySans-SlimMono.woff2") format("woff2");
-//     font-weight: 400;
-//     font-display: swap;
-//   }
-// `;
+const fonts = `
+  @font-face {
+    font-family: Portfolio Headline;
+    src: url("/fonts/FKScreamer-Bold.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Portfolio Body;
+    src: url("/fonts/PolySans-Slim.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Portfolio Body;
+    src: url("/fonts/PolySans-SlimItalic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Portfolio Body;
+    src: url("/fonts/PolySans-Neutral.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Portfolio Body;
+    src: url("/fonts/PolySans-NeutralItalic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Portfolio Body;
+    src: url("/fonts/PolySans-Median.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Portfolio Monospace";
+    src: url("/fonts/PolySans-SlimMono.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+`;
 
 const global = css({
   "*": {
     boxSizing: "border-box",
   },
   html: {
-    // fontFamily:
-    //   'Portfolio Body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+      'Portfolio Body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     fontSize: ["20px"],
     fontWeight: ["300"],
     backgroundColor: "background",
@@ -88,26 +86,39 @@ const global = css({
     content: "' ↗️'",
   },
   h1: {
+    fontFamily:
+      'Portfolio Headline, Portfolio Body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     fontWeight: "bold",
-    fontSize: 3,
+    fontSize: 4,
     marginBottom: 3,
-    // color: "accent",
+    paddingBottom: 3,
+    borderBottom: 1,
+    lineHeight: 1,
   },
   h2: {
-    // fontWeight: "bold",
     fontSize: 2,
     marginBottom: 3,
-    // color: "accent",
+    paddingBottom: 3,
+    borderBottom: 0,
+  },
+  h3: {
+    fontSize: 1,
+    fontWeight: 400,
+    marginBottom: 3,
   },
   p: {
     marginBottom: 3,
     color: "accent",
   },
+  ul: {
+    marginBottom: 3,
+    listStyleType: "'· '",
+  },
 });
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  // ${fonts}
+  ${fonts}
   ${global}
 `;
 
