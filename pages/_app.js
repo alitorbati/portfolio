@@ -45,22 +45,22 @@ const MyApp = ({ Component, pageProps }) => {
     }
   }, []);
 
-  const initialTheme = dark;
-  // const initialTheme =
-  //   window.matchMedia &&
-  //   window.matchMedia("(prefers-color-scheme: dark)").matches
-  //     ? dark
-  //     : light;
+  const initialTheme =
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? dark
+      : light;
 
   const [theme, setTheme] = React.useState(initialTheme);
 
-  // React.useEffect(() => {
-  //   window
-  //     .matchMedia("(prefers-color-scheme: dark)")
-  //     .addEventListener("change", (event) => {
-  //       event.matches ? setTheme(dark) : setTheme(light);
-  //     });
-  // }, []);
+  React.useEffect(() => {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        event.matches ? setTheme(dark) : setTheme(light);
+      });
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
