@@ -11,6 +11,23 @@ import dark from "../themes/dark";
 import Navigation from "../components/Navigation";
 
 const MyApp = ({ Component, pageProps }) => {
+  if (
+    typeof window !== "undefined" &&
+    typeof window.navigator !== "undefined" &&
+    "serviceWorker" in navigator
+  ) {
+    navigator.serviceWorker
+      .getRegistrations()
+      .then(function (registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      })
+      .catch(function (err) {
+        console.log("Service Worker registration failed: ", err);
+      });
+  }
+
   const initialTheme = dark;
   // const initialTheme =
   //   window.matchMedia &&
