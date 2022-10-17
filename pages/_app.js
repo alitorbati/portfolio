@@ -11,22 +11,23 @@ import dark from "../themes/dark";
 import Navigation from "../components/Navigation";
 
 const MyApp = ({ Component, pageProps }) => {
-  if (
-    typeof window !== "undefined" &&
-    typeof window.navigator !== "undefined" &&
-    "serviceWorker" in navigator
-  ) {
-    navigator.serviceWorker
-      .getRegistrations()
-      .then(function (registrations) {
-        for (let registration of registrations) {
-          registration.unregister();
-        }
-      })
-      .catch(function (err) {
-        console.log("Service Worker registration failed: ", err);
+  React.useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/sw.js").then(
+          function (registration) {
+            console.log(
+              "Service Worker registration successful with scope: ",
+              registration.scope
+            );
+          },
+          function (err) {
+            console.log("Service Worker registration failed: ", err);
+          }
+        );
       });
-  }
+    }
+  }, []);
 
   const initialTheme = dark;
   // const initialTheme =
