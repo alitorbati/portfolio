@@ -8,7 +8,7 @@ const Document = () => {
         this preloads the fonts, which is kind of nice but maybe not necessary.
         removing that requirement would allow this entire file to be deleted.
         */}
-        {/* <link
+        <link
           rel="preload"
           href="/fonts/FKScreamer-Bold.woff2"
           as="font"
@@ -56,7 +56,7 @@ const Document = () => {
           as="font"
           type="font/woff2"
           crossOrigin=""
-        /> */}
+        />
       </Head>
       <body>
         <Main />
