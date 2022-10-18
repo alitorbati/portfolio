@@ -3,17 +3,32 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import Box from "../../components/Box";
+import Text from "../../components/Text";
+import Date from "../../components/Date";
 
 const PostPage = (props) => {
   const { frontmatter, content } = props;
 
   return (
     <Box>
-      <a href={frontmatter.url} target="_blank" rel="noreferrer">
-        External documentation
-      </a>
-      <Box marginBottom="3" />
-      <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>■
+      <Text color="accent">
+        <Date value={frontmatter.date} />
+      </Text>
+      {frontmatter.url ? (
+        <>
+          {" · "}
+          <a href={frontmatter.url} target="_blank" rel="noreferrer">
+            View live project
+          </a>
+        </>
+      ) : null}
+      <h1>{frontmatter.title}</h1>
+      <Text>{frontmatter.summary}</Text>
+      <div
+        className="markdown-container"
+        dangerouslySetInnerHTML={{ __html: marked(content) }}
+      />
+      ■
     </Box>
   );
 };

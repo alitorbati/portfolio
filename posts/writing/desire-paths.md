@@ -6,8 +6,6 @@ isVisible: true
 summary: "Reducing choice and increasing options in a UI component library."
 ---
 
-# Desire Paths and Design Systems
-
 _This article was edited by [Ashley Soo](http://www.ashleysoo.com/portfolio/) and originally published on [Behind the Firewall](https://building.signalsciences.com/ui-desire-paths/), the Signal Sciences engineering blog. It was one of our most-viewed articles, and garnered attention from several prominent industry figures:_
 
 - [Danny Banks (Amazon)](https://twitter.com/dbanksDesign/status/1234564637904924672?s=20&t=MTt72vs-Q0IMlSvn3uJFRw)
@@ -33,7 +31,7 @@ A better solution is to provide a generic `Box` component with no opinions, and 
 
 We wanted a way for designers to feel less restricted, and for engineers to implement designs without overrides. We decided to take a new approach that allowed for greater flexibility and design freedom, while simultaneously shrinking the footprint and API surface area of Cosmo.
 
-## Introducing desire paths
+# Introducing desire paths
 
 This effort draws parallels to the concept of a [desire path](https://www.newyorker.com/tech/annals-of-technology/tracing-and-erasing-new-yorks-lines-of-desire)&mdash;a route that has developed over time as people walk where they see a more efficient path than the designated one. There are two ways to approach a desire path when it emerges:
 
@@ -42,7 +40,7 @@ This effort draws parallels to the concept of a [desire path](https://www.newyor
 
 Although we had built components that satisfied our explicit, current goals (a paved path between two points), our designers and engineers were making new connections and treading off the designated routes to satisfy their real, practical needs (a desire path!). Instead of taking the authoritarian approach to this transition, we pursued an engineering project to support these new paths, and even provide better tools for paths we can’t yet foresee.
 
-## Overriding default styles
+# Overriding default styles
 
 Originally, we based our components on mockups, which meant they were built to satisfy _current needs_. Sometimes we were able to identify slight variations in a component, which we would then support with a prop. These styles were applied with classes in the component, and overrides were handled by including an additional class with its own style:
 
@@ -61,7 +59,7 @@ Originally, we based our components on mockups, which meant they were built to s
 }
 ```
 
-## New concepts become new components
+# New concepts become new components
 
 As we built new features and identified new patterns, our original set of assumptions eroded and our design needs outgrew the boundaries of Cosmo. We realized that our original set of predefined components was going to cause too much manual work to keep up. Each new UI requirement meant creating a new component, with a lot of boilerplate React and unique CSS.
 
@@ -75,7 +73,7 @@ On top of all that, we were running into other, more subtle problems&mdash;simil
 
 Rather than continuing to create unique components for each use case, we decided that a better approach is to bake flexibility into a few basic components and allow those to be composed and remixed infinitely. We asked ourselves what really conveys the “look and feel” of a product or service&mdash;It seems to be less about the composed components, and more about the primitives of which they are composed.
 
-## The way forward
+# The way forward
 
 We were already working with a theme in CSS, but we shifted our focus to clean it up and provide better access to it in JavaScript. Variable and scales like `fontSize`, `fontWeight`, `colors`, and `space` all became directly available within our React components and removed the extra step of juggling classnames. Now components have reasonable default styles, which can be overridden if necessary:
 

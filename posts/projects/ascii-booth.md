@@ -6,6 +6,4 @@ isVisible: true
 summary: "A nostalgic piece of old technology — the dot matrix printer — is recontextualized as an instant ASCII art selfie booth."
 ---
 
-# ASCII Booth
-
 Article coming soon

@@ -6,6 +6,4 @@ isVisible: false
 summary: "Work in progress."
 ---
 
-# Instagram blobs
-
 Article coming soon

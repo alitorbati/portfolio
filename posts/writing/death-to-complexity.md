@@ -6,8 +6,6 @@ isVisible: true
 summary: "A bit about the design process that went into reimagining Spokeo’s Advanced Search tools. This was a weeks-long collaboration between the design and front-end teams, with support from backend for some specific API updates."
 ---
 
-# Death to Complexity: How we Simplified Advanced Search
-
 _This article was originally published on [Medium](https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0) and continues to get attention on [Twitter](https://twitter.com/search?q=https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0&src=typed_query&f=live). It was produced with help from [Sean D'Auria](https://www.seandauria.com/)._
 
 ---
@@ -16,7 +14,7 @@ _This article was originally published on [Medium](https://uxdesign.cc/death-to-
 
 Considering the nature of people search, filtering by parameters other than first and last name is crucial. ‘John Smith’ doesn’t really help you find who you’re looking for, but a 36 year old John Smith in Pasadena, CA, related to a Susan is damn specific, and will inform you quickly if we have the data you want.
 
-## Hidden → Visible
+# Hidden → Visible
 
 ![Old (left) and new (right)](/images/posts/writing/death-to-complexity/hidden-visible.gif)
 
@@ -24,7 +22,7 @@ Our Advanced Search (AS) was hard to find. Small blue text beneath the map read 
 
 We moved AS into a dedicated module which is always visible on desktop, and has a floating button on mobile. This provided obvious, persistent access to our most powerful search tool. Mobile search became a full-screen takeover, with the understanding that users would be in a binary situation: modifying query parameters, or browsing results. Supporting both on a small screen is futile.
 
-## Implicit → Explicit
+# Implicit → Explicit
 
 ![New explicit behavior](/images/posts/writing/death-to-complexity/implicit-explicit.gif)
 
@@ -38,7 +36,7 @@ Clicking an age range used to toggle and submit immediately. No longer! Click ag
 
 Added bonus: the locations list got a title that explains its value.
 
-## Wall → Sections
+# Wall → Sections
 
 ![Old (left) and new (right)](/images/posts/writing/death-to-complexity/wall-sections.png)
 
@@ -46,7 +44,7 @@ Opening the filters was overwhelming! Scanning the inputs was nearly impossible.
 
 Separating AS into logical sections fixed these problems and reduced the cognitive work for users. Each section can be considered independently, instead of the form appearing as a daunting task. Phone and Email suddenly make more sense in the context of “Contact info.”
 
-## Ambiguous → Guided
+# Ambiguous → Guided
 
 ![Old (left) and new (right)](/images/posts/writing/death-to-complexity/ambiguous-guided.gif)
 
@@ -56,7 +54,7 @@ We changed these to native dropdowns, where the list of states only reflects sta
 
 We removed the Street input, which required too-accurate, and often unavailable, information.
 
-## Cramped → Rows
+# Cramped → Rows
 
 ![Old (left) and new (right)](/images/posts/writing/death-to-complexity/cramped-rows.png)
 
@@ -66,7 +64,7 @@ Phone and Email being adjacent was a form-over-function design choice, which we 
 
 Now, each input gets its own row. Simple, effective, and visually less oppressive. All sections being simultaneously opened is an unlikely case, and ultimately the user’s decision. Fortunately, this flexible design allows this behavior without any negative consequences. We don’t make assumptions about how they will use Advanced Search.
 
-## Mobile behavior
+# Mobile behavior
 
 ![Old (left) and new (right)](/images/posts/writing/death-to-complexity/mobile-behavior.gif)
 
@@ -76,7 +74,7 @@ Previously, the Advanced Search panel was always open, and appeared before the r
 
 By providing a floating button at the bottom of the page, we allow users to browse, and access filters at any point in their browsing experience. For example, if they scroll through 30 results and realize their search is futile, they can quickly access Advanced Search and refine their query.
 
-## General related cleanup
+# General related cleanup
 
 We added filter “chips” beneath the primary page title. These reflect the exact query that produce the results, and allow an easy way to remove any given parameter.
 
@@ -86,7 +84,7 @@ The left panel width was flexible, with a hard minimum at 330px. Why ever allow 
 
 For SEO reasons, we must have a clickable list of locations. However, that list doesn’t have to be so prominent. We modified our React component to only show the first 10 locations, with an option for the user to ‘show more.’
 
-## On the horizon/what we’d like to do in the future
+# On the horizon/what we’d like to do in the future
 
 First and last name should not be required to search. Finding a person should be initiated with any available information (e.g. relative and phone number).
 

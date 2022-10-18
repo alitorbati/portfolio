@@ -6,8 +6,6 @@ isVisible: true
 summary: "International design and print competition."
 ---
 
-# Phoenix Challenge
-
 Article coming soon
 
 During my senior year of college I was chosen to lead a team of students and represent our school at an international packaging design and production competition called Phoenix Challenge. The guidelines were flexible, and we went above and beyond the required scope.

@@ -6,6 +6,4 @@ isVisible: true
 summary: "Breaking down and building up words, letterforms and sub-forms."
 ---
 
-# Kinetic type
-
 Article coming soon

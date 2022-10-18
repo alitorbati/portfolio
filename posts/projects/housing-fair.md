@@ -6,8 +6,6 @@ isVisible: false
 summary: "Visual identity for the quarterly Cal Poly Housing Fair."
 ---
 
-# Housing Fair
-
 Article coming soon
 
 The only direction provided was the theme - Las Vegas
