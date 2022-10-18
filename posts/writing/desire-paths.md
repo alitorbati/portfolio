@@ -3,7 +3,7 @@ title: "Desire Paths and Design Systems"
 date: "2020-02-20"
 url: "https://building.signalsciences.com/ui-desire-paths/"
 isVisible: true
-summary: "Support fewer components, manage a consistent API, and provide designers and engineers the tools they need to explore openly and creatively without hacks and unmaintainable code."
+summary: "Reducing choice and increasing options in a UI component library."
 ---
 
 # Desire Paths and Design Systems
