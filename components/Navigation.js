@@ -1,13 +1,12 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import css from "@styled-system/css";
 import Box from "../components/Box";
 import Text from "../components/Text";
 import Flexbox from "../components/Flexbox";
 
 const paths = ["/", "/projects", "/writing", "/career", "/contact"];
 
-const Header = (props) => {
+const Header = () => {
   const router = useRouter();
 
   return (

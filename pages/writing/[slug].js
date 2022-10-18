@@ -3,10 +3,9 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import Box from "../../components/Box";
-import Text from "../../components/Text";
 
 const PostPage = (props) => {
-  const { frontmatter, slug, content } = props;
+  const { content } = props;
 
   return (
     <Box>

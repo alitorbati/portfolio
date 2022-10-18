@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Box from "../components/Box";
 import Flexbox from "../components/Flexbox";
 import Text from "../components/Text";
@@ -94,7 +93,7 @@ const jobs = [
   },
 ];
 
-const Career = (props) => {
+const Career = () => {
   return (
     <Flexbox flexDirection="column" gap="3">
       {jobs.map((job, index) => {

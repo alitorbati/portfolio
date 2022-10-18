@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import css from "@styled-system/css";
-import Link from "next/link";
-import Text from "../components/Text";
 import Box from "../components/Box";
 
 const links = [
@@ -32,7 +29,7 @@ const Headshot = styled("img")((props) => ({
   maxWidth: `${props.theme.space[4] * 2}px`,
 }));
 
-const Contact = (props) => {
+const Contact = () => {
   return (
     <Box>
       <Headshot src="images/avatar.jpg" alt="Photo of Ali Torbati" />
