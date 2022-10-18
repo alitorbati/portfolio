@@ -102,32 +102,17 @@ const Career = (props) => {
         const startYear = job.start.split("/")[0];
         const endYear = job.end.split("/")[0];
         const duration =
-          startYear === endYear ? startYear : `${startYear} — ${endYear}`;
+          startYear === endYear ? startYear : `${startYear}–${endYear}`;
 
         return (
-          <Flexbox flexDirection="column" gap="0" key={index}>
-            <Text>
-              <a href={job.href} target="_blank" rel="noreferrer">
-                {job.company}
-              </a>
-              <Text color="accent">{` ${duration}`}</Text>
-            </Text>
-            <Box>
-              {/* <Text color="">{"• "}</Text>
-              {job.positions.map((position, index) => {
-                const isFinal = index === job.positions.length - 1;
-                return (
-                  <Text color="accent" key={index}>
-                    {position}
-                    {isFinal ? null : " → "}
-                  </Text>
-                );
-              })} */}
-              <Text as="p" color="accent">
-                {job.description}
-              </Text>
-            </Box>
-          </Flexbox>
+          <Box key={index}>
+            <a href={job.href} target="_blank" rel="noreferrer">
+              {job.company}
+            </a>
+            <Text color="accent">{` ${duration}`}</Text>
+            <Box />
+            <Text color="accent">{job.description}</Text>
+          </Box>
         );
       })}
     </Flexbox>

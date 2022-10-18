@@ -61,7 +61,10 @@ const global = css({
     fontWeight: ["300"],
     backgroundColor: "background",
     color: "foreground",
-    // textTransform: "lowercase",
+  },
+  "::selection": {
+    color: "background",
+    backgroundColor: "accent",
   },
   body: {
     lineHeight: "1.4",
@@ -90,29 +93,28 @@ const global = css({
     fontFamily: `Portfolio Headline, Portfolio Body, ${fontFallback}`,
     fontWeight: "bold",
     fontSize: 4,
-    marginBottom: 3,
+    marginY: 3,
     paddingBottom: 3,
     borderBottom: 1,
     lineHeight: 1,
   },
   h2: {
     fontSize: 2,
-    marginBottom: 3,
+    marginY: 3,
     paddingBottom: 3,
     borderBottom: 0,
   },
   h3: {
-    // fontSize: 1,
     fontWeight: 600,
-    marginBottom: 3,
+    marginY: 3,
   },
   p: {
-    marginBottom: 3,
+    marginY: 3,
     color: "accent",
   },
   code: {
     fontFamily: `Portfolio Monospace, Portfolio Body, ${fontFallback}`,
-    fontSize: "80%",
+    fontSize: "85%",
     backgroundColor: "hint",
     borderRadius: "5px",
     paddingX: 1,
@@ -126,6 +128,23 @@ const global = css({
   ul: {
     marginBottom: 3,
     listStyleType: "'· '",
+  },
+  li: {
+    marginBottom: 2,
+  },
+  hr: {
+    marginY: 3,
+    border: 0,
+    borderBottom: 0,
+  },
+  em: {
+    fontStyle: "italic",
+  },
+  strong: {
+    fontWeight: "600",
+  },
+  img: {
+    width: "100%",
   },
 });
 

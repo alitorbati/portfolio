@@ -13,15 +13,15 @@ const Projects = (props) => {
   return (
     <Flexbox flexDirection="column" gap="3">
       {posts.map((post) => {
-        const href = `/projects/${post.slug}`;
+        const href = path.join("projects", post.slug);
+
         return (
           <Box key={post.frontmatter.title}>
             <Link href={href}>
               <a>{post.frontmatter.title}</a>
             </Link>
-            <Text as="p" color="accent">
-              {post.frontmatter.summary}
-            </Text>
+            <Box />
+            <Text color="accent">{post.frontmatter.summary}</Text>
           </Box>
         );
       })}
