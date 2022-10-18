@@ -16,17 +16,17 @@ _This article was originally published on [Medium](https://uxdesign.cc/death-to-
 
 Considering the nature of people search, filtering by parameters other than first and last name is crucial. ‘John Smith’ doesn’t really help you find who you’re looking for, but a 36 year old John Smith in Pasadena, CA, related to a Susan is damn specific, and will inform you quickly if we have the data you want.
 
-## Hidden ➞ Visible
+## Hidden → Visible
 
-![Hidden ➞ Visible](/images/posts/writing/death-to-complexity/hidden-visible.gif)
+![Hidden → Visible](/images/posts/writing/death-to-complexity/hidden-visible.gif)
 
 Our Advanced Search (AS) was hard to find. Small blue text beneath the map read ‘Show All Filters,’ which was an imperfect solution to the requirement that we maintain a list of clickable states (for SEO reasons), and that list be visible “[above](http://www.lukew.com/ff/entry.asp?1946) [the](http://thereisnopagefold.com/) [fold](https://dribbble.com/shots/2068432-Fuck-the-Fold)”. The states are, in a sense, filters, but they are very specific and essentially a dead end without other filters.
 
 We moved AS into a dedicated module which is always visible on desktop, and has a floating button on mobile. This provided obvious, persistent access to our most powerful search tool. Mobile search became a full-screen takeover, with the understanding that users would be in a binary situation: modifying query parameters, or browsing results. Supporting both on a small screen is futile.
 
-## Implicit ➞ Explicit
+## Implicit → Explicit
 
-![Implicit ➞ Explicit](/images/posts/writing/death-to-complexity/implicit-explicit.gif)
+![Implicit → Explicit](/images/posts/writing/death-to-complexity/implicit-explicit.gif)
 
 We abandoned the expectation that users are experts. Anyone should be able to figure out how to use AS, even if it’s their first time visiting.
 
@@ -38,17 +38,17 @@ Clicking an age range used to toggle and submit immediately. No longer! Click ag
 
 Added bonus: the locations list got a title that explains its value.
 
-## Wall ➞ Sections
+## Wall → Sections
 
-![Wall ➞ Sections](/images/posts/writing/death-to-complexity/wall-sections.png)
+![Wall → Sections](/images/posts/writing/death-to-complexity/wall-sections.png)
 
 Opening the filters was overwhelming! Scanning the inputs was nearly impossible. Location inputs are directly related to each other, as are relative first/last name, but Phone and Email inputs were adjacent and independent.
 
 Separating AS into logical sections fixed these problems and reduced the cognitive work for users. Each section can be considered independently, instead of the form appearing as a daunting task. Phone and Email suddenly make more sense in the context of “Contact info.”
 
-## Ambiguous ➞ Guided
+## Ambiguous → Guided
 
-![Ambiguous ➞ Guided](/images/posts/writing/death-to-complexity/ambiguous-guided.gif)
+![Ambiguous → Guided](/images/posts/writing/death-to-complexity/ambiguous-guided.gif)
 
 The City, State input was confusing because once a State was entered, users didn’t know they could edit it to enter a City, State combination. Users could also enter a City, State combo that returned zero results, leading to an empty state.
 
@@ -56,9 +56,9 @@ We changed these to native dropdowns, where the list of states only reflects sta
 
 We removed the Street input, which required too-accurate, and often unavailable, information.
 
-## Cramped ➞ Rows
+## Cramped → Rows
 
-![Cramped ➞ Rows](/images/posts/writing/death-to-complexity/cramped-rows.png)
+![Cramped → Rows](/images/posts/writing/death-to-complexity/cramped-rows.png)
 
 Street and City, State inputs were originally adjacent to follow the design pattern of the following inputs, not because those particular parameters should logically be side by side. In fact, for most forms (think shopping checkout) they’re most commonly placed on multiple lines. “Street” is also ambiguous, because we were actually expecting a full address, not just a street name.
 
