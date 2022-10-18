@@ -103,7 +103,7 @@ const Career = () => {
           year: "numeric",
         });
 
-        const endYear = !!Date.parse(job.end)
+        const endYear = Date.parse(job.end)
           ? new Date(job.end).toLocaleDateString("en-us", {
               year: "numeric",
             })
