@@ -8,9 +8,7 @@ summary: "Reducing choice and increasing options in a UI component library."
 
 # Desire Paths and Design Systems
 
-_This article was originally published on [Behind the Firewall](https://building.signalsciences.com/ui-desire-paths/), the Signal Sciences engineering blog. It was edited by [Ashley Soo](http://www.ashleysoo.com/portfolio/)_
-
-_It was one of our most-viewed articles, and garnered attention from several prominent industry figures:_
+_This article was edited by [Ashley Soo](http://www.ashleysoo.com/portfolio/) and originally published on [Behind the Firewall](https://building.signalsciences.com/ui-desire-paths/), the Signal Sciences engineering blog. It was one of our most-viewed articles, and garnered attention from several prominent industry figures:_
 
 - [Danny Banks (Amazon)](https://twitter.com/dbanksDesign/status/1234564637904924672?s=20&t=MTt72vs-Q0IMlSvn3uJFRw)
 - [Sarah Federman (Atlassian)](https://twitter.com/sarah_federman/status/1230646352352174080?s=20&t=MTt72vs-Q0IMlSvn3uJFRw)

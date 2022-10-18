@@ -8,17 +8,17 @@ summary: "A bit about the design process that went into reimagining Spokeo’s A
 
 # Death to Complexity: How we Simplified Advanced Search
 
-_This article was originally published on [Medium](https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0) and got a substantial amount of [attention](https://twitter.com/search?q=https%3A%2F%2Fuxdesign.cc%2Fdeath-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0&src=typed_query). It was produced with help from [Sean D'Auria](https://www.seandauria.com/)_
+_This article was originally published on [Medium](https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0) and continues to get attention on [Twitter](https://twitter.com/search?q=https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0&src=typed_query&f=live). It was produced with help from [Sean D'Auria](https://www.seandauria.com/)._
 
 ---
 
-![Overview](/images/posts/writing/death-to-complexity/overview.png)
+![Old (left) and new (right)](/images/posts/writing/death-to-complexity/overview.png)
 
 Considering the nature of people search, filtering by parameters other than first and last name is crucial. ‘John Smith’ doesn’t really help you find who you’re looking for, but a 36 year old John Smith in Pasadena, CA, related to a Susan is damn specific, and will inform you quickly if we have the data you want.
 
 ## Hidden → Visible
 
-![Hidden → Visible](/images/posts/writing/death-to-complexity/hidden-visible.gif)
+![Old (left) and new (right)](/images/posts/writing/death-to-complexity/hidden-visible.gif)
 
 Our Advanced Search (AS) was hard to find. Small blue text beneath the map read ‘Show All Filters,’ which was an imperfect solution to the requirement that we maintain a list of clickable states (for SEO reasons), and that list be visible “[above](http://www.lukew.com/ff/entry.asp?1946) [the](http://thereisnopagefold.com/) [fold](https://dribbble.com/shots/2068432-Fuck-the-Fold)”. The states are, in a sense, filters, but they are very specific and essentially a dead end without other filters.
 
@@ -26,7 +26,7 @@ We moved AS into a dedicated module which is always visible on desktop, and has 
 
 ## Implicit → Explicit
 
-![Implicit → Explicit](/images/posts/writing/death-to-complexity/implicit-explicit.gif)
+![New explicit behavior](/images/posts/writing/death-to-complexity/implicit-explicit.gif)
 
 We abandoned the expectation that users are experts. Anyone should be able to figure out how to use AS, even if it’s their first time visiting.
 
@@ -40,7 +40,7 @@ Added bonus: the locations list got a title that explains its value.
 
 ## Wall → Sections
 
-![Wall → Sections](/images/posts/writing/death-to-complexity/wall-sections.png)
+![Old (left) and new (right)](/images/posts/writing/death-to-complexity/wall-sections.png)
 
 Opening the filters was overwhelming! Scanning the inputs was nearly impossible. Location inputs are directly related to each other, as are relative first/last name, but Phone and Email inputs were adjacent and independent.
 
@@ -48,7 +48,7 @@ Separating AS into logical sections fixed these problems and reduced the cogniti
 
 ## Ambiguous → Guided
 
-![Ambiguous → Guided](/images/posts/writing/death-to-complexity/ambiguous-guided.gif)
+![Old (left) and new (right)](/images/posts/writing/death-to-complexity/ambiguous-guided.gif)
 
 The City, State input was confusing because once a State was entered, users didn’t know they could edit it to enter a City, State combination. Users could also enter a City, State combo that returned zero results, leading to an empty state.
 
@@ -58,7 +58,7 @@ We removed the Street input, which required too-accurate, and often unavailable,
 
 ## Cramped → Rows
 
-![Cramped → Rows](/images/posts/writing/death-to-complexity/cramped-rows.png)
+![Old (left) and new (right)](/images/posts/writing/death-to-complexity/cramped-rows.png)
 
 Street and City, State inputs were originally adjacent to follow the design pattern of the following inputs, not because those particular parameters should logically be side by side. In fact, for most forms (think shopping checkout) they’re most commonly placed on multiple lines. “Street” is also ambiguous, because we were actually expecting a full address, not just a street name.
 
@@ -68,7 +68,7 @@ Now, each input gets its own row. Simple, effective, and visually less oppressiv
 
 ## Mobile behavior
 
-![Mobile behavior](/images/posts/writing/death-to-complexity/mobile-behavior.gif)
+![Old (left) and new (right)](/images/posts/writing/death-to-complexity/mobile-behavior.gif)
 
 A persistent problem we’ve had to deal with is maintaining crucial functionality in a left panel which disappears on mobile. Having the left panel is a hard product requirement, and we discovered an elegant solution to provide access to the Advanced Search panel on mobile.
 
