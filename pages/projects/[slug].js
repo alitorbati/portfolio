@@ -14,7 +14,7 @@ const PostPage = (props) => {
         External documentation
       </a>
       <Box marginBottom="3" />
-      <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+      <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>■
     </Box>
   );
 };

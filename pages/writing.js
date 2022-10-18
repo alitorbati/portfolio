@@ -27,7 +27,7 @@ const articles = [
 
 const Writing = () => {
   return (
-    <Flexbox flexDirection="column" gap="4">
+    <Flexbox flexDirection="column" gap="3">
       {articles.map((article, index) => {
         return (
           <Flexbox flexDirection="column" gap="0" key={index}>

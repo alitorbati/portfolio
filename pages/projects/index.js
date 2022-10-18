@@ -11,7 +11,7 @@ const Projects = (props) => {
   const { posts } = props;
 
   return (
-    <Flexbox flexDirection="column" gap="4">
+    <Flexbox flexDirection="column" gap="3">
       {posts.map((post) => {
         const href = `/projects/${post.slug}`;
         return (

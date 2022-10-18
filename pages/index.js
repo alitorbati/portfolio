@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <Box>
       <Text>Ali Torbati</Text>
-      <Box marginBottom={2} />
+      <Box />
       <Text color="accent">
         My professional focus is on UI Engineering. This discipline is
         expressive, nuanced and complex. It requires both deep and broad

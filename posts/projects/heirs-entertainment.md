@@ -1,12 +1,12 @@
 ---
-title: "Heirs Entertainment"
+title: "HEIRS Entertainment"
 date: "2020-08"
 url: "https://heirs.us"
 isVisible: true
-summary: "Showcase site for Heirs Entertainment."
+summary: "Showcase site for HEIRS Entertainment - Black-owned mixed media."
 ---
 
-# Heirs Entertainment
+# HEIRS Entertainment
 
 Article coming soon
 

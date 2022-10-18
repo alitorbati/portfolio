@@ -96,7 +96,7 @@ const jobs = [
 
 const Career = (props) => {
   return (
-    <Flexbox flexDirection="column" gap="4">
+    <Flexbox flexDirection="column" gap="3">
       {jobs.map((job, index) => {
         if (!job.isVisible) return null;
         const startYear = job.start.split("/")[0];

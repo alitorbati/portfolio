@@ -49,13 +49,14 @@ const fonts = `
   }
 `;
 
+const fontFallback = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
+
 const global = css({
   "*": {
     boxSizing: "border-box",
   },
   html: {
-    fontFamily:
-      'Portfolio Body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    fontFamily: `Portfolio Body, ${fontFallback}`,
     fontSize: ["20px"],
     fontWeight: ["300"],
     backgroundColor: "background",
@@ -83,11 +84,10 @@ const global = css({
     [href^="#"],
     [href^="/"]:not([href^="//"]),
   )):after`]: {
-    content: "' ↗️'",
+    content: "' ↗'",
   },
   h1: {
-    fontFamily:
-      'Portfolio Headline, Portfolio Body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    fontFamily: `Portfolio Headline, Portfolio Body, ${fontFallback}`,
     fontWeight: "bold",
     fontSize: 4,
     marginBottom: 3,
@@ -102,13 +102,26 @@ const global = css({
     borderBottom: 0,
   },
   h3: {
-    fontSize: 1,
-    fontWeight: 400,
+    // fontSize: 1,
+    fontWeight: 600,
     marginBottom: 3,
   },
   p: {
     marginBottom: 3,
     color: "accent",
+  },
+  code: {
+    fontFamily: `Portfolio Monospace, Portfolio Body, ${fontFallback}`,
+    fontSize: "80%",
+    backgroundColor: "hint",
+    borderRadius: "5px",
+    paddingX: 1,
+  },
+  blockquote: {
+    borderLeft: 1,
+    paddingLeft: 3,
+    fontStyle: "italic",
+    fontWeight: 400,
   },
   ul: {
     marginBottom: 3,

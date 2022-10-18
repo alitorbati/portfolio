@@ -45,15 +45,17 @@ const MyApp = ({ Component, pageProps }) => {
     }
   }, []);
 
-  const initialTheme =
-    typeof window !== "undefined" &&
+  const [theme, setTheme] = React.useState(dark);
+
+  // initialize theme
+  React.useEffect(() => {
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? dark
-      : light;
+      ? setTheme(dark)
+      : setTheme(light);
+  }, []);
 
-  const [theme, setTheme] = React.useState(initialTheme);
-
+  // change theme when device theme changes
   React.useEffect(() => {
     window
       .matchMedia("(prefers-color-scheme: dark)")
