@@ -87,7 +87,7 @@ const global = css({
     [href^="#"],
     [href^="/"]:not([href^="//"]),
   )):after`]: {
-    content: "' ↗'",
+    content: "'\\a0↗'", // non-breaking space
   },
   // h1-6 are "offset" inside/outside posts so that post content can be context-agnostic
   "h1:not(.markdown-container h1)": {
