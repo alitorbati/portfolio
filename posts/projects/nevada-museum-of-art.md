@@ -38,7 +38,7 @@ Finally, the website's accent color gradually shifts as the user scrolls the pag
 
 Again, we used CSS variables to achieve this effect. We calculate the scroll position as a percentage of the total document length, and map that value to a 360° hue scale. As the user scrolls, the current hue value is adjusted and the CSS variable value is updated.
 
-# Recognition & awards
+# Recognition
 
 This project was featured in [Communication Arts](https://www.commarts.com/project/34606/art-environment-conference) as a noteworthy Art/Design contribution. The project went on to win an [award](https://www.instagram.com/p/CicqGWlu32R/) from the same publication.
 

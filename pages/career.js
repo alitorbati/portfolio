@@ -95,7 +95,7 @@ const jobs = [
 
 const Career = () => {
   return (
-    <Flexbox flexDirection="column" gap="3">
+    <Flexbox flexDirection="column" gap={5}>
       {jobs.map((job, index) => {
         if (!job.isVisible) return null;
 

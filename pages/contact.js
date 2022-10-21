@@ -26,18 +26,18 @@ const links = [
 
 const Headshot = styled("img")((props) => ({
   borderRadius: props.theme.space[1],
-  maxWidth: `${props.theme.space[4] * 2}px`,
+  maxWidth: `${props.theme.space[6] * 2}px`,
 }));
 
 const Contact = () => {
   return (
     <Box>
       <Headshot src="images/avatar.jpg" alt="Photo of Ali Torbati" />
-      <Box marginBottom="3" />
+      <Box marginBottom={4} />
       <Box as="ul">
         {links.map((link) => {
           return (
-            <Box marginBottom="1" as="li" key={link.href}>
+            <Box marginBottom={1} as="li" key={link.href}>
               <a href={link.href} target="_blank" rel="noreferrer">
                 {link.label}
               </a>

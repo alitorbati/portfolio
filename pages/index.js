@@ -4,7 +4,7 @@ import Box from "../components/Box";
 const Home = () => {
   return (
     <Box>
-      <Text>Ali Torbati</Text>
+      <Text color="foreground">Ali Torbati</Text>
       <Box />
       <Text color="accent">
         My professional focus is on UI Engineering. This discipline is

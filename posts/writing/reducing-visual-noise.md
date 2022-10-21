@@ -6,7 +6,7 @@ isVisible: true
 summary: "A critical analysis of what caused confusion on Spokeo’s Person Profiles, and the changes we made to improve our most data-dense product page."
 ---
 
-_This article was originally published on [Medium](https://uxdesign.cc/reducing-visual-noise-for-a-better-user-experience-ae3407ff9c99) and continues to get attention on [Twitter](https://twitter.com/search?q=https://uxdesign.cc/reducing-visual-noise-for-a-better-user-experience-ae3407ff9c99&src=typed_query&f=live). It was produced with help from [Sean D'Auria](https://www.seandauria.com/)._
+_This article was edited by [Sean D'Auria](https://www.seandauria.com/) and originally published on [Medium](https://uxdesign.cc/reducing-visual-noise-for-a-better-user-experience-ae3407ff9c99)._
 
 ---
 

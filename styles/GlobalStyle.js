@@ -57,17 +57,17 @@ const global = css({
   },
   html: {
     fontFamily: `Portfolio Body, ${fontFallback}`,
-    fontSize: ["20px"],
-    fontWeight: ["300"],
+    fontSize: "20px",
+    fontWeight: "300",
     backgroundColor: "background",
-    color: "foreground",
+    color: "accent",
   },
   "::selection": {
     color: "background",
     backgroundColor: "accent",
   },
   body: {
-    lineHeight: "1.4",
+    lineHeight: "1.62", // maybe too much. consider 1.4
     minHeight: "100vh",
   },
   a: {
@@ -76,7 +76,7 @@ const global = css({
   },
   "a:hover, a:focus-visible": {
     outline: 0,
-    borderRadius: "5px",
+    borderRadius: 1,
     backgroundColor: "hint",
     paddingX: 1,
     paddingY: 1,
@@ -91,47 +91,49 @@ const global = css({
   },
   // h1-6 are "offset" inside/outside posts so that post content can be context-agnostic
   "h1:not(.markdown-container h1)": {
+    color: "foreground",
     fontFamily: `Portfolio Headline, Portfolio Body, ${fontFallback}`,
     fontWeight: "bold",
     fontSize: 4,
-    marginY: 3,
-    paddingBottom: 3,
-    borderBottom: 1,
     lineHeight: 1,
+    paddingBottom: 5,
+    borderBottom: 1,
+    marginY: 5,
   },
   "h2:not(.markdown-container h2), .markdown-container h1": {
+    color: "foreground",
     fontSize: 2,
-    marginY: 3,
     paddingBottom: 3,
     borderBottom: 0,
+    marginY: 3,
   },
   "h3:not(.markdown-container h3), .markdown-container h2": {
+    color: "foreground",
+    fontSize: 1,
     fontWeight: 600,
-    marginY: 3,
+    marginY: 4,
   },
   p: {
-    marginY: 3,
+    marginY: 4,
     color: "accent",
   },
   code: {
     fontFamily: `Portfolio Monospace, Portfolio Body, ${fontFallback}`,
     fontSize: "85%",
     backgroundColor: "hint",
-    borderRadius: "5px",
+    borderRadius: 1,
     paddingX: 1,
   },
   blockquote: {
     borderLeft: 1,
-    paddingLeft: 3,
+    paddingLeft: 4,
     fontStyle: "italic",
-    fontWeight: 400,
+    fontSize: 1,
+    lineHeight: 1.2,
   },
   ul: {
     marginBottom: 3,
     listStyleType: "'· '",
-  },
-  li: {
-    marginBottom: 2,
   },
   hr: {
     marginY: 3,
@@ -146,6 +148,9 @@ const global = css({
   },
   img: {
     width: "100%",
+    borderRadius: 1,
+    padding: 4,
+    backgroundColor: "hint",
   },
 });
 

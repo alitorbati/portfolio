@@ -6,9 +6,9 @@ isVisible: true
 summary: "A bit about the design process that went into reimagining Spokeo’s Advanced Search tools. This was a weeks-long collaboration between the design and front-end teams, with support from backend for some specific API updates."
 ---
 
-_This article was originally published on [Medium](https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0) and continues to get attention on [Twitter](https://twitter.com/search?q=https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0&src=typed_query&f=live). It was produced with help from [Sean D'Auria](https://www.seandauria.com/)._
-
----
+<Callout>
+_This article was edited by [Sean D'Auria](https://www.seandauria.com/) and originally published on [Medium](https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0)._
+</Callout>
 
 ![Old (left) and new (right)](/images/posts/writing/death-to-complexity/overview.png)
 

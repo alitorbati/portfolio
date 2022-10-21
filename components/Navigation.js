@@ -10,8 +10,8 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <Box as="nav" paddingBottom="3" borderBottom="0">
-      <Flexbox alignItems="center" gap="3" flexWrap="wrap">
+    <Box as="nav" paddingBottom={4} borderBottom={0}>
+      <Flexbox alignItems="center" gap={4} flexWrap="wrap">
         {paths.map((path) => {
           const currentPath = router.asPath;
           const currentPathParts = currentPath.split("/");
