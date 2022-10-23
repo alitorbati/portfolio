@@ -26,7 +26,7 @@ const links = [
 
 const Headshot = styled("img")((props) => ({
   borderRadius: props.theme.space[1],
-  maxWidth: `${props.theme.space[6] * 2}px`,
+  maxWidth: `${props.theme.space[6] * 3}px`,
 }));
 
 const Contact = () => {

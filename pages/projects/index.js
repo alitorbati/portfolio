@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import Promise from "promise";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import { sortByDate, filterIsVisible } from "../../utils";
