@@ -103,6 +103,7 @@ const global = css({
   "h2:not(.markdown-container h2), .markdown-container h1": {
     color: "foreground",
     fontSize: 2,
+    lineHeight: 1,
     paddingBottom: 3,
     borderBottom: 0,
     marginY: 3,
