@@ -6,13 +6,14 @@ import Link from "next/link";
 import { sortByDate, filterIsVisible } from "../../utils";
 import Box from "../../components/Box";
 import Flexbox from "../../components/Flexbox";
+import Grid from "../../components/Grid";
 import Text from "../../components/Text";
 
 const Projects = (props) => {
   const { posts } = props;
 
   return (
-    <Flexbox flexDirection="column" gap={5}>
+    <Grid gap={5} gridTemplateColumns={["100%", "repeat(2, 50%)"]}>
       {posts
         .filter(filterIsVisible)
         .sort(sortByDate)
@@ -29,7 +30,7 @@ const Projects = (props) => {
             </Box>
           );
         })}
-    </Flexbox>
+    </Grid>
   );
 };
 
