@@ -14,7 +14,7 @@ _This article was edited by [Sean D'Auria](https://www.seandauria.com/) and orig
 
 ---
 
-![Overview](/images/posts/writing/reducing-visual-noise/overview.png)
+![Overview](/images/writing/reducing-visual-noise/overview.png)
 
 # Reduce icon overload
 
@@ -25,7 +25,7 @@ We took a look at Amazon’s product pages to determine how they are able to pre
 1. Each section looks different from the others (customer reviews are rows with stars, related products are image-heavy panels that flow to the right, etc)
 1. Section titles are big, simple text that visually break up the page, and are easy to read
 
-![Top: empty cases filled with marketing copy; Bottom: clarity](/images/posts/writing/reducing-visual-noise/icons.png)
+![Top: empty cases filled with marketing copy; Bottom: clarity](/images/writing/reducing-visual-noise/icons.png)
 
 We had gotten a bit trigger-happy with our iconography. Each section had an icon next to the title, and the intention was that the icons would be easily identifiable. They would also indicate where new sections began, and make browsing the profile easier.
 
@@ -33,7 +33,7 @@ In reality the icons just added visual complexity without improving readability 
 
 # Sell value, not features
 
-![Left: old titles/icons/colors; Right: new titles](/images/posts/writing/reducing-visual-noise/value.png)
+![Left: old titles/icons/colors; Right: new titles](/images/writing/reducing-visual-noise/value.png)
 
 Our section titles were too literal, and just conveyed the information we provide, not why that information is useful, or how to use it. “Phones and Emails” became “Contact Info,” illustrating to the user that this information has value because it provides a way to get in touch with the person in question. We’ve added value for users without drastically changing the product.
 
@@ -43,7 +43,7 @@ Similarly, the title “Photos & Social Profiles” was basically satisfying mar
 
 [Users don’t understand your color scheme](https://medium.com/radical-ux/nine-nasty-ux-truths-83b30ea94355#.tlf2tdbew). At best they understand that colors indicate relationships, and at worst they are confused about the patterns they suspect but can’t discern.
 
-![Left: nav icons, purple blocks, repetitive CTAs, green section border; Right: none of that](/images/posts/writing/reducing-visual-noise/color.jpeg)
+![Left: nav icons, purple blocks, repetitive CTAs, green section border; Right: none of that](/images/writing/reducing-visual-noise/color.jpeg)
 
 Over the course of many iterations we tried to tie certain colors to certain data types (e.g. Location info was orange, and Contact info was purple), but that never really caught on and we ended up informally abandoning it. The result was that some sections of the profile had vestigial color-coded elements, but they were meaningless without the greater context in which they were conceived. We removed these colors, avoiding any potential misunderstanding based on a now-non-existent color system.
 
@@ -61,7 +61,7 @@ Since the multicolumn design converts well, project stakeholders are generally h
 
 # Don’t stick elements willy nilly
 
-![Left: old version that just sticks at the top; Right: hides the map](/images/posts/writing/reducing-visual-noise/sticky.gif)
+![Left: old version that just sticks at the top; Right: hides the map](/images/writing/reducing-visual-noise/sticky.gif)
 
 Our sticky panels were a constant headache. Implemented on one page they might have been possible to maintain, but the simple reality was that they had to handle too many unknowns, and responsive behavior added a whole additional layer of complexity. On top of all that, they didn’t really add to the user experience. If anything they allowed us to be sloppy in choosing what to put in each panel because we could expect it to just stick around if it grew past the viewport height.
 
