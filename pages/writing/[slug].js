@@ -18,6 +18,9 @@ const PostPage = (props) => {
       </Text>
       <h1>{frontmatter.title}</h1>
       <Text>{frontmatter.summary}</Text>
+      <div className="markdown-container">
+        <MDXRemote {...mdxSource} />
+      </div>
       <div
         className="markdown-container"
         dangerouslySetInnerHTML={{ __html: marked(content) }}
