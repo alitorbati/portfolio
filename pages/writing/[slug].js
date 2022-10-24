@@ -6,19 +6,19 @@ import Box from "../../components/Box";
 import Text from "../../components/Text";
 import Date from "../../components/Date";
 
-const Callout = (props) => {
-  return (
-    <Box
-      paddingX={4}
-      marginY={5}
-      backgroundColor="hint"
-      borderRadius="5px"
-      border={0} // border forces proper margin
-    >
-      {props.children}
-    </Box>
-  );
-};
+// const Callout = (props) => {
+//   return (
+//     <Box
+//       paddingX={4}
+//       marginY={5}
+//       backgroundColor="hint"
+//       borderRadius="5px"
+//       border={0} // border forces proper margin
+//     >
+//       {props.children}
+//     </Box>
+//   );
+// };
 
 const PostPage = (props) => {
   const { frontmatter, content } = props;
