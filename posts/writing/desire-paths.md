@@ -6,7 +6,7 @@ isVisible: true
 summary: "Reducing choice and increasing options in a UI component library."
 ---
 
-<Callout>
+<!-- <Callout> -->
 
 _This article was edited by [Ashley Soo](http://www.ashleysoo.com/portfolio/) and originally published on [Behind the Firewall](https://building.signalsciences.com/ui-desire-paths/), the Signal Sciences engineering blog. It was one of our most-viewed articles, and garnered attention from several prominent industry figures:_
 
@@ -15,13 +15,15 @@ _This article was edited by [Ashley Soo](http://www.ashleysoo.com/portfolio/) an
 - [Frank Bach (Headspace)](https://twitter.com/zendadddy/status/1230590836410208257?s=20&t=MTt72vs-Q0IMlSvn3uJFRw)
 - [Maya Hampton (REI)](https://twitter.com/HiMaya/status/1233518890543656962?s=20&t=MTt72vs-Q0IMlSvn3uJFRw)
 
-</Callout>
+<!-- </Callout> -->
+
+---
 
 Most tech companies understand the importance of design systems by now, and we’re no different. Creating a collection of reusable and centralized components guided by a set of clear standards is a good approach to building a consistent product. At Signal Sciences, our design system exists as a set of React components called [Cosmo](https://dashboard.signalsciences.net/static/ui/styleguide/#alert). Our original strategy was to create unique components for each use case, and this worked well for a while. But as our UI became more complex, our designers began to feel that these components restricted creativity and prevented them from designing elegant solutions.
 
 Our designers wanted the flexibility to create designs within the boundaries of our _theme_, but outside the boundaries of our existing components. They wanted the ability to bend rules, challenge patterns, and explore beyond the edges of what we had already created. To some extent they were already doing this, and so the burden of small tweaks and one-off changes often fell on the shoulders of engineers. Engineers would have to figure out how styles differ from a defined component, and then add a class and some CSS for an effective override or augmentation.
 
-![This mockup needed many one-off changes](/images/writing/desire-paths/rules-page-signal-sciences.png)
+![This mockup needed many one-off changes](/images/posts/writing/desire-paths/rules-page-signal-sciences.png)
 
 For example, The `Well` component (above) had opinions about `backgroundColor`, `padding`, and `margin`. To build this UI we had to add a `border` to both `Well`s, and remove the `backgroundColor` from one. This required engineers to
 
@@ -67,7 +69,7 @@ As we built new features and identified new patterns, our original set of assump
 
 On top of all that, we were running into other, more subtle problems&mdash;similar concepts were captured in unique components (e.g., `Section`, `Panel`, and `Well`). When looking at a mockup, an engineer would have trouble making an informed decision about which component to reach for. Here’s an example of where we encountered this tension:
 
-![Generic components may better serve our needs](/images/writing/desire-paths/events-box-component-signal-sciences.png)
+![Generic components may better serve our needs](/images/posts/writing/desire-paths/events-box-component-signal-sciences.png)
 
 - If two elements needed vertical space between them, which type of container component should they be in? And further, is that even a distinction that a designer would make?
 - Does a designer care if two elements are separated by a `Section` or `Panel`, or just that there is a particular number of pixels between them?

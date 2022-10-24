@@ -1,15 +1,13 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
+import { marked } from "marked";
 import Box from "../../components/Box";
 import Text from "../../components/Text";
 import Date from "../../components/Date";
 
 const PostPage = (props) => {
-  const { frontmatter, mdxSource } = props;
-  const { compiledSource } = mdxSource;
+  const { frontmatter, content } = props;
 
   return (
     <Box>
@@ -26,9 +24,10 @@ const PostPage = (props) => {
       ) : null}
       <h1>{frontmatter.title}</h1>
       <Text>{frontmatter.summary}</Text>
-      <div className="markdown-container">
-        <MDXRemote compiledSource={compiledSource} frontmatter={frontmatter} />
-      </div>
+      <div
+        className="markdown-container"
+        dangerouslySetInnerHTML={{ __html: marked(content) }}
+      />
       <Text color="foreground">■</Text>
     </Box>
   );
@@ -54,12 +53,11 @@ export async function getStaticProps(props) {
     "utf-8"
   );
   const { data: frontmatter, content } = matter(source);
-  const mdxSource = await serialize(content);
 
   return {
     props: {
       frontmatter,
-      mdxSource,
+      content,
     },
   };
 }

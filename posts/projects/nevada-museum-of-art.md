@@ -16,9 +16,7 @@ In early 2021, I was contacted by frequent collaborator [Zeke Wattles](https://z
 
 # Process
 
-<Callout>
 Over several weeks the group met over Zoom to discuss desired outcomes. Since the theme of the exhibit was land art, we wanted to make the user experience reflective of that - to bring site visitors into the land space, instead of leaving them statically in-place behind a screen.
-</Callout>
 
 To make the site more expressive and interactive than a traditional website, we employed generative design philosophies - connecting unexpected pairings of inputs and outputs to produce a site unlike any other. Some key details are as follows:
 
