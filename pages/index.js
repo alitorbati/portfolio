@@ -1,7 +1,7 @@
 import Text from "../components/Text";
 import Box from "../components/Box";
 
-const Home = () => {
+const Index = () => {
   return (
     <Box>
       <Text color="foreground">Ali Torbati</Text>
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Index;
