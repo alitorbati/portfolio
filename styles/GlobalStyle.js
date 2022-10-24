@@ -73,6 +73,7 @@ const global = css({
   a: {
     color: "foreground",
     textDecoration: "none",
+    transition: "padding 0.1s, margin 0.1s",
   },
   "a:hover, a:focus-visible": {
     outline: 0,
@@ -148,10 +149,10 @@ const global = css({
     fontWeight: "600",
   },
   img: {
-    width: "100%",
     borderRadius: 1,
-    padding: 4,
-    backgroundColor: "hint",
+  },
+  ".markdown-container img": {
+    width: "100%",
   },
 });
 

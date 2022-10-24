@@ -16,7 +16,7 @@ const Header = () => {
           const currentPath = router.asPath;
           const currentPathParts = currentPath.split("/");
           const pathname = path.replace("/", "");
-          const title = path === "/" ? "home" : pathname;
+          const title = path === "/" ? "index" : pathname;
 
           const isCurrentPath = currentPath === path;
           const isNestedPath = currentPathParts[1] === pathname;

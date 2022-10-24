@@ -24,15 +24,15 @@ const links = [
   },
 ];
 
-const Headshot = styled("img")((props) => ({
-  borderRadius: props.theme.space[1],
-  maxWidth: `${props.theme.space[6] * 3}px`,
-}));
-
 const Contact = () => {
   return (
     <Box>
-      <Headshot src="images/avatar.jpg" alt="Photo of Ali Torbati" />
+      <Box
+        as="img"
+        src="images/avatar.jpg"
+        alt="Photo of Ali Torbati"
+        maxWidth="140px"
+      />
       <Box marginBottom={4} />
       <Box as="ul">
         {links.map((link) => {
