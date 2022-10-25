@@ -23,7 +23,9 @@ const PostPage = (props) => {
         </>
       ) : null}
       <h1>{frontmatter.title}</h1>
-      <Text>{frontmatter.summary}</Text>
+      <Text color="foreground" fontSize="1">
+        {frontmatter.summary}
+      </Text>
       <div
         className="markdown-container"
         dangerouslySetInnerHTML={{ __html: marked(content) }}
