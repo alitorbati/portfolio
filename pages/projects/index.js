@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import { sortByDate, filterIsVisible } from "../../utils";
 import Box from "../../components/Box";
@@ -36,15 +36,16 @@ export default Projects;
 
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join("posts", "projects"));
-  const posts = files.map((file) => {
-    const slug = file.replace(".md", "");
-    const source = fs.readFileSync(
-      path.join("posts", "projects", file),
-      "utf-8"
-    );
-    const { data: frontmatter } = matter(source);
-    return { slug, frontmatter };
-  });
+  const posts = await Promise.all(
+    files.map(async (file) => {
+      const slug = file.replace(".md", "");
+      const sourcePath = path.join("posts", "projects", file);
+      const source = fs.readFileSync(sourcePath, "utf-8");
+      const mdxSource = await serialize(source, { parseFrontmatter: true });
+      const { frontmatter } = mdxSource;
+      return { slug, frontmatter };
+    })
+  );
 
   return {
     props: {

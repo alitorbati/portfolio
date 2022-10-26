@@ -6,22 +6,24 @@ import Box from "../components/Box";
 import light from "../themes/light";
 import dark from "../themes/dark";
 import Navigation from "../components/Navigation";
+import { MDXProvider } from "@mdx-js/react";
 
-// const Callout = (props) => {
-//   return (
-//     <Box
-//       paddingX={4}
-//       marginY={5}
-//       backgroundColor="hint"
-//       borderRadius="5px"
-//       border={0} // border forces proper margin
-//     >
-//       {props.children}
-//     </Box>
-//   );
-// };
+const Callout = (props) => {
+  return (
+    <Box
+      paddingX={5}
+      paddingY={2}
+      marginX={[0, 0, 0, -6]}
+      marginY={5}
+      border={1}
+      borderRadius={1}
+    >
+      {props.children}
+    </Box>
+  );
+};
 
-// const components = { Callout };
+const components = { Callout };
 
 const MyApp = ({ Component, pageProps }) => {
   if (
@@ -79,17 +81,19 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Head>
-        <title>Ali Torbati (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</title>
-      </Head>
-      <Box maxWidth="70ch" margin="0 auto" padding={4}>
-        <Navigation />
-        <Box marginBottom={4} />
-        <Box as="main">
-          <Component {...pageProps} />
+      <MDXProvider components={components}>
+        <GlobalStyle />
+        <Head>
+          <title>Ali Torbati (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</title>
+        </Head>
+        <Box maxWidth="70ch" margin="0 auto" padding={4}>
+          <Navigation />
+          <Box marginBottom={4} />
+          <Box as="main">
+            <Component {...pageProps} />
+          </Box>
         </Box>
-      </Box>
+      </MDXProvider>
     </ThemeProvider>
   );
 };
