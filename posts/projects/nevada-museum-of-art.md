@@ -6,12 +6,6 @@ isVisible: true
 summary: "Art + Environment 2021 — Land Art: Past, Present, Futures."
 ---
 
-# Collaborators
-
-- [Zeke Wattles](https://zeke.studio)
-- [Brad Bartlett](http://bradbartlett.com)
-- [Amy Oppio](https://www.linkedin.com/in/amy-oppio-15a27932/)
-
 In early 2021, I was contacted by frequent collaborator [Zeke Wattles](https://zeke.studio) and [ArtCenter](https://www.artcenter.edu/) professor [Brad Bartlett](http://bradbartlett.com). They invited me to participate in the process of designing and building a microsite for [Nevada Museum of Art's](https://nevadaart.org/) upcoming conference: [Art + Environment]("https://www.nevadaart.org/conference2021/") — Land Art: Past, Present, Futures. I was specifically asked to join because of my experience building interactive, generative digital and physical experiences.
 
 # Process

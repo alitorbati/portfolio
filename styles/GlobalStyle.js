@@ -95,7 +95,7 @@ const global = css({
     color: "foreground",
     fontFamily: `Portfolio Headline, Portfolio Body, ${fontFallback}`,
     fontWeight: "bold",
-    fontSize: 4,
+    fontSize: [3, 4],
     lineHeight: 1,
     paddingBottom: 5,
     borderBottom: 1,
@@ -103,7 +103,7 @@ const global = css({
   },
   "h2:not(.markdown-container h2), .markdown-container h1": {
     color: "foreground",
-    fontSize: 2,
+    fontSize: [1, 2],
     lineHeight: 1,
     paddingBottom: 5,
     borderBottom: 0,
@@ -111,7 +111,7 @@ const global = css({
   },
   "h3:not(.markdown-container h3), .markdown-container h2": {
     color: "foreground",
-    fontSize: 1,
+    fontSize: [0, 1],
     fontWeight: 600,
     marginY: 4,
   },

@@ -23,7 +23,7 @@ const PostPage = (props) => {
         </>
       ) : null}
       <h1>{frontmatter.title}</h1>
-      <Text color="foreground" fontSize="1">
+      <Text color="foreground" fontSize={[0, 1]}>
         {frontmatter.summary}
       </Text>
       <div
