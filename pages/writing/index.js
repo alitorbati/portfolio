@@ -37,7 +37,7 @@ export default Writing;
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join("posts", "writing"));
   const posts = files.map((file) => {
-    const slug = file.replace(".md", "");
+    const slug = file.replace(".mdx", "");
     const source = fs.readFileSync(
       path.join("posts", "writing", file),
       "utf-8"
