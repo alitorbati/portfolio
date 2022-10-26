@@ -23,7 +23,14 @@ const Callout = (props) => {
   );
 };
 
-const components = { Callout };
+const components = {
+  Callout,
+  // re-map markdown headers so that the page title is the proper h1, and subsequent headers are "downsized"
+  h1: (props) => <h2 {...props} />,
+  h2: (props) => <h3 {...props} />,
+  h3: (props) => <h4 {...props} />,
+  h4: (props) => <h5 {...props} />,
+};
 
 const MyApp = ({ Component, pageProps }) => {
   const [theme, setTheme] = React.useState(dark);

@@ -91,7 +91,7 @@ const global = css({
     content: "'\\a0↗'", // non-breaking space
   },
   // h1-6 are "offset" inside/outside posts so that post content can be context-agnostic
-  "h1:not(.markdown-container h1)": {
+  h1: {
     color: "foreground",
     fontFamily: `Portfolio Headline, Portfolio Body, ${fontFallback}`,
     fontWeight: "bold",
@@ -101,7 +101,7 @@ const global = css({
     borderBottom: 1,
     marginY: 5,
   },
-  "h2:not(.markdown-container h2), .markdown-container h1": {
+  h2: {
     color: "foreground",
     fontSize: [1, 2],
     lineHeight: 1,
@@ -109,7 +109,7 @@ const global = css({
     borderBottom: 0,
     marginY: 5,
   },
-  "h3:not(.markdown-container h3), .markdown-container h2": {
+  h3: {
     color: "foreground",
     fontSize: [0, 1],
     fontWeight: 600,
