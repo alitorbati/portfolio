@@ -50,7 +50,7 @@ const PostPage = (props) => {
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join("posts", "writing"));
   const paths = files.map((filename) => {
-    const slug = filename.replace(".mdx", "");
+    const slug = filename.replace(".md", "");
     return { params: { slug } };
   });
 
@@ -62,7 +62,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(props) {
   const { slug } = props.params;
-  const sourcePath = path.join("posts", "writing", `${slug}.mdx`);
+  const sourcePath = path.join("posts", "writing", `${slug}.md`);
   const source = fs.readFileSync(sourcePath, "utf-8");
   // const { data: frontmatter, content } = matter(source);
   const result = await bundleMDX({ source });
