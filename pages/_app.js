@@ -26,40 +26,6 @@ const Callout = (props) => {
 const components = { Callout };
 
 const MyApp = ({ Component, pageProps }) => {
-  if (
-    typeof window !== "undefined" &&
-    typeof window.navigator !== "undefined" &&
-    window &&
-    window.navigator &&
-    navigator.serviceWorker
-  ) {
-    console.log("unregister service workers");
-    navigator.serviceWorker.getRegistrations().then(function (registrations) {
-      for (let registration of registrations) {
-        registration.unregister();
-      }
-    });
-  }
-
-  React.useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      console.log("register no-op service worker");
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/service-worker.js").then(
-          function (registration) {
-            console.log(
-              "Service Worker registration successful with scope: ",
-              registration.scope
-            );
-          },
-          function (err) {
-            console.log("Service Worker registration failed: ", err);
-          }
-        );
-      });
-    }
-  }, []);
-
   const [theme, setTheme] = React.useState(dark);
 
   // initialize theme
