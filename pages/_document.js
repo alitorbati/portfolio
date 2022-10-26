@@ -13,49 +13,42 @@ const Document = () => {
           href="/fonts/FKScreamer-Bold.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin=""
         />
         <link
           rel="preload"
           href="/fonts/PolySans-Slim.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin=""
         />
         <link
           rel="preload"
           href="/fonts/PolySans-SlimItalic.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin=""
         />
         <link
           rel="preload"
           href="/fonts/PolySans-Neutral.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin=""
         />
         <link
           rel="preload"
           href="/fonts/PolySans-NeutralItalic.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin=""
         />
         <link
           rel="preload"
           href="/fonts/PolySans-Median.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin=""
         />
         <link
           rel="preload"
           href="/fonts/PolySans-SlimMono.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin=""
         />
       </Head>
       <body>
