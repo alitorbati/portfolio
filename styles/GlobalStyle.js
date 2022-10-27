@@ -151,7 +151,7 @@ const global = css({
   img: {
     borderRadius: 1,
   },
-  ".markdown-container img": {
+  ".markdown-container img, .markdown-container video": {
     width: "100%",
   },
 });

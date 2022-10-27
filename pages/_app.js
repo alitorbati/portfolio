@@ -3,28 +3,16 @@ import { ThemeProvider } from "styled-components";
 import Head from "next/head";
 import GlobalStyle from "../styles/GlobalStyle";
 import Box from "../components/Box";
+import Callout from "../components/Callout";
+import Video from "../components/Video";
 import light from "../themes/light";
 import dark from "../themes/dark";
 import Navigation from "../components/Navigation";
 import { MDXProvider } from "@mdx-js/react";
 
-const Callout = (props) => {
-  return (
-    <Box
-      paddingX={5}
-      paddingY={2}
-      marginX={[0, 0, 0, -6]}
-      marginY={5}
-      border={1}
-      borderRadius={1}
-    >
-      {props.children}
-    </Box>
-  );
-};
-
 const components = {
   Callout,
+  Video,
   // re-map markdown headers so that the page title is the proper h1, and subsequent headers are "downsized"
   h1: (props) => <h2 {...props} />,
   h2: (props) => <h3 {...props} />,

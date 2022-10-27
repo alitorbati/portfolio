@@ -27,6 +27,7 @@ const PostPage = (props) => {
       <Text color="foreground" fontSize={[0, 1]}>
         {frontmatter.summary}
       </Text>
+      <Box marginBottom="6" />
       <div className="markdown-container">
         <MDXRemote compiledSource={compiledSource} frontmatter={frontmatter} />
       </div>

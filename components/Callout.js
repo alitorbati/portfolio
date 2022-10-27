@@ -1,0 +1,18 @@
+import Box from "../components/Box";
+
+const Callout = (props) => {
+  return (
+    <Box
+      paddingX={5}
+      paddingY={2}
+      marginX={[0, 0, 0, -6]}
+      marginY={5}
+      border={1}
+      borderRadius={1}
+    >
+      {props.children}
+    </Box>
+  );
+};
+
+export default Callout;
