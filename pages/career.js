@@ -1,19 +1,17 @@
 import Box from "../components/Box";
 import Flexbox from "../components/Flexbox";
-import Text from "../components/Text";
 
 const jobs = [
-  {
-    company: "ArtCenter",
-    href: "https://www.artcenter.edu/",
-    positions: ["Assistant Professor"],
-    start: "2022-09-01",
-    end: "Present",
-    location: "Pasadena, CA",
-    description:
-      "Teaching generative design and transmedia at one of the world's most prestigious design schools",
-    isVisible: false,
-  },
+  // {
+  //   company: "ArtCenter",
+  //   href: "https://www.artcenter.edu/",
+  //   positions: ["Assistant Professor"],
+  //   start: "2022-09-01",
+  //   end: "Present",
+  //   location: "Pasadena, CA",
+  //   description:
+  //     "Teaching generative design and transmedia at one of the world's most prestigious design schools",
+  // },
   {
     company: "Fastly",
     href: "http://fastly.com",
@@ -23,7 +21,6 @@ const jobs = [
     location: "Remote",
     description:
       "Joined via acquisition of Signal Sciences. Promoted to Staff Software Engineer in recognition of continued effectiveness across several teams and features.",
-    isVisible: true,
   },
   {
     company: "Signal Sciences",
@@ -34,7 +31,6 @@ const jobs = [
     location: "Culver City, CA",
     description:
       "Built Cosmo, a robust React component library. Collaborated closely with designers. Provided technical mentorship and leadership to junior engineers.",
-    isVisible: true,
   },
   {
     company: "Spokeo",
@@ -45,7 +41,6 @@ const jobs = [
     location: "Pasadena, CA",
     description:
       "Created and maintained consistent, scalable, UI components. Provided technical consultation to design and product teams.",
-    isVisible: true,
   },
   {
     company: "Rosetta",
@@ -56,7 +51,6 @@ const jobs = [
     location: "San Luis Obispo, CA",
     description:
       "Created and distributed branded assets online. Survived the deep, dark ocean of buzz words and marketing lingo.",
-    isVisible: true,
   },
   {
     company: "DeviantART",
@@ -67,38 +61,33 @@ const jobs = [
     location: "Hollywood, CA",
     description:
       "Grew the world's largest online art community by researching and presenting strengths/weaknesses of several new products under consideration by an advisory committee.",
-    isVisible: true,
   },
-  {
-    company: "University Graphic Systems",
-    href: "http://ugs.calpoly.edu",
-    positions: ["Knowledge Manager"],
-    start: "2012-06-01",
-    end: "2013-06-20",
-    location: "San Luis Obispo, CA",
-    description:
-      "Documented and organized our student-run commercial print company's collective knowledge, including: procedures, billing history, customer information, historical pricing trends, etc.",
-    isVisible: false,
-  },
-  {
-    company: "Mustang Daily",
-    href: "http://mustangdaily.net",
-    positions: ["Advertising Designer"],
-    start: "2011-08-20",
-    end: "2012-10-02",
-    location: "San Luis Obispo, CA",
-    description:
-      "Designed ads that met clients' specification docs. Adhered to strict deadlines and client expectations.",
-    isVisible: false,
-  },
+  // {
+  //   company: "University Graphic Systems",
+  //   href: "http://ugs.calpoly.edu",
+  //   positions: ["Knowledge Manager"],
+  //   start: "2012-06-01",
+  //   end: "2013-06-20",
+  //   location: "San Luis Obispo, CA",
+  //   description:
+  //     "Documented and organized our student-run commercial print company's collective knowledge, including: procedures, billing history, customer information, historical pricing trends, etc.",
+  // },
+  // {
+  //   company: "Mustang Daily",
+  //   href: "http://mustangdaily.net",
+  //   positions: ["Advertising Designer"],
+  //   start: "2011-08-20",
+  //   end: "2012-10-02",
+  //   location: "San Luis Obispo, CA",
+  //   description:
+  //     "Designed ads that met clients' specification docs. Adhered to strict deadlines and client expectations.",
+  // },
 ];
 
 const Career = () => {
   return (
     <Flexbox flexDirection="column" gap={5}>
       {jobs.map((job, index) => {
-        if (!job.isVisible) return null;
-
         const startYear = new Date(job.start).toLocaleDateString("en-us", {
           year: "numeric",
         });
@@ -117,9 +106,9 @@ const Career = () => {
             <a href={job.href} target="_blank" rel="noreferrer">
               {job.company}
             </a>
-            <Text color="accent">{` ${duration}`}</Text>
+            {` ${duration}`}
             <Box />
-            <Text color="accent">{job.description}</Text>
+            {job.description}
           </Box>
         );
       })}

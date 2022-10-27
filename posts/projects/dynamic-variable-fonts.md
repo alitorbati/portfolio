@@ -3,7 +3,6 @@ title: "Dynamic variable fonts"
 summary: "An exploration of the unconventional use of variable fonts to express dynamic movement."
 date: "2018-09"
 url: "https://codepen.io/alitorbati/full/BMppEj"
-isVisible: true
 ---
 
 # Background

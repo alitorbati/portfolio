@@ -2,7 +2,6 @@
 title: "Nevada Museum of Art"
 date: "2021-04"
 url: "https://www.nevadaart.org/conference2021/"
-isVisible: true
 summary: "Art + Environment 2021 — Land Art: Past, Present, Futures."
 ---
 

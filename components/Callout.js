@@ -7,7 +7,7 @@ const Callout = (props) => {
       paddingY={2}
       marginX={[0, 0, 0, -6]}
       marginY={5}
-      border={1}
+      backgroundColor="backgroundLight"
       borderRadius={1}
     >
       {props.children}

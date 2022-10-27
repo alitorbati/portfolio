@@ -2,7 +2,6 @@
 title: "Reducing Visual Noise for a Better User Experience"
 date: "2016-10-21"
 url: "https://uxdesign.cc/reducing-visual-noise-for-a-better-user-experience-ae3407ff9c99"
-isVisible: true
 summary: "A critical analysis of what caused confusion on Spokeo’s Person Profiles, and the changes we made to improve our most data-dense product page."
 ---
 

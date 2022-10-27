@@ -2,32 +2,28 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
-import { sortByDate, filterIsVisible } from "../../utils";
+import { sortByDate } from "../../utils";
 import Box from "../../components/Box";
 import Grid from "../../components/Grid";
-import Text from "../../components/Text";
 
 const Projects = (props) => {
   const { posts } = props;
 
   return (
     <Grid gap={5} gridTemplateColumns={["100%", "repeat(2, 50%)"]}>
-      {posts
-        .filter(filterIsVisible)
-        .sort(sortByDate)
-        .map((post) => {
-          const href = path.join("projects", post.slug);
+      {posts.map((post) => {
+        const href = path.join("projects", post.slug);
 
-          return (
-            <Box key={post.frontmatter.title}>
-              <Link href={href}>
-                <a>{post.frontmatter.title}</a>
-              </Link>
-              <Box />
-              <Text color="accent">{post.frontmatter.summary}</Text>
-            </Box>
-          );
-        })}
+        return (
+          <Box key={post.frontmatter.title}>
+            <Link href={href}>
+              <a>{post.frontmatter.title}</a>
+            </Link>
+            <Box />
+            {post.frontmatter.summary}
+          </Box>
+        );
+      })}
     </Grid>
   );
 };
@@ -35,8 +31,9 @@ const Projects = (props) => {
 export default Projects;
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(path.join("posts", "projects"));
-  const posts = await Promise.all(
+  const filesPath = path.join("posts", "projects");
+  const files = fs.readdirSync(filesPath);
+  const allPosts = await Promise.all(
     files.map(async (file) => {
       const slug = file.replace(".md", "");
       const sourcePath = path.join("posts", "projects", file);
@@ -46,6 +43,7 @@ export async function getStaticProps() {
       return { slug, frontmatter };
     })
   );
+  const posts = allPosts.sort(sortByDate);
 
   return {
     props: {

@@ -2,7 +2,6 @@
 title: "Desire Paths and Design Systems"
 date: "2020-02-20"
 url: "https://building.signalsciences.com/ui-desire-paths/"
-isVisible: true
 summary: "Reducing choice and increasing options in a UI component library."
 ---
 

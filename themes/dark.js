@@ -6,15 +6,15 @@ const radii = space;
 
 const colors = {
   foreground: "#fff",
+  foregroundDark: "#ccc",
+  middle: "#888",
+  backgroundLight: "#333",
   background: "#222",
-  hint: "#444",
-  accent: "#888",
 };
 
 const borders = [
-  `1px solid ${colors.hint}`,
-  `1px solid ${colors.accent}`,
-  `2px solid ${colors.foreground}`,
+  `1px solid ${colors.middle}`,
+  `2px solid ${colors.foregroundDark}`,
 ];
 
 export default {

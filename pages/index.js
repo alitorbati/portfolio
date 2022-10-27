@@ -6,11 +6,9 @@ const Index = () => {
     <Box>
       <Text color="foreground">Ali Torbati</Text>
       <Box />
-      <Text color="accent">
-        My professional focus is on UI Engineering. This discipline is
-        expressive, nuanced and complex. It requires both deep and broad
-        knowledge, which is why I find it so rewarding.
-      </Text>
+      My professional focus is on UI Engineering. This discipline is expressive,
+      nuanced and complex. It requires both deep and broad knowledge, which is
+      why I find it so rewarding.
     </Box>
   );
 };

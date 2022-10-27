@@ -2,7 +2,6 @@
 title: "Parallaxify"
 date: "2015-09"
 url: "https://github.com/alitorbati/parallaxify"
-isVisible: true
 summary: "A JavaScript module to easily produce a parallax image effect."
 ---
 

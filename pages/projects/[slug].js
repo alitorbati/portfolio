@@ -12,9 +12,7 @@ const PostPage = (props) => {
 
   return (
     <Box>
-      <Text color="accent">
-        <Date value={frontmatter.date} />
-      </Text>
+      <Date value={frontmatter.date} />
       {frontmatter.url ? (
         <>
           {" · "}
@@ -24,14 +22,12 @@ const PostPage = (props) => {
         </>
       ) : null}
       <h1>{frontmatter.title}</h1>
-      <Text color="foreground" fontSize={[0, 1]}>
-        {frontmatter.summary}
-      </Text>
+      <Text fontSize={[0, 1]}>{frontmatter.summary}</Text>
       <Box marginBottom="6" />
       <div className="markdown-container">
         <MDXRemote compiledSource={compiledSource} frontmatter={frontmatter} />
       </div>
-      <Text color="foreground">■</Text>
+      <Text>■</Text>
     </Box>
   );
 };

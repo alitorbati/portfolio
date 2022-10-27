@@ -2,7 +2,6 @@
 title: "Housing Fair"
 date: "2012"
 url: "http://behance.net/gallery/6970799/Housing-Fair"
-isVisible: false
 summary: "Visual identity for the quarterly Cal Poly Housing Fair."
 ---
 

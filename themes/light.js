@@ -5,13 +5,17 @@ const space = [0, 5, 8, 13, 21, 34, 55];
 const radii = space;
 
 const colors = {
-  foreground: "#222",
-  background: "#fff",
-  hint: "#eee",
-  accent: "#888",
+  foreground: "#000",
+  foregroundDark: "#444",
+  middle: "#777",
+  backgroundLight: "#ddd",
+  background: "#eee",
 };
 
-const borders = [`1px solid ${colors.hint}`, `2px solid ${colors.foreground}`];
+const borders = [
+  `1px solid ${colors.middle}`,
+  `2px solid ${colors.foregroundDark}`,
+];
 
 export default {
   fontSizes,

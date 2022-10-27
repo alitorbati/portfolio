@@ -2,7 +2,6 @@
 title: "Phoenix Challenge"
 date: "2013"
 url: "http://behance.net/gallery/8745723/Pacific-Festival-Rebrand"
-isVisible: true
 summary: "International design and print competition."
 ---
 

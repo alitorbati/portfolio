@@ -60,25 +60,25 @@ const global = css({
     fontSize: "20px",
     fontWeight: "300",
     backgroundColor: "background",
-    color: "accent",
+    color: "middle",
   },
   "::selection": {
-    color: "background",
-    backgroundColor: "accent",
+    color: "middle",
+    backgroundColor: "backgroundLight",
   },
   body: {
     lineHeight: "1.62", // maybe too much. consider 1.4
     minHeight: "100vh",
   },
   a: {
-    color: "foreground",
+    color: "foregroundDark",
     textDecoration: "none",
     transition: "padding 0.1s, margin 0.1s",
   },
   "a:hover, a:focus-visible": {
     outline: 0,
     borderRadius: 1,
-    backgroundColor: "hint",
+    backgroundColor: "backgroundLight",
     paddingX: 1,
     paddingY: 1,
     marginX: -1,
@@ -91,18 +91,19 @@ const global = css({
     content: "'\\a0↗'", // non-breaking space
   },
   // h1-6 are "offset" inside/outside posts so that post content can be context-agnostic
+  "h1, h2, h3, h4, h5, h6": {
+    color: "foregroundDark",
+  },
   h1: {
-    color: "foreground",
     fontFamily: `Portfolio Headline, Portfolio Body, ${fontFallback}`,
     fontWeight: "bold",
     fontSize: [3, 4],
     lineHeight: 1,
     paddingBottom: 5,
-    borderBottom: 1,
+    borderBottom: 0,
     marginY: 5,
   },
   h2: {
-    color: "foreground",
     fontSize: [1, 2],
     lineHeight: 1,
     paddingBottom: 5,
@@ -110,19 +111,17 @@ const global = css({
     marginY: 5,
   },
   h3: {
-    color: "foreground",
-    fontSize: [0, 1],
     fontWeight: 600,
     marginY: 4,
+    textTransform: "uppercase",
   },
   p: {
     marginY: 4,
-    color: "accent",
   },
   code: {
     fontFamily: `Portfolio Monospace, Portfolio Body, ${fontFallback}`,
     fontSize: "85%",
-    backgroundColor: "hint",
+    backgroundColor: "backgroundLight",
     borderRadius: 1,
     paddingX: 1,
   },
@@ -139,8 +138,8 @@ const global = css({
   },
   hr: {
     marginY: 3,
-    border: 0,
-    borderBottom: 0,
+    border: "none",
+    borderBottom: 1,
   },
   em: {
     fontStyle: "italic",

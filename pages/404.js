@@ -1,4 +1,3 @@
-import Text from "../components/Text";
 import Box from "../components/Box";
 
 const Custom404 = () => {
@@ -6,9 +5,7 @@ const Custom404 = () => {
     <Box>
       404
       <Box marginBottom={1} />
-      <Text fontSize={0} color="accent">
-        Page not found
-      </Text>
+      Page not found
     </Box>
   );
 };

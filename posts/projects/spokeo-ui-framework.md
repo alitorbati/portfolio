@@ -2,7 +2,6 @@
 title: "Spokeo UI Framework"
 date: "2014"
 url: "http://spokeo.com"
-isVisible: false
 summary: "My first design system."
 ---
 
