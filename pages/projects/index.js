@@ -10,7 +10,7 @@ const Projects = (props) => {
   const { posts } = props;
 
   return (
-    <Grid gap={5} gridTemplateColumns={["100%", "repeat(2, 50%)"]}>
+    <Grid gap={5} gridTemplateColumns={["1fr", "repeat(2, 1fr)"]}>
       {posts.map((post) => {
         const href = path.join("projects", post.slug);
 

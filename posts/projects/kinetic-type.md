@@ -6,3 +6,5 @@ summary: "Breaking down and building up words, letterforms and sub-forms."
 ---
 
 Article coming soon
+
+<img src="/images/projects/kinetic-type/kinetic-type.gif" />
