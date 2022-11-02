@@ -24,9 +24,7 @@ const Header = () => {
 
           return (
             <Link href={path} key={path}>
-              <a>
-                <Text color={isCurrent ? "foreground" : null}>{title}</Text>
-              </a>
+              <Text color={isCurrent ? "foreground" : null}>{title}</Text>
             </Link>
           );
         })}

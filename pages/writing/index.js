@@ -16,9 +16,7 @@ const Writing = (props) => {
 
         return (
           <Box key={post.frontmatter.title}>
-            <Link href={href}>
-              <a>{post.frontmatter.title}</a>
-            </Link>
+            <Link href={href}>{post.frontmatter.title}</Link>
             <Box />
             {post.frontmatter.summary}
           </Box>
