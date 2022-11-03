@@ -22,11 +22,14 @@ const PostPage = (props) => {
         </>
       ) : null}
       <h1>{frontmatter.title}</h1>
-      <Text fontSize={[0, 1]}>{frontmatter.summary}</Text>
-      <Box marginBottom="6" />
+      <Text fontSize={[0, 1]} fontStyle="italic">
+        {frontmatter.summary}
+      </Text>
+      <Box marginBottom={6} />
       <div className="markdown-container">
         <MDXRemote compiledSource={compiledSource} frontmatter={frontmatter} />
       </div>
+      <Box marginBottom={6} />
       <Text>■</Text>
     </Box>
   );

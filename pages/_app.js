@@ -83,7 +83,7 @@ const MyApp = ({ Component, pageProps }) => {
         </Head>
         <Box maxWidth="70ch" margin="0 auto" padding={4}>
           <Navigation />
-          <Box marginBottom={4} />
+          <Box marginBottom={6} />
           <Box as="main">
             <Component {...pageProps} />
           </Box>

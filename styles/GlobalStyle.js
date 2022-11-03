@@ -2,53 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import css from "@styled-system/css";
 
-const fonts = `
-  @font-face {
-    font-family: Portfolio Headline;
-    src: url("/fonts/FKScreamer-Bold.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: Portfolio Body;
-    src: url("/fonts/PolySans-Slim.woff2") format("woff2");
-    font-weight: 300;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: Portfolio Body;
-    src: url("/fonts/PolySans-SlimItalic.woff2") format("woff2");
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: Portfolio Body;
-    src: url("/fonts/PolySans-Neutral.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: Portfolio Body;
-    src: url("/fonts/PolySans-NeutralItalic.woff2") format("woff2");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: Portfolio Body;
-    src: url("/fonts/PolySans-Median.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Portfolio Monospace";
-    src: url("/fonts/PolySans-SlimMono.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-  }
-`;
-
 const fontFallback = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
 const global = css({
@@ -56,8 +9,8 @@ const global = css({
     boxSizing: "border-box",
   },
   html: {
-    fontFamily: `Portfolio Body, ${fontFallback}`,
-    fontSize: "20px",
+    fontFamily: fontFallback,
+    fontSize: "24px",
     fontWeight: "300",
     backgroundColor: "background",
     color: "middle",
@@ -95,20 +48,18 @@ const global = css({
     color: "foregroundDark",
   },
   h1: {
-    fontFamily: `Portfolio Headline, Portfolio Body, ${fontFallback}`,
-    fontWeight: "bold",
-    fontSize: [3, 4],
+    fontWeight: "500",
+    fontSize: [2, 3],
     lineHeight: 1,
-    paddingBottom: 5,
-    borderBottom: 0,
-    marginY: 5,
+    paddingBottom: 4,
+    borderBottom: 1,
+    marginY: 3,
   },
   h2: {
     fontSize: [1, 2],
     lineHeight: 1,
-    paddingBottom: 5,
-    borderBottom: 0,
-    marginY: 5,
+    marginTop: 6,
+    marginBottom: 3,
   },
   h3: {
     fontWeight: 600,
@@ -126,11 +77,12 @@ const global = css({
     paddingX: 1,
   },
   blockquote: {
+    color: "foregroundDark",
     borderLeft: 1,
-    paddingLeft: 4,
+    paddingX: 4,
+    paddingY: 2,
+    backgroundColor: "backgroundLight",
     fontStyle: "italic",
-    fontSize: 1,
-    lineHeight: 1.2,
   },
   ul: {
     marginBottom: 3,
@@ -139,7 +91,7 @@ const global = css({
   hr: {
     marginY: 3,
     border: "none",
-    borderBottom: 1,
+    borderBottom: 2,
   },
   em: {
     fontStyle: "italic",
@@ -157,7 +109,6 @@ const global = css({
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  ${fonts}
   ${global}
 `;
 
