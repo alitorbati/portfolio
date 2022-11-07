@@ -6,7 +6,7 @@ import Flexbox from "../components/Flexbox";
 
 const paths = ["/", "/projects", "/writing", "/career", "/contact"];
 
-const Header = () => {
+const Navigation = () => {
   const router = useRouter();
 
   return (
@@ -33,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navigation;
