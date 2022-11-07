@@ -48,8 +48,8 @@ const global = css({
     color: "foregroundDark",
   },
   h1: {
-    fontWeight: "500",
     fontSize: [2, 3],
+    fontWeight: "600",
     lineHeight: 1,
     paddingBottom: 4,
     borderBottom: 1,
@@ -57,12 +57,13 @@ const global = css({
   },
   h2: {
     fontSize: [1, 2],
+    fontWeight: "500",
     lineHeight: 1,
     marginTop: 6,
     marginBottom: 3,
   },
   h3: {
-    fontWeight: 600,
+    fontWeight: 500,
     marginY: 4,
     textTransform: "uppercase",
   },
