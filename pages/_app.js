@@ -81,7 +81,7 @@ const MyApp = ({ Component, pageProps }) => {
         <Head>
           <title>Ali Torbati (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</title>
         </Head>
-        <Box maxWidth="70ch" margin="0 auto" padding={4}>
+        <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
           <Navigation />
           <Box marginBottom={6} />
           <Box as="main">
