@@ -10,7 +10,7 @@ const global = css({
   },
   html: {
     fontFamily: fontFallback,
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: "300",
     backgroundColor: "background",
     color: "middle",
