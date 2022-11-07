@@ -1,12 +1,9 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Box from "../components/Box";
 import Text from "../components/Text";
 import Flexbox from "../components/Flexbox";
 
-const paths = ["/", "/projects", "/writing", "/career", "/contact"];
-
-const Header = (props) => {
+const PostNavigation = (props) => {
   const { olderPost, newerPost } = props;
 
   return (
@@ -29,4 +26,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default PostNavigation;

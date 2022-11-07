@@ -1,11 +1,9 @@
 import fs from "fs";
 import path from "path";
-import Link from "next/link";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { sortByDate } from "../../utils";
 import Box from "../../components/Box";
-import Flexbox from "../../components/Flexbox";
 import Text from "../../components/Text";
 import Date from "../../components/Date";
 import PostNavigation from "../../components/PostNavigation";
