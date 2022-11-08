@@ -63,9 +63,9 @@ const global = css({
     marginBottom: 3,
   },
   h3: {
+    fontSize: [0, 1],
     fontWeight: 500,
     marginY: 4,
-    textTransform: "uppercase",
   },
   p: {
     marginY: 4,
