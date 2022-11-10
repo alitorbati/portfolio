@@ -43,7 +43,6 @@ const global = css({
   )):after`]: {
     content: "'\\a0↗'", // non-breaking space
   },
-  // h1-6 are "offset" inside/outside posts so that post content can be context-agnostic
   "h1, h2, h3, h4, h5, h6": {
     color: "foregroundDark",
     marginTop: 5,
