@@ -46,6 +46,8 @@ const global = css({
   // h1-6 are "offset" inside/outside posts so that post content can be context-agnostic
   "h1, h2, h3, h4, h5, h6": {
     color: "foregroundDark",
+    marginTop: 5,
+    marginBottom: 3,
   },
   h1: {
     fontSize: [2, 3],
@@ -53,19 +55,15 @@ const global = css({
     lineHeight: 1,
     paddingBottom: 4,
     borderBottom: 1,
-    marginY: 3,
   },
   h2: {
     fontSize: [1, 2],
     fontWeight: "500",
     lineHeight: 1,
-    marginTop: 6,
-    marginBottom: 3,
   },
   h3: {
     fontSize: [0, 1],
     fontWeight: 500,
-    marginY: 4,
   },
   p: {
     marginY: 4,
