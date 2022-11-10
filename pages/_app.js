@@ -20,7 +20,9 @@ const components = {
   h4: (props) => <h5 {...props} />,
 };
 
-const MyApp = ({ Component, pageProps }) => {
+const App = (props) => {
+  const { Component, pageProps } = props;
+
   if (
     typeof window !== "undefined" &&
     typeof window.navigator !== "undefined" &&
@@ -93,4 +95,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default MyApp;
+export default App;
