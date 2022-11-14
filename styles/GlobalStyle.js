@@ -75,12 +75,10 @@ const global = css({
     paddingX: 1,
   },
   blockquote: {
-    color: "foregroundDark",
-    borderLeft: 1,
+    borderLeft: 2,
     paddingX: 4,
-    paddingY: 2,
-    backgroundColor: "backgroundLight",
     fontStyle: "italic",
+    marginLeft: [0, -4],
   },
   ul: {
     marginBottom: 3,
