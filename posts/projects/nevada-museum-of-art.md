@@ -67,6 +67,6 @@ This project was featured in [Communication Arts](https://www.commarts.com/proje
 
 Amy, who wrote the copy for the conference and represented Nevada Museum of Art throughout the process, had these kind words to share:
 
-> I just love working with you both. So easy and the work always gets better with each version. Thank you for your patience and attention to detail.
+> "I just love working with you both. So easy and the work always gets better with each version. Thank you for your patience and attention to detail."
 >
 > — Amy Oppio
