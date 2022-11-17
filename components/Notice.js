@@ -1,6 +1,6 @@
 import Box from "../components/Box";
 
-const Callout = (props) => {
+const Notice = (props) => {
   return (
     <Box
       paddingX={5}
@@ -15,4 +15,4 @@ const Callout = (props) => {
   );
 };
 
-export default Callout;
+export default Notice;

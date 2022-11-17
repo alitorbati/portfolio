@@ -5,11 +5,11 @@ url: "https://uxdesign.cc/reducing-visual-noise-for-a-better-user-experience-ae3
 summary: "A critical analysis of what caused confusion on Spokeo’s Person Profiles, and the changes we made to improve our most data-dense product page."
 ---
 
-<Callout>
+<Notice>
 
 _This article was edited by [Sean D'Auria](https://www.seandauria.com/) and originally published on [Medium](https://uxdesign.cc/reducing-visual-noise-for-a-better-user-experience-ae3407ff9c99)._
 
-</Callout>
+</Notice>
 
 ![Overview](/images/writing/reducing-visual-noise/overview.png)
 

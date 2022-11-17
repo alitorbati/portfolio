@@ -5,7 +5,7 @@ url: "https://building.signalsciences.com/ui-desire-paths/"
 summary: "Reducing choice and increasing options in a UI component library."
 ---
 
- <Callout>
+ <Notice>
 
 _This article was edited by [Ashley Soo](http://www.ashleysoo.com/portfolio/) and originally published on [Behind the Firewall](https://building.signalsciences.com/ui-desire-paths/), the Signal Sciences engineering blog. It was one of our most-viewed articles, and garnered attention from several prominent industry figures:_
 
@@ -14,7 +14,7 @@ _This article was edited by [Ashley Soo](http://www.ashleysoo.com/portfolio/) an
 - [Frank Bach, Headspace](https://twitter.com/zendadddy/status/1230590836410208257?s=20&t=MTt72vs-Q0IMlSvn3uJFRw)
 - [Maya Hampton, REI](https://twitter.com/HiMaya/status/1233518890543656962?s=20&t=MTt72vs-Q0IMlSvn3uJFRw)
 
- </Callout>
+ </Notice>
 
 Most tech companies understand the importance of design systems by now, and we’re no different. Creating a collection of reusable and centralized components guided by a set of clear standards is a good approach to building a consistent product. At Signal Sciences, our design system exists as a set of React components called [Cosmo](https://dashboard.signalsciences.net/static/ui/styleguide/#alert). Our original strategy was to create unique components for each use case, and this worked well for a while. But as our UI became more complex, our designers began to feel that these components restricted creativity and prevented them from designing elegant solutions.
 
