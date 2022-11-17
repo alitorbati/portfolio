@@ -27,11 +27,11 @@ After giving it some thought, we had a breakthrough: By decoupling the video and
 
 As is often the case, our breakthrough seems obvious in hindsight. But at the time it was well-received as a clever solution to the problem, and it holds up.
 
-## Polygon mask
+## Polygon video mask
 
-![J. Cole in "a m a r i"](/images/projects/heirs-entertainment/shape.png)
+![Polygon video mask](/images/projects/heirs-entertainment/mask.png)
 
-The second major challenge was more technical than conceptual. The clients wanted a branded shape to frame each video preview, but the "grain of the web" doesn't easily allow for non-rectangular shapes to mask videos. Of course we could have edited the video previews to include the shapes, but that would have made future updates more cumbersome and possibly inconsistent. Also, if the masked shape was included in the video source instead of the code, we would be super tied-in to this design direction in the future.
+The second major challenge was more technical than conceptual. The clients wanted a branded shape to frame each project preview, but the "grain of the web" doesn't easily allow for non-rectangular polygons to mask videos. Of course we could have edited the video preview sources to include the shapes, but that would have made future updates more cumbersome and possibly inconsistent. Also, if the masked shape was included in the video source instead of the code, we would be super tied-in to this design direction in the future.
 
 Our solution was to use the CSS property `clip-path` to reference an SVG embedded in the webpage. The SVG included the desired shape, and we use that shape to mask videos. In the future if we want to change that shape or remove it entirely, we will be able to do so with minimal code changes and no further video editing.
 

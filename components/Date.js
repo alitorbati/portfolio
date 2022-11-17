@@ -2,9 +2,9 @@ const FomattedDate = (props) => {
   const { value } = props;
 
   return new Date(value).toLocaleDateString("en-us", {
-    year: "numeric",
-    month: "short",
+    month: "long",
     day: "numeric",
+    year: "numeric",
   });
 };
 
