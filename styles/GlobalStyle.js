@@ -95,8 +95,8 @@ const global = css({
   strong: {
     fontWeight: "600",
   },
-  img: {
-    borderRadius: 1,
+  "img, video": {
+    borderRadius: 2,
   },
   ".markdown-container img, .markdown-container video": {
     width: "100%",

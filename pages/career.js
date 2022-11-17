@@ -1,5 +1,8 @@
+import css from "@styled-system/css";
+import Link from "next/link";
 import Box from "../components/Box";
-import Flexbox from "../components/Flexbox";
+import Text from "../components/Text";
+import Grid from "../components/Grid";
 
 const jobs = [
   // {
@@ -60,33 +63,47 @@ const jobs = [
 
 const Career = () => {
   return (
-    <Flexbox flexDirection="column" gap={5}>
+    <Grid gap={5} gridTemplateColumns={["auto", "1fr auto"]}>
       {jobs.map((job, index) => {
-        const startYear = new Date(job.start).toLocaleDateString("en-us", {
-          year: "numeric",
-        });
+        const startYear = new Date(job.start).getFullYear();
 
+        // handles endYear being "Present"
         const endYear = Date.parse(job.end)
-          ? new Date(job.end).toLocaleDateString("en-us", {
-              year: "numeric",
-            })
+          ? new Date(job.end).getFullYear()
           : job.end;
 
         const duration =
           startYear === endYear ? startYear : `${startYear}–${endYear}`;
 
         return (
-          <Box key={index}>
-            <a href={job.href} target="_blank" rel="noreferrer">
-              {job.company}
-            </a>
-            {` ${duration}`}
-            <Box />
-            {job.description}
-          </Box>
+          <>
+            <Text
+              css={css({
+                display: ["none", "initial"],
+                whiteSpace: "nowrap",
+                textAlign: "right",
+              })}
+            >
+              {duration}
+            </Text>
+            <Box key={index}>
+              <Link href={job.href} target="_blank" rel="noreferrer">
+                {job.company}
+              </Link>
+              <Text
+                css={css({
+                  display: ["initial", "none"],
+                })}
+              >
+                {` ${duration}`}
+              </Text>
+              <Box />
+              {job.description}
+            </Box>
+          </>
         );
       })}
-    </Flexbox>
+    </Grid>
   );
 };
 
