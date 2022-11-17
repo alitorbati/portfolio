@@ -19,7 +19,7 @@ const PostPage = (props) => {
         <>
           {" · "}
           <a href={frontmatter.url} target="_blank" rel="noreferrer">
-            View original article
+            View live project
           </a>
         </>
       ) : null}
@@ -40,7 +40,7 @@ const PostPage = (props) => {
 };
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("posts", "writing"));
+  const files = fs.readdirSync(path.join("posts", "sketches"));
   const paths = files.map((filename) => {
     const slug = filename.replace(".md", "");
     return { params: { slug } };
@@ -55,17 +55,17 @@ export async function getStaticPaths() {
 export async function getStaticProps(props) {
   // individual
   const { slug } = props.params;
-  const sourcePath = path.join("posts", "writing", `${slug}.md`);
+  const sourcePath = path.join("posts", "sketches", `${slug}.md`);
   const source = fs.readFileSync(sourcePath, "utf-8");
   const mdxSource = await serialize(source, { parseFrontmatter: true });
 
   // prev/next
-  const filesPath = path.join("posts", "writing");
+  const filesPath = path.join("posts", "sketches");
   const files = fs.readdirSync(filesPath);
   const allPosts = await Promise.all(
     files.map(async (file) => {
       const slug = file.replace(".md", "");
-      const sourcePath = path.join("posts", "writing", file);
+      const sourcePath = path.join("posts", "sketches", file);
       const source = fs.readFileSync(sourcePath, "utf-8");
       const mdxSource = await serialize(source, { parseFrontmatter: true });
       const { frontmatter } = mdxSource;

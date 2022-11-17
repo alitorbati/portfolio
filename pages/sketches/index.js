@@ -4,15 +4,15 @@ import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import { sortByDate } from "../../utils";
 import Box from "../../components/Box";
-import Flexbox from "../../components/Flexbox";
+import Grid from "../../components/Grid";
 
-const Writing = (props) => {
+const Sketches = (props) => {
   const { posts } = props;
 
   return (
-    <Flexbox flexDirection="column" gap={5}>
+    <Grid gap={5} gridTemplateColumns={["1fr", "repeat(2, 1fr)"]}>
       {posts.map((post) => {
-        const href = path.join("writing", post.slug);
+        const href = path.join("sketches", post.slug);
 
         return (
           <Box key={post.frontmatter.title}>
@@ -22,19 +22,19 @@ const Writing = (props) => {
           </Box>
         );
       })}
-    </Flexbox>
+    </Grid>
   );
 };
 
-export default Writing;
+export default Sketches;
 
 export async function getStaticProps() {
-  const filesPath = path.join("posts", "writing");
+  const filesPath = path.join("posts", "sketches");
   const files = fs.readdirSync(filesPath);
   const allPosts = await Promise.all(
     files.map(async (file) => {
       const slug = file.replace(".md", "");
-      const sourcePath = path.join("posts", "writing", file);
+      const sourcePath = path.join("posts", "sketches", file);
       const source = fs.readFileSync(sourcePath, "utf-8");
       const mdxSource = await serialize(source, { parseFrontmatter: true });
       const { frontmatter } = mdxSource;

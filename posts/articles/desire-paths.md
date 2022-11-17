@@ -20,7 +20,7 @@ Most tech companies understand the importance of design systems by now, and weâ€
 
 Our designers wanted the flexibility to create designs within the boundaries of our _theme_, but outside the boundaries of our existing components. They wanted the ability to bend rules, challenge patterns, and explore beyond the edges of what we had already created. To some extent they were already doing this, and so the burden of small tweaks and one-off changes often fell on the shoulders of engineers. Engineers would have to figure out how styles differ from a defined component, and then add a class and some CSS for an effective override or augmentation.
 
-![This mockup needed many one-off changes](/images/writing/desire-paths/rules-page-signal-sciences.png)
+![This mockup needed many one-off changes](/images/articles/desire-paths/rules-page-signal-sciences.png)
 
 For example, The `Well` component (above) had opinions about `backgroundColor`, `padding`, and `margin`. To build this UI we had to add a `border` to both `Well`s, and remove the `backgroundColor` from one. This required engineers to
 
@@ -66,7 +66,7 @@ As we built new features and identified new patterns, our original set of assump
 
 On top of all that, we were running into other, more subtle problems&mdash;similar concepts were captured in unique components (e.g., `Section`, `Panel`, and `Well`). When looking at a mockup, an engineer would have trouble making an informed decision about which component to reach for. Hereâ€™s an example of where we encountered this tension:
 
-![Generic components may better serve our needs](/images/writing/desire-paths/events-box-component-signal-sciences.png)
+![Generic components may better serve our needs](/images/articles/desire-paths/events-box-component-signal-sciences.png)
 
 - If two elements needed vertical space between them, which type of container component should they be in? And further, is that even a distinction that a designer would make?
 - Does a designer care if two elements are separated by a `Section` or `Panel`, or just that there is a particular number of pixels between them?
