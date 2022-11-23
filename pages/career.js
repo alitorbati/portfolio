@@ -3,6 +3,7 @@ import Link from "next/link";
 import Box from "../components/Box";
 import Text from "../components/Text";
 import Grid from "../components/Grid";
+import Flexbox from "../components/Flexbox";
 
 const jobs = [
   // {
@@ -59,51 +60,94 @@ const jobs = [
     description:
       "Grew the world's largest online art community by researching and presenting strengths/weaknesses of several new products under consideration by an advisory committee.",
   },
+  {
+    company: "Cal Poly, San Luis Obispo",
+    href: "http://calpoly.com",
+    positions: ["Student"],
+    start: "2009-09-01",
+    end: "2013-09-01",
+    description: "B.S. Graphic Communication",
+  },
 ];
+
+const printItems = ["Ali Torbati", "ali.torbati@gmail.com", "323-251-1991"];
 
 const Career = () => {
   return (
-    <Grid gap={5} gridTemplateColumns={["auto", "1fr auto"]}>
-      {jobs.map((job, index) => {
-        const startYear = new Date(job.start).getFullYear();
+    <Box>
+      <Box
+        css={{
+          "@media not print": {
+            display: "none",
+          },
+        }}
+      >
+        <Flexbox justifyContent="space-between" gap={5}>
+          {printItems.map((item) => {
+            return <Text key={item}>{item}</Text>;
+          })}
+        </Flexbox>
+        <Box marginBottom={6} />
+      </Box>
+      <Grid gap={5} gridTemplateColumns={["auto", "1fr auto"]}>
+        {jobs.map((job, index) => {
+          const startYear = new Date(job.start).getFullYear();
 
-        // handles endYear being "Present"
-        const endYear = Date.parse(job.end)
-          ? new Date(job.end).getFullYear()
-          : job.end;
+          // handles endYear being "Present"
+          const endYear = Date.parse(job.end)
+            ? new Date(job.end).getFullYear()
+            : job.end;
 
-        const duration =
-          startYear === endYear ? startYear : `${startYear}–${endYear}`;
+          const duration =
+            startYear === endYear ? startYear : `${startYear}–${endYear}`;
 
-        return (
-          <>
-            <Text
-              css={css({
-                display: ["none", "initial"],
-                whiteSpace: "nowrap",
-                textAlign: "right",
-              })}
-            >
-              {duration}
-            </Text>
-            <Box key={index}>
-              <Link href={job.href} target="_blank" rel="noreferrer">
-                {job.company}
-              </Link>
+          return (
+            <>
               <Text
                 css={css({
-                  display: ["initial", "none"],
+                  display: ["none", "initial"],
+                  whiteSpace: "nowrap",
+                  textAlign: "right",
                 })}
               >
-                {` ${duration}`}
+                {duration}
               </Text>
-              <Box />
-              {job.description}
-            </Box>
-          </>
-        );
-      })}
-    </Grid>
+              <Box key={index}>
+                <Link href={job.href} target="_blank" rel="noreferrer">
+                  {job.company}
+                </Link>
+                <Text
+                  css={css({
+                    display: ["initial", "none"],
+                  })}
+                >
+                  {` ${duration}`}
+                </Text>
+                <Box />
+                {job.description}
+              </Box>
+            </>
+          );
+        })}
+      </Grid>
+      <Box
+        css={{
+          "@media print": {
+            display: "none",
+          },
+        }}
+      >
+        <Box marginBottom={6} />
+        <Flexbox justifyContent="space-around">
+          <a
+            href="#"
+            onClick={typeof window !== "undefined" ? window.print : null}
+          >
+            Download resume
+          </a>
+        </Flexbox>
+      </Box>
+    </Box>
   );
 };
 

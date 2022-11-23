@@ -10,7 +10,15 @@ const Navigation = () => {
   const router = useRouter();
 
   return (
-    <Box as="nav" paddingBottom={3}>
+    <Box
+      as="nav"
+      paddingBottom={3}
+      css={{
+        "@media print": {
+          display: "none",
+        },
+      }}
+    >
       <Flexbox
         alignItems="center"
         justifyContent="space-between"

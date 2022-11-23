@@ -1,9 +1,12 @@
+import Link from "next/link";
 import Box from "../components/Box";
+import Text from "../components/Text";
 
 const links = [
   {
     label: "email",
     href: "mailto:ali.torbati@gmail.com",
+    comment: "ali.torbati@gmail.com",
   },
   {
     label: "github",
@@ -37,9 +40,10 @@ const Contact = () => {
         {links.map((link) => {
           return (
             <Box marginBottom={1} as="li" key={link.href}>
-              <a href={link.href} target="_blank" rel="noreferrer">
+              <Link href={link.href} target="_blank" rel="noreferrer">
                 {link.label}
-              </a>
+              </Link>
+              {link.comment ? <Text> — {link.comment}</Text> : null}
             </Box>
           );
         })}
