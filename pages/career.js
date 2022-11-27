@@ -143,7 +143,7 @@ const Career = () => {
             href="#"
             onClick={typeof window !== "undefined" ? window.print : null}
           >
-            Download resume
+            Download
           </a>
         </Flexbox>
       </Box>
