@@ -21,7 +21,7 @@ Throughout the project we encountered several constructive challenges. The creat
 
 <Video source="/images/projects/heirs-entertainment/boomerang.mp4" />
 
-The first big challenge was the boomerang-style videos. The clients were insistent that when hovered, the video previews should a) play sound, and b) boomerang. This posed an immediate issue - playing audio forwards and backwards would sound awful. If we were to hover the video and play a few seconds forward then a few seconds backward as the client wanted, we were sure the result would be unsatisfactory and not up to either party's standards.
+The first big challenge was the boomerang-style videos. The clients were insistent that when hovered, the video previews should a) play sound, and b) boomerang. This posed an immediate issue - playing audio forwards and backwards would sound awful. If we were to hover the video and play a few seconds forward then a few seconds backward, we were sure the result would be unsatisfactory and not up to either party's standards.
 
 After giving it some thought, we had a breakthrough: By decoupling the video and audio, we could play the video forwards and backwards while letting the audio track play straight through. Another benefit of this approach was that it allowed us to arbitrarily pick the best independent audio and video snippets for the preview, even if they didn't happen to coincide in the actual published work.
 
