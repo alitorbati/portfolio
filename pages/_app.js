@@ -1,4 +1,5 @@
 import * as React from "react";
+import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import Head from "next/head";
 import GlobalStyle from "../styles/GlobalStyle";
@@ -10,9 +11,16 @@ import dark from "../themes/dark";
 import Navigation from "../components/Navigation";
 import { MDXProvider } from "@mdx-js/react";
 
+// needs help
+const ThreeUp = styled("div")`
+  display: flex;
+  width: calc(100% / 3);
+`;
+
 const components = {
   Notice,
   Video,
+  ThreeUp,
   // re-map markdown headers so that the page title is the proper h1, and subsequent headers are "downsized"
   h1: (props) => <h2 {...props} />,
   h2: (props) => <h3 {...props} />,

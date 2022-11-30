@@ -2,7 +2,7 @@
 title: "Nevada Museum of Art"
 date: "2021-04"
 url: "https://www.nevadaart.org/conference2021/"
-summary: "Art + Environment 2021 — Land Art: Past, Present, Futures."
+summary: 'Microsite for exhibit and conference "Art + Environment 2021 — Land Art: Past, Present, Futures."'
 ---
 
 <Video source="/images/projects/nevada-museum-of-art/overview.mp4" />

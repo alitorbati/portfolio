@@ -2,7 +2,7 @@
 title: "HEIRS Entertainment"
 date: "2020-08"
 url: "https://heirs.us"
-summary: '"Black-owned mixed media vernacular of choice for pain and struggle."'
+summary: 'Portfolio site representing and elevating "black-owned mixed media vernacular of choice for pain and struggle."'
 ---
 
 <Video source="/images/projects/heirs-entertainment/overview.mp4" />
@@ -34,7 +34,3 @@ As is often the case, our breakthrough seems obvious in hindsight. But at the ti
 The second major challenge was more technical than conceptual. The clients wanted a branded shape to frame each project preview, but the "grain of the web" doesn't easily allow for non-rectangular polygons to mask videos. Of course we could have edited the video preview sources to include the shapes, but that would have made future updates more cumbersome and possibly inconsistent. Also, if the masked shape was included in the video source instead of the code, we would be super tied-in to this design direction in the future.
 
 Our solution was to use the CSS property `clip-path` to reference an SVG embedded in the webpage. The SVG included the desired shape, and we use that shape to mask videos. In the future if we want to change that shape or remove it entirely, we will be able to do so with minimal code changes and no further video editing.
-
-# Outro
-
-The HEIRS site is an open conversation and ongoing effort. Check in for updates :)
