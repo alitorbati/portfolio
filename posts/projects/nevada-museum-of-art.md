@@ -45,7 +45,7 @@ Finally, the website's accent color gradually shifts as the user scrolls the pag
 
 In order for windspeed to adjust dynamically even if the user is on the page for a while, an API is polled once per second. The realtime windspeed value is parsed and used to update the flag's current speed.
 
-## Off-canvas animation
+## Pausing off-canvas animation
 
 Since processing the flag's movement is computationally expensive, we pause all API calls, value calculations, and rendering when the flag is off-screen. This allows us to allocate resources to the flag when it is the prominent design element, then save computational cycles when the user is no longer interacting with the flag. If the flag is scrolled back into view, all behaviors resume as before.
 
