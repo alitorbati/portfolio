@@ -14,14 +14,18 @@ const PostNavigation = (props) => {
           <br />
           <Link href={olderPost.slug}>{olderPost.frontmatter.title}</Link>
         </Box>
-      ) : null}
+      ) : (
+        <Box />
+      )}
       {newerPost ? (
         <Box style={{ textAlign: "right" }}>
           <Text>Newer</Text>
           <br />
           <Link href={newerPost.slug}>{newerPost.frontmatter.title}</Link>
         </Box>
-      ) : null}
+      ) : (
+        <Box />
+      )}
     </Flexbox>
   );
 };
