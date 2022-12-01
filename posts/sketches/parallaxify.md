@@ -5,7 +5,7 @@ url: "https://github.com/alitorbati/parallaxify"
 summary: "A JavaScript module to easily produce a parallax image effect."
 ---
 
-![Demo](/images/projects/parallaxify/demo.gif)
+![Demo](/images/sketches/parallaxify/demo.gif)
 
 While building a microsite for a family member I wanted to include an elegant parallax image effect on scroll. I wasn't able to find an easy, reusable solution online. I created my own solution, and published it for anyone to use.
 
