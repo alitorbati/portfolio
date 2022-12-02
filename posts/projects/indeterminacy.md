@@ -2,7 +2,7 @@
 title: "Indeterminacy"
 date: "2018-11"
 url: "https://alitorbati.github.io/disarray"
-summary: "Interactive installation inspired by John Cage’s method for composing with chance that gives users the power to create and print their own generative posters."
+summary: "Interactive installation that gives users the power to create and share their own generative posters."
 ---
 
 ![Animation](/images/projects/indeterminacy/animation-black.gif)
