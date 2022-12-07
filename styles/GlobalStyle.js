@@ -34,9 +34,7 @@ const global = css({
     borderRadius: 1,
     backgroundColor: "backgroundLight",
     paddingX: 1,
-    paddingY: 1,
     marginX: -1,
-    marginY: -1,
   },
   [`a[href]:not(:where(
     [href^="#"],
