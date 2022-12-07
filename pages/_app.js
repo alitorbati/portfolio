@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import GlobalStyle from "../styles/GlobalStyle";
 import Box from "../components/Box";
@@ -8,7 +9,7 @@ import Notice from "../components/Notice";
 import Video from "../components/Video";
 import light from "../themes/theme";
 import dark from "../themes/dark";
-import Navigation from "../components/Navigation";
+import Navigation, { paths } from "../components/Navigation";
 import { MDXProvider } from "@mdx-js/react";
 
 // needs help
@@ -84,12 +85,19 @@ const App = (props) => {
       });
   }, []);
 
+  const router = useRouter();
+  const currentPath = paths.find((path) => {
+    return path.href === router.asPath;
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <MDXProvider components={components}>
         <GlobalStyle />
         <Head>
-          <title>Ali Torbati (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</title>
+          <title>
+            {currentPath ? `${currentPath.name} • Ali Torbati` : "Ali Torbati"}
+          </title>
         </Head>
         <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
           <Navigation />

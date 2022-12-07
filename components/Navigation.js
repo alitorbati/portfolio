@@ -7,7 +7,7 @@ import Flexbox from "../components/Flexbox";
 export const paths = [
   {
     href: "/",
-    name: "Index",
+    name: "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
     description:
       "My professional focus is on UI Engineering. This discipline is expressive,nuanced and complex. It requires both deep and broad knowledge, which is why I find it so rewarding.",
   },
