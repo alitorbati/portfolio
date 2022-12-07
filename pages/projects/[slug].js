@@ -14,19 +14,20 @@ const PostPage = (props) => {
 
   return (
     <Box>
+      <h1>{frontmatter.title}</h1>
+      <Text fontSize={[0, 1]} fontStyle="italic">
+        {frontmatter.summary}
+      </Text>
+      <Box marginBottom={5} />
       <Date value={frontmatter.date} />
       {frontmatter.url ? (
         <>
           {" · "}
           <a href={frontmatter.url} target="_blank" rel="noreferrer">
-            View live project
+            Live project
           </a>
         </>
       ) : null}
-      <h1>{frontmatter.title}</h1>
-      <Text fontSize={[0, 1]} fontStyle="italic">
-        {frontmatter.summary}
-      </Text>
       <Box marginBottom={6} />
       <div className="markdown-container">
         <MDXRemote compiledSource={compiledSource} frontmatter={frontmatter} />
