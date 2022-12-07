@@ -5,8 +5,6 @@ url: "http://behance.net/gallery/7188509/Printed-Electronics"
 summary: "Research into advanced printing technology."
 ---
 
-Article coming soon
-
 # Background
 
 In my senior year at Cal Poly, I took a class investigating the materials and processes required to print electronics. I screen printed electroluminescent and conductive inks on plastic sheets to create circuits that could be connected to batteries.
