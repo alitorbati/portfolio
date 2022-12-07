@@ -1,14 +1,10 @@
-const fontSizes = ["1em", "1.62em", "2.62em", "4.24em", "6.86em"];
-
-const space = [0, 5, 8, 13, 21, 34, 55];
-
-const radii = space;
+import theme from "./theme";
 
 const colors = {
   foreground: "#fff",
-  foregroundDark: "#ccc",
-  middle: "#888",
-  backgroundLight: "#333",
+  foregroundDark: "#eee",
+  middle: "#999",
+  backgroundLight: "#444",
   background: "#222",
 };
 
@@ -20,9 +16,7 @@ const borders = [
 ];
 
 export default {
-  fontSizes,
-  space,
-  radii,
+  ...theme,
   colors,
   borders,
 };

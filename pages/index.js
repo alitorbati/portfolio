@@ -1,12 +1,22 @@
+import Link from "next/link";
 import Box from "../components/Box";
+import Flexbox from "../components/Flexbox";
+import { paths } from "../components/Navigation";
 
 const Index = () => {
+  // return Projects(props);
   return (
-    <Box>
-      My professional focus is on UI Engineering. This discipline is expressive,
-      nuanced and complex. It requires both deep and broad knowledge, which is
-      why I find it so rewarding.
-    </Box>
+    <Flexbox flexDirection="column" gap={5}>
+      {paths.map((path) => {
+        return (
+          <Box key={path.href}>
+            <Link href={path.href}>{path.name}</Link>
+            <Box display="inline-block" marginRight={3} />
+            {path.description}
+          </Box>
+        );
+      })}
+    </Flexbox>
   );
 };
 

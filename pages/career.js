@@ -64,8 +64,10 @@ const jobs = [
     company: "Cal Poly, San Luis Obispo",
     href: "http://calpoly.com",
     positions: ["Student"],
-    start: "2009-09-01",
-    end: "2013-09-01",
+    // start: "2009-09-01",
+    // end: "2013-09-01",
+    start: "2009",
+    end: "2013",
     description: "B.S. Graphic Communication",
   },
 ];
@@ -91,13 +93,8 @@ const Career = () => {
       </Box>
       <Grid gap={5} gridTemplateColumns={["auto", "1fr auto"]}>
         {jobs.map((job, index) => {
-          const startYear = new Date(job.start).getFullYear();
-
-          // handles endYear being "Present"
-          const endYear = Date.parse(job.end)
-            ? new Date(job.end).getFullYear()
-            : job.end;
-
+          const startYear = job.start.split("-")[0];
+          const endYear = job.end.split("-")[0];
           const duration =
             startYear === endYear ? startYear : `${startYear}–${endYear}`;
 

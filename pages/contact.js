@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Box from "../components/Box";
 import Text from "../components/Text";
+import Flexbox from "../components/Flexbox";
 
 const links = [
   {
@@ -28,18 +29,19 @@ const links = [
 
 const Contact = () => {
   return (
-    <Box>
-      <Box
-        as="img"
-        src="images/avatar.jpg"
-        alt="Photo of Ali Torbati"
-        maxWidth="140px"
-      />
-      <Box marginBottom={4} />
-      <Box as="ul">
+    <Flexbox gap={5}>
+      <Box>
+        <Box
+          as="img"
+          src="images/avatar.jpg"
+          alt="Photo of Ali Torbati"
+          maxWidth="140px"
+        />
+      </Box>
+      <Flexbox flexDirection="column" gap={1}>
         {links.map((link) => {
           return (
-            <Box marginBottom={1} as="li" key={link.href}>
+            <Box key={link.href}>
               <Link href={link.href} target="_blank" rel="noreferrer">
                 {link.label}
               </Link>
@@ -47,8 +49,8 @@ const Contact = () => {
             </Box>
           );
         })}
-      </Box>
-    </Box>
+      </Flexbox>
+    </Flexbox>
   );
 };
 

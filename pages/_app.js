@@ -6,7 +6,7 @@ import GlobalStyle from "../styles/GlobalStyle";
 import Box from "../components/Box";
 import Notice from "../components/Notice";
 import Video from "../components/Video";
-import light from "../themes/light";
+import light from "../themes/theme";
 import dark from "../themes/dark";
 import Navigation from "../components/Navigation";
 import { MDXProvider } from "@mdx-js/react";

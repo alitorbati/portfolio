@@ -10,7 +10,7 @@ const global = css({
   },
   html: {
     fontFamily: fontFallback,
-    fontSize: "20px",
+    fontSize: "18px",
     fontWeight: "300",
     backgroundColor: "background",
     color: "middle",
@@ -20,13 +20,14 @@ const global = css({
     backgroundColor: "backgroundLight",
   },
   body: {
-    lineHeight: "1.62", // maybe too much. consider 1.4
+    lineHeight: "1.5",
     minHeight: "100vh",
   },
   a: {
     color: "foregroundDark",
     textDecoration: "none",
-    transition: "padding 0.1s, margin 0.1s",
+    display: "inline-block",
+    fontWeight: "500",
   },
   "a:hover, a:focus-visible": {
     outline: 0,

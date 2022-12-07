@@ -5,11 +5,11 @@ const space = [0, 5, 8, 13, 21, 34, 55];
 const radii = space;
 
 const colors = {
-  foreground: "#000",
+  foreground: "#222",
   foregroundDark: "#444",
-  middle: "#777",
-  backgroundLight: "#ddd",
-  background: "#eee",
+  middle: "#999",
+  backgroundLight: "#eee",
+  background: "#fff",
 };
 
 const borders = [
