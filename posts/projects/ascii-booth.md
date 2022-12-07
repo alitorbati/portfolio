@@ -30,7 +30,7 @@ The interface shows users what will print in realtime. When the user is ready, t
 
 Since the whole document is text, there’s a unique opportunity for messaging: event name, location, time, sponsors, secret codes, ASCII logos, etc. The footer can be changed for each event.
 
-# Physical Build
+# Physical build
 
 ![Diagram](/images/projects/ascii-booth/diagram.png)
 
@@ -44,7 +44,7 @@ Ultimately, we were able to create a single-button experience that is easy to ex
 
 # Hello, world
 
-## Run 0: ArtCenter Grad Show
+## Run 0: ArtCenter grad show
 
 <ThreeUp>
 <Video source="/images/projects/ascii-booth/instagram-1.mp4" />
