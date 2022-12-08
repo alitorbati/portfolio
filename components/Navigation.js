@@ -9,12 +9,12 @@ export const paths = [
     href: "/",
     name: "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
     description:
-      "My professional focus is on UI Engineering. This discipline is expressive,nuanced and complex. It requires both deep and broad knowledge, which is why I find it so rewarding.",
+      "My professional focus is on UI Engineering. This discipline is expressive, nuanced and complex. It requires both deep and broad knowledge, which is why I find it so rewarding.",
   },
   {
     href: "/articles",
     name: "Articles",
-    description: "Long-form writing to facilitate deep learning.",
+    description: "Long-form writing to document and share deep learning.",
   },
   {
     href: "/projects",
@@ -30,7 +30,7 @@ export const paths = [
   {
     href: "/career",
     name: "Career",
-    description: "Noteworthy steps along my professional journey.",
+    description: "Noteworthy professional milestones.",
   },
   { href: "/contact", name: "Contact", description: "Available for hire." },
 ];
