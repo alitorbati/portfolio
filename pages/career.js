@@ -4,6 +4,7 @@ import Box from "../components/Box";
 import Text from "../components/Text";
 import Grid from "../components/Grid";
 import Flexbox from "../components/Flexbox";
+import React from "react";
 
 const jobs = [
   // {
@@ -99,7 +100,7 @@ const Career = () => {
             startYear === endYear ? startYear : `${startYear}–${endYear}`;
 
           return (
-            <>
+            <React.Fragment key={job.company}>
               <Text
                 css={css({
                   display: ["none", "initial"],
@@ -121,9 +122,11 @@ const Career = () => {
                   {` ${duration}`}
                 </Text>
                 <Box />
+                <Text color="foreground">{job.positions.join(", ")}</Text>
+                <Box />
                 {job.description}
               </Box>
-            </>
+            </React.Fragment>
           );
         })}
       </Grid>

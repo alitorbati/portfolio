@@ -24,7 +24,7 @@ const global = css({
     minHeight: "100vh",
   },
   a: {
-    color: "foregroundDark",
+    color: "foreground",
     textDecoration: "none",
     display: "inline-block",
     fontWeight: "500",
@@ -43,7 +43,7 @@ const global = css({
     content: "'\\a0↗'", // non-breaking space
   },
   "h1, h2, h3, h4, h5, h6": {
-    color: "foregroundDark",
+    color: "foreground",
     marginTop: 5,
     marginBottom: 3,
   },
