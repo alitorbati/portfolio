@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Box from "../components/Box";
-import Flexbox from "../components/Flexbox";
+import Box from "../components/foundations/Box";
+import Flexbox from "../components/foundations/Flexbox";
 import { paths } from "../components/Navigation";
 
 const Index = () => {

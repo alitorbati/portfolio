@@ -3,8 +3,8 @@ import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import { sortByDate } from "../../utils";
-import Box from "../../components/Box";
-import Flexbox from "../../components/Flexbox";
+import Box from "../../components/foundations/Box";
+import Flexbox from "../../components/foundations/Flexbox";
 
 const Articles = (props) => {
   const { posts } = props;

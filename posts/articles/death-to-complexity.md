@@ -1,7 +1,9 @@
 ---
 title: "Death to Complexity: How we Simplified Advanced Search"
 date: "2016-08-18"
-url: "https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0"
+url:
+  title: "Original article"
+  url: "https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0"
 summary: "A bit about the design process that went into reimagining Spokeo’s Advanced Search tools. This was a weeks-long collaboration between the design and front-end teams, with support from backend for some specific API updates."
 ---
 

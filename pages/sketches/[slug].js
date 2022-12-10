@@ -3,10 +3,10 @@ import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { sortByDate } from "../../utils";
-import Box from "../../components/Box";
-import Text from "../../components/Text";
-import Date from "../../components/Date";
+import Box from "../../components/foundations/Box";
+import Text from "../../components/foundations/Text";
 import PostNavigation from "../../components/PostNavigation";
+import PostHeader from "../../components/PostHeader";
 
 const PostPage = (props) => {
   const { mdxSource, olderPost, newerPost } = props;
@@ -14,20 +14,7 @@ const PostPage = (props) => {
 
   return (
     <Box>
-      <h1>{frontmatter.title}</h1>
-      <Text fontSize={[0, 1]} fontStyle="italic">
-        {frontmatter.summary}
-      </Text>
-      <Box marginBottom={5} />
-      <Date value={frontmatter.date} />
-      {frontmatter.url ? (
-        <>
-          {" · "}
-          <a href={frontmatter.url} target="_blank" rel="noreferrer">
-            Live sketch
-          </a>
-        </>
-      ) : null}
+      <PostHeader frontmatter={frontmatter} />
       <Box marginBottom={6} />
       <div className="markdown-container">
         <MDXRemote compiledSource={compiledSource} frontmatter={frontmatter} />

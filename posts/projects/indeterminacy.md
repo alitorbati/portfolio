@@ -1,7 +1,9 @@
 ---
 title: "Indeterminacy"
 date: "2018-11"
-url: "https://alitorbati.github.io/disarray"
+url:
+  title: "Make your own"
+  url: "https://alitorbati.github.io/disarray"
 summary: "Interactive installation that gives users the power to create and share their own generative posters."
 ---
 

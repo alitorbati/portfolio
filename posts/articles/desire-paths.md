@@ -1,7 +1,9 @@
 ---
 title: "Desire Paths and Design Systems"
 date: "2020-02-20"
-url: "https://building.signalsciences.com/ui-desire-paths/"
+url:
+  title: "Original article"
+  url: "https://building.signalsciences.com/ui-desire-paths/"
 summary: "Reducing choice and increasing options in a UI component library."
 ---
 

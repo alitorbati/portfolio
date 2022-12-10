@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import GlobalStyle from "../styles/GlobalStyle";
-import Box from "../components/Box";
+import Box from "../components/foundations/Box";
 import Notice from "../components/Notice";
 import Video from "../components/Video";
 import light from "../themes/theme";
@@ -12,10 +12,9 @@ import dark from "../themes/dark";
 import Navigation, { paths } from "../components/Navigation";
 import { MDXProvider } from "@mdx-js/react";
 
-// needs help
 const ThreeUp = styled("div")`
   display: flex;
-  width: calc(100% / 3);
+  gap: 20px;
 `;
 
 const components = {

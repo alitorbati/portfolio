@@ -1,9 +1,9 @@
 import css from "@styled-system/css";
 import Link from "next/link";
-import Box from "../components/Box";
-import Text from "../components/Text";
-import Grid from "../components/Grid";
-import Flexbox from "../components/Flexbox";
+import Box from "../components/foundations/Box";
+import Text from "../components/foundations/Text";
+import Grid from "../components/foundations/Grid";
+import Flexbox from "../components/foundations/Flexbox";
 import React from "react";
 
 const jobs = [

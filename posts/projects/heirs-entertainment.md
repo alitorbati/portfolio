@@ -1,7 +1,9 @@
 ---
 title: "HEIRS Entertainment"
 date: "2020-08"
-url: "https://heirs.us"
+url:
+  title: "View site"
+  url: "https://heirs.us"
 summary: 'Portfolio site representing and elevating "black-owned mixed media vernacular of choice for pain and struggle."'
 ---
 

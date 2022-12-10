@@ -1,7 +1,9 @@
 ---
 title: "Kinetic type"
 date: "2018-12"
-url: "https://alitorbati.github.io/kinetic-type"
+url:
+  title: "Get wavy"
+  url: "https://alitorbati.github.io/kinetic-type"
 summary: "Breaking down and building up words and letterforms."
 ---
 

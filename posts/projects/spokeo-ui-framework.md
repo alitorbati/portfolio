@@ -1,7 +1,6 @@
 ---
 title: "Spokeo UI Framework"
 date: "2014"
-url: "http://spokeo.com"
 summary: "My first design system."
 ---
 

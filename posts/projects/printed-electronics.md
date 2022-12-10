@@ -1,7 +1,9 @@
 ---
 title: "Printed Electronics"
 date: "2012"
-url: "http://behance.net/gallery/7188509/Printed-Electronics"
+url:
+  title: "View project"
+  url: "http://behance.net/gallery/7188509/Printed-Electronics"
 summary: "Research into advanced printing technology."
 ---
 

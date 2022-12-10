@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Box from "../components/Box";
-import Text from "../components/Text";
-import Flexbox from "../components/Flexbox";
+import Box from "../components/foundations/Box";
+import Text from "../components/foundations/Text";
+import Flexbox from "../components/foundations/Flexbox";
 
 const links = [
   {

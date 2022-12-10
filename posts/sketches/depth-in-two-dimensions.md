@@ -1,7 +1,9 @@
 ---
 title: "Depth in two dimensions"
 date: "2018-10"
-url: "https://codepen.io/alitorbati/full/oOboKj"
+url:
+  title: "Dive in"
+  url: "https://codepen.io/alitorbati/full/oOboKj"
 summary: "Using a 2D canvas to explore how one might communicate space in a physically flat environment."
 ---
 

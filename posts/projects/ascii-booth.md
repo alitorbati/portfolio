@@ -1,7 +1,9 @@
 ---
 title: "ASCII Booth"
 date: "2019-07"
-url: "https://zeke.studio/work/ascii-booth/"
+url:
+  title: "Make your own"
+  url: "https://school-night.github.io/ascii-camera/"
 isVisible: true
 summary: "Nostalgic archaic technology — the dot matrix printer — is recontextualized as an instant ASCII art selfie booth."
 ---
@@ -47,9 +49,15 @@ Ultimately, we were able to create a single-button experience that is easy to ex
 ## Run 0: ArtCenter grad show
 
 <ThreeUp>
-<Video source="/images/projects/ascii-booth/instagram-1.mp4" />
-<Video source="/images/projects/ascii-booth/grad-show.mov" />
-<Video source="/images/projects/ascii-booth/instagram-0.mp4" />
+  <div>
+    <Video source="/images/projects/ascii-booth/instagram-1.mp4" />
+  </div>
+  <div>
+    <Video source="/images/projects/ascii-booth/grad-show.mov" />
+  </div>
+  <div>
+    <Video source="/images/projects/ascii-booth/instagram-0.mp4" />
+  </div>
 </ThreeUp>
 
 The ArtCenter Grad Show is a chance for hardworking students to display the work they feel best represents them, and hopefully will land them a job. The ASCII booth was the most Instagrammed part of the grad show and there were crowds around for the whole event.
@@ -58,8 +66,17 @@ The Grad Show was the first real user testing for the booth. Zeke operated the b
 
 ## Run 1: Bedrock LA
 
-![Dublab-1](/images/projects/ascii-booth/dublab-1.jpg)
-![Dublab-0](/images/projects/ascii-booth/dublab-0.jpg)
+<ThreeUp>
+  <div>
+    <img src="/images/projects/ascii-booth/dublab-1.jpg" />
+  </div>
+  <div>
+    <Video source="/images/projects/ascii-booth/dublab-2.mp4" />
+  </div>
+  <div>
+    <img src="/images/projects/ascii-booth/dublab-0.jpg" />
+  </div>
+</ThreeUp>
 
 Dublab was celebrating their 20th Anniversary Weekend in September 2019. Day 1 was at Bedrock LA, and day 2 was at Grand Park.
 
@@ -70,8 +87,6 @@ For the Dublab event weekend we operated the booth together. Here are some of th
 - Users frequently asked “what is this?” and “how does this work?” Initially, we gave a long explanation. By the end of the weekend, our verbal instructions and explanations had organically morphed into something super quick and simple that anyone could understand.
 
 ## Run 2: Grand Park Sunday Sessions
-
-<Video source="/images/projects/ascii-booth/dublab-2.mp4" />
 
 ![Polaroid](/images/projects/ascii-booth/polaroid.jpg)
 

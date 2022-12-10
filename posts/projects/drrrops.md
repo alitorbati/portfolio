@@ -1,7 +1,6 @@
 ---
 title: "Drrrops"
 date: "2015"
-url: "http://drrrops.com/?song=https:%2F/soundcloud.com/galimatias/alina-baraz-galimatias-make"
 summary: "A comment-centric UI for SoundCloud."
 ---
 
