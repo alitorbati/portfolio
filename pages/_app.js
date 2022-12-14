@@ -11,6 +11,12 @@ import light from "../themes/theme";
 import dark from "../themes/dark";
 import Navigation, { paths } from "../components/Navigation";
 import { MDXProvider } from "@mdx-js/react";
+// import "highlight.js/styles/github-dark.css";
+// import "highlight.js/styles/base16/apprentice.css";
+// import "highlight.js/styles/base16/atelier-estuary.css";
+// import "highlight.js/styles/base16/chalk.css";
+// import "highlight.js/styles/base16/danqing.css";
+import "highlight.js/styles/base16/atelier-savanna.css";
 
 const ThreeUp = styled("div")`
   display: flex;

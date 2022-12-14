@@ -52,8 +52,8 @@ Originally, we based our components on mockups, which meant they were built to s
 ```jsx
 // settings.jsx
 <Alert
-  variant=’success’
-  className=’settings--Alert’
+  variant="success"
+  className="settings--Alert"
 >
   Changes saved
 </Alert>
@@ -84,10 +84,7 @@ We were already working with a theme in CSS, but we shifted our focus to clean i
 
 ```jsx
 // settings.jsx
-<Alert
-  variant=’success’
-  marginBottom=’md’
->
+<Alert variant="success" marginBottom="md">
   Changes saved
 </Alert>
 ```

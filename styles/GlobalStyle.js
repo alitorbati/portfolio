@@ -4,6 +4,8 @@ import css from "@styled-system/css";
 
 const fontFallback = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
+const fontFallbackMono = `ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace`;
+
 const global = css({
   "*": {
     boxSizing: "border-box",
@@ -67,7 +69,7 @@ const global = css({
     marginY: 4,
   },
   code: {
-    fontFamily: `Portfolio Monospace, Portfolio Body, ${fontFallback}`,
+    fontFamily: fontFallbackMono,
     fontSize: "85%",
     backgroundColor: "backgroundLight",
     borderRadius: 1,

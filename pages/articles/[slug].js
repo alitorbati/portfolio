@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
+import rehypeHighlight from "rehype-highlight";
 import { sortByDate } from "../../utils";
 import Box from "../../components/foundations/Box";
 import Text from "../../components/foundations/Text";
@@ -45,7 +46,12 @@ export async function getStaticProps(props) {
   const { slug } = props.params;
   const sourcePath = path.join("posts", "articles", `${slug}.md`);
   const source = fs.readFileSync(sourcePath, "utf-8");
-  const mdxSource = await serialize(source, { parseFrontmatter: true });
+  const mdxSource = await serialize(source, {
+    parseFrontmatter: true,
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight],
+    },
+  });
 
   // prev/next
   const filesPath = path.join("posts", "articles");
