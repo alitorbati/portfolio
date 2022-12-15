@@ -1,30 +1,21 @@
 import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
 import rehypeHighlight from "rehype-highlight";
-import { sortByDate } from "../../utils";
-import Box from "../../components/foundations/Box";
-import Text from "../../components/foundations/Text";
-import PostNavigation from "../../components/PostNavigation";
-import PostHeader from "../../components/PostHeader";
+import Post from "../../components/Post";
+import { sortByDate } from "../../utils/sortByDate";
 
 const PostPage = (props) => {
   const { mdxSource, olderPost, newerPost } = props;
   const { compiledSource, frontmatter } = mdxSource;
 
   return (
-    <Box>
-      <PostHeader frontmatter={frontmatter} />
-      <Box marginBottom={6} />
-      <div className="markdown-container">
-        <MDXRemote compiledSource={compiledSource} frontmatter={frontmatter} />
-      </div>
-      <Box marginBottom={4} />
-      <Text>■</Text>
-      <Box marginBottom={6} />
-      <PostNavigation olderPost={olderPost} newerPost={newerPost} />
-    </Box>
+    <Post
+      olderPost={olderPost}
+      newerPost={newerPost}
+      compiledSource={compiledSource}
+      frontmatter={frontmatter}
+    />
   );
 };
 

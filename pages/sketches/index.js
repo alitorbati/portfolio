@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
-import { sortByDate } from "../../utils";
+import { sortByDate } from "../../utils/sortByDate";
 import Box from "../../components/foundations/Box";
 import Grid from "../../components/foundations/Grid";
 
