@@ -1,7 +1,7 @@
 ---
 title: "Everyday Systems"
 date: "2023-01-05"
-summary: "Principals and habits to manage daily life, with an emphasis on digital hygiene. Sometimes I stray from them, but not often."
+summary: "Principals and habits to manage daily life, with an emphasis on digital hygiene. Sometimes I stray from these systems, but not often."
 ---
 
 <Notice>

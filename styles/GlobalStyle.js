@@ -92,7 +92,7 @@ const global = css({
   hr: {
     marginY: 3,
     border: "none",
-    borderBottom: 2,
+    borderBottom: 1,
   },
   em: {
     fontStyle: "italic",
