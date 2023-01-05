@@ -35,6 +35,10 @@ const social = [
     label: "instagram",
     href: "https://instagram.com/alitorbati",
   },
+  {
+    label: "letterboxd",
+    href: "https://letterboxd.com/alitorbati",
+  },
 ];
 
 const groups = [email, work, social];
