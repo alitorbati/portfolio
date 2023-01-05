@@ -13,7 +13,7 @@ const global = css({
   html: {
     fontFamily: fontFallback,
     fontSize: "18px",
-    fontWeight: "300",
+    fontWeight: 300,
     backgroundColor: "background",
     color: "middle",
   },
@@ -29,7 +29,7 @@ const global = css({
     color: "foreground",
     textDecoration: "none",
     display: "inline-block",
-    fontWeight: "500",
+    fontWeight: 500,
   },
   "a:hover, a:focus-visible": {
     outline: 0,
@@ -51,19 +51,23 @@ const global = css({
   },
   h1: {
     fontSize: [2, 3],
-    fontWeight: "600",
+    fontWeight: 600,
     lineHeight: 1,
     paddingBottom: 4,
     borderBottom: 1,
   },
   h2: {
     fontSize: [1, 2],
-    fontWeight: "500",
+    fontWeight: 500,
     lineHeight: 1,
   },
   h3: {
     fontSize: [0, 1],
     fontWeight: 500,
+  },
+  h4: {
+    fontSize: 0,
+    fontWeight: 600,
   },
   p: {
     marginY: 4,
@@ -94,7 +98,7 @@ const global = css({
     fontStyle: "italic",
   },
   strong: {
-    fontWeight: "600",
+    fontWeight: 600,
   },
   "img, video": {
     borderRadius: 2,
