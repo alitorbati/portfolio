@@ -12,15 +12,15 @@ _This list is partially inspired by Tania Rascia's [Everyday Systems That Help M
 
 # The holy trinity
 
-There are three primary tools I use to keep everything organized. These systems are somewhat self-sustaining, meaning that once they are set up they tend to fill a specific need, so there's no conscious effort required to use them.
+There are three primary tools I use to keep everything organized.
 
 - **Reminders** for things I need to do
-- **Calendars** for things I need to attend
+- **Calendar** for things I need to attend
 - **Notes** for things I need to reference
 
 ## Reminders
 
-Reminders are the best way to offload items from your mental "RAM". Use Siri to create reminders throughout the day. (e.g. "Hey Siri, remind me to DM John in 30 minutes"). Create separate lists in the Reminders app. Assign colors and icons to reinforce the urgency and purpose of each list.
+Reminders are the best way to offload items from your mental "RAM". I use Siri to create reminders throughout the day. My reminders are separated into lists, each with their own colors and icon to reinforce their urgency and purpose. The Cycles list is for things that need to be done at a regular interval.
 
 - Near term (day)
 - Short term (month)
@@ -28,79 +28,63 @@ Reminders are the best way to offload items from your mental "RAM". Use Siri to 
 - Long term (year)
 - Cycles
 
-![Reminders lists](/images/articles/everyday-systems/reminders.jpg)
+## Calendar
 
-### Cycles
-
-Create repeating reminders for things that need to be done at a given interval. Some examples: Finance tasks (1st of every month), Roll bins to curb (Tuesdays at 9pm), Pay gardener (Every four weeks).
-
-## Calendars
-
-Calendars are used for things I want to attend, either physically or virtually.
-
-Use one calendar provider (I prefer Google). Use separate calendars within a single provider, if necessary (Social, Gym, etc). Assign those calendars unique colors to evaluate your upcoming schedule at a glance.
-
-Save birthdays in Contacts. Calendars read Contacts and automatically display them.
+Calendars are used for things I want to attend, either physically or virtually. I use one calendar provider, but organize events onto separate calendars (Social, Gym, etc). Calendars each have a unique color to aid in evaluating my upcoming schedule at a glance. Save birthdays in Contacts, not as Calendar events. They will show up in your calendar.
 
 ## Notes
 
-Notes are useful for keeping track of things that I will likely need to reference later, and are not immediately something I need to complete. Notes can include prose, lists, tables, etc. For example, a few notes I keep:
+Notes are useful for keeping track of things that I will likely need to reference later. Notes can include prose, lists, tables, etc, so I try to pick the right formatting for the content. For example, a few notes I keep:
 
 - Car info: license plate, VIN
 - Car insurance: provider, policy number, link to website
 - Health insurance: Provider, ID, Group ID
 - Freelance: Hours, billed (y/n), paid (y/n)
 
-# Bills
+# Systems
 
-Don't autopay bills. Read each one before paying. Adjust all bill dates to be the 1st of the month.
+## One thing
 
-For one specific cyclical reminder (Finance tasks) I have a Chrome bookmarks folder for all my bills. Right click > Open All on that folder when it's time to pay bills. Pay and close each tab in sequence.
+I try to use "one thing" for a given need. I use 1Password, and disable all other password managers (e.g. Keychain, Chrome). I use Google Calendar, and disable Apple's Calendar. I use Apple Photos, and migrated everything away from Google Photos. I use one email address, one phone number, etc. I try to find the best tool for the job, then only use that one thing.
 
-# Email
+## Passwords
 
-Aggressively unsubscribe from marketing emails.
+1Password is my designated password manager. Password managers require maintenance, so I keep it organized and up to date. I enforce use by requiring myself to never type login info. If I know a password, I generate a new one and forget it. I always prefer logging in with Google over creating a new account.
 
-You will not miss anything important, I promise. Email should be a peaceful place. I can't emphasize enough how important this step is. I also turn off my email app notification badge because email is usually not urgent so lingering badge numbers can unnecessarily draw my attention.
+## Email
 
-# Notifications
+Aggressively unsubscribe from marketing emails. I can't emphasize enough how important this is. You will not miss anything important, I promise. My email app notification badge is disabled because email is not urgent, so lingering badge numbers unnecessarily draw my attention.
 
-Aggressively disable notifications entirely, or at the very least manage account preferences such that apps don't send push notifications about promotions.
+I use personal email for personal stuff, and work email for work stuff because I don't want to be locked out of Netflix if I lose my job.
 
-Try to only receive notifications about time-sensitive, action-required things that are specifically meant for me. I don't want to be bothered by anything that could be construed as marketing.
+## Notifications
 
-# Passwords
+I try to only receive notifications about things that are specifically meant for me. I don't want to be bothered by anything that could be construed as marketing. I manage account preferences such that apps don't send promotion notifications, but if an app doesn't provide that control I disable notifications entirely.
 
-Use a password manager.
+## Profiles
 
-I use 1Password, but anything is better than nothing. Use only one password manager, and disable all other password management (e.g. Chrome, Keychain, etc). Password managers require maintenance, so keep it organized and up to date. Enforce use by requiring yourself to never type login info. If you know an account password, generate a new one and forget it.
+Chrome profiles are a great tool to separate personal and work needs. Bookmarks, history, cookies etc will all by synced and managed per-profile. For example, gmail.com in my personal profile and gmail.com in my work profile both stay logged in to their respective accounts. Each profile has a distinct theme so they can be easily identified.
 
-Always prefer logging in with Google over creating a new login.
+## Bills
 
-# Profiles
+I read or at least glance at each bill before paying it (no autopay). All my bills are due the 1st of the month, and I have a recurring reminder on that day. I keep a Chrome bookmarks folder of all my bills' websites, so I can Right click > Open All on that folder, then pay and close each tab in sequence.
 
-Use Chrome profiles to separate personal and work needs.
+## iMessage
 
-Bookmarks, history, cookies etc will all by synced and managed per-profile. For example, gmail.com in my personal profile and gmail.com in my work profile both stay logged in to their respective accounts. Give each profile a distinct theme so they can be easily identified.
+iMessage is set up to only send/receive via my phone number. The default allows using an email address, which often complicates things.
 
-Use personal email for personal stuff, and work email for work stuff. You don't want to be locked out of Netflix if you lose your job.
+## Text replacement
 
-Only use one email address for personal needs. Don't use a spam email.
+Create text replacement shortcuts to speed up typing tedious, common things:
 
-Set up iMessage to only be send/receive via phone number. The default allows using an email address, which complicates things.
-
-# Autocomplete
-
-Create autocomplete shortcuts:
-
-- email: typing "@@" autocompletes to my email
-- phone: typing "##" autocompletes to my phone number
-- address: typing my street number autocompletes to my full address
+- "@@" autocompletes to my email
+- "##" autocompletes to my phone number
+- my street number autocompletes to my full address
 
 # Routines
 
 - floss daily
-- make bed daily
-- tidy laundry daily
+- make the bed daily
+- put away laundry daily
 - wash dishes daily
 - work out a few times per week
