@@ -2,7 +2,7 @@ import theme from "./theme";
 
 const colors = {
   foreground: "#eee",
-  middle: "#999",
+  middle: "#aaa",
   backgroundLight: "#444",
   background: "#222",
 };

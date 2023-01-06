@@ -43,13 +43,8 @@ const App = (props) => {
     if (!window.matchMedia) {
       setTheme(dark);
     }
-
     const mm = window.matchMedia("(prefers-color-scheme: dark)");
-
-    // initialize theme
     mm.matches ? setTheme(dark) : setTheme(light);
-
-    // change theme when device theme changes
     mm.addEventListener("change", (event) => {
       event.matches ? setTheme(dark) : setTheme(light);
     });

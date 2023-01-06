@@ -6,7 +6,7 @@ const radii = space;
 
 const colors = {
   foreground: "#444",
-  middle: "#999",
+  middle: "#777",
   backgroundLight: "#eee",
   background: "#fff",
 };
