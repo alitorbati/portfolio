@@ -11,7 +11,9 @@ const Index = () => {
       {paths.map((path) => {
         return (
           <Box key={path.href}>
-            <Link href={path.href}>{path.name}</Link>
+            <Link href={path.href}>
+              {path.icon} {path.name}
+            </Link>
             <Box display="inline-block" marginRight={3} />
             {path.description}
           </Box>

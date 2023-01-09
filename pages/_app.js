@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { IconoirProvider } from "iconoir-react";
 import GlobalStyle from "../styles/GlobalStyle";
 import Box from "../components/foundations/Box";
 import Notice from "../components/Notice";
@@ -58,19 +59,32 @@ const App = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <MDXProvider components={components}>
-        <GlobalStyle />
-        <Head>
-          <title>
-            {currentPath ? `${currentPath.name} • Ali Torbati` : "Ali Torbati"}
-          </title>
-        </Head>
-        <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
-          <Navigation />
-          <Box marginBottom={6} />
-          <Box as="main">
-            <Component {...pageProps} />
+        <IconoirProvider
+          iconProps={{
+            strokeWidth: 2,
+            width: "1em",
+            height: "1em",
+            style: {
+              transform: "translateY(2px)",
+            },
+          }}
+        >
+          <GlobalStyle />
+          <Head>
+            <title>
+              {currentPath
+                ? `${currentPath.name} • Ali Torbati`
+                : "Ali Torbati"}
+            </title>
+          </Head>
+          <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
+            <Navigation />
+            <Box marginBottom={6} />
+            <Box as="main">
+              <Component {...pageProps} />
+            </Box>
           </Box>
-        </Box>
+        </IconoirProvider>
       </MDXProvider>
     </ThemeProvider>
   );

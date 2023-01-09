@@ -1,5 +1,6 @@
 import css from "@styled-system/css";
 import Link from "next/link";
+import { ArrowDownCircled } from "iconoir-react";
 import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Grid from "../components/foundations/Grid";
@@ -65,10 +66,8 @@ const jobs = [
     company: "Cal Poly, San Luis Obispo",
     href: "http://calpoly.com",
     positions: ["Student"],
-    // start: "2009-09-01",
-    // end: "2013-09-01",
-    start: "2009",
-    end: "2013",
+    start: "2009-09-01",
+    end: "2013-09-01",
     description: "B.S. Graphic Communication",
   },
 ];
@@ -143,7 +142,7 @@ const Career = () => {
             href="#"
             onClick={typeof window !== "undefined" ? window.print : null}
           >
-            Download
+            <ArrowDownCircled /> Download
           </a>
         </Flexbox>
       </Box>
