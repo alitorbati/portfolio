@@ -6,6 +6,7 @@ import Head from "next/head";
 import { IconoirProvider } from "iconoir-react";
 import GlobalStyle from "../styles/GlobalStyle";
 import Box from "../components/foundations/Box";
+import Flexbox from "../components/foundations/Flexbox";
 import Notice from "../components/Notice";
 import Video from "../components/Video";
 import light from "../themes/theme";
@@ -78,11 +79,14 @@ const App = (props) => {
             </title>
           </Head>
           <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
-            <Navigation />
-            <Box marginBottom={6} />
-            <Box as="main">
-              <Component {...pageProps} />
-            </Box>
+            <Flexbox alignItems="flex-start" flexDirection="column" gap={6}>
+              <Flexbox flex={[null, "0 0 auto"]}>
+                <Navigation />
+              </Flexbox>
+              <Box as="main">
+                <Component {...pageProps} />
+              </Box>
+            </Flexbox>
           </Box>
         </IconoirProvider>
       </MDXProvider>

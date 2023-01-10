@@ -1,18 +1,24 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import css from "@styled-system/css";
 import {
   PageFlip,
   BoxIso,
   Flask,
   Computer,
-  ChatBubbleEmpty,
+  ChatLines,
   HomeSimpleDoor,
 } from "iconoir-react";
-import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
 
 export const paths = [
+  {
+    href: "/",
+    name: "Home",
+    description: "Home.",
+    icon: <HomeSimpleDoor />,
+  },
   {
     href: "/articles",
     name: "Articles",
@@ -42,7 +48,7 @@ export const paths = [
     href: "/contact",
     name: "Contact",
     description: "Available for hire.",
-    icon: <ChatBubbleEmpty />,
+    icon: <ChatLines />,
   },
 ];
 
@@ -50,49 +56,39 @@ const Navigation = () => {
   const router = useRouter();
 
   return (
-    <Box
+    <Flexbox
       as="nav"
-      paddingBottom={3}
+      flexDirection="row"
+      flexWrap="wrap"
+      flex="1"
+      gap={4}
       css={{
         "@media print": {
           display: "none",
         },
       }}
     >
-      <Flexbox
-        alignItems="center"
-        justifyContent="space-between"
-        gap={4}
-        flexWrap="wrap"
-      >
-        <Link href="/">
-          <Text>
-            <HomeSimpleDoor /> Ali Torbati
-          </Text>
-        </Link>
-        <Flexbox alignItems="center" gap={4} flexWrap="wrap">
-          {paths
-            .filter((path) => path.href !== "/")
-            .map((path) => {
-              const currentPath = router.asPath;
-              const currentPathParts = currentPath.split("/");
+      {paths.map((path) => {
+        const currentPath = router.asPath;
+        const currentPathParts = currentPath.split("/");
 
-              const isCurrentPath = currentPath === path.href;
-              const isNestedPath =
-                currentPathParts[1] === path.href.replace("/", "");
-              const isCurrent = isCurrentPath || isNestedPath;
+        const isCurrentPath = currentPath === path.href;
+        const isNestedPath = currentPathParts[1] === path.href.replace("/", "");
+        const isCurrent = isCurrentPath || isNestedPath;
 
-              return (
-                <Link href={path.href} key={path.href}>
-                  <Text color={isCurrent ? "middle" : null}>
-                    {path.icon} {path.name}
-                  </Text>
-                </Link>
-              );
-            })}
-        </Flexbox>
-      </Flexbox>
-    </Box>
+        return (
+          <Link href={path.href} key={path.href}>
+            <Text color={isCurrent ? "middle" : null}>
+              {path.icon}
+              <Text css={css({ display: ["none", "initial"] })}>
+                {" "}
+                {path.name}
+              </Text>
+            </Text>
+          </Link>
+        );
+      })}
+    </Flexbox>
   );
 };
 
