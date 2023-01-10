@@ -49,9 +49,13 @@ const Contact = () => {
       <Box>
         <Box
           as="img"
-          src="images/avatar.jpg"
+          src="images/avatar.png"
           alt="Photo of Ali Torbati"
+          width="100vw"
           maxWidth="140px"
+          css={{
+            imageRendering: "pixelated",
+          }}
         />
       </Box>
       <Flexbox flexDirection="column" gap={1}>
