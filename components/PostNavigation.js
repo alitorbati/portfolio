@@ -18,7 +18,7 @@ const PostNavigation = (props) => {
         <Box />
       )}
       {newerPost ? (
-        <Box style={{ textAlign: "right" }}>
+        <Box css={{ textAlign: "right" }}>
           <Text>Newer</Text>
           <br />
           <Link href={newerPost.slug}>{newerPost.frontmatter.title}</Link>

@@ -36,3 +36,30 @@ As is often the case, our breakthrough seems obvious in hindsight. But at the ti
 The second major challenge was more technical than conceptual. The clients wanted a branded shape to frame each project preview, but the "grain of the web" doesn't easily allow for non-rectangular polygons to mask videos. Of course we could have edited the video preview sources to include the shapes, but that would have made future updates more cumbersome and possibly inconsistent. Also, if the masked shape was included in the video source instead of the code, we would be super tied-in to this design direction in the future.
 
 Our solution was to use the CSS property `clip-path` to reference an SVG embedded in the webpage. The SVG included the desired shape, and we use that shape to mask videos. In the future if we want to change that shape or remove it entirely, we will be able to do so with minimal code changes and no further video editing.
+
+# Version 2.0
+
+![Version 2.0](/images/projects/heirs-entertainment/2.png)
+
+More recently we were contacted again to refresh the look and feed of the HEIRS site; to make it feel more modern and fresh.
+
+![Nav](/images/projects/heirs-entertainment/nav.png)
+
+We made a few significant tweaks that improved the overall experience and really elevated the site:
+
+1. Added a Directors page
+1. Refreshed typographic system (mobile + web)
+1. Optimized mobile web
+1. Refreshed landing page (w/ new reel)
+1. Refreshed nav (more commerical/standard/horizontal)
+1. New layouts on work and directors pages
+1. Elegant hover motion effects on the work and directors pages
+1. Attention to detail like mobile behavior
+
+We also took on a major rewrite of the application to bring it up to modern web development standards:
+
+1. We moved you from static HTML to a modern build infrastructure (Next.js)
+1. SEO-optimized to show up in search results
+1. Included metadata so when the link is shared online or in messages people see a preview image
+1. Used server-side rendering, meaning it loads _fast_ for users, and is cached by web crawlers like Google
+1. The site works without JavaScript, which means Google will give it a higher quality ranking

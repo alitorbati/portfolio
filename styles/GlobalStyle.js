@@ -87,7 +87,11 @@ const global = css({
   },
   ul: {
     marginBottom: 3,
-    listStyleType: "'· '",
+    listStyleType: "disc",
+  },
+  ol: {
+    marginBottom: 3,
+    listStyleType: "decimal",
   },
   hr: {
     marginY: 3,
