@@ -78,7 +78,10 @@ const Navigation = () => {
 
         return (
           <Link href={path.href} key={path.href}>
-            <Text color={isCurrent ? "middle" : null}>
+            <Text
+              color={isCurrent ? "foreground" : "middle"}
+              css={{ textDecoration: "none" }}
+            >
               {path.icon}
               <Text css={css({ display: ["none", "initial"] })}>
                 {" "}
