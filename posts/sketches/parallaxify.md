@@ -23,7 +23,7 @@ A diff of the before/after can be found [on Github](https://github.com/alitorbat
 
 Instead of defining `percentSeen` inside the `for` loop and referencing an external variable (`element`), define `percentSeen` once and accept an argument (`el`).
 
-Before
+### Before
 
 ```js
 for (let i = 0; i < elements.length; i++) {
