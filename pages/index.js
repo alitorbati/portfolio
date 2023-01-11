@@ -38,7 +38,11 @@ const Index = () => {
       <Text fontSize={1} fontWeight={600} color="foreground">
         Ali Torbati
       </Text>
-      <Box marginBottom={3} />
+      <Box marginBottom={0} />
+      <Text color="foreground">
+        Software engineer, designer and creative technologist.
+      </Text>
+      <Box marginBottom={5} />
       <Box>
         Sometimes I share long-form writing as{" "}
         <Link href="/articles">articles</Link>. Undertakings that required a
