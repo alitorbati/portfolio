@@ -16,38 +16,31 @@ export const paths = [
   {
     href: "/",
     name: "Home",
-    description: "Home.",
     icon: <HomeSimpleDoor />,
   },
   {
     href: "/articles",
     name: "Articles",
-    description: "Long-form writing to document and share deep learning.",
     icon: <PageFlip />,
   },
   {
     href: "/projects",
     name: "Projects",
-    description:
-      "Undertakings that required a team or several distinct technologies.",
     icon: <BoxIso />,
   },
   {
     href: "/sketches",
     name: "Sketches",
-    description: "Code experiments to learn a new skill or convey an idea.",
     icon: <Flask />,
   },
   {
     href: "/career",
     name: "Career",
-    description: "Noteworthy professional milestones.",
     icon: <Computer />,
   },
   {
     href: "/contact",
     name: "Contact",
-    description: "Available for hire.",
     icon: <ChatLines />,
   },
 ];

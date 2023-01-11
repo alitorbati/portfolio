@@ -3,7 +3,10 @@ import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeHighlight from "rehype-highlight";
 import Post from "../../components/Post";
+import { getAllPaths } from "../../utils/getAllPaths";
+import { getAllPosts } from "../../utils/getAllPosts";
 import { sortByDate } from "../../utils/sortByDate";
+import { getOlderNewer } from "../../utils/getOlderNewer";
 
 const PostPage = (props) => {
   const { mdxSource, olderPost, newerPost } = props;
@@ -20,11 +23,7 @@ const PostPage = (props) => {
 };
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("posts", "projects"));
-  const paths = files.map((filename) => {
-    const slug = filename.replace(".md", "");
-    return { params: { slug } };
-  });
+  const paths = await getAllPaths("projects");
 
   return {
     paths,
@@ -45,26 +44,10 @@ export async function getStaticProps(props) {
   });
 
   // prev/next
-  const filesPath = path.join("posts", "projects");
-  const files = fs.readdirSync(filesPath);
-  const allPosts = await Promise.all(
-    files.map(async (file) => {
-      const slug = file.replace(".md", "");
-      const sourcePath = path.join("posts", "projects", file);
-      const source = fs.readFileSync(sourcePath, "utf-8");
-      const mdxSource = await serialize(source, { parseFrontmatter: true });
-      const { frontmatter } = mdxSource;
-      return { slug, frontmatter };
-    })
-  );
+  const allPosts = await getAllPosts("projects");
   const posts = allPosts.sort(sortByDate);
   const currentIndex = posts.findIndex((post) => post.slug === slug);
-  const isCurrentLast = currentIndex === posts.length - 1;
-  const isCurrentFirst = currentIndex === 0;
-  const olderIndex = isCurrentLast ? null : currentIndex + 1;
-  const newerIndex = isCurrentFirst ? null : currentIndex - 1;
-  const olderPost = typeof olderIndex === "number" ? posts[olderIndex] : null;
-  const newerPost = typeof newerIndex === "number" ? posts[newerIndex] : null;
+  const { olderPost, newerPost } = getOlderNewer(posts, currentIndex);
 
   return {
     props: {

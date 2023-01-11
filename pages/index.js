@@ -1,38 +1,15 @@
 import Link from "next/link";
-import { PageFlip, BoxIso, Flask, Emoji } from "iconoir-react";
+import { Emoji } from "iconoir-react";
 import Box from "../components/foundations/Box";
 import Flexbox from "../components/foundations/Flexbox";
 import Text from "../components/foundations/Text";
+import CollectionItem from "../components/CollectionItem";
+import { getAllPosts } from "../utils/getAllPosts";
+import { paths } from "../components/Navigation";
 
-// TODO: fetch values from source
-const features = [
-  {
-    icon: <PageFlip />,
-    category: "Article",
-    slug: "/articles/desire-paths",
-    title: "Desire Paths and Design Systems",
-    summary:
-      "Reducing choice and increasing options in a UI component library.",
-  },
-  {
-    icon: <BoxIso />,
-    category: "Project",
-    slug: "/projects/nevada-museum-of-art",
-    title: "Nevada Museum of Art",
-    summary:
-      'Microsite for exhibit and conference "Art + Environment 2021 — Land Art: Past, Present, Futures.',
-  },
-  {
-    icon: <Flask />,
-    category: "Sketch",
-    slug: "/sketches/depth-in-two-dimensions",
-    title: "Depth in two dimensions",
-    summary:
-      "Using a 2D canvas to explore how one might communicate space in a physically flat environment.",
-  },
-];
+const Index = (props) => {
+  const { features } = props;
 
-const Index = () => {
   return (
     <Box>
       <Text fontSize={1} fontWeight={600} color="foreground">
@@ -61,6 +38,10 @@ const Index = () => {
       <Box marginBottom={3} />
       <Flexbox gap={3} flexDirection={["column", "row"]}>
         {features.map((feature, index) => {
+          const path = paths.find(
+            (path) => path.href.replace("/", "") === feature.category
+          );
+
           return (
             <Box
               key={index}
@@ -69,12 +50,12 @@ const Index = () => {
               padding={3}
               style={{ flex: "1" }}
             >
-              {feature.icon} {feature.category}
+              {path.icon} {path.name}
               <Box marginBottom={5} />
-              <Link href={feature.slug}>{feature.title}</Link>
-              <Box marginBottom={3} />
-              <Box />
-              {feature.summary}
+              <CollectionItem
+                href={feature.href}
+                frontmatter={feature.frontmatter}
+              />
             </Box>
           );
         })}
@@ -82,5 +63,38 @@ const Index = () => {
     </Box>
   );
 };
+
+export async function getStaticProps() {
+  const allArticles = await getAllPosts("articles");
+  const allProjects = await getAllPosts("projects");
+  const allSketches = await getAllPosts("sketches");
+  const featuredArticle = allArticles.find((p) => p.frontmatter.featured);
+  const featuredProject = allProjects.find((p) => p.frontmatter.featured);
+  const featuredSketch = allSketches.find((p) => p.frontmatter.featured);
+
+  const features = [
+    {
+      category: "articles",
+      href: `/articles/${featuredArticle.slug}`,
+      frontmatter: featuredArticle.frontmatter,
+    },
+    {
+      category: "projects",
+      href: `/projects/${featuredProject.slug}`,
+      frontmatter: featuredProject.frontmatter,
+    },
+    {
+      category: "sketches",
+      href: `/sketches/${featuredSketch.slug}`,
+      frontmatter: featuredSketch.frontmatter,
+    },
+  ];
+
+  return {
+    props: {
+      features,
+    },
+  };
+}
 
 export default Index;

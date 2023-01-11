@@ -1,10 +1,8 @@
-import fs from "fs";
 import path from "path";
-import { serialize } from "next-mdx-remote/serialize";
-import Link from "next/link";
 import { sortByDate } from "../../utils/sortByDate";
-import Box from "../../components/foundations/Box";
+import { getAllPosts } from "../../utils/getAllPosts";
 import Flexbox from "../../components/foundations/Flexbox";
+import CollectionItem from "../../components/CollectionItem";
 
 const Articles = (props) => {
   const { posts } = props;
@@ -15,11 +13,11 @@ const Articles = (props) => {
         const href = path.join("articles", post.slug);
 
         return (
-          <Box key={post.frontmatter.title}>
-            <Link href={href}>{post.frontmatter.title}</Link>
-            <Box />
-            {post.frontmatter.summary}
-          </Box>
+          <CollectionItem
+            key={post.frontmatter.title}
+            frontmatter={post.frontmatter}
+            href={href}
+          />
         );
       })}
     </Flexbox>
@@ -29,18 +27,7 @@ const Articles = (props) => {
 export default Articles;
 
 export async function getStaticProps() {
-  const filesPath = path.join("posts", "articles");
-  const files = fs.readdirSync(filesPath);
-  const allPosts = await Promise.all(
-    files.map(async (file) => {
-      const slug = file.replace(".md", "");
-      const sourcePath = path.join("posts", "articles", file);
-      const source = fs.readFileSync(sourcePath, "utf-8");
-      const mdxSource = await serialize(source, { parseFrontmatter: true });
-      const { frontmatter } = mdxSource;
-      return { slug, frontmatter };
-    })
-  );
+  const allPosts = await getAllPosts("articles");
   const posts = allPosts.sort(sortByDate);
 
   return {
