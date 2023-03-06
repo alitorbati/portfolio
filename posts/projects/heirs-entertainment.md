@@ -1,10 +1,10 @@
 ---
-title: "HEIRS Entertainment"
+title: "Heirs Entertainment"
 date: "2020-08"
 url:
   title: "View site"
   url: "https://heirs.us"
-summary: 'Portfolio site representing and elevating "black-owned mixed media vernacular of choice for pain and struggle."'
+summary: 'Portfolio site representing and elevating black-owned mixed media'
 ---
 
 <Video source="/images/projects/heirs-entertainment/overview.mp4" />
