@@ -87,6 +87,7 @@ const global = css({
   },
   ul: {
     marginBottom: 3,
+    marginLeft: "16px",
     listStyleType: "disc",
   },
   ol: {
