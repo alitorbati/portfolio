@@ -19,7 +19,7 @@ const jobs = [
   {
     company: "ArtCenter",
     href: "https://www.artcenter.edu/",
-    positions: ["Assistant Professor"],
+    positions: ["Instructor"],
     start: "2022-09-01",
     end: "Present",
     description:
