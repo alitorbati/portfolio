@@ -30,7 +30,7 @@ const jobs = [
     href: "http://fastly.com",
     positions: ["Senior Software Engineer", "Staff Software Engineer"],
     start: "2020-10-01",
-    end: "Present",
+    end: "2023-04-14",
     description:
       "Joined via acquisition of Signal Sciences. Promoted to Staff Software Engineer in recognition of continued effectiveness across several teams and features.",
   },
