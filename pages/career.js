@@ -28,7 +28,7 @@ const jobs = [
   {
     company: "Fastly",
     href: "http://fastly.com",
-    positions: ["Senior Software Engineer", "Staff Software Engineer"],
+    positions: ["Staff Software Engineer"],
     start: "2020-10-01",
     end: "2023-04-14",
     description:
@@ -46,7 +46,7 @@ const jobs = [
   {
     company: "Spokeo",
     href: "http://spokeo.com/styleguide",
-    positions: ["UI Developer", "Senior UI Developer"],
+    positions: ["Senior UI Developer"],
     start: "2013-12-09",
     end: "2017-12-28",
     description:
