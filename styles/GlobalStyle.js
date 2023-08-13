@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import css from "@styled-system/css";
 
-const fontFallback = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
+const fontFallback = `"Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
 const fontFallbackMono = `ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace`;
 
@@ -12,7 +12,7 @@ const global = css({
   },
   html: {
     fontFamily: fontFallback,
-    fontSize: "18px",
+    fontSize: ["18px", "19px"],
     fontWeight: 300,
     backgroundColor: "background",
     color: "middle",
@@ -50,15 +50,15 @@ const global = css({
     marginBottom: 3,
   },
   h1: {
-    fontSize: [2, 3],
-    fontWeight: 600,
-    lineHeight: 1,
+    fontSize: [3, 4],
+    fontWeight: 800,
+    lineHeight: 0.85,
     paddingBottom: 4,
     borderBottom: 1,
   },
   h2: {
     fontSize: [1, 2],
-    fontWeight: 500,
+    fontWeight: 700,
     lineHeight: 1,
   },
   h3: {

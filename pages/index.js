@@ -12,7 +12,7 @@ const Index = (props) => {
 
   return (
     <Box>
-      <Text fontSize={1} fontWeight={600} color="foreground">
+      <Text fontSize={2} fontWeight={800} color="foreground">
         Ali Torbati
       </Text>
       <Box marginBottom={0} />
