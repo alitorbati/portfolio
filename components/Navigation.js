@@ -7,7 +7,7 @@ import {
   Flask,
   Computer,
   ChatLines,
-  HomeSimpleDoor,
+  HomeSimple,
 } from "iconoir-react";
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
@@ -16,7 +16,7 @@ export const paths = [
   {
     href: "/",
     name: "Home",
-    icon: <HomeSimpleDoor />,
+    icon: <HomeSimple />,
   },
   {
     href: "/articles",

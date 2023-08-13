@@ -24,6 +24,7 @@ const global = css({
   body: {
     lineHeight: "1.5",
     minHeight: "100vh",
+    fontOpticalSizing: "auto",
   },
   a: {
     color: "foreground",
