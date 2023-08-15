@@ -5,7 +5,7 @@ import Flexbox from "../components/foundations/Flexbox";
 
 const email = [
   {
-    label: "email",
+    label: "Email",
     href: "mailto:ali.torbati@gmail.com",
     comment: "ali.torbati@gmail.com",
   },
@@ -13,30 +13,30 @@ const email = [
 
 const work = [
   {
-    label: "linkedin",
+    label: "LinkedIn",
     href: "https://linkedin.com/in/alitorbati",
   },
   {
-    label: "github",
+    label: "GitHub",
     href: "https://github.com/alitorbati",
   },
 ];
 
 const social = [
   {
-    label: "twitter",
+    label: "Twitter",
     href: "https://twitter.com/alitorbati",
   },
   {
-    label: "spotify",
+    label: "Spotify",
     href: "https://open.spotify.com/user/9fptjtu65hi3cxtee3b43x6br?si=3a63d19ac8dc4ba6",
   },
   {
-    label: "instagram",
+    label: "Instagram",
     href: "https://instagram.com/alitorbati",
   },
   {
-    label: "letterboxd",
+    label: "Letterboxd",
     href: "https://letterboxd.com/alitorbati",
   },
 ];
