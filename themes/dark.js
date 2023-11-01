@@ -1,8 +1,8 @@
 import theme from "./theme";
 
 const colors = {
-  foreground: "#dfdbca",
-  middle: "#a9a699",
+  foreground: "#fefaf1",
+  middle: "#b3ada2",
   backgroundLight: "#41403b",
   background: "#222",
 };

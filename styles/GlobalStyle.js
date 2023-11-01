@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import css from "@styled-system/css";
 
-const fontFallback = `"Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
+const fontFallback = `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
 
 const fontFallbackMono = `ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace`;
 
@@ -32,7 +32,7 @@ const global = css({
     display: "inline-block",
     fontWeight: 500,
   },
-  "a:hover, a:focus-visible": {
+  [`a:hover, a:focus-visible, [data-active="true"]`]: {
     outline: 0,
     borderRadius: 1,
     backgroundColor: "backgroundLight",

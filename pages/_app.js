@@ -77,16 +77,6 @@ const App = (props) => {
                 ? `${currentPath.name} • Ali Torbati`
                 : "Ali Torbati"}
             </title>
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link
-              rel="preconnect"
-              href="https://fonts.gstatic.com"
-              crossorigin
-            />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200..800&display=swap"
-              rel="stylesheet"
-            />
           </Head>
           <Box maxWidth="80ch" margin="0 auto" padding={4} paddingBottom={6}>
             <Flexbox alignItems="flex-start" flexDirection="column" gap={6}>
