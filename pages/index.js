@@ -39,7 +39,6 @@ const Index = (props) => {
           const path = paths.find(
             (path) => path.href.replace("/", "") === feature.category
           );
-
           return (
             <Box
               key={index}
