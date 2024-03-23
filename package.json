@@ -12,6 +12,7 @@
     "@mdx-js/react": "^2.1.5",
     "esbuild": "^0.14.54",
     "eslint-config-next": "^13.0.1",
+    "framer-motion": "^11.0.20",
     "highlight.js": "^11.7.0",
     "iconoir-react": "^5.5.2",
     "mdx-bundler": "^9.0.1",

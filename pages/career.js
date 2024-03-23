@@ -6,6 +6,12 @@ import Text from "../components/foundations/Text";
 import Grid from "../components/foundations/Grid";
 import Flexbox from "../components/foundations/Flexbox";
 import React from "react";
+import { motion } from "framer-motion";
+
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  shown: { opacity: 1, y: 0 },
+};
 
 const jobs = [
   {
@@ -99,7 +105,14 @@ const Career = () => {
         </Flexbox>
         <Box marginBottom={6} />
       </Box>
-      <Grid gap={5} gridTemplateColumns={["auto", "1fr auto"]}>
+      <Grid
+        as={motion.div}
+        initial="hidden"
+        animate="shown"
+        transition={{ staggerChildren: 0.1 }}
+        gap={5}
+        gridTemplateColumns={["auto", "1fr auto"]}
+      >
         {jobs.map((job, index) => {
           const startYear = job.start.split("-")[0];
           const endYear = job.end.split("-")[0];
@@ -109,6 +122,8 @@ const Career = () => {
           return (
             <React.Fragment key={job.company}>
               <Text
+                as={motion.div}
+                variants={item}
                 css={css({
                   display: ["none", "initial"],
                   whiteSpace: "nowrap",
@@ -117,16 +132,17 @@ const Career = () => {
               >
                 {duration}
               </Text>
-              <Box key={index}>
+              <Box as={motion.div} variants={item}>
                 <Link href={job.href} target="_blank" rel="noreferrer">
                   {job.company}
                 </Link>
                 <Text
+                  marginLeft={3}
                   css={css({
                     display: ["initial", "none"],
                   })}
                 >
-                  {` ${duration}`}
+                  {duration}
                 </Text>
                 <Box />
                 <Text color="textAccent">{job.positions.join(", ")}</Text>

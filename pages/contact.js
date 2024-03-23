@@ -2,6 +2,12 @@ import Link from "next/link";
 import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
+import { motion } from "framer-motion";
+
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  shown: { opacity: 1, y: 0 },
+};
 
 const email = [
   {
@@ -45,8 +51,14 @@ const groups = [email, work, social];
 
 const Contact = () => {
   return (
-    <Flexbox gap={5}>
-      <Box>
+    <Flexbox
+      as={motion.flex}
+      initial="hidden"
+      animate="shown"
+      transition={{ staggerChildren: 0.1 }}
+      gap={5}
+    >
+      <Box as={motion.div} variants={item}>
         <Box
           as="img"
           src="images/avatar.png"
@@ -64,7 +76,7 @@ const Contact = () => {
             <Box key={index}>
               {group.map((link) => {
                 return (
-                  <Box key={link.href}>
+                  <Box key={link.href} as={motion.div} variants={item}>
                     <Link href={link.href} target="_blank" rel="noreferrer">
                       {link.label}
                     </Link>
@@ -72,7 +84,7 @@ const Contact = () => {
                   </Box>
                 );
               })}
-              {index < groups.length - 1 ? <hr /> : null}
+              {index < groups.length - 1 ? <motion.hr variants={item} /> : null}
             </Box>
           );
         })}

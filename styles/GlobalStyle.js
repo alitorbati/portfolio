@@ -53,12 +53,13 @@ const global = css({
   h1: {
     fontSize: 2,
     fontWeight: 600,
-    lineHeight: 0.85,
+    lineHeight: 1.2,
+    marginTop: 0,
   },
   h2: {
     fontSize: 1,
     fontWeight: 500,
-    lineHeight: 1,
+    lineHeight: 1.2,
   },
   h3: {
     fontWeight: 500,
@@ -72,9 +73,10 @@ const global = css({
   code: {
     fontFamily: fontFallbackMono,
     fontSize: "85%",
-    backgroundColor: "middle",
+    backgroundColor: "backgroundAccent",
     borderRadius: 1,
     paddingX: 1,
+    whiteSpace: "pre-wrap",
   },
   blockquote: {
     borderLeft: 2,
