@@ -113,7 +113,7 @@ const Career = () => {
         gap={5}
         gridTemplateColumns={["auto", "1fr auto"]}
       >
-        {jobs.map((job, index) => {
+        {jobs.map((job) => {
           const startYear = job.start.split("-")[0];
           const endYear = job.end.split("-")[0];
           const duration =
