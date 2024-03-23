@@ -70,11 +70,12 @@ const Navigation = () => {
         const isCurrent = isCurrentPath || isNestedPath;
 
         return (
-          <Link href={path.href} key={path.href} data-active={isCurrent.toString()}>
-            <Text
-              color={isCurrent ? "foreground" : "middle"}
-              css={{ textDecoration: "none" }}
-            >
+          <Link
+            href={path.href}
+            key={path.href}
+            data-active={isCurrent.toString()}
+          >
+            <Text>
               {path.icon}
               <Text css={css({ display: ["none", "initial"] })}>
                 {" "}

@@ -13,8 +13,7 @@ const Index = (props) => {
   return (
     <Box>
       <Text as="h1">Ali Torbati</Text>
-      <Box marginBottom={0} />
-      <Text as="h2">
+      <Text as="h2" marginTop={0}>
         Software engineer, designer and creative technologist.
       </Text>
       <Box marginBottom={5} />
@@ -30,9 +29,7 @@ const Index = (props) => {
         <Link href="/contact">contact</Link> me <Emoji />
       </Box>
       <Box marginBottom={6} />
-      <Text fontWeight={600} color="foreground">
-        Featured posts
-      </Text>
+      <Text as={"h2"}>Featured posts</Text>
       <Box marginBottom={3} />
       <Flexbox gap={3} flexDirection={["column", "row"]}>
         {features.map((feature, index) => {

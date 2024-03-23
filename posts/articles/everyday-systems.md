@@ -78,7 +78,7 @@ iMessage is set up to only send/receive via my phone number. The default allows 
 Create text replacement shortcuts to speed up typing tedious, common things:
 
 - "@@" autocompletes to my email
-- "##" autocompletes to my phone number
+- "323" autocompletes to my phone number
 - my street number autocompletes to my full address
 
 # Routines

@@ -1,17 +1,17 @@
 import theme from "./theme";
 
 const colors = {
-  foreground: "#fefaf1",
-  middle: "#b3ada2",
-  backgroundLight: "#41403b",
-  background: "#222",
+  textAccent: "#ddd",
+  text: "#aaa",
+  background: "#111",
+  backgroundAccent: "#222",
 };
 
 const borders = [
   `0`,
-  `1px solid ${colors.backgroundLight}`,
-  `1px solid ${colors.middle}`,
-  `2px solid ${colors.foreground}`,
+  `1px solid ${colors.backgroundAccent}`,
+  `1px solid ${colors.textAccent}`,
+  `2px solid ${colors.textAccent}`,
 ];
 
 export default {

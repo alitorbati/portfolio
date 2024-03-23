@@ -12,14 +12,13 @@ const global = css({
   },
   html: {
     fontFamily: fontFallback,
-    fontSize: ["18px", "19px"],
     fontWeight: 300,
     backgroundColor: "background",
-    color: "middle",
+    color: "text",
   },
   "::selection": {
-    color: "middle",
-    backgroundColor: "backgroundLight",
+    color: "textAccent",
+    backgroundColor: "backgroundAccent",
   },
   body: {
     lineHeight: "1.5",
@@ -27,7 +26,7 @@ const global = css({
     fontOpticalSizing: "auto",
   },
   a: {
-    color: "foreground",
+    color: "textAccent",
     textDecoration: "none",
     display: "inline-block",
     fontWeight: 500,
@@ -35,7 +34,7 @@ const global = css({
   [`a:hover, a:focus-visible, [data-active="true"]`]: {
     outline: 0,
     borderRadius: 1,
-    backgroundColor: "backgroundLight",
+    backgroundColor: "backgroundAccent",
     paddingX: 1,
     marginX: -1,
   },
@@ -46,29 +45,26 @@ const global = css({
     content: "'\\a0↗'", // non-breaking space
   },
   "h1, h2, h3, h4, h5, h6": {
-    color: "foreground",
+    color: "textAccent",
     marginTop: 5,
     marginBottom: 3,
+    fontSize: 0,
   },
   h1: {
-    fontSize: [3, 4],
-    fontWeight: 800,
+    fontSize: 2,
+    fontWeight: 600,
     lineHeight: 0.85,
-    paddingBottom: 4,
-    borderBottom: 1,
   },
   h2: {
-    fontSize: [1, 2],
-    fontWeight: 700,
+    fontSize: 1,
+    fontWeight: 500,
     lineHeight: 1,
   },
   h3: {
-    fontSize: [0, 1],
     fontWeight: 500,
   },
   h4: {
-    fontSize: 0,
-    fontWeight: 600,
+    fontWeight: 400,
   },
   p: {
     marginY: 4,
@@ -76,7 +72,7 @@ const global = css({
   code: {
     fontFamily: fontFallbackMono,
     fontSize: "85%",
-    backgroundColor: "backgroundLight",
+    backgroundColor: "middle",
     borderRadius: 1,
     paddingX: 1,
   },

@@ -129,7 +129,7 @@ const Career = () => {
                   {` ${duration}`}
                 </Text>
                 <Box />
-                <Text color="foreground">{job.positions.join(", ")}</Text>
+                <Text color="textAccent">{job.positions.join(", ")}</Text>
                 <Box />
                 {job.description}
               </Box>
