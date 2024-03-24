@@ -3,19 +3,13 @@ import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
 import { motion } from "framer-motion";
+import { Check, Copy } from "iconoir-react";
+import { useState } from "react";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
   shown: { opacity: 1, y: 0 },
 };
-
-const email = [
-  {
-    label: "Email",
-    href: "mailto:ali.torbati@gmail.com",
-    comment: "ali.torbati@gmail.com",
-  },
-];
 
 const work = [
   {
@@ -47,9 +41,11 @@ const social = [
   },
 ];
 
-const groups = [email, work, social];
+const groups = [work, social];
 
 const Contact = () => {
+  const [copying, setCopying] = useState(false);
+
   return (
     <Flexbox
       as={motion.flex}
@@ -71,16 +67,42 @@ const Contact = () => {
         />
       </Box>
       <Flexbox flexDirection="column" gap={1}>
+        <Box>
+          <Flexbox
+            as={motion.div}
+            variants={item}
+            gap={1}
+            alignItems="baseline"
+            width={"100%"}
+          >
+            <Text>ali.torbati@gmail.com</Text>
+            {copying ? (
+              <Check />
+            ) : (
+              <Copy
+                cursor={"pointer"}
+                onClick={() => {
+                  navigator.clipboard.writeText("ali.torbati@gmail.com");
+                  setCopying(true);
+                  setTimeout(() => setCopying(false), 1000);
+                }}
+              />
+            )}
+          </Flexbox>
+          <motion.hr variants={item} />
+        </Box>
         {groups.map((group, index) => {
           return (
             <Box key={index}>
               {group.map((link) => {
                 return (
-                  <Box key={link.href} as={motion.div} variants={item}>
-                    <Link href={link.href} target="_blank" rel="noreferrer">
-                      {link.label}
-                    </Link>
-                    {link.comment ? <Text> — {link.comment}</Text> : null}
+                  <Box key={index} as={motion.div} variants={item}>
+                    {link.href ? (
+                      <Link href={link.href} target="_blank" rel="noreferrer">
+                        {link.label}
+                      </Link>
+                    ) : null}
+                    {link.comment ? <Text>{link.comment}</Text> : null}
                   </Box>
                 );
               })}
