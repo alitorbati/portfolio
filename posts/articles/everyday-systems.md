@@ -1,7 +1,7 @@
 ---
 title: "Everyday Systems"
 date: "2023-01-05"
-summary: "Principals and habits to manage daily life, with an emphasis on digital hygiene. Sometimes I stray from these systems, but not often."
+summary: "Principles and habits to manage daily life, with an emphasis on digital hygiene. Sometimes I stray from these systems, but not often."
 ---
 
 <Notice>
@@ -12,7 +12,7 @@ _This list is partially inspired by Tania Rascia's [Everyday Systems That Help M
 
 # The holy trinity
 
-There are three primary tools I use to keep everything organized.
+There are three primary tools I use to keep everything organized:
 
 - **Reminders** for things I need to do
 - **Calendar** for things I need to attend
