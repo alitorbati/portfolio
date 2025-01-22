@@ -72,9 +72,7 @@ const Index = (props) => {
                 <CollectionItem
                   href={feature.href}
                   frontmatter={feature.frontmatter}
-                  flexDirection="column"
-                  flexGap={2}
-                  imgWidth="100%"
+                  isStacked
                 />
               </Box>
             );

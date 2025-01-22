@@ -3,16 +3,14 @@ import Box from "./foundations/Box";
 import Flexbox from "./foundations/Flexbox";
 
 const CollectionItem = (props) => {
-  const {
-    frontmatter,
-    href,
-    flexDirection = "row",
-    imgWidth = [7, 8],
-    imgHeight = [6, 7],
-  } = props;
+  const { frontmatter, href, isStacked = false } = props;
 
   return (
-    <Flexbox gap={4} flexDirection={flexDirection}>
+    <Flexbox
+      gap={[3, 4]}
+      flexDirection={isStacked ? "column" : "row"}
+      alignItems={isStacked ? "stretch" : "flex-start"}
+    >
       <Box
         as={Link}
         href={href}
@@ -31,8 +29,8 @@ const CollectionItem = (props) => {
         {frontmatter.videoUrl ? (
           <Box
             as={"video"}
-            width={imgWidth}
-            height={imgHeight}
+            width={isStacked ? "100%" : [7, 8]}
+            height={[6, 7]}
             borderRadius={1}
             flexShrink={0}
             display="block"
@@ -50,8 +48,8 @@ const CollectionItem = (props) => {
           </Box>
         ) : (
           <Box
-            width={imgWidth}
-            height={imgHeight}
+            width={isStacked ? "100%" : [7, 8]}
+            height={[6, 7]}
             flexShrink={0}
             borderRadius={1}
             backgroundColor="backgroundAccent"
