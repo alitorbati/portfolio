@@ -6,6 +6,7 @@ url:
   url: "https://codepen.io/alitorbati/full/oOboKj"
 summary: "Using a 2D canvas to explore how one might communicate space in a physically flat environment."
 featured: true
+videoUrl: "/images/sketches/depth-in-two-dimensions/depth-in-two-dimensions.mp4"
 ---
 
 <Video source="/images/sketches/depth-in-two-dimensions/depth-in-two-dimensions.mp4" />

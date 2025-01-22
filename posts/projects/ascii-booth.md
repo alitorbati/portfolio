@@ -6,6 +6,7 @@ url:
   url: "https://school-night.github.io/ascii-camera/"
 isVisible: true
 summary: "Nostalgic archaic technology — the dot matrix printer — is recontextualized as an instant ASCII art selfie booth."
+videoUrl: "/images/projects/ascii-booth/ascii.mp4"
 ---
 
 <Video source="/images/projects/ascii-booth/ascii.mp4" />

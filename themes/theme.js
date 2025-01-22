@@ -1,6 +1,6 @@
 const fontSizes = ["1em", "1.2em", "1.8em", "4.24em", "6.86em"];
 
-const space = [0, 5, 8, 13, 21, 34, 55];
+const space = [0, 5, 8, 13, 21, 34, 55, 89, 144, 233];
 
 const radii = space;
 
@@ -21,6 +21,7 @@ const borders = [
 export default {
   fontSizes,
   space,
+  sizes: space,
   radii,
   colors,
   borders,

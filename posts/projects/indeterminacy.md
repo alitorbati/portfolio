@@ -5,6 +5,7 @@ url:
   title: "Make your own"
   url: "https://alitorbati.github.io/disarray"
 summary: "Interactive installation that gives users the power to create and share their own generative posters."
+imgUrl: "/images/projects/indeterminacy/animation-black.gif"
 ---
 
 ![Animation](/images/projects/indeterminacy/animation-black.gif)

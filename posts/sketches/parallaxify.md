@@ -5,6 +5,7 @@ url:
   title: "See the code"
   url: "https://github.com/alitorbati/parallaxify"
 summary: "A JavaScript module to easily produce a parallax image effect."
+imgUrl: "/images/sketches/parallaxify/demo.gif"
 ---
 
 ![Demo](/images/sketches/parallaxify/demo.gif)

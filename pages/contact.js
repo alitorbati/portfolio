@@ -60,7 +60,7 @@ const Contact = () => {
           src="images/avatar.png"
           alt="Photo of Ali Torbati"
           width="100vw"
-          maxWidth="140px"
+          maxWidth={[7, 8]}
           css={{
             imageRendering: "pixelated",
           }}

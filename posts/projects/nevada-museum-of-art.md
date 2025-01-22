@@ -6,6 +6,7 @@ url:
   url: "https://www.nevadaart.org/conference2021/"
 summary: "Microsite for exhibit and conference: Art + Environment 2021"
 featured: true
+videoUrl: "/images/projects/nevada-museum-of-art/overview.mp4"
 ---
 
 <Video source="/images/projects/nevada-museum-of-art/overview.mp4" />

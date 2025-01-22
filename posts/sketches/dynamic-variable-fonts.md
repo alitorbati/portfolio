@@ -3,8 +3,9 @@ title: "Dynamic variable fonts"
 summary: "An exploration of the unconventional use of variable fonts to express dynamic movement."
 date: "2018-09"
 url:
-  title: "Slide in"
+  title: "Try it"
   url: "https://codepen.io/alitorbati/full/BMppEj"
+videoUrl: "/images/sketches/dynamic-variable-fonts/dynamic-variable-fonts.mp4"
 ---
 
 <Video source="/images/sketches/dynamic-variable-fonts/dynamic-variable-fonts.mp4" />

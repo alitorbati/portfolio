@@ -5,6 +5,7 @@ url:
   title: "Original article"
   url: "https://uxdesign.cc/death-to-complexity-how-we-simplified-advanced-search-a9ab2940acf0"
 summary: "How we Simplified Advanced Search - A bit about the design process that went into reimagining Spokeo’s Advanced Search tools. This was a weeks-long collaboration between the design and front-end teams, with support from backend for some specific API updates."
+imgUrl: "/images/articles/death-to-complexity/overview.png"
 ---
 
 <Notice>

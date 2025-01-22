@@ -4,7 +4,8 @@ date: "2020-08"
 url:
   title: "View site"
   url: "https://heirs.us"
-summary: 'Portfolio site representing and elevating black-owned mixed media'
+summary: "Portfolio site representing and elevating black-owned mixed media"
+videoUrl: "/images/projects/heirs-entertainment/overview.mp4"
 ---
 
 <Video source="/images/projects/heirs-entertainment/overview.mp4" />

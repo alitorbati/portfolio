@@ -5,6 +5,7 @@ url:
   title: "Get wavy"
   url: "https://alitorbati.github.io/kinetic-type"
 summary: "Breaking down and building up words and letterforms."
+videoUrl: "/images/sketches/kinetic-type/kinetic-type.mp4"
 ---
 
 <Video source="/images/sketches/kinetic-type/kinetic-type.mp4" />

@@ -116,7 +116,7 @@ const Career = () => {
         {jobs.map((job) => {
           const startYear = job.start.split("-")[0];
           const endYear = job.end.split("-")[0];
-          const duration =
+          const period =
             startYear === endYear ? startYear : `${startYear}–${endYear}`;
 
           return (
@@ -129,8 +129,9 @@ const Career = () => {
                   whiteSpace: "nowrap",
                   textAlign: "right",
                 })}
+                color={endYear === "Present" ? "textAccent" : "text"}
               >
-                {duration}
+                {period}
               </Text>
               <Box as={motion.div} variants={item}>
                 <Link href={job.href} target="_blank" rel="noreferrer">
@@ -142,7 +143,7 @@ const Career = () => {
                     display: ["initial", "none"],
                   })}
                 >
-                  {duration}
+                  {period}
                 </Text>
                 <Box />
                 <Text color="textAccent">{job.positions.join(", ")}</Text>

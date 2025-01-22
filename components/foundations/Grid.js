@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { system } from "styled-system";
-import { grid, layout } from "styled-system";
+import { system, compose, grid, layout } from "styled-system";
 
 const gap = system({
   gap: {
@@ -9,9 +8,9 @@ const gap = system({
   },
 });
 
+const allSystemProps = compose(gap, grid, layout);
+
 export default styled("div")`
   display: grid;
-  ${gap}
-  ${grid}
-  ${layout}
+  ${allSystemProps}
 `;

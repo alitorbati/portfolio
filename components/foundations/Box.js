@@ -1,9 +1,33 @@
 import styled from "styled-components";
-import { color, space, layout, border } from "styled-system";
+import {
+  compose,
+  color,
+  space,
+  layout,
+  border,
+  background,
+  flexbox,
+} from "styled-system";
 
-export default styled("div")`
-  ${color}
-  ${space}
-  ${layout}
-  ${border}
+const allSystemProps = compose(
+  color,
+  space,
+  layout,
+  border,
+  background,
+  flexbox
+);
+
+const Box = styled("div")`
+  ${allSystemProps}
+
+  &:hover {
+    ${(props) => props._hover && allSystemProps(props._hover)}
+  }
+
+  &:focus-visible {
+    ${(props) => props._focus && allSystemProps(props._focus)}
+  }
 `;
+
+export default Box;

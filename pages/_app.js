@@ -79,7 +79,7 @@ const App = (props) => {
             </title>
           </Head>
           <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
-            <Flexbox alignItems="flex-start" flexDirection="column" gap={6}>
+            <Flexbox alignItems="stretch" flexDirection="column" gap={6}>
               <Flexbox flex={[null, "0 0 auto"]}>
                 <Navigation />
               </Flexbox>
