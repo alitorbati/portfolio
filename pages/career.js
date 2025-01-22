@@ -142,6 +142,7 @@ const Career = () => {
                   css={css({
                     display: ["initial", "none"],
                   })}
+                  color={endYear === "Present" ? "textAccent" : "text"}
                 >
                   {period}
                 </Text>
