@@ -1,14 +1,14 @@
 ---
-title: "Dynamic variable fonts"
+title: "Variable type"
 summary: "An exploration of the unconventional use of variable fonts to express dynamic movement."
 date: "2018-09"
 url:
   title: "Try it"
   url: "https://codepen.io/alitorbati/full/BMppEj"
-videoUrl: "/images/sketches/dynamic-variable-fonts/dynamic-variable-fonts.mp4"
+videoUrl: "/images/sketches/variable-type/variable-type.mov"
 ---
 
-<Video source="/images/sketches/dynamic-variable-fonts/dynamic-variable-fonts.mp4" />
+<Video source="/images/sketches/variable-type/variable-type.mov" />
 
 As an attempt to further explore the relationship of space and type, I wanted to create an experiment that would use movement inputs to modify the properties of a variable typeface.
 

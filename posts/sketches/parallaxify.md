@@ -5,10 +5,7 @@ url:
   title: "See the code"
   url: "https://github.com/alitorbati/parallaxify"
 summary: "A JavaScript module to easily produce a parallax image effect."
-imgUrl: "/images/sketches/parallaxify/demo.gif"
 ---
-
-![Demo](/images/sketches/parallaxify/demo.gif)
 
 While building a microsite for a family member I wanted to include an elegant parallax image effect on scroll. A parallax effect is when an image appears to scroll slightly faster than the rest of the page, producing a subtle shifting/drifting sensation.
 
