@@ -2,6 +2,7 @@
 title: "Everyday Systems"
 date: "2023-01-05"
 summary: "Principles and habits to manage daily life, with an emphasis on digital hygiene. Sometimes I stray from these systems, but not often."
+imgUrl: "/images/articles/everyday-systems/everyday-systems.png"
 ---
 
 <Notice>
@@ -9,6 +10,9 @@ summary: "Principles and habits to manage daily life, with an emphasis on digita
 _This list is partially inspired by Tania Rascia's [Everyday Systems That Help Me](https://www.taniarascia.com/everyday-systems/)._
 
 </Notice>
+
+![Everyday systems](/images/articles/everyday-systems/everyday-systems.png)
+_Image by [Visualize Value](https://www.visualizevalue.com/)_
 
 # The holy trinity
 
