@@ -1,6 +1,6 @@
 import css from "@styled-system/css";
 import Link from "next/link";
-import { ArrowDownCircled } from "iconoir-react";
+import { ArrowDownCircle } from "iconoir-react";
 import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Grid from "../components/foundations/Grid";
@@ -168,7 +168,7 @@ const Career = () => {
             href="#"
             onClick={typeof window !== "undefined" ? window.print : null}
           >
-            <ArrowDownCircled /> Download
+            <ArrowDownCircle /> Download
           </a>
         </Flexbox>
       </Box>
