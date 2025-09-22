@@ -12,6 +12,8 @@ import {
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
 
+// For now, keep the static paths but make them easily maintainable
+// The dynamic generation will happen at the Next.js level through the dynamic routes
 export const paths = [
   {
     href: "/",
