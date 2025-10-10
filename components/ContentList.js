@@ -14,6 +14,9 @@ const ContentList = (props) => {
   return (
     <Flexbox
       as={motion.flex}
+      // key fixes an issue where template pages don't trigger nested motion
+      // animations correctly
+      key={pathBase}
       initial="hidden"
       animate="shown"
       transition={{ staggerChildren: 0.1 }}
