@@ -3,12 +3,13 @@ import { Box, Flex, chakra } from "@chakra-ui/react";
 import type { Post } from "../types/content";
 
 interface PostNavigationProps {
+  category: string;
   olderPost: Post | null;
   newerPost: Post | null;
 }
 
 const PostNavigation = (props: PostNavigationProps) => {
-  const { olderPost, newerPost } = props;
+  const { category, olderPost, newerPost } = props;
 
   return (
     <Flex gap={3} justifyContent="space-between">
@@ -16,7 +17,9 @@ const PostNavigation = (props: PostNavigationProps) => {
         <Box>
           <chakra.span>Older</chakra.span>
           <br />
-          <Link href={olderPost.slug}>{olderPost.frontmatter.title}</Link>
+          <Link href={`/${category}/${olderPost.slug}`}>
+            {olderPost.frontmatter.title}
+          </Link>
         </Box>
       ) : (
         <Box />
@@ -25,7 +28,9 @@ const PostNavigation = (props: PostNavigationProps) => {
         <Box textAlign="right">
           <chakra.span>Newer</chakra.span>
           <br />
-          <Link href={newerPost.slug}>{newerPost.frontmatter.title}</Link>
+          <Link href={`/${category}/${newerPost.slug}`}>
+            {newerPost.frontmatter.title}
+          </Link>
         </Box>
       ) : (
         <Box />

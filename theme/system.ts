@@ -116,6 +116,28 @@ const config = defineConfig({
       px: "1",
       whiteSpace: "pre-wrap",
     },
+    // Shiki code blocks: the <pre> carries the light theme inline; add the box
+    // styling and reset the inner <code> so the inline-`code` rule above doesn't
+    // leak in. Long lines scroll horizontally rather than wrapping.
+    ".shiki": {
+      padding: "4",
+      borderRadius: "1",
+      overflowX: "auto",
+      fontSize: "85%",
+      whiteSpace: "pre",
+    },
+    ".shiki code": {
+      bg: "transparent",
+      padding: 0,
+      borderRadius: 0,
+      fontSize: "inherit",
+      whiteSpace: "inherit",
+    },
+    // Follow next-themes: under `.dark`, swap to Shiki's dark-theme variables.
+    ".dark .shiki, .dark .shiki span": {
+      color: "var(--shiki-dark) !important",
+      backgroundColor: "var(--shiki-dark-bg) !important",
+    },
     blockquote: {
       borderLeft: "2",
       px: "4",

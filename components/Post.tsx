@@ -21,12 +21,13 @@ const item = {
 interface PostProps {
   compiledSource: string;
   frontmatter: Frontmatter;
+  category: string;
   olderPost: PostType | null;
   newerPost: PostType | null;
 }
 
 const Post = (props: PostProps) => {
-  const { compiledSource, frontmatter, olderPost, newerPost } = props;
+  const { compiledSource, frontmatter, category, olderPost, newerPost } = props;
 
   return (
     <MotionBox initial="hidden" animate="shown" variants={staggerContainer}>
@@ -52,7 +53,11 @@ const Post = (props: PostProps) => {
       <Box marginBottom={4} />
       <chakra.span>■</chakra.span>
       <Box marginBottom={6} />
-      <PostNavigation olderPost={olderPost} newerPost={newerPost} />
+      <PostNavigation
+        category={category}
+        olderPost={olderPost}
+        newerPost={newerPost}
+      />
     </MotionBox>
   );
 };

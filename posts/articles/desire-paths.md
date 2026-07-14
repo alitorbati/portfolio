@@ -59,8 +59,10 @@ Originally, we based our components on mockups, which meant they were built to s
 >
   Changes saved
 </Alert>
+```
 
-// settings.css
+```css
+/* settings.css */
 .settings--Alert {
   margin-bottom: var(--space-md);
 }

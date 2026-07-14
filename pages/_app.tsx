@@ -8,12 +8,6 @@ import { Box, Flex } from "@chakra-ui/react";
 import Notice from "../components/Notice";
 import Video from "../components/Video";
 import Navigation, { paths } from "../components/Navigation";
-// import "highlight.js/styles/github-dark.css";
-// import "highlight.js/styles/base16/apprentice.css";
-// import "highlight.js/styles/base16/atelier-estuary.css";
-// import "highlight.js/styles/base16/chalk.css";
-// import "highlight.js/styles/base16/danqing.css";
-import "highlight.js/styles/base16/atelier-savanna.css";
 
 const ThreeUp = (props: ComponentPropsWithoutRef<"div">) => (
   <Flex gap="20px" {...props} />

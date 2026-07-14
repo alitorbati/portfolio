@@ -3,7 +3,7 @@ import path from "path";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
-import rehypeHighlight from "rehype-highlight";
+import rehypeShiki from "@shikijs/rehype";
 import Post from "../../components/Post";
 import { getAllPaths } from "../../utils/getAllPaths";
 import { getAllPosts } from "../../utils/getAllPosts";
@@ -26,11 +26,12 @@ interface PostPageProps {
 }
 
 const PostPage = (props: PostPageProps) => {
-  const { mdxSource, olderPost, newerPost } = props;
+  const { mdxSource, olderPost, newerPost, category } = props;
   const { compiledSource, frontmatter } = mdxSource;
 
   return (
     <Post
+      category={category}
       olderPost={olderPost}
       newerPost={newerPost}
       compiledSource={compiledSource}
@@ -95,7 +96,18 @@ export const getStaticProps: GetStaticProps<
       {
         parseFrontmatter: true,
         mdxOptions: {
-          rehypePlugins: [rehypeHighlight],
+          rehypePlugins: [
+            [
+              rehypeShiki,
+              {
+                // Dual themes: the light theme is applied inline and the dark
+                // theme is emitted as CSS variables; a `.dark` rule in globalCss
+                // swaps to them to follow the next-themes color mode.
+                themes: { light: "one-light", dark: "github-dark" },
+                defaultColor: "light",
+              },
+            ],
+          ],
         },
       }
     );

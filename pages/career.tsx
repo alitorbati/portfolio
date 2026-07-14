@@ -24,7 +24,7 @@ const jobs: Job[] = [
     positions: ["Senior Software Engineer"],
     start: "2023-04-18",
     end: "Present",
-    description: "",
+    description: "Fulfilling a hybrid role of designer and developer on a lean and effective team building highly technical security software.",
   },
   {
     company: "ArtCenter",
@@ -33,7 +33,7 @@ const jobs: Job[] = [
     start: "2022-09-01",
     end: "Present",
     description:
-      "Teaching generative design and transmedia at one of the world's most prestigious design schools.",
+      "Teaching Generative Design at one of the world's most prestigious design schools.",
   },
   {
     company: "Fastly",
@@ -42,7 +42,7 @@ const jobs: Job[] = [
     start: "2020-10-01",
     end: "2023-04-14",
     description:
-      "Joined via acquisition of Signal Sciences. Promoted to Staff Software Engineer in recognition of continued effectiveness across several teams and features.",
+      "Joined via acquisition of Signal Sciences. Promoted to Staff Software Engineer in recognition of effectiveness across several teams.",
   },
   {
     company: "Signal Sciences",
@@ -51,7 +51,7 @@ const jobs: Job[] = [
     start: "2017-01-16",
     end: "2020-10-01",
     description:
-      "Built Cosmo, a robust React component library. Collaborated closely with designers. Provided technical mentorship and leadership to junior engineers.",
+      "Built a robust React component library. Collaborated closely with designers. Provided technical mentorship and leadership to junior engineers.",
   },
   {
     company: "Spokeo",
