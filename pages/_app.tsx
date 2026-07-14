@@ -1,19 +1,13 @@
-import * as React from "react";
 import type { ComponentPropsWithoutRef } from "react";
 import type { AppProps } from "next/app";
-import styled, { ThemeProvider } from "styled-components";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { IconoirProvider } from "iconoir-react";
-import GlobalStyle from "../styles/GlobalStyle";
-import Box from "../components/foundations/Box";
-import Flexbox from "../components/foundations/Flexbox";
+import { MDXProvider } from "@mdx-js/react";
+import { Provider } from "../components/ui/provider";
+import { Box, Flex } from "@chakra-ui/react";
 import Notice from "../components/Notice";
 import Video from "../components/Video";
-import light from "../themes/theme";
-import dark from "../themes/dark";
 import Navigation, { paths } from "../components/Navigation";
-import { MDXProvider } from "@mdx-js/react";
 // import "highlight.js/styles/github-dark.css";
 // import "highlight.js/styles/base16/apprentice.css";
 // import "highlight.js/styles/base16/atelier-estuary.css";
@@ -21,10 +15,9 @@ import { MDXProvider } from "@mdx-js/react";
 // import "highlight.js/styles/base16/danqing.css";
 import "highlight.js/styles/base16/atelier-savanna.css";
 
-const ThreeUp = styled("div")`
-  display: flex;
-  gap: 20px;
-`;
+const ThreeUp = (props: ComponentPropsWithoutRef<"div">) => (
+  <Flex gap="20px" {...props} />
+);
 
 const components = {
   Notice,
@@ -37,36 +30,8 @@ const components = {
   h4: (props: ComponentPropsWithoutRef<"h4">) => <h5 {...props} />,
 };
 
-const prefersDarkQuery = "(prefers-color-scheme: dark)";
-
-const subscribeToColorScheme = (callback: () => void) => {
-  if (!window.matchMedia) {
-    return () => {};
-  }
-  const mm = window.matchMedia(prefersDarkQuery);
-  mm.addEventListener("change", callback);
-  return () => mm.removeEventListener("change", callback);
-};
-
-const getThemeSnapshot = () => {
-  if (!window.matchMedia) {
-    return dark;
-  }
-  return window.matchMedia(prefersDarkQuery).matches ? dark : light;
-};
-
-// SSR renders with the dark theme; useSyncExternalStore swaps to the user's
-// OS preference after hydration without a hydration mismatch.
-const getServerThemeSnapshot = () => dark;
-
 const App = (props: AppProps) => {
   const { Component, pageProps } = props;
-
-  const theme = React.useSyncExternalStore(
-    subscribeToColorScheme,
-    getThemeSnapshot,
-    getServerThemeSnapshot
-  );
 
   const router = useRouter();
   const currentPath = paths.find((path) => {
@@ -74,39 +39,25 @@ const App = (props: AppProps) => {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+    <Provider>
       <MDXProvider components={components}>
-        <IconoirProvider
-          iconProps={{
-            strokeWidth: 2,
-            width: "1em",
-            height: "1em",
-            style: {
-              transform: "translateY(2px)",
-            },
-          }}
-        >
-          <GlobalStyle />
-          <Head>
-            <title>
-              {currentPath
-                ? `${currentPath.name} • Ali Torbati`
-                : "Ali Torbati"}
-            </title>
-          </Head>
-          <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
-            <Flexbox alignItems="stretch" flexDirection="column" gap={6}>
-              <Flexbox flex={[null, "0 0 auto"]}>
-                <Navigation />
-              </Flexbox>
-              <Box as="main">
-                <Component {...pageProps} />
-              </Box>
-            </Flexbox>
-          </Box>
-        </IconoirProvider>
+        <Head>
+          <title>
+            {currentPath ? `${currentPath.name} • Ali Torbati` : "Ali Torbati"}
+          </title>
+        </Head>
+        <Box maxWidth="70ch" margin="0 auto" padding={4} paddingBottom={6}>
+          <Flex alignItems="stretch" flexDirection="column" gap={6}>
+            <Flex flex={[null, "0 0 auto"]}>
+              <Navigation />
+            </Flex>
+            <Box as="main">
+              <Component {...pageProps} />
+            </Box>
+          </Flex>
+        </Box>
       </MDXProvider>
-    </ThemeProvider>
+    </Provider>
   );
 };
 

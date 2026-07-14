@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Box from "./foundations/Box";
-import Text from "./foundations/Text";
+import { Box, chakra } from "@chakra-ui/react";
 import Date from "./Date";
 import type { Frontmatter } from "../types/content";
 
@@ -14,7 +13,7 @@ const PostHeader = (props: PostHeaderProps) => {
   return (
     <Box>
       <h1>{frontmatter.title}</h1>
-      <Text color="textAccent">{frontmatter.summary}</Text>
+      <chakra.span color="textAccent">{frontmatter.summary}</chakra.span>
       <Box marginBottom={2} />
       <Date value={frontmatter.date} />
       {frontmatter.url ? (

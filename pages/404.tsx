@@ -1,4 +1,4 @@
-import Box from "../components/foundations/Box";
+import { Box } from "@chakra-ui/react";
 
 const Custom404 = () => {
   return (

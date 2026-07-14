@@ -1,10 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import css from "@styled-system/css";
-import { motion } from "framer-motion";
-import Box from "../components/foundations/Box";
-import Text from "../components/foundations/Text";
-import Grid from "../components/foundations/Grid";
+import { Box, chakra } from "@chakra-ui/react";
+import { MotionBox, staggerContainer } from "../components/motion";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
@@ -96,21 +93,21 @@ const jobs: Job[] = [
 const Career = () => {
   return (
     <Box>
-      <Grid
-        as={motion.div}
+      <MotionBox
+        display="grid"
         initial="hidden"
         animate="shown"
-        transition={{ staggerChildren: 0.1 }}
+        variants={staggerContainer}
         gap={5}
         gridTemplateColumns={["auto", "1fr auto"]}
       >
         <Box></Box>
-        <Box as={motion.div} variants={item}>
+        <MotionBox variants={item}>
           I am a UX Engineer with over ten years of practical experience
           designing and implementing interfaces. I also teach a university
           course for students interested in experimental and generative design.
           I have a highly developed eye and taste for design and UX.
-        </Box>
+        </MotionBox>
         {jobs.map((job) => {
           const startYear = job.start.split("-")[0];
           const endYear = job.end.split("-")[0];
@@ -119,40 +116,35 @@ const Career = () => {
 
           return (
             <React.Fragment key={job.company}>
-              <Text
-                as={motion.div}
+              <MotionBox
                 variants={item}
-                css={css({
-                  display: ["none", "initial"],
-                  whiteSpace: "nowrap",
-                  textAlign: "right",
-                })}
+                display={["none", "initial"]}
+                whiteSpace="nowrap"
+                textAlign="right"
                 color={endYear === "Present" ? "textAccent" : "text"}
               >
                 {period}
-              </Text>
-              <Box as={motion.div} variants={item}>
+              </MotionBox>
+              <MotionBox variants={item}>
                 <Link href={job.href} target="_blank" rel="noreferrer">
                   {job.company}
                 </Link>
-                <Text
+                <chakra.span
                   marginLeft={3}
-                  css={css({
-                    display: ["initial", "none"],
-                  })}
+                  display={["initial", "none"]}
                   color={endYear === "Present" ? "textAccent" : "text"}
                 >
                   {period}
-                </Text>
+                </chakra.span>
                 <Box />
-                <Text color="textAccent">{job.positions.join(", ")}</Text>
+                <chakra.span color="textAccent">{job.positions.join(", ")}</chakra.span>
                 <Box />
                 {job.description}
-              </Box>
+              </MotionBox>
             </React.Fragment>
           );
         })}
-      </Grid>
+      </MotionBox>
     </Box>
   );
 };

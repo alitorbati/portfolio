@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { Emoji } from "iconoir-react";
+import { Smile } from "lucide-react";
 import { motion } from "framer-motion";
-import Box from "../components/foundations/Box";
-import Flexbox from "../components/foundations/Flexbox";
-import Text from "../components/foundations/Text";
+import { Box, Flex, chakra } from "@chakra-ui/react";
 import CollectionItem from "../components/CollectionItem";
+import { MotionBox } from "../components/motion";
 import { getAllPosts } from "../utils/getAllPosts";
 import { paths } from "../components/Navigation";
 import type { GetStaticProps } from "next";
@@ -30,20 +29,14 @@ const Index = (props: IndexProps) => {
         transition={{ staggerChildren: 0.1 }}
       >
         <motion.div variants={item}>
-          <Text as="h1" marginTop={0} marginBottom={0}>
+          <chakra.span as="h1" marginTop={0} marginBottom={0}>
             Ali Torbati
-          </Text>
+          </chakra.span>
         </motion.div>
         <motion.div variants={item}>
-          <Text as="h2" marginTop={0}>
+          <chakra.span as="h2" marginTop={0}>
             Software engineer, designer and creative technologist.
-          </Text>
-        </motion.div>
-        <Box marginBottom={5} />
-        <motion.div variants={item}>
-          <Box>
-            I am a UX Engineer with over ten years of practical experience designing and implementing interfaces. I also teach a university course for students interested in experimental and generative design. I have a highly developed eye and taste for design and UX.
-          </Box>
+          </chakra.span>
         </motion.div>
         <Box marginBottom={5} />
         <motion.div variants={item}>
@@ -57,26 +50,25 @@ const Index = (props: IndexProps) => {
             noted in my <Link href="/career">career</Link>{" "}
             highlights. If any of
             this resonates with you, you&apos;re welcome to{" "}
-            <Link href="/contact">contact</Link> me <Emoji />
+            <Link href="/contact">contact</Link> me <Smile />
           </Box>
         </motion.div>
         <Box marginBottom={6} />
         <motion.div variants={item}>
-          <Text as={"h2"}>Featured posts</Text>
+          <chakra.span as={"h2"}>Featured posts</chakra.span>
         </motion.div>
         <Box marginBottom={3} />
-        <Flexbox gap={3} flexDirection={["column", "row"]}>
+        <Flex gap={3} flexDirection={["column", "row"]}>
           {features.map((feature, index) => {
             const path = paths.find(
               (path) => path.href.replace("/", "") === feature.category
             );
             return (
-              <Box
-                as={motion.div}
+              <MotionBox
                 variants={item}
                 key={index}
                 borderRadius={1}
-                border={1}
+                border="1"
                 padding={3}
                 style={{ flex: "1" }}
               >
@@ -87,10 +79,10 @@ const Index = (props: IndexProps) => {
                   frontmatter={feature.frontmatter}
                   isStacked
                 />
-              </Box>
+              </MotionBox>
             );
           })}
-        </Flexbox>
+        </Flex>
       </motion.div>
     </Box>
   );

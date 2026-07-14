@@ -1,17 +1,15 @@
 import type { ReactNode } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import css from "@styled-system/css";
 import {
-  PageFlip,
-  BoxIso,
-  Flask,
-  Computer,
-  ChatLines,
-  HomeSimple,
-} from "iconoir-react";
-import Text from "../components/foundations/Text";
-import Flexbox from "../components/foundations/Flexbox";
+  BookOpen,
+  Box as BoxIcon,
+  FlaskConical,
+  Laptop,
+  MessageCircle,
+  House,
+} from "lucide-react";
+import { Flex, chakra } from "@chakra-ui/react";
 
 export interface NavPath {
   href: string;
@@ -25,32 +23,32 @@ export const paths: NavPath[] = [
   {
     href: "/",
     name: "Home",
-    icon: <HomeSimple />,
+    icon: <House />,
   },
   {
     href: "/articles",
     name: "Articles",
-    icon: <PageFlip />,
+    icon: <BookOpen />,
   },
   {
     href: "/projects",
     name: "Projects",
-    icon: <BoxIso />,
+    icon: <BoxIcon />,
   },
   {
     href: "/sketches",
     name: "Sketches",
-    icon: <Flask />,
+    icon: <FlaskConical />,
   },
   {
     href: "/career",
     name: "Career",
-    icon: <Computer />,
+    icon: <Laptop />,
   },
   {
     href: "/contact",
     name: "Contact",
-    icon: <ChatLines />,
+    icon: <MessageCircle />,
   },
 ];
 
@@ -58,7 +56,7 @@ const Navigation = () => {
   const router = useRouter();
 
   return (
-    <Flexbox as="nav" flexDirection="row" flexWrap="wrap" flex="1" gap={4}>
+    <Flex as="nav" flexDirection="row" flexWrap="wrap" flex="1" gap={4}>
       {paths.map((path) => {
         const currentPath = router.asPath;
         const currentPathParts = currentPath.split("/");
@@ -73,17 +71,14 @@ const Navigation = () => {
             key={path.href}
             data-active={isCurrent.toString()}
           >
-            <Text>
+            <Flex as="span" display="inline-flex" alignItems="center" gap={1}>
               {path.icon}
-              <Text css={css({ display: ["none", "initial"] })}>
-                {" "}
-                {path.name}
-              </Text>
-            </Text>
+              <chakra.span display={["none", "initial"]}>{path.name}</chakra.span>
+            </Flex>
           </Link>
         );
       })}
-    </Flexbox>
+    </Flex>
   );
 };
 

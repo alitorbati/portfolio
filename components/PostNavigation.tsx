@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Box from "../components/foundations/Box";
-import Text from "../components/foundations/Text";
-import Flexbox from "../components/foundations/Flexbox";
+import { Box, Flex, chakra } from "@chakra-ui/react";
 import type { Post } from "../types/content";
 
 interface PostNavigationProps {
@@ -13,10 +11,10 @@ const PostNavigation = (props: PostNavigationProps) => {
   const { olderPost, newerPost } = props;
 
   return (
-    <Flexbox gap={3} justifyContent="space-between">
+    <Flex gap={3} justifyContent="space-between">
       {olderPost ? (
         <Box>
-          <Text>Older</Text>
+          <chakra.span>Older</chakra.span>
           <br />
           <Link href={olderPost.slug}>{olderPost.frontmatter.title}</Link>
         </Box>
@@ -24,15 +22,15 @@ const PostNavigation = (props: PostNavigationProps) => {
         <Box />
       )}
       {newerPost ? (
-        <Box css={{ textAlign: "right" }}>
-          <Text>Newer</Text>
+        <Box textAlign="right">
+          <chakra.span>Newer</chakra.span>
           <br />
           <Link href={newerPost.slug}>{newerPost.frontmatter.title}</Link>
         </Box>
       ) : (
         <Box />
       )}
-    </Flexbox>
+    </Flex>
   );
 };
 

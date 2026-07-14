@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check, Copy } from "iconoir-react";
-import Box from "../components/foundations/Box";
-import Text from "../components/foundations/Text";
-import Flexbox from "../components/foundations/Flexbox";
+import { Box, Flex, chakra } from "@chakra-ui/react";
+import { Check, Copy } from "lucide-react";
+import { MotionBox, staggerContainer } from "../components/motion";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
@@ -53,16 +52,15 @@ const Contact = () => {
   const [copying, setCopying] = useState(false);
 
   return (
-    <Flexbox
-      as={motion.div}
+    <MotionBox
+      display="flex"
       initial="hidden"
       animate="shown"
-      transition={{ staggerChildren: 0.1 }}
+      variants={staggerContainer}
       gap={5}
     >
-      <Box as={motion.div} variants={item}>
-        <Box
-          as="img"
+      <MotionBox variants={item}>
+        <chakra.img
           src="images/avatar.png"
           alt="Photo of Ali Torbati"
           width="100vw"
@@ -71,22 +69,22 @@ const Contact = () => {
             imageRendering: "pixelated",
           }}
         />
-      </Box>
-      <Flexbox flexDirection="column" gap={1}>
+      </MotionBox>
+      <Flex flexDirection="column" gap={1}>
         <Box>
-          <Flexbox
-            as={motion.div}
+          <MotionBox
+            display="flex"
             variants={item}
             gap={1}
             alignItems="baseline"
             width={"100%"}
           >
-            <Text>ali.torbati@gmail.com</Text>
+            <chakra.span>ali.torbati@gmail.com</chakra.span>
             {copying ? (
               <Check />
             ) : (
               <Copy
-                cursor={"pointer"}
+                style={{ cursor: "pointer" }}
                 onClick={() => {
                   navigator.clipboard.writeText("ali.torbati@gmail.com");
                   setCopying(true);
@@ -94,7 +92,7 @@ const Contact = () => {
                 }}
               />
             )}
-          </Flexbox>
+          </MotionBox>
           <motion.hr variants={item} />
         </Box>
         {groups.map((group, index) => {
@@ -102,22 +100,22 @@ const Contact = () => {
             <Box key={index}>
               {group.map((link) => {
                 return (
-                  <Box key={link.label} as={motion.div} variants={item}>
+                  <MotionBox key={link.label} variants={item}>
                     {link.href ? (
                       <Link href={link.href} target="_blank" rel="noreferrer">
                         {link.label}
                       </Link>
                     ) : null}
-                    {link.comment ? <Text>{link.comment}</Text> : null}
-                  </Box>
+                    {link.comment ? <chakra.span>{link.comment}</chakra.span> : null}
+                  </MotionBox>
                 );
               })}
               {index < groups.length - 1 ? <motion.hr variants={item} /> : null}
             </Box>
           );
         })}
-      </Flexbox>
-    </Flexbox>
+      </Flex>
+    </MotionBox>
   );
 };
 

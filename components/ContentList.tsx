@@ -1,6 +1,6 @@
 import path from "path";
 import { motion } from "framer-motion";
-import Flexbox from "./foundations/Flexbox";
+import { MotionBox, staggerContainer } from "./motion";
 import CollectionItem from "./CollectionItem";
 import type { Post } from "../types/content";
 
@@ -18,14 +18,14 @@ const ContentList = (props: ContentListProps) => {
   const { posts, pathBase } = props;
 
   return (
-    <Flexbox
-      as={motion.div}
+    <MotionBox
+      display="flex"
       // key fixes an issue where template pages don't trigger nested motion
       // animations correctly
       key={pathBase}
       initial="hidden"
       animate="shown"
-      transition={{ staggerChildren: 0.1 }}
+      variants={staggerContainer}
       flexDirection="column"
       gap={5}
     >
@@ -38,7 +38,7 @@ const ContentList = (props: ContentListProps) => {
           </motion.div>
         );
       })}
-    </Flexbox>
+    </MotionBox>
   );
 };
 
