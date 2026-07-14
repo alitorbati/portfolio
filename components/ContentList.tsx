@@ -1,19 +1,25 @@
 import path from "path";
+import { motion } from "framer-motion";
 import Flexbox from "./foundations/Flexbox";
 import CollectionItem from "./CollectionItem";
-import { motion } from "framer-motion";
+import type { Post } from "../types/content";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
   shown: { opacity: 1, y: 0 },
 };
 
-const ContentList = (props) => {
+interface ContentListProps {
+  posts: Post[];
+  pathBase: string;
+}
+
+const ContentList = (props: ContentListProps) => {
   const { posts, pathBase } = props;
 
   return (
     <Flexbox
-      as={motion.flex}
+      as={motion.div}
       // key fixes an issue where template pages don't trigger nested motion
       // animations correctly
       key={pathBase}

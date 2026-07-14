@@ -1,19 +1,25 @@
 import Link from "next/link";
 import { Emoji } from "iconoir-react";
+import { motion } from "framer-motion";
 import Box from "../components/foundations/Box";
 import Flexbox from "../components/foundations/Flexbox";
 import Text from "../components/foundations/Text";
 import CollectionItem from "../components/CollectionItem";
 import { getAllPosts } from "../utils/getAllPosts";
 import { paths } from "../components/Navigation";
-import { motion } from "framer-motion";
+import type { GetStaticProps } from "next";
+import type { Feature, Post } from "../types/content";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
   shown: { opacity: 1, y: 0 },
 };
 
-const Index = (props) => {
+interface IndexProps {
+  features: Feature[];
+}
+
+const Index = (props: IndexProps) => {
   const { features } = props;
 
   return (
@@ -48,7 +54,8 @@ const Index = (props) => {
             <Link href="/projects">projects</Link>. Smaller{" "}
             <Link href="/sketches">sketches</Link> are code experiments to learn
             a new skill or convey an idea. I get paid to build web stuff, as
-            noted in my <Link href="/career">career</Link> highlights. If any of
+            noted in my <Link href="/career">career</Link>{" "}
+            highlights. If any of
             this resonates with you, you&apos;re welcome to{" "}
             <Link href="/contact">contact</Link> me <Emoji />
           </Box>
@@ -73,7 +80,7 @@ const Index = (props) => {
                 padding={3}
                 style={{ flex: "1" }}
               >
-                {path.icon} {path.name}
+                {path?.icon} {path?.name}
                 <Box marginBottom={5} />
                 <CollectionItem
                   href={feature.href}
@@ -89,15 +96,20 @@ const Index = (props) => {
   );
 };
 
-export async function getStaticProps() {
-  const allArticles = await getAllPosts("articles");
-  const allProjects = await getAllPosts("projects");
-  const allSketches = await getAllPosts("sketches");
-  const featuredArticle = allArticles.find((p) => p.frontmatter.featured);
-  const featuredProject = allProjects.find((p) => p.frontmatter.featured);
-  const featuredSketch = allSketches.find((p) => p.frontmatter.featured);
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+  const findFeatured = (posts: Post[]): Post => {
+    const post = posts.find((p) => p.frontmatter.featured);
+    if (!post) {
+      throw new Error("No featured post found");
+    }
+    return post;
+  };
 
-  const features = [
+  const featuredArticle = findFeatured(await getAllPosts("articles"));
+  const featuredProject = findFeatured(await getAllPosts("projects"));
+  const featuredSketch = findFeatured(await getAllPosts("sketches"));
+
+  const features: Feature[] = [
     {
       category: "articles",
       href: `/articles/${featuredArticle.slug}`,
@@ -120,6 +132,6 @@ export async function getStaticProps() {
       features,
     },
   };
-}
+};
 
 export default Index;

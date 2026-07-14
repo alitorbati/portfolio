@@ -1,6 +1,7 @@
 import * as React from "react";
-import styled from "styled-components";
-import { ThemeProvider } from "styled-components";
+import type { ComponentPropsWithoutRef } from "react";
+import type { AppProps } from "next/app";
+import styled, { ThemeProvider } from "styled-components";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { IconoirProvider } from "iconoir-react";
@@ -30,15 +31,15 @@ const components = {
   Video,
   ThreeUp,
   // re-map markdown headers so that the page title is the proper h1, and subsequent headers are "downsized"
-  h1: (props) => <h2 {...props} />,
-  h2: (props) => <h3 {...props} />,
-  h3: (props) => <h4 {...props} />,
-  h4: (props) => <h5 {...props} />,
+  h1: (props: ComponentPropsWithoutRef<"h1">) => <h2 {...props} />,
+  h2: (props: ComponentPropsWithoutRef<"h2">) => <h3 {...props} />,
+  h3: (props: ComponentPropsWithoutRef<"h3">) => <h4 {...props} />,
+  h4: (props: ComponentPropsWithoutRef<"h4">) => <h5 {...props} />,
 };
 
 const prefersDarkQuery = "(prefers-color-scheme: dark)";
 
-const subscribeToColorScheme = (callback) => {
+const subscribeToColorScheme = (callback: () => void) => {
   if (!window.matchMedia) {
     return () => {};
   }
@@ -58,7 +59,7 @@ const getThemeSnapshot = () => {
 // OS preference after hydration without a hydration mismatch.
 const getServerThemeSnapshot = () => dark;
 
-const App = (props) => {
+const App = (props: AppProps) => {
   const { Component, pageProps } = props;
 
   const theme = React.useSyncExternalStore(

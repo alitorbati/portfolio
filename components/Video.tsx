@@ -1,4 +1,8 @@
-const Video = (props) => {
+interface VideoProps {
+  source: string;
+}
+
+const Video = (props: VideoProps) => {
   return (
     <video loop muted autoPlay playsInline>
       <source src={props.source} type="video/mp4" />

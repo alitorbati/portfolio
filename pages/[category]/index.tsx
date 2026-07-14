@@ -1,18 +1,28 @@
+import type { GetStaticPaths, GetStaticProps } from "next";
 import { sortByDate } from "../../utils/sortByDate";
 import { getAllPosts } from "../../utils/getAllPosts";
-import { getContentCategories, isValidCategory } from "../../utils/getContentCategories";
+import {
+  getContentCategories,
+  isValidCategory,
+} from "../../utils/getContentCategories";
 import ContentList from "../../components/ContentList";
+import type { Post } from "../../types/content";
 
-const CategoryPage = (props) => {
+interface CategoryPageProps {
+  posts: Post[];
+  category: string;
+}
+
+const CategoryPage = (props: CategoryPageProps) => {
   const { posts, category } = props;
   return <ContentList posts={posts} pathBase={category} />;
 };
 
 export default CategoryPage;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const categories = getContentCategories();
-  
+
   const paths = categories.map((category) => ({
     params: { category },
   }));
@@ -21,11 +31,14 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const { category } = params;
-  
+export const getStaticProps: GetStaticProps<
+  CategoryPageProps,
+  { category: string }
+> = async ({ params }) => {
+  const { category } = params!;
+
   // Validate that this is a real category
   if (!isValidCategory(category)) {
     return {
@@ -49,4 +62,4 @@ export async function getStaticProps({ params }) {
       notFound: true,
     };
   }
-}
+};

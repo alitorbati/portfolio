@@ -1,8 +1,15 @@
 import Link from "next/link";
 import Box from "./foundations/Box";
 import Flexbox from "./foundations/Flexbox";
+import type { Frontmatter } from "../types/content";
 
-const CollectionItem = (props) => {
+interface CollectionItemProps {
+  frontmatter: Frontmatter;
+  href: string;
+  isStacked?: boolean;
+}
+
+const CollectionItem = (props: CollectionItemProps) => {
   const { frontmatter, href, isStacked = false } = props;
 
   return (

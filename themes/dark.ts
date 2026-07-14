@@ -1,3 +1,4 @@
+import type { Theme } from "../types/content";
 import theme from "./theme";
 
 const colors = {
@@ -14,7 +15,7 @@ const borders = [
   `2px solid ${colors.textAccent}`,
 ];
 
-const dark = {
+const dark: Theme = {
   ...theme,
   colors,
   borders,

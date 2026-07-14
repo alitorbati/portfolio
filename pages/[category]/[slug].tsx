@@ -1,15 +1,31 @@
 import fs from "fs";
 import path from "path";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import { serialize } from "next-mdx-remote/serialize";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import rehypeHighlight from "rehype-highlight";
 import Post from "../../components/Post";
 import { getAllPaths } from "../../utils/getAllPaths";
 import { getAllPosts } from "../../utils/getAllPosts";
-import { getContentCategories, isValidCategory } from "../../utils/getContentCategories";
+import {
+  getContentCategories,
+  isValidCategory,
+} from "../../utils/getContentCategories";
 import { sortByDate } from "../../utils/sortByDate";
 import { getOlderNewer } from "../../utils/getOlderNewer";
+import type { Frontmatter, Post as PostType } from "../../types/content";
 
-const PostPage = (props) => {
+type PostMdxSource = MDXRemoteSerializeResult<Record<string, unknown>, Frontmatter>;
+
+interface PostPageProps {
+  mdxSource: PostMdxSource;
+  olderPost: PostType | null;
+  newerPost: PostType | null;
+  category: string;
+  slug: string;
+}
+
+const PostPage = (props: PostPageProps) => {
   const { mdxSource, olderPost, newerPost } = props;
   const { compiledSource, frontmatter } = mdxSource;
 
@@ -23,9 +39,9 @@ const PostPage = (props) => {
   );
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const categories = getContentCategories();
-  const allPaths = [];
+  const allPaths: { params: { category: string; slug: string } }[] = [];
 
   // Generate paths for all categories and their posts
   for (const category of categories) {
@@ -47,10 +63,13 @@ export async function getStaticPaths() {
     paths: allPaths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const { category, slug } = params;
+export const getStaticProps: GetStaticProps<
+  PostPageProps,
+  { category: string; slug: string }
+> = async ({ params }) => {
+  const { category, slug } = params!;
 
   // Validate that this is a real category
   if (!isValidCategory(category)) {
@@ -62,7 +81,7 @@ export async function getStaticProps({ params }) {
   try {
     // Load the individual post
     const sourcePath = path.join("posts", category, `${slug}.md`);
-    
+
     // Check if file exists
     if (!fs.existsSync(sourcePath)) {
       return {
@@ -71,12 +90,15 @@ export async function getStaticProps({ params }) {
     }
 
     const source = fs.readFileSync(sourcePath, "utf-8");
-    const mdxSource = await serialize(source, {
-      parseFrontmatter: true,
-      mdxOptions: {
-        rehypePlugins: [rehypeHighlight],
-      },
-    });
+    const mdxSource = await serialize<Record<string, unknown>, Frontmatter>(
+      source,
+      {
+        parseFrontmatter: true,
+        mdxOptions: {
+          rehypePlugins: [rehypeHighlight],
+        },
+      }
+    );
 
     // Get prev/next posts for navigation
     const allPosts = await getAllPosts(category);
@@ -99,6 +121,6 @@ export async function getStaticProps({ params }) {
       notFound: true,
     };
   }
-}
+};
 
 export default PostPage;

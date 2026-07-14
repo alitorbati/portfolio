@@ -1,17 +1,23 @@
+import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Check, Copy } from "iconoir-react";
 import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
-import { motion } from "framer-motion";
-import { Check, Copy } from "iconoir-react";
-import { useState } from "react";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
   shown: { opacity: 1, y: 0 },
 };
 
-const work = [
+interface ContactLink {
+  label: string;
+  href?: string;
+  comment?: string;
+}
+
+const work: ContactLink[] = [
   {
     label: "LinkedIn",
     href: "https://linkedin.com/in/alitorbati",
@@ -22,7 +28,7 @@ const work = [
   },
 ];
 
-const social = [
+const social: ContactLink[] = [
   {
     label: "Twitter",
     href: "https://twitter.com/alitorbati",
@@ -41,14 +47,14 @@ const social = [
   },
 ];
 
-const groups = [work, social];
+const groups: ContactLink[][] = [work, social];
 
 const Contact = () => {
   const [copying, setCopying] = useState(false);
 
   return (
     <Flexbox
-      as={motion.flex}
+      as={motion.div}
       initial="hidden"
       animate="shown"
       transition={{ staggerChildren: 0.1 }}
@@ -96,7 +102,7 @@ const Contact = () => {
             <Box key={index}>
               {group.map((link) => {
                 return (
-                  <Box key={index} as={motion.div} variants={item}>
+                  <Box key={link.label} as={motion.div} variants={item}>
                     {link.href ? (
                       <Link href={link.href} target="_blank" rel="noreferrer">
                         {link.label}

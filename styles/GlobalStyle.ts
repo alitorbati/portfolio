@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import type { Interpolation } from "styled-components";
 import reset from "styled-reset";
 import css from "@styled-system/css";
 
@@ -112,9 +113,13 @@ const global = css({
   },
 });
 
+// @styled-system/css returns a props-consuming style function whose parameter
+// type is stricter than styled-components' generic ExecutionContext; bridge it.
+const globalStyles = global as unknown as Interpolation<object>;
+
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  ${global}
+  ${globalStyles}
 `;
 
 export default GlobalStyle;

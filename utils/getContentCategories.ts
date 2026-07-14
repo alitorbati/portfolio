@@ -5,16 +5,16 @@ import path from "path";
  * Get all content categories by scanning the posts directory
  * Returns an array of subdirectory names (e.g., ['articles', 'projects', 'sketches'])
  */
-export const getContentCategories = () => {
+export const getContentCategories = (): string[] => {
   const postsDirectory = path.join(process.cwd(), "posts");
-  
+
   try {
     const categories = fs
       .readdirSync(postsDirectory, { withFileTypes: true })
       .filter((dirent) => dirent.isDirectory())
       .map((dirent) => dirent.name)
       .sort();
-    
+
     return categories;
   } catch (error) {
     console.error("Error reading posts directory:", error);
@@ -25,37 +25,45 @@ export const getContentCategories = () => {
 /**
  * Check if a category exists in the posts directory
  */
-export const isValidCategory = (category) => {
+export const isValidCategory = (category: string): boolean => {
   const categories = getContentCategories();
   return categories.includes(category);
 };
+
+export interface CategoryMetadata {
+  name: string;
+  icon: string;
+  description: string;
+}
 
 /**
  * Get category metadata (for icons, display names, etc.)
  * This can be expanded to include custom metadata per category
  */
-export const getCategoryMetadata = (category) => {
-  const metadata = {
+export const getCategoryMetadata = (category: string): CategoryMetadata => {
+  const metadata: Record<string, CategoryMetadata> = {
     articles: {
       name: "Articles",
       icon: "PageFlip",
-      description: "Written articles and blog posts"
+      description: "Written articles and blog posts",
     },
     projects: {
       name: "Projects",
-      icon: "BoxIso", 
-      description: "Portfolio projects and case studies"
+      icon: "BoxIso",
+      description: "Portfolio projects and case studies",
     },
     sketches: {
       name: "Sketches",
       icon: "Flask",
-      description: "Creative sketches and experiments"
+      description: "Creative sketches and experiments",
+    },
+  };
+
+  return (
+    metadata[category] || {
+      name: category.charAt(0).toUpperCase() + category.slice(1),
+      icon: "Computer", // default icon
+      description: `${category} content`,
     }
-  };
-  
-  return metadata[category] || {
-    name: category.charAt(0).toUpperCase() + category.slice(1),
-    icon: "Computer", // default icon
-    description: `${category} content`
-  };
+  );
 };

@@ -2,8 +2,13 @@ import Link from "next/link";
 import Box from "./foundations/Box";
 import Text from "./foundations/Text";
 import Date from "./Date";
+import type { Frontmatter } from "../types/content";
 
-const PostHeader = (props) => {
+interface PostHeaderProps {
+  frontmatter: Frontmatter;
+}
+
+const PostHeader = (props: PostHeaderProps) => {
   const { frontmatter } = props;
 
   return (

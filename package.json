@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
@@ -25,8 +26,14 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/styled-system": "^5.1.25",
+    "@types/styled-system__css": "^5.0.22",
     "babel-plugin-styled-components": "^2.3.0",
     "eslint": "^9.39.5",
-    "prettier": "^3.9.5"
+    "prettier": "^3.9.5",
+    "typescript": "^6.0.3"
   }
 }

@@ -8,6 +8,7 @@ import {
   background,
   flexbox,
 } from "styled-system";
+import type { BoxProps } from "../../types/system";
 
 const allSystemProps = compose(
   color,
@@ -18,7 +19,7 @@ const allSystemProps = compose(
   flexbox
 );
 
-const Box = styled("div")`
+const Box = styled("div")<BoxProps>`
   ${allSystemProps}
 
   &:hover {

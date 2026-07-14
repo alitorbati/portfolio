@@ -1,17 +1,26 @@
-import css from "@styled-system/css";
+import React from "react";
 import Link from "next/link";
+import css from "@styled-system/css";
+import { motion } from "framer-motion";
 import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Grid from "../components/foundations/Grid";
-import React from "react";
-import { motion } from "framer-motion";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
   shown: { opacity: 1, y: 0 },
 };
 
-const jobs = [
+interface Job {
+  company: string;
+  href: string;
+  positions: string[];
+  start: string;
+  end: string;
+  description: string;
+}
+
+const jobs: Job[] = [
   {
     company: "Impart Security",
     href: "https://www.impart.ai/",
@@ -96,7 +105,12 @@ const Career = () => {
         gridTemplateColumns={["auto", "1fr auto"]}
       >
         <Box></Box>
-        <Box as={motion.div} variants={item}>I am a UX Engineer with over ten years of practical experience designing and implementing interfaces. I also teach a university course for students interested in experimental and generative design. I have a highly developed eye and taste for design and UX.</Box>
+        <Box as={motion.div} variants={item}>
+          I am a UX Engineer with over ten years of practical experience
+          designing and implementing interfaces. I also teach a university
+          course for students interested in experimental and generative design.
+          I have a highly developed eye and taste for design and UX.
+        </Box>
         {jobs.map((job) => {
           const startYear = job.start.split("-")[0];
           const endYear = job.end.split("-")[0];

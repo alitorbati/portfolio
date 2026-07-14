@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { system, compose, flexbox, layout } from "styled-system";
+import type { FlexboxProps } from "../../types/system";
 
 const gap = system({
   gap: {
@@ -10,7 +11,9 @@ const gap = system({
 
 const allSystemProps = compose(gap, flexbox, layout);
 
-export default styled("div")`
+const Flexbox = styled("div")<FlexboxProps>`
   display: flex;
   ${allSystemProps}
 `;
+
+export default Flexbox;

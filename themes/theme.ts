@@ -1,3 +1,5 @@
+import type { Theme } from "../types/content";
+
 const fontSizes = ["1em", "1.2em", "1.8em", "4.24em", "6.86em"];
 
 const space = [0, 5, 8, 13, 21, 34, 55, 89, 144, 233];
@@ -18,7 +20,7 @@ const borders = [
   `2px solid ${colors.textAccent}`,
 ];
 
-const theme = {
+const theme: Theme = {
   fontSizes,
   space,
   sizes: space,

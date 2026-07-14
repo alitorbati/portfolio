@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import css from "@styled-system/css";
@@ -12,9 +13,15 @@ import {
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
 
+export interface NavPath {
+  href: string;
+  name: string;
+  icon: ReactNode;
+}
+
 // For now, keep the static paths but make them easily maintainable
 // The dynamic generation will happen at the Next.js level through the dynamic routes
-export const paths = [
+export const paths: NavPath[] = [
   {
     href: "/",
     name: "Home",
@@ -51,13 +58,7 @@ const Navigation = () => {
   const router = useRouter();
 
   return (
-    <Flexbox
-      as="nav"
-      flexDirection="row"
-      flexWrap="wrap"
-      flex="1"
-      gap={4}
-    >
+    <Flexbox as="nav" flexDirection="row" flexWrap="wrap" flex="1" gap={4}>
       {paths.map((path) => {
         const currentPath = router.asPath;
         const currentPathParts = currentPath.split("/");

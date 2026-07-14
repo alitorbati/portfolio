@@ -2,8 +2,14 @@ import Link from "next/link";
 import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Flexbox from "../components/foundations/Flexbox";
+import type { Post } from "../types/content";
 
-const PostNavigation = (props) => {
+interface PostNavigationProps {
+  olderPost: Post | null;
+  newerPost: Post | null;
+}
+
+const PostNavigation = (props: PostNavigationProps) => {
   const { olderPost, newerPost } = props;
 
   return (

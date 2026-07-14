@@ -1,6 +1,8 @@
-const FomattedDate = (props) => {
-  const { value } = props;
+interface DateProps {
+  value: string;
+}
 
+const FomattedDate = ({ value }: DateProps): string => {
   return new Date(value).toLocaleDateString("en-us", {
     month: "long",
     day: "numeric",

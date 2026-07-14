@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import Box from "./foundations/Box";
 import Text from "./foundations/Text";
@@ -6,7 +7,8 @@ import PostHeader from "./PostHeader";
 import PostNavigation from "./PostNavigation";
 import Notice from "./Notice";
 import Video from "./Video";
-import { motion } from "framer-motion";
+import type { ComponentPropsWithoutRef } from "react";
+import type { Frontmatter, Post as PostType } from "../types/content";
 
 const ThreeUp = styled("div")`
   display: flex;
@@ -18,7 +20,14 @@ const item = {
   shown: { opacity: 1, y: 0 },
 };
 
-const Post = (props) => {
+interface PostProps {
+  compiledSource: string;
+  frontmatter: Frontmatter;
+  olderPost: PostType | null;
+  newerPost: PostType | null;
+}
+
+const Post = (props: PostProps) => {
   const { compiledSource, frontmatter, olderPost, newerPost } = props;
 
   return (
@@ -35,14 +44,15 @@ const Post = (props) => {
         <MDXRemote
           compiledSource={compiledSource}
           frontmatter={frontmatter}
+          scope={{}}
           components={{
             Notice,
             Video,
             ThreeUp,
-            h1: (props) => <h2 {...props} />,
-            h2: (props) => <h3 {...props} />,
-            h3: (props) => <h4 {...props} />,
-            h4: (props) => <h5 {...props} />,
+            h1: (props: ComponentPropsWithoutRef<"h1">) => <h2 {...props} />,
+            h2: (props: ComponentPropsWithoutRef<"h2">) => <h3 {...props} />,
+            h3: (props: ComponentPropsWithoutRef<"h3">) => <h4 {...props} />,
+            h4: (props: ComponentPropsWithoutRef<"h4">) => <h5 {...props} />,
           }}
         />
       </motion.div>
