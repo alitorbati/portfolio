@@ -18,7 +18,7 @@ const borders = [
   `2px solid ${colors.textAccent}`,
 ];
 
-export default {
+const theme = {
   fontSizes,
   space,
   sizes: space,
@@ -26,3 +26,5 @@ export default {
   colors,
   borders,
 };
+
+export default theme;

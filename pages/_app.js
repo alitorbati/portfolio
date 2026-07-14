@@ -36,21 +36,36 @@ const components = {
   h4: (props) => <h5 {...props} />,
 };
 
+const prefersDarkQuery = "(prefers-color-scheme: dark)";
+
+const subscribeToColorScheme = (callback) => {
+  if (!window.matchMedia) {
+    return () => {};
+  }
+  const mm = window.matchMedia(prefersDarkQuery);
+  mm.addEventListener("change", callback);
+  return () => mm.removeEventListener("change", callback);
+};
+
+const getThemeSnapshot = () => {
+  if (!window.matchMedia) {
+    return dark;
+  }
+  return window.matchMedia(prefersDarkQuery).matches ? dark : light;
+};
+
+// SSR renders with the dark theme; useSyncExternalStore swaps to the user's
+// OS preference after hydration without a hydration mismatch.
+const getServerThemeSnapshot = () => dark;
+
 const App = (props) => {
   const { Component, pageProps } = props;
 
-  const [theme, setTheme] = React.useState(dark);
-
-  React.useEffect(() => {
-    if (!window.matchMedia) {
-      setTheme(dark);
-    }
-    const mm = window.matchMedia("(prefers-color-scheme: dark)");
-    mm.matches ? setTheme(dark) : setTheme(light);
-    mm.addEventListener("change", (event) => {
-      event.matches ? setTheme(dark) : setTheme(light);
-    });
-  }, []);
+  const theme = React.useSyncExternalStore(
+    subscribeToColorScheme,
+    getThemeSnapshot,
+    getServerThemeSnapshot
+  );
 
   const router = useRouter();
   const currentPath = paths.find((path) => {

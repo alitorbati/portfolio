@@ -14,8 +14,10 @@ const borders = [
   `2px solid ${colors.textAccent}`,
 ];
 
-export default {
+const dark = {
   ...theme,
   colors,
   borders,
 };
+
+export default dark;
