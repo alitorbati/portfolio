@@ -6,7 +6,6 @@ url:
   title: "Fall out"
   url: "https://editor.p5js.org/ali.torbati/full/m6ZZbcRJJ"
 videoUrl: "/images/sketches/illusion-of-choice/illusion-of-choice.mov"
-featured: true
 ---
 
 <Video source="/images/sketches/illusion-of-choice/illusion-of-choice.mov" />

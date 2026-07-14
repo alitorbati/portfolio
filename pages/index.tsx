@@ -5,6 +5,7 @@ import { Box, Flex, chakra } from "@chakra-ui/react";
 import CollectionItem from "../components/CollectionItem";
 import { MotionBox } from "../components/motion";
 import { getAllPosts } from "../utils/getAllPosts";
+import { sortByDate } from "../utils/sortByDate";
 import { paths } from "../components/Navigation";
 import type { GetStaticProps } from "next";
 import type { Feature, Post } from "../types/content";
@@ -90,11 +91,16 @@ const Index = (props: IndexProps) => {
 
 export const getStaticProps: GetStaticProps<IndexProps> = async () => {
   const findFeatured = (posts: Post[]): Post => {
-    const post = posts.find((p) => p.frontmatter.featured);
-    if (!post) {
-      throw new Error("No featured post found");
+    const featured = posts.find((p) => p.frontmatter.featured);
+    if (featured) {
+      return featured;
     }
-    return post;
+    // No post is featured — fall back to the most recent one.
+    const [mostRecent] = [...posts].sort(sortByDate);
+    if (!mostRecent) {
+      throw new Error("Category has no posts");
+    }
+    return mostRecent;
   };
 
   const featuredArticle = findFeatured(await getAllPosts("articles"));
