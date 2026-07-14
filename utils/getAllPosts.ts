@@ -19,5 +19,7 @@ export async function getAllPosts(dir: string): Promise<Post[]> {
       return { slug, frontmatter };
     })
   );
-  return allPosts;
+  // Archived posts are hidden from listings, the featured fallback, and prev/next
+  // navigation. Their pages still build (see getAllPaths) and stay reachable.
+  return allPosts.filter((post) => !post.frontmatter.archived);
 }

@@ -49,7 +49,7 @@ Ultimately, we were able to create a single-button experience that is easy to ex
 
 ## Run 0: ArtCenter grad show
 
-<ThreeUp>
+<ImageRow>
   <div>
     <Video source="/images/projects/ascii-booth/instagram-1.mp4" />
   </div>
@@ -59,7 +59,7 @@ Ultimately, we were able to create a single-button experience that is easy to ex
   <div>
     <Video source="/images/projects/ascii-booth/instagram-0.mp4" />
   </div>
-</ThreeUp>
+</ImageRow>
 
 The ArtCenter Grad Show is a chance for hardworking students to display the work they feel best represents them, and hopefully will land them a job. The ASCII booth was the most Instagrammed part of the grad show and there were crowds around for the whole event.
 
@@ -67,7 +67,7 @@ The Grad Show was the first real user testing for the booth. Zeke operated the b
 
 ## Run 1: Bedrock LA
 
-<ThreeUp>
+<ImageRow>
   <div>
     <img src="/images/projects/ascii-booth/dublab-1.jpg" />
   </div>
@@ -77,7 +77,7 @@ The Grad Show was the first real user testing for the booth. Zeke operated the b
   <div>
     <img src="/images/projects/ascii-booth/dublab-0.jpg" />
   </div>
-</ThreeUp>
+</ImageRow>
 
 Dublab was celebrating their 20th Anniversary Weekend in September 2019. Day 1 was at Bedrock LA, and day 2 was at Grand Park.
 

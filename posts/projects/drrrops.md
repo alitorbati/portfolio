@@ -1,5 +1,6 @@
 ---
 title: "Drrrops"
+archived: true
 date: "2015"
 summary: "A comment-centric UI for SoundCloud."
 ---

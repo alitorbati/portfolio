@@ -5,7 +5,10 @@ url:
   title: "View project"
   url: "http://behance.net/gallery/7188509/Printed-Electronics"
 summary: "Research into advanced printing technology."
+imgUrl: "/images/projects/printed-electronics/01.jpg"
 ---
+
+![Printed electronics](/images/projects/printed-electronics/01.jpg)
 
 # Background
 
@@ -14,6 +17,11 @@ In my senior year at Cal Poly, I took a class investigating the materials and pr
 # Aesthetics
 
 The aesthetics were relatively arbitrary, but there were specific requirements about the placement of conductive nodes and the thickness of the ink. I took the opportunity to not only meet the basic technical requirements, but also incorporate the requirements into an elegant design so that they felt like part of the art, and not an ugly addition.
+
+<ImageRow>
+  <img src="/images/projects/printed-electronics/02.png" alt="Printed electronics design" />
+  <img src="/images/projects/printed-electronics/03.png" alt="Printed electronics graphic" />
+</ImageRow>
 
 # Outcomes
 

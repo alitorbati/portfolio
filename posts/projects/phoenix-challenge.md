@@ -1,5 +1,6 @@
 ---
 title: "Phoenix Challenge"
+archived: true
 date: "2013"
 url:
   title: "View project"

@@ -9,14 +9,25 @@ import Notice from "../components/Notice";
 import Video from "../components/Video";
 import Navigation, { paths } from "../components/Navigation";
 
-const ThreeUp = (props: ComponentPropsWithoutRef<"div">) => (
-  <Flex gap="20px" {...props} />
+interface ImageRowProps extends ComponentPropsWithoutRef<"div"> {
+  matchHeight?: boolean;
+}
+
+const ImageRow = ({ matchHeight, ...props }: ImageRowProps) => (
+  <Flex
+    gap={4}
+    justifyContent="center"
+    flexWrap="wrap"
+    {...props}
+    className="image-row"
+    data-match={matchHeight ? "height" : "width"}
+  />
 );
 
 const components = {
   Notice,
   Video,
-  ThreeUp,
+  ImageRow,
   // re-map markdown headers so that the page title is the proper h1, and subsequent headers are "downsized"
   h1: (props: ComponentPropsWithoutRef<"h1">) => <h2 {...props} />,
   h2: (props: ComponentPropsWithoutRef<"h2">) => <h3 {...props} />,

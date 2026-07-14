@@ -1,5 +1,6 @@
 ---
 title: "Spokeo UI Framework"
+archived: true
 date: "2014"
 summary: "My first design system."
 ---

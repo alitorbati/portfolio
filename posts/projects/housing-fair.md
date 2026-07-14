@@ -1,5 +1,6 @@
 ---
 title: "Housing Fair"
+archived: true
 date: "2012"
 url:
   title: "View designs"

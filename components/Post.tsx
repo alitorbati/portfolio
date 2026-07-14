@@ -9,8 +9,19 @@ import Notice from "./Notice";
 import Video from "./Video";
 import type { Frontmatter, Post as PostType } from "../types/content";
 
-const ThreeUp = (props: ComponentPropsWithoutRef<"div">) => (
-  <Flex gap="20px" {...props} />
+interface ImageRowProps extends ComponentPropsWithoutRef<"div"> {
+  matchHeight?: boolean;
+}
+
+const ImageRow = ({ matchHeight, ...props }: ImageRowProps) => (
+  <Flex
+    gap={4}
+    justifyContent="center"
+    flexWrap="wrap"
+    {...props}
+    className="image-row"
+    data-match={matchHeight ? "height" : "width"}
+  />
 );
 
 const item = {
@@ -42,7 +53,7 @@ const Post = (props: PostProps) => {
           components={{
             Notice,
             Video,
-            ThreeUp,
+            ImageRow,
             h1: (props: ComponentPropsWithoutRef<"h1">) => <h2 {...props} />,
             h2: (props: ComponentPropsWithoutRef<"h2">) => <h3 {...props} />,
             h3: (props: ComponentPropsWithoutRef<"h3">) => <h4 {...props} />,

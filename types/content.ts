@@ -8,6 +8,9 @@ export interface Frontmatter {
   summary: string;
   date: string;
   featured?: boolean;
+  // Hidden from listings/navigation, but the page still builds and is reachable
+  // by direct URL.
+  archived?: boolean;
   imgUrl?: string;
   videoUrl?: string;
   url?: FrontmatterUrl;

@@ -146,7 +146,7 @@ const config = defineConfig({
     },
     ul: {
       mb: "3",
-      ml: "16px",
+      ml: "4",
       listStyleType: "disc",
     },
     ol: {
@@ -167,8 +167,38 @@ const config = defineConfig({
     "img, video": {
       borderRadius: "2",
     },
-    ".markdown-container img, .markdown-container video": {
+    // Images never exceed the content width but keep their natural size, so
+    // small images aren't upscaled into a pixelated, oversized mess.
+    ".markdown-container img": {
+      maxWidth: "100%",
+      height: "auto",
+    },
+    ".markdown-container video": {
       width: "100%",
+    },
+    // <ImageRow> in MDX fills the row. By default each item is an equal-width
+    // column (as large as possible) — for same-aspect media that also equalizes
+    // height. Pass `matchHeight` to instead give every image/video a shared
+    // height with widths following each aspect ratio. The attribute selectors
+    // out-rank the .markdown-container rules above, so order doesn't matter.
+    ".image-row :is(img, video)": {
+      display: "block",
+    },
+    '.image-row[data-match="width"] > *': {
+      flex: "1 1 0",
+      minWidth: 0,
+    },
+    '.image-row[data-match="width"] :is(img, video)': {
+      width: "100%",
+      height: "auto",
+    },
+    '.image-row[data-match="height"] :is(img, video)': {
+      height: "clamp(8rem, 20vw, 15rem)",
+      width: "auto",
+      maxWidth: "100%",
+    },
+    ".image-row > div": {
+      display: "flex",
     },
     // Chakra's Preflight sets `svg { display: block }`, which pushes icons onto
     // their own line next to text. Keep lucide icons inline and sized to the
