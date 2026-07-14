@@ -57,11 +57,6 @@ const Navigation = () => {
       flexWrap="wrap"
       flex="1"
       gap={4}
-      css={{
-        "@media print": {
-          display: "none",
-        },
-      }}
     >
       {paths.map((path) => {
         const currentPath = router.asPath;

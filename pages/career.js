@@ -1,10 +1,8 @@
 import css from "@styled-system/css";
 import Link from "next/link";
-import { ArrowDownCircle } from "iconoir-react";
 import Box from "../components/foundations/Box";
 import Text from "../components/foundations/Text";
 import Grid from "../components/foundations/Grid";
-import Flexbox from "../components/foundations/Flexbox";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -16,7 +14,7 @@ const item = {
 const jobs = [
   {
     company: "Impart Security",
-    href: "https://www.impart.security/",
+    href: "https://www.impart.ai/",
     positions: ["Senior Software Engineer"],
     start: "2023-04-18",
     end: "Present",
@@ -33,7 +31,7 @@ const jobs = [
   },
   {
     company: "Fastly",
-    href: "http://fastly.com",
+    href: "https://www.fastly.com/",
     positions: ["Staff Software Engineer"],
     start: "2020-10-01",
     end: "2023-04-14",
@@ -42,7 +40,7 @@ const jobs = [
   },
   {
     company: "Signal Sciences",
-    href: "http://signalsciences.com",
+    href: "https://leadedge.com/portfolio/signal-sciences/",
     positions: ["Software Engineer"],
     start: "2017-01-16",
     end: "2020-10-01",
@@ -51,7 +49,7 @@ const jobs = [
   },
   {
     company: "Spokeo",
-    href: "http://spokeo.com/styleguide",
+    href: "https://www.spokeo.com/",
     positions: ["Senior UI Developer"],
     start: "2013-12-09",
     end: "2017-12-28",
@@ -78,7 +76,7 @@ const jobs = [
   // },
   {
     company: "Cal Poly, San Luis Obispo",
-    href: "http://calpoly.com",
+    href: "https://www.calpoly.edu/",
     positions: ["Student"],
     start: "2009-09-01",
     end: "2013-09-01",
@@ -86,25 +84,9 @@ const jobs = [
   },
 ];
 
-const printItems = ["Ali Torbati", "ali.torbati@gmail.com", "323-251-1991"];
-
 const Career = () => {
   return (
     <Box>
-      <Box
-        css={{
-          "@media not print": {
-            display: "none",
-          },
-        }}
-      >
-        <Flexbox justifyContent="space-between" gap={5}>
-          {printItems.map((item) => {
-            return <Text key={item}>{item}</Text>;
-          })}
-        </Flexbox>
-        <Box marginBottom={6} />
-      </Box>
       <Grid
         as={motion.div}
         initial="hidden"
@@ -113,6 +95,8 @@ const Career = () => {
         gap={5}
         gridTemplateColumns={["auto", "1fr auto"]}
       >
+        <Box></Box>
+        <Box as={motion.div} variants={item}>I am a UX Engineer with over ten years of practical experience designing and implementing interfaces. I also teach a university course for students interested in experimental and generative design. I have a highly developed eye and taste for design and UX.</Box>
         {jobs.map((job) => {
           const startYear = job.start.split("-")[0];
           const endYear = job.end.split("-")[0];
@@ -155,23 +139,6 @@ const Career = () => {
           );
         })}
       </Grid>
-      <Box
-        css={{
-          "@media print": {
-            display: "none",
-          },
-        }}
-      >
-        <Box marginBottom={6} />
-        <Flexbox justifyContent="space-around">
-          <a
-            href="#"
-            onClick={typeof window !== "undefined" ? window.print : null}
-          >
-            <ArrowDownCircle /> Download
-          </a>
-        </Flexbox>
-      </Box>
     </Box>
   );
 };

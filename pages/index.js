@@ -24,7 +24,7 @@ const Index = (props) => {
         transition={{ staggerChildren: 0.1 }}
       >
         <motion.div variants={item}>
-          <Text as="h1" marginTop={0}>
+          <Text as="h1" marginTop={0} marginBottom={0}>
             Ali Torbati
           </Text>
         </motion.div>
@@ -32,6 +32,12 @@ const Index = (props) => {
           <Text as="h2" marginTop={0}>
             Software engineer, designer and creative technologist.
           </Text>
+        </motion.div>
+        <Box marginBottom={5} />
+        <motion.div variants={item}>
+          <Box>
+            I am a UX Engineer with over ten years of practical experience designing and implementing interfaces. I also teach a university course for students interested in experimental and generative design. I have a highly developed eye and taste for design and UX.
+          </Box>
         </motion.div>
         <Box marginBottom={5} />
         <motion.div variants={item}>
