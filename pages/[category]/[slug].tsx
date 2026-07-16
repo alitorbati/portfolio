@@ -4,8 +4,11 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import rehypeShiki from "@shikijs/rehype";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import Post from "../../components/Post";
+import { getHeadings } from "../../utils/getHeadings";
+import type { Heading } from "../../utils/getHeadings";
 import { getAllPaths } from "../../utils/getAllPaths";
 import { getAllPosts } from "../../utils/getAllPosts";
 import {
@@ -20,6 +23,7 @@ type PostMdxSource = MDXRemoteSerializeResult<Record<string, unknown>, Frontmatt
 
 interface PostPageProps {
   mdxSource: PostMdxSource;
+  headings: Heading[];
   olderPost: PostType | null;
   newerPost: PostType | null;
   category: string;
@@ -27,7 +31,7 @@ interface PostPageProps {
 }
 
 const PostPage = (props: PostPageProps) => {
-  const { mdxSource, olderPost, newerPost, category } = props;
+  const { mdxSource, headings, olderPost, newerPost, category } = props;
   const { compiledSource, frontmatter } = mdxSource;
 
   return (
@@ -37,6 +41,7 @@ const PostPage = (props: PostPageProps) => {
       newerPost={newerPost}
       compiledSource={compiledSource}
       frontmatter={frontmatter}
+      headings={headings}
     />
   );
 };
@@ -92,6 +97,7 @@ export const getStaticProps: GetStaticProps<
     }
 
     const source = fs.readFileSync(sourcePath, "utf-8");
+    const headings = getHeadings(source);
     const mdxSource = await serialize<Record<string, unknown>, Frontmatter>(
       source,
       {
@@ -99,6 +105,7 @@ export const getStaticProps: GetStaticProps<
         mdxOptions: {
           remarkPlugins: [remarkGfm],
           rehypePlugins: [
+            rehypeSlug,
             [
               rehypeShiki,
               {
@@ -123,6 +130,7 @@ export const getStaticProps: GetStaticProps<
     return {
       props: {
         mdxSource,
+        headings,
         olderPost,
         newerPost,
         category,

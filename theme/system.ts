@@ -56,6 +56,12 @@ const config = defineConfig({
       fontWeight: 300,
       bg: "background",
       color: "text",
+      // Smooth-scroll in-page anchor jumps (e.g. the table of contents),
+      // unless the reader has asked for reduced motion.
+      scrollBehavior: "smooth",
+      "@media (prefers-reduced-motion: reduce)": {
+        scrollBehavior: "auto",
+      },
     },
     "::selection": {
       color: "textAccent",
@@ -85,7 +91,7 @@ const config = defineConfig({
     "h1, h2, h3, h4, h5, h6": {
       color: "textAccent",
       mt: "5",
-      mb: "3",
+      mb: "2",
       fontSize: "0",
     },
     h1: {
@@ -106,7 +112,10 @@ const config = defineConfig({
       fontWeight: 400,
     },
     p: {
-      my: "4",
+      my: "3",
+    },
+    "h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p": {
+      mt: "2",
     },
     code: {
       fontFamily: fontFallbackMono,
