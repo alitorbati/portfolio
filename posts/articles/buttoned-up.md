@@ -64,6 +64,10 @@ export function RefreshButton(props: RefreshButtonProps): React.ReactNode {
 }
 ```
 
-## Final result
+# Final result
+
+The final result is a refresh button that spins smoothly and continuously while loading, and stops spinning quickly after the load completes, providing a more satisfying user experience than the generic loading state. The animation feels responsive and in sync with the load, enhancing the overall interaction.
+
+Other users reported finding themselves clicking the button multiple times just to experience the animation, which is a good sign that the new loading state is more pleasant and engaging than the previous one!
 
 <Video source="/images/articles/buttoned-up/final.mp4" />
