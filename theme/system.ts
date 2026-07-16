@@ -144,6 +144,28 @@ const config = defineConfig({
       fontStyle: "italic",
       ml: [0, "-4"],
     },
+    // GFM tables: Chakra's Preflight resets table borders and spacing, so
+    // rebuild them here. Wrapped in .markdown-container so it only affects
+    // rendered post content.
+    ".markdown-container table": {
+      display: "block",
+      width: "fit-content",
+      maxWidth: "100%",
+      mb: "3",
+      overflowX: "auto",
+      borderCollapse: "collapse",
+    },
+    ".markdown-container :is(th, td)": {
+      border: "1",
+      px: "3",
+      py: "2",
+      textAlign: "left",
+      verticalAlign: "top",
+    },
+    ".markdown-container th": {
+      fontWeight: 600,
+      bg: "backgroundAccent",
+    },
     ul: {
       mb: "3",
       ml: "4",

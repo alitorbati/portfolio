@@ -7,6 +7,7 @@ import PostHeader from "./PostHeader";
 import PostNavigation from "./PostNavigation";
 import Notice from "./Notice";
 import Video from "./Video";
+import YouTube from "./YouTube";
 import type { Frontmatter, Post as PostType } from "../types/content";
 
 interface ImageRowProps extends ComponentPropsWithoutRef<"div"> {
@@ -53,6 +54,7 @@ const Post = (props: PostProps) => {
           components={{
             Notice,
             Video,
+            YouTube,
             ImageRow,
             h1: (props: ComponentPropsWithoutRef<"h1">) => <h2 {...props} />,
             h2: (props: ComponentPropsWithoutRef<"h2">) => <h3 {...props} />,

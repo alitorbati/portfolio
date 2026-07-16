@@ -4,6 +4,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import rehypeShiki from "@shikijs/rehype";
+import remarkGfm from "remark-gfm";
 import Post from "../../components/Post";
 import { getAllPaths } from "../../utils/getAllPaths";
 import { getAllPosts } from "../../utils/getAllPosts";
@@ -96,6 +97,7 @@ export const getStaticProps: GetStaticProps<
       {
         parseFrontmatter: true,
         mdxOptions: {
+          remarkPlugins: [remarkGfm],
           rehypePlugins: [
             [
               rehypeShiki,
