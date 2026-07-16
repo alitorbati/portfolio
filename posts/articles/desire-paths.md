@@ -5,7 +5,6 @@ url:
   title: "Original article"
   url: "https://building.signalsciences.com/ui-desire-paths/"
 summary: "Reducing choice and increasing options in a UI component library."
-featured: true
 imgUrl: "/images/articles/desire-paths/overview.jpg"
 ---
 

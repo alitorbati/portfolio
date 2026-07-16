@@ -24,7 +24,7 @@ const jobs: Job[] = [
     positions: ["Senior Software Engineer"],
     start: "2023-04-18",
     end: "Present",
-    description: "Fulfilling a hybrid role of designer and developer on a lean and effective team building highly technical security software.",
+    description: "Fulfilling a hybrid role of designer and developer on a lean and effective team building highly technical security software. Deep experience with cross-functional collaboration. Frequent and extensive ownership of the prototype-to-production pipeline for AI features, data viz, complex forms, etc.",
   },
   {
     company: "ArtCenter",
@@ -33,7 +33,7 @@ const jobs: Job[] = [
     start: "2022-09-01",
     end: "Present",
     description:
-      "Teaching Generative Design at one of the world's most prestigious design schools.",
+      "Teaching Generative Design at one of the world's most prestigious design schools. I help students to understand technological opportunities, and connect conceptual ideas to practical implementations. Then we build those ideas together.",
   },
   {
     company: "Fastly",
@@ -103,10 +103,7 @@ const Career = () => {
       >
         <Box></Box>
         <MotionBox variants={item}>
-          I am a UX Engineer with over ten years of practical experience
-          designing and implementing interfaces. I also teach a university
-          course for students interested in experimental and generative design.
-          I have a highly developed eye and taste for design and UX.
+          I am a UX Engineer with over ten years of practical experience designing and implementing interfaces. I also teach a university course for students interested in experimental and generative design. I have a highly developed eye and taste for design and UX, and strong written and verbal communication skills.
         </MotionBox>
         {jobs.map((job) => {
           const startYear = job.start.split("-")[0];

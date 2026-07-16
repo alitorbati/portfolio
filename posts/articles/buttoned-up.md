@@ -5,7 +5,7 @@ summary: "Thinking through and implementing the details of a button's loading st
 imgUrl: "/images/articles/buttoned-up/overview.png"
 ---
 
-<Video source="/images/articles/buttoned-up/final.mp4" />
+![Button screenshot](/images/articles/buttoned-up/overview.png)
 
 # Why a generic loading state is insufficient
 
@@ -63,3 +63,7 @@ export function RefreshButton(props: RefreshButtonProps): React.ReactNode {
   );
 }
 ```
+
+## Final result
+
+<Video source="/images/articles/buttoned-up/final.mp4" />

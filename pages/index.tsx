@@ -47,11 +47,10 @@ const Index = (props: IndexProps) => {
             team or several distinct technologies are documented as{" "}
             <Link href="/projects">projects</Link>. Smaller{" "}
             <Link href="/sketches">sketches</Link> are code experiments to learn
-            a new skill or convey an idea. I get paid to build web stuff, as
+            a new skill or convey an idea. I like to build web experiences, as
             noted in my <Link href="/career">career</Link>{" "}
-            highlights. If any of
-            this resonates with you, you&apos;re welcome to{" "}
-            <Link href="/contact">contact</Link> me <Smile />
+            highlights. If any of this resonates with you, you&apos;re welcome
+            to{" "}<Link href="/contact">contact</Link> me <Smile />
           </Box>
         </motion.div>
         <Box marginBottom={6} />

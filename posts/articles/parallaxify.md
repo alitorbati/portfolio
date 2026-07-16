@@ -7,13 +7,15 @@ url:
 summary: "A JavaScript module to easily produce a parallax image effect."
 ---
 
-While building a microsite for a family member I wanted to include an elegant parallax image effect on scroll. A parallax effect is when an image appears to scroll slightly faster than the rest of the page, producing a subtle shifting/drifting sensation.
+# Motivation
 
-Notice in the above gif that the mountains and horses' heads approach the top of the image faster than the image approaches the top of the frame.
+While building a microsite for a family member I wanted to include an elegant parallax image effect on scroll. A parallax effect is when an image appears to scroll slightly faster than the rest of the page, producing a subtle shifting/drifting sensation to convey depth.
 
-I wasn't able to find a simple, reusable solution so I created my own and published it for anyone to use.
+I wasn't able to find a simple, reusable solution so I created my own and published it for anyone to use. The code is super-lightweight and requires zero dependencies.
 
-This little snippet is super-lightweight and requires zero dependencies. I hadn't touched the code in years, but I revisited it for this writeup and really realized how much I've learned. I was able to reduce the lines of codes by 65% (from 55 to 23 lines). The minified version shrunk 59% (from 932 to 374 Bytes).
+# Lessons and improvements
+
+I hadn't touched the code in years, but I revisited it for this writeup and realized how much I've learned since the original publication. I was able to reduce the lines of codes by 65% (from 55 to 23 lines). The minified version shrunk 59% (from 932 to 374 Bytes).
 
 A diff of the before/after can be found [on Github](https://github.com/alitorbati/parallaxify/compare/db72ae89af743638e1cc647be7adeecae42bf71a...ef5d8c0db5cdd3af820960c6f3011568988ba45e#diff-23c0029469889253cca40d7b44aa24b027b105d86f3bace22b5f14f71e61e3c1), but I'll share a few key improvements below.
 
@@ -53,7 +55,7 @@ for (let i = 0; i < elements.length; i++) {
 
 ## Improved clamping
 
-Instead of the classic `if (someTrueThing) return true; else return false` pattern, I return a clamped number based directly on the source value.
+Instead of the naive `if (someTrueThing) return true; else return false` pattern, I return a clamped number based directly on the source value.
 
 ### Before
 
