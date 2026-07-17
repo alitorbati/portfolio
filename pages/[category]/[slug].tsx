@@ -11,6 +11,7 @@ import {
   remarkCollectHeadings,
   remarkShiftHeadings,
 } from "../../utils/remarkHeadings";
+import { transformerTitle } from "../../utils/shikiTitle";
 import { getAllPaths } from "../../utils/getAllPaths";
 import { getAllPosts } from "../../utils/getAllPosts";
 import {
@@ -123,6 +124,7 @@ export const getStaticProps: GetStaticProps<
                 // swaps to them to follow the next-themes color mode.
                 themes: { light: "one-light", dark: "github-dark" },
                 defaultColor: "light",
+                transformers: [transformerTitle()],
               },
             ],
           ],

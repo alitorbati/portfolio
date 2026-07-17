@@ -23,9 +23,7 @@ A diff of the before/after can be found [on Github](https://github.com/alitorbat
 
 Instead of defining `percentSeen` inside the `for` loop and referencing an external variable (`element`), define `percentSeen` once and accept an argument (`el`).
 
-### Before
-
-```js
+```js title="Before"
 for (let i = 0; i < elements.length; i++) {
  let element = elements[i]
  let elementOffsetTop = element.offsetTop
@@ -37,9 +35,7 @@ for (let i = 0; i < elements.length; i++) {
 }
 ```
 
-### After
-
-```js
+```js title="After"
 function getPercentSeen(el) {
  let distance = window.scrollY + window.innerHeight - el.offsetTop
  ...
@@ -57,17 +53,13 @@ for (let i = 0; i < elements.length; i++) {
 
 Instead of the naive `if (someTrueThing) return true; else return false` pattern, I return a clamped number based directly on the source value.
 
-### Before
-
-```js
+```js title="Before"
 if (percentage < 0) return 0;
 else if (percentage > 100) return 100;
 else return percentage;
 ```
 
-### After
-
-```js
+```js title="After"
 return Math.min(Math.max(percentage, 0), 100); // clamp between 0 and 100
 ```
 
@@ -75,9 +67,7 @@ return Math.min(Math.max(percentage, 0), 100); // clamp between 0 and 100
 
 Previously, I jumped through hoops to define and maintain the `viewportHeight` variable when the script was initialized or the window was resized. A simpler approach is to just reference the underlying `window.innerHeight` value directly as-needed, and not worry at all about syncing another variable. If the window is resized, the up-to-date value is used.
 
-### Before
-
-```js
+```js title="Before"
 let viewportHeight = 0
 
 let updateWindowCalcs = function () {
@@ -97,9 +87,7 @@ function percentSeen () {
 }
 ```
 
-### After
-
-```js
+```js title="After"
 function getPercentSeen(el) {
   let distance = window.scrollY + window.innerHeight - el.offsetTop;
   ...
@@ -110,17 +98,13 @@ function getPercentSeen(el) {
 
 Use naming conventions to indicate if a function is getting or setting a value.
 
-### Before
-
-```js
+```js title="Before"
 function percentSeen () {...}
 
 element.style.backgroundPositionY = percentSeen()+'%'
 ```
 
-### After
-
-```js
+```js title="After"
 function getPercentSeen(el) {...}
 
 el.style.backgroundPositionY = `${getPercentSeen(el)}%`;

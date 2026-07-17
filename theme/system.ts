@@ -142,6 +142,18 @@ const config = defineConfig({
       fontSize: "inherit",
       whiteSpace: "inherit",
     },
+    // A fence's `title="..."` becomes a caption above its code block. The
+    // <figure> owns the vertical rhythm so the caption and block read as one
+    // unit; the <pre> keeps its own background and radius.
+    ".code-figure": {
+      my: "3",
+    },
+    ".code-title": {
+      fontFamily: fontFallbackMono,
+      fontSize: "75%",
+      color: "textAccent",
+      mb: "1",
+    },
     // Follow next-themes: under `.dark`, swap to Shiki's dark-theme variables.
     ".dark .shiki, .dark .shiki span": {
       color: "var(--shiki-dark) !important",
