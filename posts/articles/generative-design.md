@@ -42,7 +42,7 @@ I'm consistently impressed by students' ability to apply the concepts and techni
 
 Students have consistently provided positive feedback about the course, highlighting the hands-on approach to learning coding and the creative possibilities it opens up. Many students have expressed that they felt empowered to explore generative design in their own work and appreciated the supportive learning environment. They have also mentioned that my teaching style is approachable and that I have made them feel comfortable reframing "failure" as a learning opportunity.
 
-Some examples of student feedback include (edited for clarity and brevity):
+Below are some examples of student feedback collected from anonymous surveys at the end of each semester (edited for clarity and brevity):
 
 ## What are the best qualities of this class?
 
