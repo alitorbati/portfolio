@@ -2,20 +2,32 @@ import path from "path";
 import fs from "fs";
 import { serialize } from "next-mdx-remote/serialize";
 import type { Frontmatter, Post } from "../types/content";
+import { resolveFrontmatterAssets } from "./postAssets";
 
 export async function getAllPosts(dir: string): Promise<Post[]> {
-  const filesPath = path.join("posts", dir);
-  const files = fs.readdirSync(filesPath);
+  const base = path.join("posts", dir);
+  // Each post is a folder holding an index.md alongside its colocated assets.
+  const slugs = fs
+    .readdirSync(base, { withFileTypes: true })
+    .filter(
+      (entry) =>
+        entry.isDirectory() &&
+        fs.existsSync(path.join(base, entry.name, "index.md"))
+    )
+    .map((entry) => entry.name);
+
   const allPosts = await Promise.all(
-    files.map(async (file) => {
-      const slug = file.replace(".md", "");
-      const sourcePath = path.join("posts", dir, file);
-      const source = fs.readFileSync(sourcePath, "utf-8");
+    slugs.map(async (slug) => {
+      const postDir = path.join(base, slug);
+      const source = fs.readFileSync(path.join(postDir, "index.md"), "utf-8");
       const mdxSource = await serialize<Record<string, unknown>, Frontmatter>(
         source,
         { parseFrontmatter: true }
       );
       const { frontmatter } = mdxSource;
+      // Cover image/video are authored colocated; publish them to public/ and
+      // rewrite to served URLs so the listing cards resolve.
+      resolveFrontmatterAssets(frontmatter, postDir, dir, slug);
       return { slug, frontmatter };
     })
   );

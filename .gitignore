@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# post assets copied from posts/<category>/<slug>/ into public/ at build time
+/public/post-assets/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

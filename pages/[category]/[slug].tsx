@@ -11,6 +11,8 @@ import {
   remarkCollectHeadings,
   remarkShiftHeadings,
 } from "../../utils/remarkHeadings";
+import { remarkColocatedAssets } from "../../utils/remarkColocatedAssets";
+import { resolveFrontmatterAssets } from "../../utils/postAssets";
 import { transformerTitle } from "../../utils/shikiTitle";
 import { getAllPaths } from "../../utils/getAllPaths";
 import { getAllPosts } from "../../utils/getAllPosts";
@@ -89,8 +91,9 @@ export const getStaticProps: GetStaticProps<
   }
 
   try {
-    // Load the individual post
-    const sourcePath = path.join("posts", category, `${slug}.md`);
+    // Each post is a folder holding an index.md next to its colocated assets.
+    const postDir = path.join("posts", category, slug);
+    const sourcePath = path.join(postDir, "index.md");
 
     // Check if file exists
     if (!fs.existsSync(sourcePath)) {
@@ -113,6 +116,9 @@ export const getStaticProps: GetStaticProps<
             remarkGfm,
             [remarkCollectHeadings, { into: headings }],
             remarkShiftHeadings,
+            // Publish colocated body assets (images, <Video>) to public/ and
+            // rewrite their refs to served URLs.
+            [remarkColocatedAssets, { postDir, category, slug }],
           ],
           rehypePlugins: [
             rehypeSlug,
@@ -131,6 +137,9 @@ export const getStaticProps: GetStaticProps<
         },
       }
     );
+
+    // Publish colocated cover image/video (frontmatter) to public/ as well.
+    resolveFrontmatterAssets(mdxSource.frontmatter, postDir, category, slug);
 
     // Get prev/next posts for navigation
     const allPosts = await getAllPosts(category);
