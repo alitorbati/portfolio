@@ -38,6 +38,15 @@ const config = defineConfig({
         3: { value: "2px solid {colors.textAccent}" },
       },
     },
+    // Chakra ships a full-turn `spin`; this is its half-turn counterpart. A
+    // 180°-symmetric icon rests at 180° looking exactly as it did at 0°, so a
+    // half turn is a complete cycle for it. See <LoadingStateDemo>.
+    keyframes: {
+      "spin-half": {
+        from: { transform: "rotate(0deg)" },
+        to: { transform: "rotate(180deg)" },
+      },
+    },
     semanticTokens: {
       colors: {
         background: { value: { _light: "#fff", _dark: "#111" } },

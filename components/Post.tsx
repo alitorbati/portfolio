@@ -6,6 +6,7 @@ import PostHeader from "./PostHeader";
 import PostNavigation from "./PostNavigation";
 import TableOfContents from "./TableOfContents";
 import ImageRow from "./ImageRow";
+import LoadingStateDemo from "./LoadingStateDemo";
 import Notice from "./Notice";
 import Video from "./Video";
 import YouTube from "./YouTube";
@@ -13,7 +14,7 @@ import type { Frontmatter, Heading, Post as PostType } from "../types/content";
 
 // The components a post can reference by name in its markdown. This is the only
 // place MDX is rendered, so it's the only place the map needs to exist.
-const components = { ImageRow, Notice, Video, YouTube };
+const components = { ImageRow, LoadingStateDemo, Notice, Video, YouTube };
 
 const item = {
   hidden: { opacity: 0, y: 10 },
