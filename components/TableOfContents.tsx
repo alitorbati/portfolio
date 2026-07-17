@@ -3,7 +3,7 @@ import { chakra } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 import { ArrowUpToLine, ArrowDownToLine } from "lucide-react";
 import { MotionBox } from "./motion";
-import type { Heading } from "../utils/getHeadings";
+import type { Heading } from "../types/content";
 
 // Shared look for the three stacked edge buttons. Column `alignItems: stretch`
 // makes them share the widest button's width (the outline minimap).

@@ -7,8 +7,10 @@ import rehypeShiki from "@shikijs/rehype";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import Post from "../../components/Post";
-import { getHeadings } from "../../utils/getHeadings";
-import type { Heading } from "../../utils/getHeadings";
+import {
+  remarkCollectHeadings,
+  remarkShiftHeadings,
+} from "../../utils/remarkHeadings";
 import { getAllPaths } from "../../utils/getAllPaths";
 import { getAllPosts } from "../../utils/getAllPosts";
 import {
@@ -17,7 +19,7 @@ import {
 } from "../../utils/getContentCategories";
 import { sortByDate } from "../../utils/sortByDate";
 import { getOlderNewer } from "../../utils/getOlderNewer";
-import type { Frontmatter, Post as PostType } from "../../types/content";
+import type { Frontmatter, Heading, Post as PostType } from "../../types/content";
 
 type PostMdxSource = MDXRemoteSerializeResult<Record<string, unknown>, Frontmatter>;
 
@@ -97,13 +99,20 @@ export const getStaticProps: GetStaticProps<
     }
 
     const source = fs.readFileSync(sourcePath, "utf-8");
-    const headings = getHeadings(source);
+
+    // Filled in during the serialize below: remarkCollectHeadings pushes the
+    // post's outline out of the same parse that renders it.
+    const headings: Heading[] = [];
     const mdxSource = await serialize<Record<string, unknown>, Frontmatter>(
       source,
       {
         parseFrontmatter: true,
         mdxOptions: {
-          remarkPlugins: [remarkGfm],
+          remarkPlugins: [
+            remarkGfm,
+            [remarkCollectHeadings, { into: headings }],
+            remarkShiftHeadings,
+          ],
           rehypePlugins: [
             rehypeSlug,
             [

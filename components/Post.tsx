@@ -1,31 +1,19 @@
 import { MDXRemote } from "next-mdx-remote";
 import { motion } from "framer-motion";
-import type { ComponentPropsWithoutRef } from "react";
-import { Box, Flex, chakra } from "@chakra-ui/react";
+import { Box, chakra } from "@chakra-ui/react";
 import { MotionBox, staggerContainer } from "./motion";
 import PostHeader from "./PostHeader";
 import PostNavigation from "./PostNavigation";
 import TableOfContents from "./TableOfContents";
+import ImageRow from "./ImageRow";
 import Notice from "./Notice";
 import Video from "./Video";
 import YouTube from "./YouTube";
-import type { Frontmatter, Post as PostType } from "../types/content";
-import type { Heading } from "../utils/getHeadings";
+import type { Frontmatter, Heading, Post as PostType } from "../types/content";
 
-interface ImageRowProps extends ComponentPropsWithoutRef<"div"> {
-  matchHeight?: boolean;
-}
-
-const ImageRow = ({ matchHeight, ...props }: ImageRowProps) => (
-  <Flex
-    gap={4}
-    justifyContent="center"
-    flexWrap="wrap"
-    {...props}
-    className="image-row"
-    data-match={matchHeight ? "height" : "width"}
-  />
-);
+// The components a post can reference by name in its markdown. This is the only
+// place MDX is rendered, so it's the only place the map needs to exist.
+const components = { ImageRow, Notice, Video, YouTube };
 
 const item = {
   hidden: { opacity: 0, y: 10 },
@@ -56,16 +44,7 @@ const Post = (props: PostProps) => {
           compiledSource={compiledSource}
           frontmatter={frontmatter}
           scope={{}}
-          components={{
-            Notice,
-            Video,
-            YouTube,
-            ImageRow,
-            h1: (props: ComponentPropsWithoutRef<"h1">) => <h2 {...props} />,
-            h2: (props: ComponentPropsWithoutRef<"h2">) => <h3 {...props} />,
-            h3: (props: ComponentPropsWithoutRef<"h3">) => <h4 {...props} />,
-            h4: (props: ComponentPropsWithoutRef<"h4">) => <h5 {...props} />,
-          }}
+          components={components}
         />
       </motion.div>
       <Box marginBottom={4} />
