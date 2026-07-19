@@ -101,7 +101,7 @@ const Career = () => {
         gap={5}
         gridTemplateColumns={["auto", "1fr auto"]}
       >
-        <Box></Box>
+        <Box display={["none", "initial"]}></Box>
         <MotionBox variants={item}>
           I am a UX Engineer with over ten years of practical experience designing and implementing interfaces. I also teach a university course for students interested in experimental and generative design. I have a highly developed eye and taste for design and UX, and strong written and verbal communication skills.
         </MotionBox>

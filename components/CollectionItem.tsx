@@ -16,12 +16,18 @@ interface CollectionItemProps {
 const CollectionItem = (props: CollectionItemProps) => {
   const { frontmatter, href, isStacked = false } = props;
 
+  // Every variant stacks on the narrowest screens, where a side-by-side thumbnail
+  // would be squeezed down to a thumbnail of a thumbnail. `isStacked` therefore
+  // only decides what happens from the first breakpoint up.
+  const flexDirection = ["column", isStacked ? "column" : "row"];
+  const alignItems = ["stretch", isStacked ? "stretch" : "flex-start"];
+  // Full-bleed while stacked; a fixed left column once the text sits beside it.
+  const mediaWidth = ["100%", isStacked ? "100%" : 8];
+  // Taller when stacked so a full-width image isn't a letterbox slit.
+  const mediaHeight = [8, 7];
+
   return (
-    <Flex
-      gap={[3, 4]}
-      flexDirection={isStacked ? "column" : "row"}
-      alignItems={isStacked ? "stretch" : "flex-start"}
-    >
+    <Flex gap={[3, 4]} flexDirection={flexDirection} alignItems={alignItems}>
       <LinkBox
         href={href}
         display="block"
@@ -42,8 +48,8 @@ const CollectionItem = (props: CollectionItemProps) => {
       >
         {frontmatter.videoUrl ? (
           <chakra.video
-            width={isStacked ? "100%" : [7, 8]}
-            height={[6, 7]}
+            width={mediaWidth}
+            height={mediaHeight}
             borderRadius={1}
             display="block"
             style={{
@@ -60,8 +66,8 @@ const CollectionItem = (props: CollectionItemProps) => {
           </chakra.video>
         ) : frontmatter.imgUrl ? (
           <Box
-            width={isStacked ? "100%" : [7, 8]}
-            height={[6, 7]}
+            width={mediaWidth}
+            height={mediaHeight}
             borderRadius={1}
             backgroundColor="backgroundAccent"
             backgroundImage={`url(${frontmatter.imgUrl})`}
@@ -70,8 +76,8 @@ const CollectionItem = (props: CollectionItemProps) => {
           />
         ) : (
           <Flex
-            width={isStacked ? "100%" : [7, 8]}
-            height={[6, 7]}
+            width={mediaWidth}
+            height={mediaHeight}
             borderRadius={1}
             backgroundColor="backgroundAccent"
             color="text"

@@ -1,5 +1,5 @@
 ---
-title: "Impart Security Logo Redesign"
+title: "Impart Security Logo Design"
 date: "2023-07-24"
 isVisible: true
 summary: "The logo I designed for Impart Security, a cybersecurity company."
@@ -54,7 +54,7 @@ To further illustrate the flexibility of the logo, here are some examples of the
 
 ### Dark and light — Agency, two-tone
 
-Finally, here are some examples of the agency logo design. We were never provided with a presentation like this, but I recreated the logo and displayed it in a comparble format so that we could have an informed discussion.
+Finally, here are examples of the agency logo design. We were never provided with a presentation like this, but I recreated the logo and displayed it in a comparable format so that we could have an informed discussion.
 
 The agency version was a two-tone design. I included some rather illegible examples to illustrate the shortcomings of including a second color within the single graphic element. In the light background cases, the subtle blue/black contrast in the logomark is difficult to discern. In the dark background cases, the dots are lost in the background color, leaving the logomark looking quite different than the light background cases.
 
@@ -106,6 +106,8 @@ Here are some examples of the logo in context, so we can evaluate how it looks i
 ![GitHub](11-Github.png)
 
 ### Twitter
+
+The logo also works as an infinitely repeating pattern (seen in the header background of the image below). The idea is that it represents a data stream, and the illuminated section is Impart's "inspection" process.
 
 ![Twitter](12-Twitter.png)
 
