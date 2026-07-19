@@ -28,7 +28,11 @@ export function publishPostAsset(
   const dest = path.join("public", PUBLIC_ROOT, category, slug, rel);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(path.join(postDir, rel), dest);
-  return path.posix.join("/", PUBLIC_ROOT, category, slug, rel);
+  // Asset filenames may contain spaces or other characters that need escaping in
+  // a URL (e.g. "9-Logo comparison.png"). Encode each path segment so the served
+  // src resolves; the copied file on disk keeps its original name.
+  const encodedRel = rel.split("/").map(encodeURIComponent).join("/");
+  return path.posix.join("/", PUBLIC_ROOT, category, slug, encodedRel);
 }
 
 // Publish the asset-bearing frontmatter fields (cover image, cover video),
